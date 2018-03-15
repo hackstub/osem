@@ -18,7 +18,7 @@ class User < ApplicationRecord
                                                    :avatar_content_type, :avatar_file_size, :avatar_updated_at, :updated_at, :confirmation_sent_at, :confirmation_token, :reset_password_token]
 
   include Gravtastic
-  gravtastic size: 32
+  gravtastic size: 32, default: "identicon"
 
   before_create :setup_role
 
