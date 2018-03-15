@@ -5,10 +5,10 @@
     %p.lead
       We are now accepting proposals for sessions!
     %p
-      - if not event_types.empty?
+      - if event_types.any?
         You can submit proposals for
         %span.notranslate
-          = "#{event_types}."
+          = "#{event_types_sentence(event_types)}."
       - if tracks.any?
         Proposals should fit in one of the
         %span.notranslate
