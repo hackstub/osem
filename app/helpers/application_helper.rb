@@ -141,8 +141,12 @@ module ApplicationHelper
                               hint: 'The people responsible for the booth. You can only select existing users.'
   end
 
-  def event_types_sentence(conference)
-    conference.event_types.map { |et| et.title.pluralize }.uniq.to_sentence
+  def event_types_sentence(event_types)
+    event_types
+      .pluck(:title)
+      .map { |t| t.downcase.gsub(/\(.*\)/, "").strip.pluralize }
+      .uniq
+      .to_sentence
   end
 
   def sign_in_path

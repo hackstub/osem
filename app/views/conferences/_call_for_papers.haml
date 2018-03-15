@@ -8,7 +8,7 @@
       - if event_types.any?
         You can submit proposals for
         %span.notranslate
-          = event_types.map(&:pluralize).uniq.to_sentence + '.'
+          = "#{event_types_sentence(event_types)}."
       - if tracks.any?
         Proposals should fit in one of the
         %span.notranslate
