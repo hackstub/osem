@@ -31,6 +31,11 @@
 
             = f.inputs name: 'Proposal Information' do
               = f.input :title, as: :string, required: true, input_html: { required: true }
+
+              = f.input :subtitle, as: :string
+
+              = track_selector_input f
+
               = f.input :event_type_id, as: :select,
                 collection: @program.event_types.map {|type| ["#{type.title} - #{show_time(type.length)}", type.id,
                 data: { min_words: type.minimum_abstract_length, max_words: type.maximum_abstract_length }]},
@@ -44,6 +49,13 @@
               - @program.event_types.each do |event_type|
                 %span{ class: 'help-block event_event_type_id collapse', id: "#{event_type.id}-help" }
                   = event_type.description
+
+              = f.input :difficulty_level, as: :select, collection: @conference.program.difficulty_levels, input_html: { class: 'select-help-toggle' },
+                include_blank: '(Please select)' if @conference.program.difficulty_levels.any?
+
+              - @conference.program.difficulty_levels.each do |difficulty_level|
+                %span{ class: 'help-block select-help-text collapse event_difficulty_level_id', id: "#{difficulty_level.id}-help" }
+                  = difficulty_level.description
 
               = f.input :abstract, required: true, input_html: { rows: 5, data: { provide: 'markdown-editable' } },
                 hint: markdown_hint('[Tips to improve your presentations.](http://blog.hubspot.com/blog/tabid/6307/bid/5975/10-Rules-to-Instantly-Improve-Your-Presentations.aspx)')
