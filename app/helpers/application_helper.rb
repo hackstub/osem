@@ -142,7 +142,7 @@ module ApplicationHelper
   end
 
   def event_types_sentence(conference)
-    conference.event_types.map { |et| et.title.pluralize }.to_sentence
+    conference.event_types.map { |et| et.title.pluralize }.uniq.to_sentence
   end
 
   def sign_in_path
