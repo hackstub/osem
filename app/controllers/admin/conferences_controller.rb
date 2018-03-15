@@ -111,10 +111,7 @@ module Admin
     end
 
     def show
-      @program = @conference.program
-      unless @conference.program
-        @program = Program.new(conference_id: @conference.id)
-      end
+      @program = @conference.program || Program.new(conference_id: @conference.id)
 
       # Overview and since last login information
       @total_reg = @conference.registrations.count
@@ -130,8 +127,10 @@ module Admin
       @new_program_length = @conference.new_program_hours(current_user.last_sign_in_at)
 
       @total_withdrawn = @all_events.where(state: :withdrawn).count
-      @new_withdrawn = @all_events
-          .where('state = "withdrawn" and created_at > ?', current_user.last_sign_in_at).count
+      @new_withdrawn = @all_events.where(state: :withdrawn).where(
+        'events.created_at > ?',
+        current_user.last_sign_in_at
+      ).count
 
       #  Step by step list
       @conference_progress = @conference.get_status
@@ -147,7 +146,6 @@ module Admin
 
       @submissions = Conference.get_event_state_line_colors
 
-      @submissions_data = {}
       @submissions_data = @conference.get_submissions_data
       @cfp_weeks = 0
       if @submissions_data['Weeks']
@@ -155,7 +153,6 @@ module Admin
         @submissions_data = @submissions_data.except('Weeks')
       end
 
-      @tickets_data = {}
       @tickets_data = @conference.get_tickets_data
       @ticket_weeks = 0
       if @tickets_data['Weeks']
