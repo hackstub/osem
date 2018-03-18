@@ -18,6 +18,73 @@ en:
       mit: "MIT license"
       free_sw: "free software"
       github: "GitHub"
+  conferences:
+    booths:
+      booths: "Booths"
+    call_for_papers:
+      call_for_papers: "Call for Papers"
+      now_accepting_proposals: "We are now accepting proposals for sessions!"
+      submit_proposals_for_event_types: "You can submit proposals for %{event_types}."
+      proposals_should_fit_tracks: "Proposals should fit in one of the %{tracks}."
+      submission_period_is_open: "The submission period is open %{dates}."
+      days_remaining:
+        one: "You have one day left!"
+        other: "You have %{count} left!"
+      submit_proposal_button: "Submit your proposal now"
+    call_for_content:
+      call_for_content: "Call for Content"
+    call_for_tracks:
+      call_for_tracks: "Call for Tracks"
+      now_accepting_track_requests: "We are now accepting custom track requests!"
+      you_interested_bro: "Would you like to host mini-summit, sub-conference, or hack space?"
+      submission_period_html: "The submission period for track requests is open <em>%{dates}</em>."
+      days_left:
+        one: "You have one day left!"
+        other: "You have %{count} days left!"
+      submit_request_for_track: "Submit your request for track"
+    conference_details:
+      view_conference: "View Conference"
+      schedule: Schedule
+      my_registration: My Registration
+      register: Register
+      my_track_requests: My Track Requests
+      submit_track_requests: Submit Track Requests
+      my_proposals: My Proposals
+      submit_proposals: Submit Proposals
+      my_booth_requests: My Booth Requests
+      request_booth: Request Booth
+      subscribe: Subscribe
+      unsubscribe: Unsubscribe
+      my_tickets: My Tickets
+    highlights:
+      program_highlights: Program Highlights
+    index:
+      upcoming_conferences: Upcoming Conferences
+    lodging:
+      where_to_stay: Where to stay in %{city}
+      where_to_stay_without_venue: Where to stay
+      recommended_accomodations_follow: We recommend the following accomodations for your visit.
+    program:
+      program: "Program"
+      most_awesome_program_ever: "%{conference} has the most awesome program ever!"
+      full_schedule: Full Schedule
+    registration:
+      registration: Registration
+      registration_limit_exceeded: Sorry, the conference registration limit has exceeded.
+      free_of_charge: "Going to %{conference} is free of charge!"
+      register_before: "We only ask you to register yourself before %{end_date} so we can plan for the right amount of people."
+      registration_period_open: "The registration period is open %{dates}."
+      register_now: Register Now
+    sponsors:
+      sponsors: Sponsors
+      want_to_sponsor: "Want to sponsor?"
+      contact_us: "Contact us!"
+    tickets:
+      tickets: Tickets
+      support_conference: "Support %{conference}"
+    tracks:
+      tracks: Tracks
+      room: "In %{room}"
   hello: "Hello world"
   time:
       formats:

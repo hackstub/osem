@@ -1,6 +1,7 @@
 .row
   .col-md-12
-    %h3.text-center Tracks
+    %h3.text-center
+      = t(".tracks")
 .row.row-centered
   - tracks.each do |track|
     .col-md-3.col-sm-3.col-centered.col-top.track
@@ -12,5 +13,5 @@
             - if track.start_date && track.end_date
               = date_string(track.start_date, track.end_date)
             - if track.room
-              In #{track.room.name}
+              = t(".room", :room => track.room.name)
           = markdown truncate(track.description, length: 200, separator: ' ')

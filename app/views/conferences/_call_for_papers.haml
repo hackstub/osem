@@ -1,27 +1,18 @@
 - cache [conference_id, call, event_types, tracks, '#splash#callforpapers'] do
   .col-md-5.col-sm-5.text-center
     %h2
-      Call for Papers
+      = t(".call_for_papers")
     %p.lead
-      We are now accepting proposals for sessions!
+      = t(".now_accepting_proposals")
     %p
       - if event_types.any?
-        You can submit proposals for
-        %span.notranslate
-          = "#{event_types_sentence(event_types)}."
+        = t(".submit_proposals_for_event_types", :event_types => event_types_sentence(event_types))
       - if tracks.any?
-        Proposals should fit in one of the
-        %span.notranslate
-          = pluralize(tracks.length, 'track') + ':'
-          = tracks.to_sentence + '.'
-      The submission period is open
-      %em.notranslate
-        = date_string(call.start_date, call.end_date) + '.'
+        = t(".proposals_should_fit_tracks", :tracks => pluralize(tracks.length, "track") + ":" + tracks.to_sentence)
+      = t(".submission_period_is_open", :dates => date_string(call.start_date, call.end_date))
       %b
-        You have
-        = pluralize(call.remaining_days, 'day')
-        left!
+        = t(".days_remaining", :count => pluralize(call.remaining_days, "day"))
     %p.cta-button
-      = link_to "Submit your proposal now",
+      = link_to t(".submit_proposal_button"),
         new_conference_program_proposal_path(conference_id),
         class: 'btn btn-success btn-lg text-center'
