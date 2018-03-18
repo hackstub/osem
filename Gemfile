@@ -35,6 +35,7 @@ gem 'mini_magick'
 
 # for internationalizing
 gem 'rails-i18n', '~> 5.0.0'
+gem 'globalize', '~> 5.1.0.beta2'
 
 # as authentification framework
 gem 'devise'

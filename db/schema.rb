@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180313012253) do
+ActiveRecord::Schema.define(version: 20180318180310) do
 
   create_table "ahoy_events", force: :cascade do |t|
     t.integer  "visit_id"
@@ -99,6 +99,17 @@ ActiveRecord::Schema.define(version: 20180313012253) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "url"
+  end
+
+  create_table "conference_translations", force: :cascade do |t|
+    t.integer  "conference_id", null: false
+    t.string   "locale",        null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.string   "title"
+    t.text     "description"
+    t.index ["conference_id"], name: "index_conference_translations_on_conference_id"
+    t.index ["locale"], name: "index_conference_translations_on_locale"
   end
 
   create_table "conferences", force: :cascade do |t|
