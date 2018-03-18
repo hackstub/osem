@@ -2,6 +2,22 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  layout:
+    navigation:
+      toggle: "Toggle navigation"
+      avatar_alt: "Yo %{username}!"
+      notifications: "Notifications (%{count})"
+      sign_up: "Sign Up"
+      sign_in: "Sign In"
+    messages:
+      no_js: 
+        heading: "JavaScript is not enabled"
+        body: "OSEM requires JavaScript to be enabled to function. Please turn on JavaScript in your browser's settings and reload the page to continue."
+    footer:
+      text_html: "This tool is %{free_sw} released under the %{mit}. You can run, copy, distribute, study, change and improve it. The source code and the developers are on %{github}."
+      mit: "MIT license"
+      free_sw: "free software"
+      github: "GitHub"
   hello: "Hello world"
   time:
       formats:
