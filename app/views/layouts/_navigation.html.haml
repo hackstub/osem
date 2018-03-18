@@ -1,7 +1,6 @@
 .navbar.navbar-default.navbar-fixed-top.nav-osem{role: 'navigation'}
   .container
     .navbar-header
-      - if @conference && @conference.short_title.present?
       %button{"data-target"=>"#main-nav", "data-toggle"=>"collapse", class: 'navbar-toggle', type: 'button'}
         %span.sr-only
           Toggle navigation
