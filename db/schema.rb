@@ -114,7 +114,6 @@ ActiveRecord::Schema.define(version: 20180318180310) do
 
   create_table "conferences", force: :cascade do |t|
     t.string   "guid",                               null: false
-    t.string   "title",                              null: false
     t.string   "short_title",                        null: false
     t.string   "timezone",                           null: false
     t.date     "start_date",                         null: false
@@ -128,7 +127,6 @@ ActiveRecord::Schema.define(version: 20180318180310) do
     t.boolean  "use_volunteers"
     t.string   "color"
     t.text     "events_per_week"
-    t.text     "description"
     t.integer  "registration_limit", default: 0
     t.string   "picture"
     t.integer  "start_hour",         default: 9

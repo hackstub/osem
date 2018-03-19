@@ -6,7 +6,8 @@ class TranslateConference < ActiveRecord::Migration[5.0]
           :title => :string,
           :description => :text
         }, {
-          :migrate_data => true
+          :migrate_data => true,
+          :remove_source_columns => true
         })
       end
 
