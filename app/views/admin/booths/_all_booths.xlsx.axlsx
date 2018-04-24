@@ -4,10 +4,13 @@ wb.add_worksheet(name: 'all booths') do |sheet|
   row = ['Booth ID',
          'Title',
          'Description',
-         'Reasoning',
+         'During the general audience week-end',
+         'During the rest of the week',
          'Submitter Name',
-         'Submitter Relationship',
+         'Submitter Email',
+         'Peoples on booth',
          'Website Url',
+         'Comment',
          'State']
 
   sheet.add_row row, style: bold_style
@@ -16,10 +19,13 @@ wb.add_worksheet(name: 'all booths') do |sheet|
     row << booth.id
     row << booth.title
     row << booth.description
-    row << booth.reasoning
+    row << booth.during_the_general_audience_weekend
+    row << booth.during_the_rest_of_the_week
     row << booth.submitter.name
-    row << booth.submitter_relationship
+    row << booth.submitter.email
+    row << booth.peoples_on_booth
     row << booth.website_url
+    row << booth.comment
     row << booth.state
     sheet.add_row row , style: wrap_text
     sheet.column_widths 10,20,35,35,20,30,35,10

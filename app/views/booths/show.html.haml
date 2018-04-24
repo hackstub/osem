@@ -18,11 +18,6 @@
             = markdown(@booth.description)
         %tr
           %td.col-md-2
-            %b Reasoning
-          %td
-            = markdown(@booth.reasoning)
-        %tr
-          %td.col-md-2
             %b Website
           %td
             - if @booth.website_url.present?
@@ -32,11 +27,6 @@
             %b Submitter
           %td
             = link_to @booth.submitter.name, user_path(@booth.submitter)
-        %tr
-          %td.col-md-2
-            %b Submitter's relationship
-          %td
-            = @booth.submitter_relationship
         %tr
           %td.col-md-2
             %b Responsibles

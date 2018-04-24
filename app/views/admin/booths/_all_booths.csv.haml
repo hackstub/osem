@@ -1,10 +1,13 @@
 - headers = ['Booth ID',
              'Title',
              'Description',
-             'Reasoning',
+             'During the general audience week-end',
+             'During the rest of the week',
              'Submitter Name',
-             'Submitter Relationship',
+             'Submitter Email',
+             'Peoples on booth',
              'Website Url',
+             'Comment',
              'State']
 = CSV.generate_line ['All booths']
 = CSV.generate_line headers
@@ -12,8 +15,11 @@
   = CSV.generate_line([booth.id,
                        booth.title,
                        booth.description,
-                       booth.reasoning,
+                       booth.during_the_general_audience_weekend,
+                       booth.during_the_rest_of_the_week,
                        booth.submitter.name,
-                       booth.submitter_relationship,
+                       booth.submitter.email,
+                       booth.peoples_on_booth,
                        booth.website_url,
+                       booth.comment,
                        booth.state]).html_safe

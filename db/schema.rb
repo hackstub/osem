@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180313012253) do
+ActiveRecord::Schema.define(version: 20180424084951) do
 
   create_table "ahoy_events", force: :cascade do |t|
     t.integer  "visit_id"
@@ -48,8 +48,14 @@ ActiveRecord::Schema.define(version: 20180313012253) do
     t.string   "website_url"
     t.text     "submitter_relationship"
     t.integer  "conference_id"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",                                                        null: false
+    t.datetime "updated_at",                                                        null: false
+    t.boolean  "during_the_general_audience_weekend",               default: false
+    t.boolean  "during_the_rest_of_the_week",                       default: false
+    t.boolean  "assurance",                                         default: false
+    t.integer  "peoples_on_booth",                                  default: 1
+    t.text     "hardware_needs",                      limit: 65535
+    t.text     "comment",                             limit: 65535
   end
 
   create_table "campaigns", force: :cascade do |t|

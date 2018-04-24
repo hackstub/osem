@@ -17,12 +17,11 @@ class Booth < ApplicationRecord
             presence: true
 
   validates :description,
-            :reasoning,
             :state,
             :responsibles,
             :conference_id,
             :website_url,
-            :submitter_relationship,
+            :peoples_on_booth,
             presence: true
 
   scope :accepted, -> { where(state: 'accepted') }

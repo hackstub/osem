@@ -2,18 +2,25 @@
   .row
     .col-md-8
       = semantic_form_for(@booth,  url: @url, html: { multipart: true }) do |f|
-        = f.input :title, as: :string, input_html: { autofocus: true }, required: true
+        = f.input :title, as: :string, input_html: { autofocus: true }, required: true,
+          hint: 'The name of the association requesting the booth'
+        = image_tag f.object.picture.thumb.url if f.object.picture?
+        = f.input :picture, hint: 'The association\'s logo'
         = f.input :description, input_html: { rows: 5, data: { provide: 'markdown-editable' } }, required: true,
           hint: 'This field becomes public upon request acceptance'
-        = f.input :reasoning, input_html: { rows: 5, data: { provide: 'markdown-editable' } }, required: true,
-          label: 'How it fits the conference'
-        = f.input :submitter_relationship, input_html: { rows: 5, data: { provide: 'markdown-editable' } }, required: true,
-          label: 'Submitter\'s relation',
-          hint: 'e.g. employee, comunity manager, etc'
         = f.input :website_url
+        %div.form-group
+          %label.control-label Presence:
+          = f.input :during_the_general_audience_weekend
+          = f.input :during_the_rest_of_the_week
+        = f.input :peoples_on_booth, required: true
         = responsibles_selector_input f
-        = image_tag f.object.picture.thumb.url if f.object.picture?
-        = f.input :picture
+        %hr
+        = f.input :assurance, hint: 'Do you have a valid assurance?'
+        = f.input :comment, input_html: { rows: 5, data: { provide: 'markdown-editable' } }, required: true,
+          hint: 'Anything you would like to say to the organizers'
+        = f.input :hardware_needs, input_html: { rows: 2, data: { provide: 'markdown-editable' } },
+          hint: 'Tables, chairs, electricity, an internet connection… you tell us!'
 
         %p.text-right
           - if @booth.new_record?
