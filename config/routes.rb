@@ -23,6 +23,10 @@ Osem::Application.routes.draw do
     resources :openids, only: :destroy
   end
 
+  scope module: 'rmll' do
+    get "home" => "home#index"
+  end
+
   namespace :admin do
     resources :organizations do
       member do
@@ -217,6 +221,7 @@ Osem::Application.routes.draw do
   unless ENV['OSEM_ROOT_CONFERENCE'].blank?
     root to: redirect("/conferences/#{ENV['OSEM_ROOT_CONFERENCE']}")
   else
-    root to: 'conferences#index', via: [:get, :options]
+    # root to: 'conferences#index', via: [:get, :options]
+    root to: 'rmll/home#index', via: [:get, :options]
   end
 end

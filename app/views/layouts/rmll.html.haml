@@ -1,0 +1,23 @@
+!!! 5
+%html{ lang:"fr", dir:"ltr", xmlns: 'http://www.w3.org/1999/html' }
+  %head
+    %meta{ charset:"utf-8" }
+    %meta{ name:"viewport", content:"width=device-width, initial-scale=1" }
+    %title= content_for?(:title) ? yield(:title) : "RMLL 2018 - Rencontres Mondiales du Logiciel Libre"
+    -# TODO add favicon
+    -# TODO add canonical links
+    %meta{ name:"description", content:"Les Rencontres Mondiales du Logiciel Libre 2018, à Strasbourg du 7 au 12 juillet, un festival transdisciplinaire ouvert à toutes et à tous." }
+    %meta{ name:"keywords", content:"rmll, 2018, rencontres, logiciel, libre, software, meeting, strasbourg, education, numérique, captivité, émancipation, liberation, festival" }
+    -# TODO add og:stuff
+    = stylesheet_link_tag "rmll/stylesheet"
+    -# = csrf_meta_tags
+  %body
+    = yield :yolo
+
+
+    %main
+      = yield
+
+    -# = javascript_include_tag "rmll/script"
+    = yield :script
+    -# = piwik_tracking_tag
