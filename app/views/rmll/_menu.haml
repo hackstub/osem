@@ -1,0 +1,87 @@
+%nav.noselect
+  %ul
+    %div#home= link_to "↗", root_path
+    %li
+      = link_to "Programme", "#"
+      %ul.dropdown.dropdown-menu
+        %li.has-submenu
+          = link_to "Présentation", "#"
+          %ul.dropdown.dropdown-submenu
+            %li= link_to "Éducation numérique", "#"
+            %li= link_to "Thèmes", "#"
+            %li= link_to "Tracks/Fils rouges", "#"
+            %li= link_to "Intervenants", "#"
+        %li.has-submenu
+          = link_to "Calendrier", "#"
+          %ul.dropdown.dropdown-submenu
+            %li= link_to "Conférences", "#"
+            %li= link_to "Ateliers", "#"
+            %li= link_to "Plénières/Tables rondes", "#"
+            %li= link_to "Salles autogérées", "#"
+            %li= link_to "Créations", "#"
+        %li= link_to "Soirée du Libre", "#"
+        %li= link_to "Repas du Libre", "#"
+    %li
+      = link_to "Village", "#"
+      %ul.dropdown.dropdown-menu
+        %li= link_to "Plan", "#"
+        %li= link_to "Associations/Exposants", "#"
+        %li= link_to "Appel à stand", "#"
+    %li
+      = link_to "Infos pratique", "#"
+      %ul.dropdown.dropdown-menu
+        %li.has-submenu
+          = link_to "Accès", "#"
+          %ul.dropdown.dropdown-submenu
+            %li= link_to "Tram/Bus", "#"
+            %li= link_to "Parkings", "#"
+            %li= link_to "Accessibilité et mobilité", "#"
+        %li= link_to "Hébergement", "#"
+        %li= link_to "Restauration", "#"
+        %li= link_to "Réservation Repas du Libre", "#"
+        %li= link_to "Tourisme", "#"
+        %li= link_to "Réseau internet", "#"
+        %li= link_to "Se rendre à Strasbourg", "#"
+    %li
+      = link_to "Participer", "#"
+      %ul.dropdown.dropdown-menu
+        %li= link_to "Boutique", "#"
+        %li= link_to "Bénévolat", "#"
+        %li= link_to "Don", "#"
+        %li= link_to "Héberger", "#"
+        %li= link_to "Financement participatif", "#"
+        %li= link_to "Appel à participation", "#"
+    %li
+      = link_to "Médias", "#"
+      %ul.dropdown.dropdown-menu
+        %li= link_to "Communiqués/Dossier de presse", "#"
+        %li= link_to "Communication graphique", "#"
+        %li= link_to "Live", "#"
+        %li= link_to "Vidéos", "#"
+    %li
+      = link_to "À propos", "#"
+      %ul.dropdown.dropdown-menu
+        %li= link_to "Qu'est-ce que le Libre ?", "#"
+        %li= link_to "Historique", "#"
+        %li= link_to "Partenaires", "#"
+        %li= link_to "Organisateurs", "#"
+        %li= link_to "Remerciements", "#"
+        %li= link_to "Mentions légales", "#"
+        %li= link_to "Plan du site", "#"
+
+  %ul
+    %li
+      = link_to "User", "#"
+      %ul.dropdown.dropdown-menu
+        %li= link_to "Connection", "#"
+        %li= link_to "Langue", "#"
+        %li= link_to "Outils", "#"
+    %li
+      = link_to "Notifications", "#"
+      %ul.dropdown.dropdown-menu
+        %li= link_to "Blog", "#"
+        %li= link_to "Radio RMLL", "#"
+        %li= link_to "Mastodon", "https://mamot.fr/@rmll2018"
+        %li= link_to "Liste de diffusion", "#"
+        %li= link_to "IRC", "https://webchat.freenode.net/"
+        %li= link_to "Matrix", "#"

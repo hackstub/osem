@@ -12,12 +12,12 @@
     = stylesheet_link_tag "rmll/stylesheet"
     -# = csrf_meta_tags
   %body
-    = yield :yolo
-
+    = render 'rmll/menu'
+    = yield :background
 
     %main
       = yield
 
-    -# = javascript_include_tag "rmll/script"
+    = javascript_include_tag "rmll/script"
     = yield :script
     -# = piwik_tracking_tag
