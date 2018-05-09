@@ -14,3 +14,11 @@ $cyan: #6dffff;
 
 $font-mono: "Space Mono", monospace;
 $font-sans: "Open Sans", sans-serif;
+
+@mixin screen() {
+  @media (min-width: 768px) { @content; }
+}
+
+@mixin phone() {
+  @media (max-width: 768px) { @content; }
+}

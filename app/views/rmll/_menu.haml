@@ -1,87 +1,140 @@
-%nav.noselect
-  %ul
-    %div#home= link_to "↗", root_path
-    %li
-      = link_to "Programme", "#"
-      %ul.dropdown.dropdown-menu
-        %li.has-submenu
-          = link_to "Présentation", "#"
-          %ul.dropdown.dropdown-submenu
-            %li= link_to "Éducation numérique", "#"
-            %li= link_to "Thèmes", "#"
-            %li= link_to "Tracks/Fils rouges", "#"
-            %li= link_to "Intervenants", "#"
-        %li.has-submenu
-          = link_to "Calendrier", "#"
-          %ul.dropdown.dropdown-submenu
-            %li= link_to "Conférences", "#"
-            %li= link_to "Ateliers", "#"
-            %li= link_to "Plénières/Tables rondes", "#"
-            %li= link_to "Salles autogérées", "#"
-            %li= link_to "Créations", "#"
-        %li= link_to "Soirée du Libre", "#"
-        %li= link_to "Repas du Libre", "#"
-    %li
-      = link_to "Village", "#"
-      %ul.dropdown.dropdown-menu
-        %li= link_to "Plan", "#"
-        %li= link_to "Associations/Exposants", "#"
-        %li= link_to "Appel à stand", "#"
-    %li
-      = link_to "Infos pratique", "#"
-      %ul.dropdown.dropdown-menu
-        %li.has-submenu
-          = link_to "Accès", "#"
-          %ul.dropdown.dropdown-submenu
-            %li= link_to "Tram/Bus", "#"
-            %li= link_to "Parkings", "#"
-            %li= link_to "Accessibilité et mobilité", "#"
-        %li= link_to "Hébergement", "#"
-        %li= link_to "Restauration", "#"
-        %li= link_to "Réservation Repas du Libre", "#"
-        %li= link_to "Tourisme", "#"
-        %li= link_to "Réseau internet", "#"
-        %li= link_to "Se rendre à Strasbourg", "#"
-    %li
-      = link_to "Participer", "#"
-      %ul.dropdown.dropdown-menu
-        %li= link_to "Boutique", "#"
-        %li= link_to "Bénévolat", "#"
-        %li= link_to "Don", "#"
-        %li= link_to "Héberger", "#"
-        %li= link_to "Financement participatif", "#"
-        %li= link_to "Appel à participation", "#"
-    %li
-      = link_to "Médias", "#"
-      %ul.dropdown.dropdown-menu
-        %li= link_to "Communiqués/Dossier de presse", "#"
-        %li= link_to "Communication graphique", "#"
-        %li= link_to "Live", "#"
-        %li= link_to "Vidéos", "#"
-    %li
-      = link_to "À propos", "#"
-      %ul.dropdown.dropdown-menu
-        %li= link_to "Qu'est-ce que le Libre ?", "#"
-        %li= link_to "Historique", "#"
-        %li= link_to "Partenaires", "#"
-        %li= link_to "Organisateurs", "#"
-        %li= link_to "Remerciements", "#"
-        %li= link_to "Mentions légales", "#"
-        %li= link_to "Plan du site", "#"
+%nav.noselect{ role:"navigation", "aria-label":"Menu bar", "aria-hidden":"false" }
+  %ul#left-menu{ role:"menubar" }
+    %li{ role:"menuitem", "aria-label":"Home" }
+      = link_to "↗", root_path
+    %li{ role:"menuitem", "aria-haspopup":"true" }
+      %a#menu-button{ tabindex:0 } Menu
+      %ul#main-menu.dropdown{ role:"menu", "aria-hidden":"true" }
+        %li{ role:"menuitem", "aria-haspopup":"true" }
+          %a{ tabindex:0 } Programme
+          %ul.dropdown.dropdown-menu{ role:"menu", "aria-hidden":"true" }
+            %li.has-submenu{ role:"menuitem", "aria-haspopup":"true" }
+              %a{ tabindex:0 } Présentation
+              %ul.dropdown.dropdown-submenu{ role:"menu", "aria-hidden":"true" }
+                %li{ role:"menuitem" }
+                  = link_to "Éducation numérique", "/program/presentation/edu_num"
+                %li{ role:"menuitem" }
+                  = link_to "Thèmes", "/program/presentation/theme"
+                %li{ role:"menuitem" }
+                  = link_to "Tracks/Fils rouges", "#"
+                %li{ role:"menuitem" }
+                  = link_to "Intervenants", "#"
+            %li.has-submenu{ role:"menuitem", "aria-haspopup":"true" }
+              %a{ tabindex:0 } Calendrier
+              %ul.dropdown.dropdown-submenu{ role:"menu", "aria-hidden":"true" }
+                %li{ role:"menuitem" }
+                  = link_to "Conférences", "#"
+                %li{ role:"menuitem" }
+                  = link_to "Ateliers", "#"
+                %li{ role:"menuitem" }
+                  = link_to "Plénières/Tables rondes", "#"
+                %li{ role:"menuitem" }
+                  = link_to "Salles autogérées", "#"
+                %li{ role:"menuitem" }
+                  = link_to "Créations", "#"
+            %li{ role:"menuitem" }
+              = link_to "Soirée du Libre", "/program/night"
+            %li{ role:"menuitem" }
+              = link_to "Repas du Libre", "/program/meal"
+        %li{ role:"menuitem", "aria-haspopup":"true" }
+          %a{ tabindex:0 } Village
+          %ul.dropdown.dropdown-menu{ role:"menu", "aria-hidden":"true" }
+            %li{ role:"menuitem" }
+              = link_to "Plan", "#"
+            %li{ role:"menuitem" }
+              = link_to "Associations/Exposants", "#"
+            %li{ role:"menuitem" }
+              = link_to "Appel à stand", "#"
+        %li{ role:"menuitem", "aria-haspopup":"true" }
+          %a{ tabindex:0 } Info pratiques
+          %ul.dropdown.dropdown-menu{ role:"menu", "aria-hidden":"true" }
+            %li.has-submenu{ role:"menuitem", "aria-haspopup":"true" }
+              %a{ tabindex:0 } Accès
+              %ul.dropdown.dropdown-submenu{ role:"menu", "aria-hidden":"true" }
+                %li{ role:"menuitem" }
+                  = link_to "Tram/Bus", "#"
+                %li{ role:"menuitem" }
+                  = link_to "Parkings", "#"
+                %li{ role:"menuitem" }
+                  = link_to "Accessibilité et mobilité", "#"
+            %li{ role:"menuitem" }
+              = link_to "Hébergement", "#"
+            %li{ role:"menuitem" }
+              = link_to "Restauration", "#"
+            %li{ role:"menuitem" }
+              = link_to "Réservation Repas du Libre", "#"
+            %li{ role:"menuitem" }
+              = link_to "Tourisme", "#"
+            %li{ role:"menuitem" }
+              = link_to "Réseau internet", "#"
+            %li{ role:"menuitem" }
+              = link_to "Se rendre à Strasbourg", "#"
+        %li{ role:"menuitem", "aria-haspopup":"true" }
+          %a{ tabindex:0 } Participer
+          %ul.dropdown.dropdown-menu{ role:"menu", "aria-hidden":"true" }
+            %li{ role:"menuitem" }
+              = link_to "Boutique", "#"
+            %li{ role:"menuitem" }
+              = link_to "Bénévolat", "#"
+            %li{ role:"menuitem" }
+              = link_to "Don", "#"
+            %li{ role:"menuitem" }
+              = link_to "Héberger", "#"
+            %li{ role:"menuitem" }
+              = link_to "Financement participatif", "#"
+            %li{ role:"menuitem" }
+              = link_to "Appel à participation", "#"
+        %li{ role:"menuitem", "aria-haspopup":"true" }
+          %a{ tabindex:0 } Médias
+          %ul.dropdown.dropdown-menu{ role:"menu", "aria-hidden":"true" }
+            %li{ role:"menuitem" }
+              = link_to "Communiqués/Dossier de presse", "#"
+            %li{ role:"menuitem" }
+              = link_to "Communication graphique", "#"
+            %li{ role:"menuitem" }
+              = link_to "Live", "#"
+            %li{ role:"menuitem" }
+              = link_to "Vidéos", "#"
+        %li{ role:"menuitem", "aria-haspopup":"true" }
+          %a{ tabindex:0 } À propos
+          %ul.dropdown.dropdown-menu{ role:"menu", "aria-hidden":"true" }
+            %li{ role:"menuitem" }
+              = link_to "Qu'est-ce que le Libre ?", "#"
+            %li{ role:"menuitem" }
+              = link_to "Historique", "#"
+            %li{ role:"menuitem" }
+              = link_to "Partenaires", "#"
+            %li{ role:"menuitem" }
+              = link_to "Organisateurs", "#"
+            %li{ role:"menuitem" }
+              = link_to "Remerciements", "#"
+            %li{ role:"menuitem" }
+              = link_to "Mentions légales", "#"
+            %li{ role:"menuitem" }
+              = link_to "Plan du site", "#"
 
-  %ul
-    %li
-      = link_to "User", "#"
-      %ul.dropdown.dropdown-menu
-        %li= link_to "Connection", "#"
-        %li= link_to "Langue", "#"
-        %li= link_to "Outils", "#"
-    %li
-      = link_to "Notifications", "#"
-      %ul.dropdown.dropdown-menu
-        %li= link_to "Blog", "#"
-        %li= link_to "Radio RMLL", "#"
-        %li= link_to "Mastodon", "https://mamot.fr/@rmll2018"
-        %li= link_to "Liste de diffusion", "#"
-        %li= link_to "IRC", "https://webchat.freenode.net/"
-        %li= link_to "Matrix", "#"
+  %ul{ role:"menubar" }
+    %li{ role:"menuitem", "aria-haspopup":"true" }
+      %a{ tabindex:0 } User
+      %ul.dropdown.dropdown-menu{ role:"menu", "aria-hidden":"true" }
+        %li{ role:"menuitem" }
+          = link_to "Connection", admin_path
+        %li{ role:"menuitem" }
+          = link_to "Langue", "#"
+        %li{ role:"menuitem" }
+          = link_to "Outils", "#"
+    %li{ role:"menuitem", "aria-haspopup":"true" }
+      %a{ tabindex:0 } Notifications
+      %ul#last-menu.dropdown.dropdown-menu{ role:"menu", "aria-hidden":"true" }
+        %li{ role:"menuitem" }
+          = link_to "Blog", "#"
+        %li{ role:"menuitem" }
+          = link_to "Radio RMLL", "#"
+        %li{ role:"menuitem" }
+          = link_to "Mastodon", "https://mamot.fr/@rmll2018"
+        %li{ role:"menuitem" }
+          = link_to "Liste de diffusion", "#"
+        %li{ role:"menuitem" }
+          = link_to "IRC", "https://webchat.freenode.net/"
+        %li{ role:"menuitem" }
+          = link_to "Matrix", "#"
