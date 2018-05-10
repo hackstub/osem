@@ -2,13 +2,13 @@
   %ul#left-menu{ role:"menubar" }
     %li{ role:"menuitem", "aria-label":"Home" }
       = link_to "↗", root_path
-    %li{ role:"menuitem", "aria-haspopup":"true" }
+    %li{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false" }
       %a#menu-button{ tabindex:0 } Menu
       %ul#main-menu.dropdown{ role:"menu", "aria-hidden":"true" }
-        %li{ role:"menuitem", "aria-haspopup":"true" }
+        %li{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false"}
           %a{ tabindex:0 } Programme
           %ul.dropdown.dropdown-menu{ role:"menu", "aria-hidden":"true" }
-            %li.has-submenu{ role:"menuitem", "aria-haspopup":"true" }
+            %li.has-submenu{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false" }
               %a{ tabindex:0 } Présentation
               %ul.dropdown.dropdown-submenu{ role:"menu", "aria-hidden":"true" }
                 %li{ role:"menuitem" }
@@ -19,7 +19,7 @@
                   = link_to "Tracks/Fils rouges", "#"
                 %li{ role:"menuitem" }
                   = link_to "Intervenants", "#"
-            %li.has-submenu{ role:"menuitem", "aria-haspopup":"true" }
+            %li.has-submenu{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false" }
               %a{ tabindex:0 } Calendrier
               %ul.dropdown.dropdown-submenu{ role:"menu", "aria-hidden":"true" }
                 %li{ role:"menuitem" }
@@ -36,7 +36,7 @@
               = link_to "Soirée du Libre", "/program/night"
             %li{ role:"menuitem" }
               = link_to "Repas du Libre", "/program/meal"
-        %li{ role:"menuitem", "aria-haspopup":"true" }
+        %li{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false" }
           %a{ tabindex:0 } Village
           %ul.dropdown.dropdown-menu{ role:"menu", "aria-hidden":"true" }
             %li{ role:"menuitem" }
@@ -45,10 +45,10 @@
               = link_to "Associations/Exposants", "#"
             %li{ role:"menuitem" }
               = link_to "Appel à stand", "#"
-        %li{ role:"menuitem", "aria-haspopup":"true" }
+        %li{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false" }
           %a{ tabindex:0 } Info pratiques
           %ul.dropdown.dropdown-menu{ role:"menu", "aria-hidden":"true" }
-            %li.has-submenu{ role:"menuitem", "aria-haspopup":"true" }
+            %li.has-submenu{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false" }
               %a{ tabindex:0 } Accès
               %ul.dropdown.dropdown-submenu{ role:"menu", "aria-hidden":"true" }
                 %li{ role:"menuitem" }
@@ -69,7 +69,7 @@
               = link_to "Réseau internet", "#"
             %li{ role:"menuitem" }
               = link_to "Se rendre à Strasbourg", "#"
-        %li{ role:"menuitem", "aria-haspopup":"true" }
+        %li{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false" }
           %a{ tabindex:0 } Participer
           %ul.dropdown.dropdown-menu{ role:"menu", "aria-hidden":"true" }
             %li{ role:"menuitem" }
@@ -84,7 +84,7 @@
               = link_to "Financement participatif", "#"
             %li{ role:"menuitem" }
               = link_to "Appel à participation", "#"
-        %li{ role:"menuitem", "aria-haspopup":"true" }
+        %li{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false" }
           %a{ tabindex:0 } Médias
           %ul.dropdown.dropdown-menu{ role:"menu", "aria-hidden":"true" }
             %li{ role:"menuitem" }
@@ -95,7 +95,7 @@
               = link_to "Live", "#"
             %li{ role:"menuitem" }
               = link_to "Vidéos", "#"
-        %li{ role:"menuitem", "aria-haspopup":"true" }
+        %li{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false" }
           %a{ tabindex:0 } À propos
           %ul.dropdown.dropdown-menu{ role:"menu", "aria-hidden":"true" }
             %li{ role:"menuitem" }
@@ -114,7 +114,7 @@
               = link_to "Plan du site", "#"
 
   %ul{ role:"menubar" }
-    %li{ role:"menuitem", "aria-haspopup":"true" }
+    %li{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false" }
       %a{ tabindex:0 } User
       %ul.dropdown.dropdown-menu{ role:"menu", "aria-hidden":"true" }
         %li{ role:"menuitem" }
@@ -123,7 +123,7 @@
           = link_to "Langue", "#"
         %li{ role:"menuitem" }
           = link_to "Outils", "#"
-    %li{ role:"menuitem", "aria-haspopup":"true" }
+    %li{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false" }
       %a{ tabindex:0 } Notifications
       %ul#last-menu.dropdown.dropdown-menu{ role:"menu", "aria-hidden":"true" }
         %li{ role:"menuitem" }

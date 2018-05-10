@@ -57,7 +57,7 @@ nav {
       padding: 0.5rem 0 1rem 0;
 
       & > li > a::before, .has-submenu > a::before {
-        content: "v";
+        content: ">";
         display: inline-block;
         text-align: center;
         width: 1rem;
