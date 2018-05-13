@@ -1,0 +1,10 @@
+= content_for :head do
+  = stylesheet_link_tag "rmll/specific/mapbox-gl"
+  = stylesheet_link_tag "rmll/specific/map"
+  = javascript_include_tag "rmll/lib/mapbox-gl.js"
+
+%section
+  #map
+
+:javascript
+  initMap();

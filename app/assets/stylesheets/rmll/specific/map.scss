@@ -1,0 +1,13 @@
+@import "../var";
+#map {
+  width: 100%;
+  height: 100%;
+
+  .mapboxgl-ctrl {
+    box-shadow: none;
+  }
+  button {
+    background-color: white;
+    border: none;
+  }
+}

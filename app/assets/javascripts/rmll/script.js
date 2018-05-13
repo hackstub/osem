@@ -31,3 +31,37 @@ function hideMenu() {
     showed[i].classList.remove("show");
   }
 }
+
+// UTILS
+function readJSONFile(url) {
+    return new Promise((resolve, reject) => {
+        var rawFile = new XMLHttpRequest();
+        rawFile.overrideMimeType("application/json");
+        rawFile.open("GET", url);
+        rawFile.onload = () => {
+            if (rawFile.readyState === 4 && rawFile.status == "200") {
+                resolve(JSON.parse(rawFile.responseText));
+            }
+        }
+        rawFile.onerror = () => reject("Couldn't find '" + url +"'");
+        rawFile.send();
+    });
+}
+
+// MAP FUNCTIONS
+
+
+
+function initMap() {
+  var map = new mapboxgl.Map({
+      container: 'map',
+      style: '/assets/rmll/map-style.json',
+      center: [7.76399,48.576662],
+      zoom: window.innerWidth > 700 ? 15.6 : 14.5,
+      hash: true,
+  });
+
+  map.addControl(new mapboxgl.NavigationControl(), 'top-right');
+
+
+}

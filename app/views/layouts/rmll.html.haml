@@ -10,6 +10,8 @@
     %meta{ name:"keywords", content:"rmll, 2018, rencontres, logiciel, libre, software, meeting, strasbourg, education, numérique, captivité, émancipation, liberation, festival" }
     -# TODO add og:stuff
     = stylesheet_link_tag "rmll/stylesheet"
+    = javascript_include_tag "rmll/script"
+    = yield :head
     -# = csrf_meta_tags
   %body
     = render 'rmll/menu'
@@ -18,6 +20,5 @@
     %main
       = yield
 
-    = javascript_include_tag "rmll/script"
     = yield :script
     -# = piwik_tracking_tag
