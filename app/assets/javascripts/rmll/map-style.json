@@ -1317,54 +1317,6 @@
       }
     },
     {
-      "id": "poi_label",
-      "type": "symbol",
-      "source": "openmaptiles",
-      "source-layer": "poi",
-      "minzoom": 14,
-      "filter": [
-        "all",
-        [
-          "==",
-          "$type",
-          "Point"
-        ],
-        [
-          "==",
-          "rank",
-          1
-        ]
-      ],
-      "layout": {
-        "text-size": 11,
-        "text-font": [
-          "Noto Sans Bold"
-        ],
-        "visibility": "visible",
-        "text-offset": [
-          0,
-          0.5
-        ],
-        "icon-size": 1,
-        "text-anchor": "top",
-        "text-field": "{name:latin}\n{name:nonlatin}",
-        "text-max-width": 8,
-        "text-line-height": 1.2,
-        "text-padding": 2,
-        "text-letter-spacing": 0,
-        "text-transform": "uppercase"
-      },
-      "paint": {
-        "text-color": "rgba(255, 255, 255, 1)",
-        "text-halo-width": 10,
-        "text-halo-color": "rgba(255, 0, 0, 1)",
-        "text-halo-blur": 0,
-        "icon-halo-width": 0,
-        "icon-halo-color": "rgba(0, 0, 0, 0)",
-        "icon-color": "rgba(0, 0, 0, 1)"
-      }
-    },
-    {
       "id": "airport-label",
       "type": "symbol",
       "source": "openmaptiles",

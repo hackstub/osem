@@ -49,10 +49,7 @@ function readJSONFile(url) {
 }
 
 // MAP FUNCTIONS
-
-
-
-function initMap() {
+async function initMap() {
   var map = new mapboxgl.Map({
       container: 'map',
       style: '/assets/rmll/map-style.json',
@@ -63,5 +60,78 @@ function initMap() {
 
   map.addControl(new mapboxgl.NavigationControl(), 'top-right');
 
+  var marker = new mapboxgl.Marker()
+  .setLngLat([7.76399, 48.576662])
+  .addTo(map);
+  var markerHeight = 50, markerRadius = 10, linearOffset = 25;
+  var popupOffsets = {
+   'top': [0, 0],
+   'top-left': [0,0],
+   'top-right': [0,0],
+   'bottom': [0, -markerHeight],
+   'bottom-left': [linearOffset, (markerHeight - markerRadius + linearOffset) * -1],
+   'bottom-right': [-linearOffset, (markerHeight - markerRadius + linearOffset) * -1],
+   'left': [markerRadius, (markerHeight - markerRadius) * -1],
+   'right': [-markerRadius, (markerHeight - markerRadius) * -1]
+   };
 
+  var popup = new mapboxgl.Popup({offset:popupOffsets})
+  .setLngLat([7.76399, 48.576662])
+  .setHTML("yolo")
+  .addTo(map);
+
+  var layers = await readJSONFile("/assets/rmll/map-extra.json");
+  map.on('load', function () {
+    map.addLayer({
+        "id": "batiments",
+        "type": "fill",
+        "source": {
+            "type": "geojson",
+            "data": layers.batiments
+        },
+        "layout": {},
+        "paint": {
+            "fill-color": "#FF0000",
+            "fill-opacity": 1
+        }
+    });
+
+    map.addLayer({
+        "id": "tram",
+        "type": "symbol",
+        "source": {
+            "type": "geojson",
+            "data": layers.tramStops
+        },
+        "minzoom": 14,
+        "layout": {
+          "text-size": 11,
+          "text-font": [
+            "Noto Sans Bold"
+          ],
+          "text-offset": [
+            0,
+            0.5
+          ],
+          "icon-size": 1,
+          "text-anchor": "top",
+          "text-field": "{name}",
+          "text-max-width": 8,
+          "text-line-height": 1.2,
+          "text-padding": 2,
+          "text-letter-spacing": 0,
+          "text-transform": "uppercase"
+        },
+        "paint": {
+          "text-color": "rgba(255, 255, 255, 1)",
+          "text-halo-width": 10,
+          "text-halo-color": "rgba(255, 0, 0, 1)",
+          "text-halo-blur": 0,
+          "icon-halo-width": 0,
+          "icon-halo-color": "rgba(0, 0, 0, 0)",
+          "icon-color": "rgba(0, 0, 0, 1)"
+        }
+    });
+
+  });
 }
