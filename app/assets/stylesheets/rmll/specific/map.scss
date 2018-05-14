@@ -1,4 +1,39 @@
 @import "../var";
+
+section {
+  // display: flex;
+  font-family: $font-sans;
+  // @include phone {
+  //   flex-direction: column;
+  // }
+}
+
+article {
+  position: absolute;
+  top: 2rem;
+  margin: 10px 0 0 10px;
+  background-color: white;
+  border-radius: 4px;
+  padding: 2rem;
+  @include screen {
+    // min-width: 25rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  fieldset {
+    margin-top: 1rem;
+    legend {
+
+    }
+  }
+
+
+}
+
 #map {
   width: 100%;
   height: 100%;
@@ -6,13 +41,16 @@
   .mapboxgl-ctrl {
     box-shadow: none;
   }
+
   button {
     background-color: white;
     border: none;
   }
+
   .mapboxgl-ctrl-attrib {
     background-color: #272727;
     padding: 0 1rem;
+
     a {
       font-family: $font-mono;
       color: white;

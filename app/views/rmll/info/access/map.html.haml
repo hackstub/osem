@@ -5,6 +5,49 @@
 
 %section
   #map
+  %article
+    %h1 Plan d'accès
+
+    %fieldset
+      %legend Afficher
+      %ul
+        %input{ type:"checkbox", id:"all", name:"mapOptions", value:"all" }
+        %label{ for:"all" } Tous
+
+        %li
+          %input{ type:"checkbox", id:"tram", name:"mapOptions", value:"tram" }
+          %label{ for:"tram" } Arret de tram
+        %li
+          %input{ type:"checkbox", id:"bus", name:"mapOptions", value:"bus" }
+          %label{ for:"bus" } Arret de bus
+        %li
+          %input{ type:"checkbox", id:"parking", name:"mapOptions", value:"parking" }
+          %label{ for:"parking" } Parkings
+        %li
+          %input{ type:"checkbox", id:"lodging", name:"mapOptions", value:"lodging" }
+          %label{ for:"lodging" } Logements
+        %li
+          %input{ type:"checkbox", id:"tourism", name:"mapOptions", value:"tourism" }
+          %label{ for:"tourism" } Tourisme
+
+        %button{ type:"button", id:"submit", name:"mapOptions", value:"submit" } submit
+
 
 :javascript
-  initMap();
+  var boxes = document.getElementsByTagName("input");
+  var submit = document.getElementsByTagName("button")[0];
+  var map = initMap();
+
+  submit.onclick = displayInfo;
+  function displayInfo() {
+    var all = boxes[0].checked;
+    for(var i = boxes.length - 1; i >= 0; i--) {
+      var id = boxes[i].id;
+      if (id === "tram") {
+        var visibility = all ? "visible" : boxes[i].checked ? "visible" : "none";
+        if (map.getLayoutProperty(id, 'visibility') !== visibility) {
+          map.setLayoutProperty(id, 'visibility', visibility);
+        }
+      }
+    }
+  }

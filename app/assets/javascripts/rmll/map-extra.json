@@ -2,17 +2,132 @@
   "tramStops" : {
     "type": "FeatureCollection",
     "features": [
-
-      {
-        "type": "Feature",
-        "properties": {
-          "name": "test arret tram"
+        {
+          "type": "Feature",
+          "properties": {
+            "name": "Esplanade"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [7.76941940188408,48.57833201165997]
+          }
         },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [7.769418060779572,48.578327575316294]
+        {
+          "type": "Feature",
+          "properties": {
+            "name": "Observatoire"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [7.7689406275749215,48.581385011054294]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "name": "Université"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [7.76391550898552,48.5827530782418]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "name": "Galia"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [7.758356630802155,48.58435798145738]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "name": "Winston Churchill"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [7.766706347465516,48.573764146041405]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "name": "Landsberg"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [7.763120234012605,48.56963070605812]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "name": "Étoile Bourse"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [7.753450870513917,48.57484137609292]
+          }
         }
+    ]
+  },
+
+  "buildingNames": {
+    "type": "FeatureCollection",
+    "features": [
+      {
+      "type": "Feature",
+      "properties": {
+        "name": "Platane"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [7.767258882522584,48.57794161192529]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Atrium"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [7.76360034942627,48.57849881790004]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Escarpe"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [7.761779129505158,48.578531646722894]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Shadok"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [7.763900756835938,48.57407116781805]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Médiathèque André Malraux"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [7.76033073663712,48.5743249474167]
+      }
+    }
 
 
     ]
