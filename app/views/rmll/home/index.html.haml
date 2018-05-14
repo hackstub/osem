@@ -1,4 +1,57 @@
-- content_for :background do
+- content_for :head do
+  = stylesheet_link_tag "rmll/specific/home"
+
+%section
   #background
-    %h1 Rencontres Mondiales du Logiciel Libre 2018
-    %h2 RMLL-OS
+    %h2
+      RMLL-OS
+      %span v18
+    %h1
+      %span Rencontres Mondiales du Logiciel Libre 2018
+    %h3
+      %span du 7 au 12 juillet à Strasbourg
+
+  #conky
+    %ul
+      %li#activities
+        %p
+          %span.title Activités
+        %ul.window
+          %li
+            %span.number 134
+            total,
+            %span.number 2
+            en cours,
+            %span.number 2
+            dormantes,
+            %span.number 0
+            stoppées,
+            %span.number 0
+            zombie
+          %li
+            %span.process en cours
+            %ul.tab
+              %li= link_to "Lorem ipsum dolor sit amet", "#"
+              %li= link_to "Lorem ipsum dolor sit amet", "#"
+          %li
+            %span.process dormantes
+            %ul.tab
+              %li= link_to "Lorem ipsum dolor sit amet", "#"
+              %li= link_to "Lorem ipsum dolor sit amet", "#"
+      %li
+        %p
+          %span.title Espaces
+        %ul.window
+          Strasbourg
+          %li
+            ├> Université de Strasbourg
+            %ul
+              %li │ ├> Escarpe
+              %li │ ├> Atrium
+              %li │ └> Platane
+          %li ├> Médiathèque Malraux
+          %li └> Shadok
+
+      %li.window
+        wifi :
+        %span wifi-name
