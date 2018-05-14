@@ -11,7 +11,7 @@
     %fieldset
       %legend Afficher
       %ul
-        %input{ type:"checkbox", id:"all", name:"mapOptions", value:"all" }
+        %input{ type:"checkbox", id:"all", name:"mapOptions", value:"all", checked:"checked" }
         %label{ for:"all" } Tous
 
         %li
@@ -35,11 +35,45 @@
 
 :javascript
   var boxes = document.getElementsByTagName("input");
-  var submit = document.getElementsByTagName("button")[0];
+  for(var i = boxes.length - 1; i >= 0; i--) {
+    boxes[i].onclick = toggle;
+  }
+  document.getElementsByTagName("button")[0].onclick = displayLayer;
   var map = initMap();
 
-  submit.onclick = displayInfo;
-  function displayInfo() {
+  function toggle(e) {
+    function every() {
+      for (var i = boxes.length - 1; i > 0; i--) {
+        if (!boxes[i].checked) return false;
+      }
+      return true;
+    }
+    function some() {
+      for (var i = boxes.length - 1; i > 0; i--) {
+        if (boxes[i].checked) return true;
+      }
+      return false;
+    }
+
+    var elem = e.target;
+    if (elem.id === "all") {
+      for(var i = boxes.length - 1; i > 0; i--) {
+        boxes[i].checked = elem.checked;
+      }
+    } else {
+      if (every()) {
+        boxes[0].checked = true;
+        boxes[0].indeterminate = false;
+      } else if (some()) {
+        boxes[0].indeterminate = true;
+      } else {
+        boxes[0].checked = false;
+        boxes[0].indeterminate = false;
+      }
+    }
+  }
+
+  function displayLayer() {
     var all = boxes[0].checked;
     for(var i = boxes.length - 1; i >= 0; i--) {
       var id = boxes[i].id;

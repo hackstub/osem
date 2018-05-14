@@ -1,11 +1,7 @@
 @import "../var";
 
 section {
-  // display: flex;
   font-family: $font-sans;
-  // @include phone {
-  //   flex-direction: column;
-  // }
 }
 
 article {
@@ -28,6 +24,9 @@ article {
     margin-top: 1rem;
     legend {
 
+    }
+    li {
+      margin-left: 1rem;
     }
   }
 
