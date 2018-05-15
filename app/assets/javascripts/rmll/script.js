@@ -30,7 +30,7 @@ function displayMenu(e) {
 }
 
 function hideMenu() {
-  var showed = document.getElementsByClassName("show");
+  var showed = document.querySelectorAll("nav .show");
   for (var i = showed.length-1; i >= 0; i--) {
     showed[i].setAttribute("aria-hidden", "true");
     showed[i].parentElement.setAttribute("aria-expanded", "false");

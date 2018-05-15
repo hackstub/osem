@@ -6,31 +6,151 @@ section {
 
 article {
   position: absolute;
+  z-index: 1;
   top: 2rem;
   margin: 10px 0 0 10px;
   background-color: white;
   border-radius: 4px;
-  padding: 2rem;
-  @include screen {
-    // min-width: 25rem;
+
+  &.show {
+    fieldset {
+      display: block;
+    }
+
+    h1 {
+    text-align: center;
+      font-size: 2rem;
+      padding: 1rem 3rem;
+      background-color: $color-cli;
+      line-height: 2rem;
+      height: auto;
+      border-bottom-left-radius: 0; border-bottom-right-radius: 0;
+
+      &::before {
+        content: "±";
+        font-family: $font-mono;
+        font-size: 2rem;
+        background-color: white;
+      }
+    }
   }
 
   h1 {
-    font-size: 2rem;
+    border-radius: 4px;
     font-weight: bold;
+
+    height: 30px;
+    padding: 1rem;
+    line-height: 0.1rem;
+
+    &::before {
+      content: "±";
+      font-size: 1.5rem;
+      font-family: $font-mono;
+      margin-right: 0.5rem;
+    }
+    &:focus {
+      outline: none;
+      background-color: $orange;
+    }
   }
 
   fieldset {
+    display: none;
     margin-top: 1rem;
-    legend {
+    padding: 2rem 3rem 2rem 2rem;
 
+    legend {
+      margin-bottom: -1.5rem;
+      font-weight: bold;
+    }
+
+    li {
+      margin: 0.75rem 0;
     }
     li {
-      margin-left: 1rem;
+      margin-left: 1.5rem;
+    }
+
+    button {
+      margin-top: 1rem;
+      font-size: 1rem;
+      line-height: 1.2rem;
+      background-color: $color-main;
+      color: white;
+      border: 4px solid $color-main;
+      border-radius: 4px;
+      padding: 0.2rem 1rem;
+
+      &:focus, &:hover {
+        background-color: $orange;
+        border-color: $orange;
+        color: black;
+      }
     }
   }
 
-
+  // Base
+  [type="checkbox"]:not(:checked),
+  [type="checkbox"]:checked {
+    position: absolute;
+    left: -9999px;
+  }
+  [type="checkbox"]:not(:checked) + label,
+  [type="checkbox"]:checked + label {
+    position: relative;
+    padding-left: 2rem;
+    cursor: pointer;
+  }
+  [type="checkbox"]:not(:checked) + label::before,
+  [type="checkbox"]:checked + label::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0;
+    width: 1rem; height: 1rem;
+    border: 0.3rem solid #ccc;
+    border-radius: 4px;
+  }
+  // indeterminate state
+  [type="checkbox"]:indeterminate + label::after {
+    content: '';
+    position: absolute;
+    left: 0.3rem; top:0.3rem;
+    width: 0; height: 0; border-top: 1rem solid white; border-left: 1rem solid transparent;
+  }
+  // not checked
+  [type="checkbox"]:not(:checked) + label::before {
+    background: #fff;
+  }
+  // checked
+  [type="checkbox"]:checked + label::before,
+  [type="checkbox"]:indeterminate + label::before {
+    border-color: $orange;
+    background-color: $orange;
+  }
+  // disabled
+  [type="checkbox"]:disabled:not(:checked) + label::before {
+    border-color: #bbb;
+    background-color: #ddd;
+  }
+  [type="checkbox"]:disabled:checked + label::before {
+    background-color: #ddd;
+    border-color: #ddd;
+  }
+  [type="checkbox"]:disabled + label {
+    color: #aaa;
+  }
+  // focus
+  [type="checkbox"]:checked:focus + label::before,
+  [type="checkbox"]:not(:checked):focus + label::before {
+    border-color: $color-main;
+    border-style: dashed;
+  }
+  // hover
+  label:hover::before {
+    background-color: $color-main !important;
+    border: 0.3rem dotted $color-main !important;
+  }
 }
 
 #map {
@@ -39,6 +159,10 @@ article {
 
   .mapboxgl-ctrl {
     box-shadow: none;
+
+        button:focus {
+          background-color: $orange;
+        }
   }
 
   button {
