@@ -1,0 +1,54 @@
+#conky
+  %ul
+    %li
+      %h4
+        %span Infos
+      %ul.window
+        %li
+          %span.process ouverture
+          %p.tab 10h -> 18h
+        %li
+          %span.process plénières
+          %p.tab 18h -> 20h Amphithéâtre A9 (Atrium)
+    %li
+      %h4
+        %span Activités
+      %ul.window
+        %li
+          %span.number 134
+          total,
+          %span.number 2
+          en cours,
+          %span.number 2
+          dormantes,
+          %span.number 0
+          stoppées,
+          %span.number 0
+          zombie
+        %li
+          %span.process en cours
+          %ul
+            %li.tab= link_to "Lorem ipsum dolor sit amet", "#"
+            %li.tab= link_to "Lorem ipsum dolor sit amet", "#"
+        %li
+          %span.process dormantes
+          %ul
+            %li.tab= link_to "Lorem ipsum dolor sit amet", "#"
+            %li.tab= link_to "Lorem ipsum dolor sit amet", "#"
+    %li
+      %h4
+        %span Espaces
+      %ul.window
+        Strasbourg
+        %li
+          ├> Université de Strasbourg
+          %ul
+            %li │ ├> Escarpe
+            %li │ ├> Atrium
+            %li │ └> Platane
+        %li ├> Médiathèque Malraux
+        %li └> Shadok
+
+    %li.window
+      wifi :
+      %span wifi-name

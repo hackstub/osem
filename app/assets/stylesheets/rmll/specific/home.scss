@@ -1,6 +1,6 @@
 @import "../var";
 
-section {
+section#home-section {
   display: flex;
   @include phone {
     flex-direction: column;
@@ -13,7 +13,7 @@ section {
 #conky {
   padding: 1rem;
   color: white;
-  line-height: 1.2rem;
+  line-height: 1.3rem;
   @include screen {
     max-width: 40rem;
     width: 50%;
@@ -29,17 +29,17 @@ section {
     color: $blue;
   }
 
-  li p {
+  h4 {
     display: flex;
     justify-content: flex-end;
-  }
 
-  .title {
-    padding: 0.2rem 1rem;
+    span {
+      padding: 0.2rem 1rem;
 
-    background-color: white;
-    color: black;
-    font-weight: bold;
+      background-color: white;
+      color: black;
+      font-weight: bold;
+    }
   }
 
   .process {
@@ -48,7 +48,7 @@ section {
     padding: 0 1rem;
   }
 
-  .tab li {
+  .tab {
     margin-left: 1rem;
 
   }
@@ -64,7 +64,6 @@ section {
   flex-direction: column;
   width: 100%;
   height: 100%;
-  z-index: -1;
   color: white;
   @include screen {
     padding-left: 5rem;

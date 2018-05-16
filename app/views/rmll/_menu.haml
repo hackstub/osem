@@ -8,30 +8,10 @@
         %li{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false"}
           %a{ tabindex:0 } Programme
           %ul.dropdown.dropdown-menu{ role:"menu", "aria-hidden":"true" }
-            %li.has-submenu{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false" }
-              %a{ tabindex:0 } Présentation
-              %ul.dropdown.dropdown-submenu{ role:"menu", "aria-hidden":"true" }
-                %li{ role:"menuitem" }
-                  = link_to "Éducation numérique", "/program/presentation/edu_num"
-                %li{ role:"menuitem" }
-                  = link_to "Thèmes", "/program/presentation/theme"
-                %li{ role:"menuitem" }
-                  = link_to "Tracks/Fils rouges", "#"
-                %li{ role:"menuitem" }
-                  = link_to "Intervenants", "#"
-            %li.has-submenu{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false" }
-              %a{ tabindex:0 } Calendrier
-              %ul.dropdown.dropdown-submenu{ role:"menu", "aria-hidden":"true" }
-                %li{ role:"menuitem" }
-                  = link_to "Conférences", "#"
-                %li{ role:"menuitem" }
-                  = link_to "Ateliers", "#"
-                %li{ role:"menuitem" }
-                  = link_to "Plénières/Tables rondes", "#"
-                %li{ role:"menuitem" }
-                  = link_to "Salles autogérées", "#"
-                %li{ role:"menuitem" }
-                  = link_to "Créations", "#"
+            %li{ role:"menuitem" }
+              = link_to "Présentation", "/program/presentation"
+            %li{ role:"menuitem" }
+              = link_to "Calendrier", "/program/presentation"
             %li{ role:"menuitem" }
               = link_to "Soirée du Libre", "/program/night"
             %li{ role:"menuitem" }
@@ -40,25 +20,14 @@
           %a{ tabindex:0 } Village
           %ul.dropdown.dropdown-menu{ role:"menu", "aria-hidden":"true" }
             %li{ role:"menuitem" }
-              = link_to "Plan", "#"
-            %li{ role:"menuitem" }
-              = link_to "Associations/Exposants", "#"
-            %li{ role:"menuitem" }
               = link_to "Appel à stand", "#"
         %li{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false" }
           %a{ tabindex:0 } Info pratiques
           %ul.dropdown.dropdown-menu{ role:"menu", "aria-hidden":"true" }
-            %li.has-submenu{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false" }
-              %a{ tabindex:0 } Accès
-              %ul.dropdown.dropdown-submenu{ role:"menu", "aria-hidden":"true" }
-                %li{ role:"menuitem" }
-                  = link_to "Carte", "/info/access/map"
-                %li{ role:"menuitem" }
-                  = link_to "Tram/Bus", "#"
-                %li{ role:"menuitem" }
-                  = link_to "Parkings", "#"
-                %li{ role:"menuitem" }
-                  = link_to "Accessibilité et mobilité", "#"
+            %li{ role:"menuitem" }
+              = link_to "Carte", "/info/map"
+            %li{ role:"menuitem" }
+              = link_to "Accès", "/info/access"
             %li{ role:"menuitem" }
               = link_to "Hébergement", "#"
             %li{ role:"menuitem" }

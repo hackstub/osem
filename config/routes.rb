@@ -215,7 +215,7 @@ Osem::Application.routes.draw do
   get '/admin' => redirect('/admin/conferences')
 
   scope module: 'rmll' do
-    get "home" => "home#index"
+    get "home" => "rmll#index"
 
     get ":heading" => "rmll#static_pages"
     get ":heading/:page" => "rmll#static_pages"
