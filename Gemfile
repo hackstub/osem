@@ -35,6 +35,7 @@ gem 'mini_magick'
 
 # for internationalizing
 gem 'rails-i18n', '~> 5.0.0'
+gem 'globalize', '~> 5.1.0.beta2'
 
 # as authentification framework
 gem 'devise'
@@ -89,7 +90,7 @@ gem 'jquery-ui-rails', '~> 4.2.1'
 # for languages validation
 gem 'iso-639'
 
-gem 'thor', '0.19.1'
+gem 'thor', '~> 0.19'
 
 # frontend javascripts
 source 'https://rails-assets.org' do
@@ -263,6 +264,8 @@ group :test do
   gem 'json-schema'
   # For using 'assigns' in tests
   gem 'rails-controller-testing'
+  # For managing the environment
+  gem 'climate_control'
 end
 
 group :development, :test do

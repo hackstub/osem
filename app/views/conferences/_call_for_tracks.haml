@@ -1,19 +1,15 @@
 - cache [conference_id, call, '#splash#callfortracks'] do
   .col-md-5.col-sm-5.text-center
     %h2
-      Call for Tracks
+      = t(".call_for_tracks")
     %p.lead
-      We are now accepting custom track requests!
+      = t(".now_accepting_track_requests")
     %p
-      Would you like to host a mini-summit, sub-conference, or hack space?
-      The submission period for track requests is open
-      %em
-        = date_string(call.start_date, call.end_date) + '.'
+      = t(".you_interested_bro")
+      = t(".submission_period", :dates => date_string(call.start_date, call.end_date))
       %b
-        You have
-        = pluralize(call.remaining_days, 'day')
-        left!
+        = t(".days_left", :count => call.remaining_days)
     %p.cta-button
-      = link_to("Submit your request for track",
+      = link_to(t(".submit_request_for_track"),
         new_conference_program_track_path(conference_id),
         class: 'btn btn-success btn-lg text-center')

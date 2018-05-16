@@ -1,6 +1,7 @@
 = content_for :splash_nav do
   %li
-    %a.smoothscroll{ href: '#sponsors' } Sponsors
+    %a.smoothscroll{ href: '#sponsors' }
+      = t(".sponsors")
 
 - cache [conference, sponsors, sponsorship_levels, '#splash#sponsors'] do
   %section#sponsors
@@ -27,9 +28,9 @@
       .row
         .col-md-12
           %h3.text-center
-            Want to sponsor?
+            = t(".want_to_sponsor")
             = link_to(sponsorship_mailto(conference)) do
-              Contact us!
+              = t(".contact_us")
 
 - sponsors.each do |sponsor|
   - content_for :modals do

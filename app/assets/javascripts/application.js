@@ -25,8 +25,6 @@
 //= require osem-dashboard
 //= require ahoy
 //= require jquery-smooth-scroll
-//= require trianglify
-//= require tinycolor
 //= require bootstrap-markdown
 //= require to-markdown
 //= require markdown
@@ -49,11 +47,11 @@
 //= require selectize
 
 $(document).ready(function() {
-    $('a[disabled=disabled]').click(function(event){
-        return false;
-    });
+  $("a[disabled=disabled]").click(function(event) {
+    return false;
+  });
 
-    $('body').smoothScroll({
-        delegateSelector: 'a.smoothscroll'
-    });
+  $("body").smoothScroll({
+    delegateSelector: "a.smoothscroll"
+  });
 });

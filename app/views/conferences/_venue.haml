@@ -34,7 +34,8 @@
             %address
               = venue.street
               %br
-              = venue.postalcode + ','
+              - unless venue.postalcode.blank?
+                = venue.postalcode + ','
               = venue.city
               %br
               = venue.country_name

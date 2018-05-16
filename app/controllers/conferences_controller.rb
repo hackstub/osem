@@ -29,7 +29,7 @@ class ConferencesController < ApplicationController
       cfps = @conference.program.cfps
       @call_for_events = cfps.find { |call| call.cfp_type == 'events' }
       if @call_for_events.try(:open?)
-        @event_types = @conference.event_types.pluck(:title)
+        @event_types = @conference.event_types
         @track_names = @conference.confirmed_tracks.pluck(:name).sort
       end
       @call_for_tracks = cfps.find { |call| call.cfp_type == 'tracks' }

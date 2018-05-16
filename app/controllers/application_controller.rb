@@ -5,8 +5,17 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception, prepend: true
   before_action :get_conferences
   before_action :store_location
+  before_action :set_locale
   # Ensure every controller authorizes resource or skips authorization (skip_authorization_check)
   check_authorization unless: :devise_controller?
+
+  def default_url_options
+    { locale: I18n.locale }
+  end
+
+  def set_locale
+    I18n.locale = params[:locale] || I18n.default_locale
+  end
 
   def store_location
     # store last url - this is needed for post-login redirect to whatever the user last visited.

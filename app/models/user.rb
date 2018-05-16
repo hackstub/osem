@@ -18,9 +18,11 @@ class User < ApplicationRecord
                                                    :avatar_content_type, :avatar_file_size, :avatar_updated_at, :updated_at, :confirmation_sent_at, :confirmation_token, :reset_password_token]
 
   include Gravtastic
-  gravtastic size: 32
+  gravtastic size: 32, default: "identicon"
 
   before_create :setup_role
+
+  after_save :touch_events
 
   # add scope
   scope :comment_notifiable, ->(conference) {joins(:roles).where('roles.name IN (?)', [:organizer, :cfp]).where('roles.resource_type = ? AND roles.resource_id = ?', 'Conference', conference.id)}
@@ -229,6 +231,10 @@ class User < ApplicationRecord
     if User.count == 1 && User.first.email == 'deleted@localhost.osem'
       self.is_admin = true
     end
+  end
+
+  def touch_events
+    event_users.each(&:touch)
   end
 
   ##

@@ -1,9 +1,5 @@
 Osem::Application.routes.draw do
 
-  constraints DomainConstraint do
-    get '/', to: 'conferences#show'
-  end
-
   if ENV['OSEM_ICHAIN_ENABLED'] == 'true'
     devise_for :users, controllers: { registrations: :registrations }
   else
@@ -17,6 +13,10 @@ Osem::Application.routes.draw do
   # Use letter_opener_web to open mails in browser (e.g. necessary for Vagrant)
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
+
+  constraints DomainConstraint do
+    get '/', to: 'conferences#show'
   end
 
   resources :users, except: [:new, :index, :create, :destroy] do
@@ -150,69 +150,75 @@ Osem::Application.routes.draw do
     get '/revision_history/:id/revert_object' => 'versions#revert_object', as: 'revision_history_revert_object'
     get '/revision_history/:id/revert_attribute' => 'versions#revert_attribute', as: 'revision_history_revert_attribute'
   end
-  resources :organizations, only: [:index] do
-    member do
-      get :conferences
-    end
-  end
-  resources :conferences, only: [:index, :show] do
-    resources :booths do
-      member do
-        patch :withdraw
-        patch :confirm
-        patch :restart
-      end
-    end
-    resource :program, only: [] do
-      resources :proposals, except: :destroy do
-        get 'commercials/render_commercial' => 'commercials#render_commercial'
-        resources :commercials, only: [:create, :update, :destroy]
-        member do
-          get :registrations
-          patch '/withdraw' => 'proposals#withdraw'
-          patch '/confirm' => 'proposals#confirm'
-          patch '/restart' => 'proposals#restart'
-        end
-      end
-      resources :tracks, except: :destroy do
-        member do
-          patch :restart
-          patch :confirm
-          patch :withdraw
-        end
-      end
-    end
+  scope("(:locale)", locale: Regexp.new(I18n.available_locales.map(&:to_s).join("|"))) do
+		resources :organizations, only: [:index] do
+			member do
+				get :conferences
+			end
+		end
+		resources :conferences, only: [:index, :show] do
+			resources :booths do
+				member do
+					patch :withdraw
+					patch :confirm
+					patch :restart
+				end
+			end
+			resource :program, only: [] do
+				resources :proposals, except: :destroy do
+					get 'commercials/render_commercial' => 'commercials#render_commercial'
+					resources :commercials, only: [:create, :update, :destroy]
+					member do
+						get :registrations
+						patch '/withdraw' => 'proposals#withdraw'
+						patch '/confirm' => 'proposals#confirm'
+						patch '/restart' => 'proposals#restart'
+					end
+				end
+				resources :tracks, except: :destroy do
+					member do
+						patch :restart
+						patch :confirm
+						patch :withdraw
+					end
+				end
+			end
 
-    # TODO: change conference_registrations to singular resource
-    resource :conference_registration, path: 'register'
-    resources :tickets, only: [:index]
-    resources :ticket_purchases, only: [:create, :destroy, :index]
-    resources :payments, only: [:index, :new, :create]
-    resources :physical_tickets, only: [:index, :show]
-    resource :subscriptions, only: [:create, :destroy]
-    resource :schedule, only: [:show] do
-      member do
-        get :events
-      end
-    end
-  end
+			# TODO: change conference_registrations to singular resource
+			resource :conference_registration, path: 'register'
+			resources :tickets, only: [:index]
+			resources :ticket_purchases, only: [:create, :destroy, :index]
+			resources :payments, only: [:index, :new, :create]
+			resources :physical_tickets, only: [:index, :show]
+			resource :subscriptions, only: [:create, :destroy]
+			resource :schedule, only: [:show] do
+				member do
+					get :events
+				end
+			end
+		end
 
-  namespace :api, defaults: {format: 'json'} do
-    namespace :v1 do
-      resources :conferences, only: [ :index, :show ] do
-        resources :rooms, only: :index
-        resources :tracks, only: :index
-        resources :speakers, only: :index
-        resources :events, only: :index
-      end
-      resources :rooms, only: :index
-      resources :tracks, only: :index
-      resources :speakers, only: :index
-      resources :events, only: :index
-    end
-  end
+		unless ENV['OSEM_ROOT_CONFERENCE'].blank?
+			root to: redirect("/conferences/#{ENV['OSEM_ROOT_CONFERENCE']}")
+		else
+			root to: 'conferences#index', via: [:get, :options]
+		end
+	end
 
-  get '/admin' => redirect('/admin/conferences')
+	namespace :api, defaults: {format: 'json'} do
+		namespace :v1 do
+			resources :conferences, only: [ :index, :show ] do
+				resources :rooms, only: :index
+				resources :tracks, only: :index
+				resources :speakers, only: :index
+				resources :events, only: :index
+			end
+			resources :rooms, only: :index
+			resources :tracks, only: :index
+			resources :speakers, only: :index
+			resources :events, only: :index
+		end
+	end
 
-  root to: 'conferences#index', via: [:get, :options]
+	get '/admin' => redirect('/admin/conferences')
 end

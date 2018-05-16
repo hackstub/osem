@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171201163628) do
+ActiveRecord::Schema.define(version: 20180318180310) do
 
   create_table "ahoy_events", force: :cascade do |t|
     t.integer  "visit_id"
@@ -101,9 +101,19 @@ ActiveRecord::Schema.define(version: 20171201163628) do
     t.string   "url"
   end
 
+  create_table "conference_translations", force: :cascade do |t|
+    t.integer  "conference_id", null: false
+    t.string   "locale",        null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.string   "title"
+    t.text     "description"
+    t.index ["conference_id"], name: "index_conference_translations_on_conference_id"
+    t.index ["locale"], name: "index_conference_translations_on_locale"
+  end
+
   create_table "conferences", force: :cascade do |t|
     t.string   "guid",                               null: false
-    t.string   "title",                              null: false
     t.string   "short_title",                        null: false
     t.string   "timezone",                           null: false
     t.date     "start_date",                         null: false
@@ -117,7 +127,6 @@ ActiveRecord::Schema.define(version: 20171201163628) do
     t.boolean  "use_volunteers"
     t.string   "color"
     t.text     "events_per_week"
-    t.text     "description"
     t.integer  "registration_limit", default: 0
     t.string   "picture"
     t.integer  "start_hour",         default: 9
@@ -216,8 +225,8 @@ ActiveRecord::Schema.define(version: 20171201163628) do
     t.integer  "schedule_id"
     t.integer  "room_id"
     t.datetime "start_time"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.boolean  "enabled",     default: true
     t.index ["event_id", "schedule_id"], name: "index_event_schedules_on_event_id_and_schedule_id", unique: true
     t.index ["event_id"], name: "index_event_schedules_on_event_id"
@@ -226,13 +235,15 @@ ActiveRecord::Schema.define(version: 20171201163628) do
   end
 
   create_table "event_types", force: :cascade do |t|
-    t.string  "title",                                 null: false
-    t.integer "length",                  default: 30
-    t.integer "minimum_abstract_length", default: 0
-    t.integer "maximum_abstract_length", default: 500
-    t.string  "color"
-    t.string  "description"
-    t.integer "program_id"
+    t.string   "title",                                 null: false
+    t.integer  "length",                  default: 30
+    t.integer  "minimum_abstract_length", default: 0
+    t.integer  "maximum_abstract_length", default: 500
+    t.string   "color"
+    t.string   "description"
+    t.integer  "program_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "event_users", force: :cascade do |t|
@@ -506,12 +517,14 @@ ActiveRecord::Schema.define(version: 20171201163628) do
   end
 
   create_table "tickets", force: :cascade do |t|
-    t.integer "conference_id"
-    t.string  "title",                               null: false
-    t.text    "description"
-    t.integer "price_cents",         default: 0,     null: false
-    t.string  "price_currency",      default: "USD", null: false
-    t.boolean "registration_ticket", default: false
+    t.integer  "conference_id"
+    t.string   "title",                               null: false
+    t.text     "description"
+    t.integer  "price_cents",         default: 0,     null: false
+    t.string   "price_currency",      default: "USD", null: false
+    t.boolean  "registration_ticket", default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "tracks", force: :cascade do |t|

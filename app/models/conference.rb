@@ -68,6 +68,8 @@ class Conference < ApplicationRecord
 
   mount_uploader :picture, PictureUploader, mount_on: :logo_file_name
 
+  translates :title, :description, touch: true
+
   validates :title,
             :short_title,
             :start_date,

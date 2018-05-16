@@ -2,7 +2,8 @@
   .row
     .col-md-12
       .page-header
-        %h2 Upcoming Conferences
+        %h2
+          = t(".upcoming_conferences")
   - @current.each do |conference|
     = render '/conferences/conference_details', conference: conference
   -if @antiquated and @antiquated.any?

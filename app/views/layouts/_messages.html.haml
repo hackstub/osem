@@ -4,9 +4,9 @@
       display: none;
     }
   %h2
-    JavaScript is not enabled
+    = t("layout.messages.no_js.heading")
   %p
-    OSEM requires JavaScript to be enabled to function. Please turn on JavaScript in your browser's settings and reload the page to continue.
+    = t("layout.messages.no_js.body")
 - flash.each do |type, message|
   .row
     .col-md-12
