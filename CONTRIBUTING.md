@@ -26,7 +26,7 @@ We are using [Vagrant](https://www.vagrantup.com/) to create our development env
 3. Clone this code repository:
 
     ```
-    git clone https://github.com/openSUSE/osem.git
+    git clone https://github.com/hackstub/rmll18-osem
     ```
 
 4. Execute Vagrant in the cloned directory:
