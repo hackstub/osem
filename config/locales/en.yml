@@ -2,7 +2,35 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
   time:
-      formats:
-          short: "%Y-%m-%dT%H:%M:%S"
+    formats:
+      short: "%Y-%m-%dT%H:%M:%S"
+  menu:
+    program: Program
+    presentation: Presentation
+    calendar: Calendar
+    night: Libre party
+    meal: Libre meal
+    village: Village
+    cfb: Call for booths
+    info: Practical informations
+    map: Map
+    access: Access
+    lodging: Lodging
+    food: Food
+    tourism: Tourism
+    participate: Participate
+    volunteering: Volunteering
+    donate: Donate
+    cfp: Call for papers
+    about: About
+    libre: What is Libre ?
+    history: History
+    sponsors: Sponsors
+    organisers: Organisers
+    legal: Legal notice
+    site_map: Site map
+  rmll:
+    program:
+      presentation:
+        text: "lel"

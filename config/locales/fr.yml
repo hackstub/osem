@@ -1,0 +1,30 @@
+fr:
+  menu:
+    program: Programme
+    presentation: Présentation
+    calendar: Calendrier
+    night: Soirée du Libre
+    meal: Repas du Libre
+    village: Village
+    cfb: Appel à stand
+    info: Info pratiques
+    map: Carte
+    access: Accès
+    lodging: Hébergement
+    food: Restauration
+    tourism: Tourisme
+    participate: Participer
+    volunteering: Bénévolat
+    donate: Appel à don
+    cfp: Appel à participations
+    about: À propos
+    libre: Qu'est ce que le Libre ?
+    history: Historique
+    sponsors: Partenaires
+    organisers: Organisateurs
+    legal: Mentions légales
+    site_map: Plan du site
+  rmll:
+    program:
+      presentation:
+        text: "lol"

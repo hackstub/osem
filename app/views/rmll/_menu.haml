@@ -6,55 +6,55 @@
       %a#menu-button{ tabindex:0 } Menu
       %ul#main-menu.dropdown{ role:"menu", "aria-hidden":"true" }
         %li{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false"}
-          %a{ tabindex:0 } Programme
+          %a{ tabindex:0 }= t("menu.program")
           %ul.dropdown.dropdown-menu{ role:"menu", "aria-hidden":"true" }
             %li{ role:"menuitem" }
-              = link_to "Présentation", "/program/presentation"
+              = link_to t("menu.presentation"), "/program/presentation"
             %li{ role:"menuitem" }
-              = link_to "Calendrier", "/program/calendar"
+              = link_to t("menu.calendar"), "/program/calendar"
             %li{ role:"menuitem" }
-              = link_to "Soirée du Libre", "/program/night"
+              = link_to t("menu.night"), "/program/night"
             %li{ role:"menuitem" }
-              = link_to "Repas du Libre", "/program/meal"
+              = link_to t("menu.meal"), "/program/meal"
         %li{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false" }
-          %a{ tabindex:0 } Village
+          %a{ tabindex:0 }= t("menu.village")
           %ul.dropdown.dropdown-menu{ role:"menu", "aria-hidden":"true" }
             %li{ role:"menuitem" }
-              = link_to "Appel à stand", "/village/call"
+              = link_to t("menu.cfb"), "/village/call"
         %li{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false" }
-          %a{ tabindex:0 } Info pratiques
+          %a{ tabindex:0 }= t("menu.info")
           %ul.dropdown.dropdown-menu{ role:"menu", "aria-hidden":"true" }
             %li{ role:"menuitem" }
-              = link_to "Carte", "/info/map"
+              = link_to t("menu.map"), "/info/map"
             %li{ role:"menuitem" }
-              = link_to "Accès", "/info/access"
+              = link_to t("menu.access"), "/info/access"
             %li{ role:"menuitem" }
-              = link_to "Hébergement", "/info/lodging"
+              = link_to t("menu.lodging"), "/info/lodging"
             %li{ role:"menuitem" }
-              = link_to "Restauration", "/info/food"
+              = link_to t("menu.food"), "/info/food"
             -# %li{ role:"menuitem" }
             -#   = link_to "Réservation Repas du Libre", "#"
             %li{ role:"menuitem" }
-              = link_to "Tourisme", "/info/tourism"
+              = link_to t("menu.tourism"), "/info/tourism"
             -# %li{ role:"menuitem" }
             -#   = link_to "Réseau internet", "#"
             -# %li{ role:"menuitem" }
             -#   = link_to "Se rendre à Strasbourg", "#"
         %li{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false" }
-          %a{ tabindex:0 } Participer
+          %a{ tabindex:0 }= t("menu.participate")
           %ul.dropdown.dropdown-menu{ role:"menu", "aria-hidden":"true" }
             -# %li{ role:"menuitem" }
             -#   = link_to "Boutique", "#"
             %li{ role:"menuitem" }
-              = link_to "Bénévolat", "#"
+              = link_to t("menu.volunteering"), "#"
             %li{ role:"menuitem" }
-              = link_to "Don", "/participate/donate"
+              = link_to t("menu.donate"), "/participate/donate"
             -# %li{ role:"menuitem" }
             -#   = link_to "Héberger", "#"
             -# %li{ role:"menuitem" }
             -#   = link_to "Financement participatif", "#"
             %li{ role:"menuitem" }
-              = link_to "Appel à participation (terminé)", "#"
+              = link_to t("menu.cfp"), "#"
         -# %li{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false" }
         -#   %a{ tabindex:0 } Médias
         -#   %ul.dropdown.dropdown-menu{ role:"menu", "aria-hidden":"true" }
@@ -67,20 +67,20 @@
         -#     %li{ role:"menuitem" }
         -#       = link_to "Vidéos", "#"
         %li{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false" }
-          %a{ tabindex:0 } À propos
+          %a{ tabindex:0 }= t("menu.about")
           %ul.dropdown.dropdown-menu{ role:"menu", "aria-hidden":"true" }
             %li{ role:"menuitem" }
-              = link_to "Qu'est-ce que le Libre ?", "/about/libre"
+              = link_to t("menu.libre"), "/about/libre"
             %li{ role:"menuitem" }
-              = link_to "Historique", "/about/history"
+              = link_to t("menu.history"), "/about/history"
             %li{ role:"menuitem" }
-              = link_to "Partenaires", "/about/sponsors"
+              = link_to t("menu.sponsors"), "/about/sponsors"
             %li{ role:"menuitem" }
-              = link_to "Organisateurs", "/about/organisers"
+              = link_to t("menu.organisers"), "/about/organisers"
             %li{ role:"menuitem" }
-              = link_to "Mentions légales", "/about/legal"
+              = link_to t("menu.legal"), "/about/legal"
             %li{ role:"menuitem" }
-              = link_to "Plan du site", "/about/site_map"
+              = link_to t("menu.site_map"), "/about/site_map"
 
   %ul{ role:"menubar" }
     %li{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false" }

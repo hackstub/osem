@@ -2,6 +2,12 @@ module Rmll
     class RmllController < ActionController::Base
         layout "rmll"
 
+        before_action :set_locale
+
+        def set_locale
+          I18n.locale = params[:locale] || I18n.default_locale
+        end
+
         def index
           render "rmll/index"
         end
