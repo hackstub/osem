@@ -1,4 +1,14 @@
 fr:
+  common:
+    submit: Valider
+    all: Tout
+    hour: heure
+    total: total
+    running: en cours
+    sleeping: en veille
+    stopped: arrêtés
+    zombie: zombie
+    spaces: Espaces
   menu:
     program: Programme
     presentation: Présentation
@@ -22,9 +32,28 @@ fr:
     history: Historique
     sponsors: Partenaires
     organisers: Organisateurs
+    conduct_code: Code de conduite
     legal: Mentions légales
     site_map: Plan du site
   rmll:
+    home:
+      background:
+        h1: Rencontres Mondiales du Logiciel Libre 2018
+        h2: du 7 au 12 juillet à Strasbourg
+        h3: RMLL-OS
+        version: v18.0
+      conky:
+        infos:
+          title: Infos
+          process:
+            - name: ouverture
+              content: 10h -> 18h
+            - name: plénières
+              content: 18h -> 20h Amphithéâtre A9 (Atrium)
+        activities: Activités
+      salt:
+        text: L'ancienne équipe du thème Sécurité organise à Lille du 2 au 4 juillet, Pass the SALT, un événement dédiés à la sécurité informatique et aux logiciels libre.
+        url: "https://2018.pass-the-salt.org/"
     program:
       presentation:
         title: Présentation
@@ -109,18 +138,251 @@ fr:
               url: ""
             - name: LinuxFr.org
               url: ""
+        night:
+          title: Soirée du Libre
+          text: To be announced...
+        meal:
+          title: Repas du Libre
+          text: Le Repas du Libre aura lieu au FEC (place St-Étienne) le dimanche 8 juillet à partir de 20 h 30.
+      calendar:
+        title: Calendrier
+        list:
+          - date: Samedi 7 juillet
+            program:
+              - Toute la journée - Village du libre @ Presqu'île Malraux
+              - 10 h - Ouverture @ Escarpe
+              - De 10 h à 18 h [...] TBA [...]
+              - 18 h - 19 h 30 - Plénière @ Atrium
+              - De 20 h à 4 h - Soirée @ TBA
+          - date: Dimanche 8 juillet
+            program:
+              - Toute la journée - Village du libre @ Escarpe + Atrium
+              - De 10 h à 18 h [...] TBA [...]
+              - 18 h - 19 h 30 - Plénière @ Atrium
+              - 20 h 30 - Repas du Libre
+          - date: Lundi 9 juillet
+            program:
+              - De 10 h à  - Village du libre @ Escarpe + Atrium
+              - De 10 h à 18 h [...] TBA [...]
+              - 18 h - 19 h 30 - Plénière @ Atrium
+          - date: Mardi 10 juillet
+            program:
+              - De 10 h à 20 h
+              - Toute la journée - Village du libre @ Escarpe + Atrium
+              - De 10 h à 18 h [...] TBA [...]
+              - 18 h - 19 h 30 - Plénière @ Atrium
+          - date: Mercredi 11 juillet
+            program:
+              - De 10 h à 20 h
+              - Toute la journée - Village du libre @ Escarpe + Atrium
+              - De 10 h à 18 h [...] TBA [...]
+              - 18 h - 19 h 30 - Plénière @ Atrium
+          - date: Jeudi 12 juillet
+            program:
+              - De 10 h à 12 h
+              - Toute la journée - Village du libre @ Escarpe + Atrium
+              - De 10 h à 18 h [...] TBA [...]
+              - 18 h - 19 h 30 - Plénière @ Atrium
+      night:
+        title: Soirée du Libre
+      meal:
+        title: Repas du Libre
+    village:
+      map:
+      cutributors:
+      cfb:
+        title: Appel à stand
+        text:
+          - Le village associatif est un ensemble d'associations tenant des stands pour présenter au public leurs projets et actions. Le village associatif est notamment un lieu propice à la découverte des différents logiciels libres et leurs conceptions, offrant une alternative aux grosses entreprises à but lucratif.
+          - Le village sera déplacé en partie sur la presque-île André-Malraux le samedi (07/07/2018).
+        call: "Vous souhaitez représenter votre logiciel, votre association ou autre ? L'appel est toujours ouvert, inscrivez-vous"
+        call-url: "https://osem.aius.u-strasbg.fr/conferences/RMLL2018/booths"
+    info:
+      map:
+        title: Carte
+        options:
+          checkboxes:
+            - name: Arret de tram
+              id: tram
+            - name: Arret de bus
+              id: bus
+            - name: Parkings
+              id: parking
+            - name: Hébergement
+              id: lodging
+            - name: Tourisme
+              id: tourism
+      access:
+        title: Accès
+        places:
+          title: Lieux
+          campus:
+            name: Campus Central de l'Université de Strasbourg
+            adress: 4 rue Blaise Pascal
+            buildings:
+              - name: Escarpe
+                adress: 11 Rue du Maréchal Juin, 67000 Strasbourg
+              - name: Atrium
+                adress: 16 Rue René Descartes, 67000 Strasbourg
+              - name: Platane
+                adress: Allée René Capitant, 67000 Strasbourg
+          malraux:
+            name: Presqu'île André Malraux
+            adress: Presqu'île André Malraux
+            buildings:
+              - name: Médiathèque André Malraux
+                adress: 1 Presqu'île André-Malraux, 67100 Strasbourg
+              - name: Le Shadok
+                adress: 25 presqu'ile André Malraux, 67100 Strasbourg
+        cts:
+          title: Transports en commun
+          url: "https://www.cts-strasbourg.eu/fr"
+          tram:
+          bus:
+        parkings:
+          text: "Bien qu'il soit probablement possible de se garer non loin des RMLL dans les rues adjacentes en fouillant un peu, voici 4 parking payants à proximité et leurs tarifs maximaux :"
+          list:
+            - name: Parking Esplanade Centre Commercial
+              adress: 3 Rue de Londres, 67000 Strasbourg
+              distance: 0.6
+              price: 1.2
+              url: "http://www.parcus.com/index.php?parcusParam[cmpref]=11863&lang=fr&module=parcus&action=ViewDetail"
+            - name: Parking des Bateliers
+              adress: Rue de Zurich, 67000 Strasbourg
+              distance: 0.7
+              price: 1.6
+              url: "http://www.parcus.com/index.php?parcusParam%5Bcmpref%5D=871&lang=fr&module=parcus&action=ViewDetail"
+            - name: Parking Étoile Cinéma
+              adress: 25 Avenue du Rhin, 67100 Strasbourg
+              distance: 1
+              price: 1.45
+              url: "https://www.placedeshalles.com/infos-pratiques/parking"
+            - name: Parking Kléber
+              adress: Place Kléber, 67000 Strasbourg
+              distance: 2
+              price: 2.4
+              url: "https://www.jds.fr/strasbourg/parking/parking-kleber-homme-de-fer-4977_L"
+            - name: Parking des Halles
+              adress: Rue du Marais Vert, 67000 Strasbourg
+              distance: 2.5
+              price: 1.6
+              url: "https://www.placedeshalles.com/infos-pratiques/parking"
+        accessibility:
+          title: Accessibilité et mobilité
+          text:
+            - Les bâtiments du campus universitaire sont tous équipés de rampes d'accès pour les handicapés mis à part le premier étage du Platane.
+            - Notre équipe se tiend à votre disposition lors de l'évènement pour vous aider à accéder au premier étage de ce bâtiment.
+            - Pour toutes questions complémentaires n'hésitez pas à nous contacter à contact [AT] listes2018.rmll.info
+      lodging:
+        title: Hébergement
+        text: Voici le lien vers notre liste des différents hébergements abordables disponibles sur Strasbourg et sa périphérie
+        url: "https://2018.rmll.info/conferences/RMLL2018/#lodging"
+      food:
+        title: Restauration
+        daily: La restauration sera assurée tout au long de l'évènement par l'AIUS ainsi que des food trucks vegans
+        alsatian: Les RMLL de Strasbourg ne pourront se faire sans nos fameuses tartes flambées alsaciennes qui seront cuisinées par des bénévoles afin de partager le patrimoine gastronomique de la région.
+        libre_meal: Les réservations pour le Repas du Libre bientôt ouvertes, promis ~
+      tourism:
+        title: Tourisme
+        intro: Voici quelques lieux intéressants que vous pourriez visiter lors de votre venue à Strasbourg.
+        museum:
+          desc: "1) Quelques musées :"
+          desc_items:
+            - name: Le Musée Historique de Strasbourg
+              desc: Retrace de manière très détaillée et documentée l'histoire de notre ville, capitale de l'Alsace, à partir du début du moyen-age jusqu'à nos jours.
+              url: "https://www.musees.strasbourg.eu/web/musees/presentation-musee-historique"
+              coordinates:
+            - name: Le Musée Alsacien
+              desc: Ce musée montre les coutumes typiquement alsaciennes, ainsi que l'architecture et les ustensiles typiques de notre région.
+              url: "https://www.musees.strasbourg.eu/musee-alsacien"
+              coordinates:
+            - name: Le Pixel Museum (musée du jeu-vidéo)
+              desc: Ce musée contient une grande collection d'anciennes et actuelles consoles dont beaucoups sont jouables (Atari 2600, Vectrex, bornes d'arcades, etc.), le tout accompagné d'affiches expliquant les grandes étapes des débuts du jeu-vidéo ainsi que les programmeurs célèbres.
+              url: "https://pixel-museum.fr/"
+              coordinates:
+        places:
+          desc: "2) Quelques lieux intéressants où se balader :"
+          desc_items:
+            - name: La cathédrale Notre-Dame de Strasbourg
+              desc: Construite en plusieurs étapes entre 1015 (début) et 1439 (fin), et située au coeur de la ville, elle est incontournable pour quiconque s'intéresserait à visiter la ville de Strasbourg. Elle contient en son sein une ancienne et magnifique horloge astronomique, et on peut monter quasiment jusqu'à son sommet de 142m.
+              coordinates: [7.75029391050339,48.5815988294439]
+            - name: La Grande Île (centre historique)
+              desc: "L'ensemble de l'île nommée : « la grande île » avec pour centre la place Kleber, est la partie la plus ancienne de la ville où vous pourrez y admirer partout l'architecture typiquement alsacienne. Il y a aussi la petite France juste au nord de la grande île, proche du campus de médecine."
+              coordinates: [7.74587094783783,48.5833608004904]
+            - name: La Petite France
+              desc: Quartier ancien typique
+              coordinates: [7.74239078164101,48.581290966165]
+    participate:
+      volunteering:
+        title: Bénévolat
+      donate:
+        title: Appel à don
+        text:
+          - Afin d'assurer la réussite de cette édition 2018, nous faisons appel à la participation de tous pour nous soutenir financièrement.
+          - Cette collecte nous permettra de défrayer le déplacement des intervenants et la captation des activités.
+          - Si vous souhaitez mettre votre pierre à l'édifice, n'hésitez pas !
+          - Au delà de 500€, nous afficherons votre participation sur notre site internet.
+          - Au delà de 1 000€ vous pouvez solliciter une apparition sur nos autres supports de communication.
+      cfp:
+        url: ""
+    medias:
+      comm:
+      graphic_design:
     about:
+      libre:
+        title: Qu'est ce que le Libre ?
+        intro:
+          - À l'origine, le Libre est apparu dès les débuts de l'informatique. Les ordinateurs étaient alors des machines très volumineuses et coûteuses ne pouvant être manipulées que par quelques chercheurs.
+          - Les logiciels étaient alors très liés à leur support et n'avaient pas de valeur intrinsèque. Les chercheurs échangeaient des copies des logiciels avec leurs pairs pour les développer collectivement.
+          - Ces chercheurs en informatique se faisaient appeler hackers (bricoleurs/bidouilleurs), à ne pas confondre avec les crackers, visant des cibles spécifiques afin de leur voler des ressources.
+          - Ce n'est qu'à la fin des années 70, lorsque les logiciels ont commencé à avoir une valeur commerciale significative, que l'on a assisté à un processus de verrouillage juridique de l'informatique.
+          - "L'évènement le plus marquant de l'époque est probablement la lettre ouverte aux bricoleurs (Open Letter to Hobbyists), écrite par Bill Gates en janvier 1976, leur sommant d'arrêter de les copier et de les modifier, assimilant ces actions à du vol, ce qui à l'heure d'aujourd'hui nous paraîtrait comme tel, mais qui n'était pas encore entré dans les mentalités de l'époque. Car c'est de cette façon qu'avaient toujours été développés les logiciels : en les copiant et les modifiant pour qu'ils puissent être améliorés par d'autres personnes."
+          - Face à ce mouvement, et soucieux de préserver la liberté des logiciels, Richard M. Stallman fonda le projet GNU en 1983, formalisant ainsi la première définition du logiciel libre.
+        liberties:
+          desc: "Un logiciel est alors considéré comme libre s'il confère à son utilisateur ces 4 libertés (numérotées de 0 à 3) :"
+          desc_items:
+            - 0. la liberté d'exécuter le programme, pour tous les usages ;
+            - 1. la liberté d'étudier le fonctionnement du programme et de l'adapter à ses besoins ;
+            - 2. la liberté de redistribuer des copies du programme (ce qui implique la possibilité aussi bien de donner que de vendre des copies) ;
+            - 3. la liberté d'améliorer le programme et de distribuer ces améliorations au public, pour en faire profiter toute la communauté.
+        middle: Aujourd'hui, et ce malgré l'économie du logiciel propriétaire, le logiciel libre est partout, comme le célèbre navigateur Mozilla Firefox, et même là où on ne s'y attend pas, comme le système d'exploitation mobile Android de Google.
+        advantages:
+          desc: "Pour cause, les logiciels libres possédant notamment les avantages suivants :"
+          desc_items:
+            - le code source est accessible et bénéficie ainsi de l'intelligence collective de l'ensemble des relecteurs ;
+            - le logiciel peut être adapté aux besoins d'autres utilisateurs, car il possède une flexibilité permettent de l'adapter à tous les besoins ;
+            - "les logiciels libres sont interopérables avec d'autres logiciels : ils ne sont pas uniquement compatibles avec un écosystème défini."
       history:
+        title: Historique
+        text:
+          - Les Rencontres Mondiales du Logiciel Libre se déroulent chaque année, depuis 2000, au début du mois de juillet.
+          - Elles ont eu lieu plusieurs années à Bordeaux, puis dans d'autres villes de France ou des pays voisins francophones.
+        moar:
+          committee:
+            text: Vous pouvez trouver des informations sur l’historique et la philosophie des Rencontres Mondiales du Logiciel Libre sur le site web du Comité des RMLL.
+            url: "http://comite.rmll.info/?lang=fr"
+          videos:
+            text: Les vidéos des éditions précédentes sont accessibles à
+            url: "http://video.rmll.info"
         previousEditions:
           - txt: "drwxr-xr-x Alolise            01:07 JUL 2017"
             url: "https://2017.rmll.info"
             city: St-Etienne
+          - txt: "drwxr-xr-x undefined          07:10 JUL 2016"
+            url: "http://2016.d.rmll.info/"
+            city: Saint-Joseph
+          - txt: "drwxr-xr-x équipe sécurité    04:06 JUL 2016"
+            url: "https://sec2016.rmll.info/"
+            city: Paris
           - txt: "drwxr-xr-x Oisux              04:10 JUL 2015"
             url: "https://2015.rmll.info"
             city: Beauvais
           - txt: "drwxr-xr-x FRUL               05:11 JUL 2014"
             url: "https://2014.rmll.info"
             city: Montpellier
+          - txt: "drwxr-xr-x undefined          22:25 AUG 2013"
+            url: "http://2013.d.rmll.info/"
+            city: Saint-Joseph
           - txt: "drwxr-xr-x Abelli             06:11 JUL 2013"
             url: "https://2013.rmll.info"
             city: Bruxelles
@@ -130,6 +392,9 @@ fr:
           - txt: "drwxr-xr-x undefined          09:14 JUL 2011"
             url: "http://2011.rmll.info"
             city: Strasbourg
+          - txt: "drwxr-xr-x undefined          01:03 JUL 2011"
+            url: "http://2011.d.rmll.info/"
+            city: Saint-Joseph
           - txt: "drwxr-xr-x ABUL               06:11 JUL 2010"
             url: "http://2010.rmll.info"
             city: Bordeaux
@@ -163,3 +428,71 @@ fr:
           - txt: "drwxr-xr-x ABUL               05:09 JUL 2000"
             url: ""
             city: Bordeaux
+      sponsors:
+        title: Partenaires
+        list:
+          - name: Free Software Foundation Europe (FSFE)
+            url: "https://fsfe.org/"
+          - name: La Ville et l'Eurométropole de Strasbourg
+            url: "https://www.strasbourg.eu/"
+          - name: L'Université de Strasbourg
+            url: "http://www.unistra.fr/"
+          - name: Le Shadok, fabrique du numérique
+            url: "http://www.shadok.strasbourg.eu/"
+          - name: Les éditions Diamond
+            url: ""
+      organisers:
+        title: Organisateurs
+        text: L'édition 2018 des RMLL est organisée par la fédération alsace.netlib.re, portée par l'association Hackstub. La fédération alsacienne du Libre et du Hack est composée des associations et collectifs Hackstub, Alsace Réseau Neutre (ARN), Radio Rhino, Seeraiwer, l'AIUS, Desclicks, sxb.so et Lilo.
+        ekip: "L'équipe RMLL 2018 c'est : Harmonie, Jérémie, Jean, Jules, Phillippine, Aleks, Nicolas, Marjorie, Manu, Tsanta, Sandhose, Irina, Legaume, Ljf, Jyhem, Janka, Marie-France, Claude, Garfield, Syme, Mhep, Adeline, Franck et tous ceux qu'on a oublié (désolé)"
+      conduct_code:
+        title: Code de conduite
+        text:
+          - RMLL (LSM) and its Staff members aim to offer a friendly and peaceful environment for every participant. All participants are expected to behave excellently towards each other. Misbehaviour can lead to exclusion from our events and/or our technical infrastructure.
+          - RMLL aims to be a free, open and cooperative event. This means we expect collaboration from all the participants, and for everybody to behave respectfully towards all others, including those that are different or think differently from yourself.
+          - The Code of Conduct applies equally to all participants including, but not limited to, speakers, volunteers, staffers, exhibitors, etc.
+          - "Behave excellently and inclusivly to everyone: We invite and encourage everybody to express their opinions on relevant topics. All participants should at all times feel at ease to do so without fearing any form of attack, reprisal or harassment. As a consequence we do not tolerate harassment of participants in any form. We ask everybody to be respectful and considerate towards each other, especially when attempting to provide constructive criticism."
+          - "Consider what you share: All communication should be appropriate for an audience including people of many different backgrounds."
+          - "Respect your environment : We trust and expect everybody to be mindful of the area, the environment and our neighbours. Some areas at RMLL are restricted for organizational and/or security reasons. Everybody is expected to follow instructions from RMLL staff at all times and respect closed doors."
+          - If you have experienced or become aware of behaviour contrary to the principles enshrined in this Code of Conduct, please bring such incidents to the attention of RMLL Staff members.
+          - RMLL Staff members reserve the right to deny entrance and/or eject from an event or any of its infrastructure any individual found to be engaging in misconduct contrary to the principles highlighted above.
+      legal:
+        title: Mentions légales
+        editor:
+          title: Éditeur
+          text:
+            - Hackstub, pour la fédération alsace.netlib.re
+            - Association de droit local (Bas-Rhin, Haut-Rhin et Moselle)
+            - "N° Siret : 810 535 773 00016"
+        siege:
+          title: Siège social
+          text:
+            - Association Hackstub
+            - hébergé (physiquement) au Shadok, fabrique du numérique de Strasbourg
+            - 25 presqu'île André Malraux,
+            - 67100 Strasbourg
+        dirlo:
+          title: Directeur de la publication
+          text:
+            - Harmonie VO VIET ANH – Président des RMLL 2018
+        data:
+          title: Informations sur les traitements de données à caractère personnel
+          text:
+            - L’association Hackstub collecte des informations à caractère personnel des utilisateurs (nom, adresse électronique, coordonnées téléphoniques) pour assurer la coordination et la logistique de l’évènement, notamment pour répondre aux propositions de contributions. L’utilisateur fournit ces informations en toute connaissance de cause, notamment lorsqu’il procède par lui-même à leur saisie.
+            - L'association Hackstub n'effectue aucune transaction de ces données.
+        data_access:
+          title: Droit d’accès et de rectification des informations à caractère personnel
+          text:
+            - L’utilisateur dispose d’un droit d’accès et de modification des données le concernant. Pour cela, l’utilisateur peut se connecter lui-même sur notre plate-forme pour effectuer toute modification utile.
+            - En cas de difficultés, vous pouvez nous joindre via notre adresse de contact.
+        responsibility:
+          title: Limitation de responsabilité
+          text:
+            - Le Hackstub ne pourra être tenu pour responsable des dommages directs ou indirects (destruction matérielle, blessure corporelle ou psychique, perte de marché ou d’une chance) consécutifs à l’usage du site.
+        property:
+          title: Propriété intellectuelle
+          text:
+            - Les contenus sont rédigés par les bénévoles de l’organisation. Les textes présents sur le site n'ont pas la prétention d'être d'une quelconque originalité.
+            - Les graphismes ont été produits par Nicolas Chesnais et Majorie Ober sous licence EUPL 1.2.
+      site_map:
+        title: Plan du site
