@@ -25,6 +25,90 @@ fr:
     legal: Mentions légales
     site_map: Plan du site
   rmll:
+    program:
+      presentation:
+        title: Présentation
+        intro:
+          text: Les Rencontres Mondiales du Logiciel Libre 2018 se tiendront du 7 au 12 juillet à Strasbourg.
+          desc: "L'événement est rythmé par :"
+          elems_desc:
+            - des conférences, des ateliers, des tables rondes, hackerspaces, etc. ;
+            - des stands (d'associations, de projets, etc) ;
+            - des rencontres entre les acteurs du Libre et le grand public ;
+            - des rencontres entre les différents acteurs du Libre (développeurs, décideurs/agents, publics, utilisateurs) ;
+            - des concerts, performances, projections-débats, expositions, etc.
+        edu_num:
+          title: Éducation numérique
+          text: "Le fil rouge principal de cette édition sera « Éducation numérique : fabrique de la captivité ou nouvelle émancipation ? ». Cette thématique centrale se retrouvera sur toute la durée du festival. Elle n'est donc pas exclusive, mais nous privilégierons les propositions de formats qui s'y rattachent. La question de l'enseignement numérique permettra d'aborder les enjeux majeurs de l'éducation par/aux usages de ces technologies. Cette thématique recouvre les enseignements du primaire au supérieur, en passant par l'apprentissage associatif, amateur et continu, tout en questionnant leurs implications sociétales de manière générale."
+        tracks:
+          title: Tracks
+          text: "Ces RMLL sont articulées autour de « fils rouges » (ou tracks) transdisciplinaires. Le fil rouge principal est : « Éducation numérique : fabrique de la captivité ou nouvelle émancipation ? ». Les fils rouges correspondent à une succession linéaire d'évènements de formats divers sur une même thématique, permettant aux participants de suivre l'ensemble des contenus recouvrant le même sujet."
+        formats:
+          title: Formats
+          list:
+            - title: Conférences
+              text:
+                - Format classique, interactive ou non, la conférence permet de mettre en avant un progrès technique, une problématique, ou toute autre idée ou projet pertinent.
+              duration: "Durée : 30 min ou 1 h, plus interactions avec l'audience, sauf exceptions."
+              public: "Public : 50, 210 ou 520 personnes."
+            - title: Ateliers
+              text:
+                - Destinés ou non à un public spécifique, l'atelier permet une découverte ou un approfondissement d'une pratique précise.
+                - Nous vous demandons de présenter la méthode pédagogique que vous pratiquerez pendant l'atelier.
+              duration: "Durée : par séance(s) de 1 h à 4 h."
+              public: "Public : 50 personnes max."
+            - title: Plénières/Tables ronde
+              text:
+                - Les débats ou tables-rondes permettent de discuter collectivement de questions majeures.
+                - Nous vous laissons le choix du dispositif (frontal, forum, etc.), en tenant compte de l'intérêt que présentera le degré choisi de participation du public.
+              duration: "Durée : 50 min."
+              public: "Public : 50 personnes max."
+            - title: Salons de discussions
+              text:
+                - Nommés en référence aux t'chats, les salons de discussions permettent la rencontre physique entre toutes les personnes et communautés sensibles à un sujet particulier.
+                - Nous vous encourageons à rendre ces moments accueillants et conviviaux.
+              duration: "Durée : de 1 h à 4 h."
+              public: "Public : 50 personnes max."
+            - title: Hackerspaces
+              text:
+                - Nous proposons des espaces autogérés dédiés à la bidouille en tout genre.
+              duration: "Durée : libre"
+              public: "Public : indéfini"
+            - title: Création
+              text:
+                - "Vous pouvez nous proposer une sorte de résidence d'un à plusieurs jours pour produire des formes libres : théâtre, musique, dessin, cinéma, cuisine, etc."
+                - "La création est à prendre au sens large : il peut aussi bien s'agir d'une projection audiovisuelle que d'une performance musicale, culinaire ou sportive, en intérieur ou extérieur."
+              duration: "Durée : libre."
+              public: "Public : selon les cas."
+        speakers:
+          title: Intervenants
+          text: Le programme définitif sera publié le 5 juin.
+          desc: "Pour une petite idée, les RMLL 2018 accueilleront notamment :"
+          desc_items:
+            - name: la Free Software Foundation Europe (FSFE)
+              url: ""
+            - name: Framasoft
+              url: ""
+            - name: l'APRIL
+              url: ""
+            - name: APO33
+              url: ""
+            - name: CoopCycle
+              url: ""
+            - name: Exodus Privacy
+              url: ""
+            - name: Funkwhale
+              url: ""
+            - name: Resonate
+              url: ""
+            - name: Sugarizer
+              url: ""
+            - name: Peertube
+              url: ""
+            - name: CHATONS
+              url: ""
+            - name: LinuxFr.org
+              url: ""
     about:
       history:
         previousEditions:
