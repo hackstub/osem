@@ -1,0 +1,33 @@
+@import "../var";
+
+.term {
+  line-height: $terminal-line-height;
+  font-family: $font-mono;
+  background-color: $color-dark;
+  color: $color-light;
+
+  // .bar {
+  //   @include soft_bar("terminal");
+  // }
+
+  .content {
+    padding: 2rem;
+  }
+
+  .color {
+    color: $color-cli;
+  }    position: absolute;
+
+
+  .folder {
+    color: $blue;
+  }
+
+  a {
+    color: $color-light;
+  }
+
+  .result p {
+    white-space: pre-wrap;
+  }
+}

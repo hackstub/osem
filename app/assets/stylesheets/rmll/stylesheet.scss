@@ -3,7 +3,7 @@
 
 :root {
   font-family: $font-mono;
-  font-size: 0.8em;
+  font-size: $root-font-size;
   font-variant-ligatures: none;
 }
 
@@ -27,6 +27,7 @@ section {
 
 @import "menu";
 @import "specific/home";
+@import "specific/terminal";
 
 .noselect {
   -webkit-touch-callout: none; // iOS Safari
@@ -35,6 +36,10 @@ section {
 
 .pre-wrap {
   white-space: pre-wrap;
+}
+
+.over-background {
+  position: absolute;
 }
 
 @import "font-face";

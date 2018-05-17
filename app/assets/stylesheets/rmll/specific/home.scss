@@ -12,8 +12,8 @@ section#home-section {
 
 #conky {
   padding: 1rem;
-  color: white;
-  line-height: 1.3rem;
+  color: $color-light;
+  line-height: $terminal-line-height;
   @include screen {
     max-width: 40rem;
     width: 50%;
@@ -21,7 +21,7 @@ section#home-section {
 
   .window {
     margin-bottom: 1rem;
-    background-color: black;
+    background-color: $color-dark;
     padding: 1.5rem;
   }
 
@@ -101,6 +101,7 @@ section#home-section {
 
     span {
       position: relative;
+      z-index: -1;
       bottom: 7.5vw;
       right: 7.5vw;
       font-size: 1.5vw;

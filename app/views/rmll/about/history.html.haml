@@ -1,2 +1,13 @@
-%section
-  %h1 Historique des RMLL
+%section.term.over-background
+  .bar
+  .content
+    - term_ps1("user", "~/about", "ls -l history/previousEditions/")
+    .result
+      - t(".previousEditions").each do |edition|
+        %p<
+          = edition[:txt]
+          %a.folder{ href:edition[:url], target:"_blank"}<
+            = edition[:city]
+
+%section#home-section
+  = render "rmll/background"

@@ -3,8 +3,11 @@ $color-second: #b6ffaa;
 $color-dark: #0f0f0f;
 $color-dark-select: #272727;
 $color-light: #d5d5d5;
-
 $color-cli: #00ffa5;
+
+$root-font-size: 0.8em;
+$terminal-line-height: 1.3rem;
+
 $blue: #009cff;
 $pink: #ffdaff;
 $orange: #ffda00;
@@ -21,4 +24,23 @@ $font-sans: "Open Sans", sans-serif;
 
 @mixin phone() {
   @media (max-width: 729px) { @content; }
+}
+
+@mixin soft_bar($soft-name) {
+  height: 1.25rem;
+  line-height: 1.4rem;
+  width: 100%;
+  background-color: $blue;
+  color: black;
+
+  &:before {
+    content: $soft-name;
+    position: absolute;
+    margin-left: 0.5rem;
+  }
+  &:after {
+    content: "x";
+    position: relative;
+    right: calc(-100% + 1rem);
+  }
 }
