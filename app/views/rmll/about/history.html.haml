@@ -1,4 +1,4 @@
-%section.term.over-background
+%section.term.fullscreen.over-background
   .bar
   .content
     - term_ps1("user", "~/about", "ls -l history/previousEditions/")
@@ -9,5 +9,5 @@
           %a.folder{ href:edition[:url], target:"_blank"}<
             = edition[:city]
 
-%section#home-section
+%section.fullscreen#home-section
   = render "rmll/background"

@@ -22,12 +22,19 @@ main {
 section {
   overflow: auto;
   margin-top: 2rem;
-  height: calc(100% - 2rem);
+
+  &.fullscreen {
+    height: calc(100% - 2rem);
+    width: 100%;
+  }
+
 }
 
 @import "menu";
 @import "specific/home";
 @import "specific/terminal";
+@import "specific/popup";
+@import "specific/spreadsheet";
 
 .noselect {
   -webkit-touch-callout: none; // iOS Safari

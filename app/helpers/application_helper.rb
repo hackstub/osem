@@ -209,8 +209,14 @@ module ApplicationHelper
       haml_concat "<span class='color'>></span> #{command}"
     end
   end
+
+  def add_text(text, className="", elem="p")
+    if text.kind_of?(Array)
+      for t in text do
+        haml_tag elem + className, t
+      end
+    else
+      haml_tag elem + className, text
+    end
+  end
 end
- #
- # haml_tag(:div, class: "alert #{prefix}") do
- #      output_message
- # end

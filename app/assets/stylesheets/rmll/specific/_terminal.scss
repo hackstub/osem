@@ -7,7 +7,7 @@
   color: $color-light;
 
   // .bar {
-  //   @include soft_bar("terminal");
+  //   @include simple_bar("terminal");
   // }
 
   .content {
@@ -40,7 +40,7 @@
   overflow-x: hidden;
 
   .bar {
-    @include soft_bar("Présentation");
+    @include simple_bar("Présentation");
     background-color: $color-grey-darker;
     height: 2rem;
     line-height: 2rem;

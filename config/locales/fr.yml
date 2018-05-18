@@ -459,41 +459,42 @@ fr:
           - RMLL Staff members reserve the right to deny entrance and/or eject from an event or any of its infrastructure any individual found to be engaging in misconduct contrary to the principles highlighted above.
       legal:
         title: Mentions légales
-        editor:
-          title: Éditeur
-          text:
-            - Hackstub, pour la fédération alsace.netlib.re
-            - Association de droit local (Bas-Rhin, Haut-Rhin et Moselle)
-            - "N° Siret : 810 535 773 00016"
-        siege:
-          title: Siège social
-          text:
-            - Association Hackstub
-            - hébergé (physiquement) au Shadok, fabrique du numérique de Strasbourg
-            - 25 presqu'île André Malraux,
-            - 67100 Strasbourg
-        dirlo:
-          title: Directeur de la publication
-          text:
-            - Harmonie VO VIET ANH – Président des RMLL 2018
-        data:
-          title: Informations sur les traitements de données à caractère personnel
-          text:
-            - L’association Hackstub collecte des informations à caractère personnel des utilisateurs (nom, adresse électronique, coordonnées téléphoniques) pour assurer la coordination et la logistique de l’évènement, notamment pour répondre aux propositions de contributions. L’utilisateur fournit ces informations en toute connaissance de cause, notamment lorsqu’il procède par lui-même à leur saisie.
-            - L'association Hackstub n'effectue aucune transaction de ces données.
-        data_access:
-          title: Droit d’accès et de rectification des informations à caractère personnel
-          text:
-            - L’utilisateur dispose d’un droit d’accès et de modification des données le concernant. Pour cela, l’utilisateur peut se connecter lui-même sur notre plate-forme pour effectuer toute modification utile.
-            - En cas de difficultés, vous pouvez nous joindre via notre adresse de contact.
-        responsibility:
-          title: Limitation de responsabilité
-          text:
-            - Le Hackstub ne pourra être tenu pour responsable des dommages directs ou indirects (destruction matérielle, blessure corporelle ou psychique, perte de marché ou d’une chance) consécutifs à l’usage du site.
-        property:
-          title: Propriété intellectuelle
-          text:
-            - Les contenus sont rédigés par les bénévoles de l’organisation. Les textes présents sur le site n'ont pas la prétention d'être d'une quelconque originalité.
-            - Les graphismes ont été produits par Nicolas Chesnais et Majorie Ober sous licence EUPL 1.2.
+        text:
+          editor:
+            title: Éditeur
+            text:
+              - Hackstub, pour la fédération alsace.netlib.re
+              - Association de droit local (Bas-Rhin, Haut-Rhin et Moselle)
+              - "N° Siret : 810 535 773 00016"
+          siege:
+            title: Siège social
+            text:
+              - Association Hackstub
+              - hébergé (physiquement) au Shadok, fabrique du numérique de Strasbourg
+              - 25 presqu'île André Malraux,
+              - 67100 Strasbourg
+          dirlo:
+            title: Directeur de la publication
+            text:
+              - Harmonie VO VIET ANH – Président des RMLL 2018
+          data:
+            title: Informations sur les traitements de données à caractère personnel
+            text:
+              - L’association Hackstub collecte des informations à caractère personnel des utilisateurs (nom, adresse électronique, coordonnées téléphoniques) pour assurer la coordination et la logistique de l’évènement, notamment pour répondre aux propositions de contributions. L’utilisateur fournit ces informations en toute connaissance de cause, notamment lorsqu’il procède par lui-même à leur saisie.
+              - L'association Hackstub n'effectue aucune transaction de ces données.
+          data_access:
+            title: Droit d’accès et de rectification des informations à caractère personnel
+            text:
+              - L’utilisateur dispose d’un droit d’accès et de modification des données le concernant. Pour cela, l’utilisateur peut se connecter lui-même sur notre plate-forme pour effectuer toute modification utile.
+              - En cas de difficultés, vous pouvez nous joindre via notre adresse de contact.
+          responsibility:
+            title: Limitation de responsabilité
+            text:
+              - Le Hackstub ne pourra être tenu pour responsable des dommages directs ou indirects (destruction matérielle, blessure corporelle ou psychique, perte de marché ou d’une chance) consécutifs à l’usage du site.
+          property:
+            title: Propriété intellectuelle
+            text:
+              - Les contenus sont rédigés par les bénévoles de l’organisation. Les textes présents sur le site n'ont pas la prétention d'être d'une quelconque originalité.
+              - Les graphismes ont été produits par Nicolas Chesnais et Majorie Ober sous licence EUPL 1.2.
       site_map:
         title: Plan du site

@@ -2,8 +2,7 @@
   = stylesheet_link_tag "rmll/specific/mapbox-gl"
   = stylesheet_link_tag "rmll/specific/map"
 
-%section
-  #map
+%section.fullscreen
   %article{ "aria-haspopup":"true", "aria-expanded":"false" }
     %h1.noselect{ tabindex:0,  } Options
 
@@ -30,6 +29,7 @@
           %label{ for:"tourism" } Tourisme
 
         %button{ type:"button", id:"submit", name:"mapOptions", value:"submit" } submit
+  #map
 
 = content_for :script do
   = javascript_include_tag "rmll/lib/mapbox-gl.js"
@@ -49,7 +49,8 @@
       option.parentElement.setAttribute("aria-expanded", "true");
       option.nextElementSibling.setAttribute("aria-hidden", "false");
     }
-    var option = document.getElementsByTagName("h1")[0]
+    var option = document.getElementsByTagName("h1")[0];
+    // FIXME focus and click triggers each others
     option.onclick = function (e) {
       if (option.parentElement.classList.contains("show")) {
         option.parentElement.classList.remove("show");
