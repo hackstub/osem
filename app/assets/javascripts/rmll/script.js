@@ -6,7 +6,7 @@ window.onload = function () {
   var menus = document.querySelectorAll("nav li a");
   for (var i = menus.length-1; i >= 0; i--) {
     menus[i].addEventListener("focus", displayMenu);
-    menus[i].addEventListener("mouseover", displayMenu);
+    // menus[i].addEventListener("mouseover", displayMenu);
   }
   document.getElementsByTagName("nav")[0].addEventListener("keydown", menuKeyHandler);
   document.onclick = function (e) {

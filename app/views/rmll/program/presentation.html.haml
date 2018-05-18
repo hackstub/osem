@@ -1,32 +1,51 @@
-%section
-  %h1= t(".menu.program")
 
-  %p= t(".intro.text")
-  %ul
-    = t(".intro.desc")
-    - t(".intro.elems_desc").each do |elem|
-      %li= elem
+%section#vimLike
+  .bar
 
-  %h2= t(".edu_num.title")
-  %p= t(".edu_num.text")
+  #window-content
 
-  %h2= t(".tracks.title")
-  %p= t(".tracks.text")
+    #treeView
+      %h2= t(".edu_num.title")
+      %br
+      %h2= t(".tracks.title")
+      %br
+      %h2= t(".formats.title")
+      %ul
+        - t(".formats.list").each do |formatItem|
+          %li
+            %h4= formatItem[:title]
+      %br
+      %h2= t(".speakers.title")
 
-  %h2= t(".formats.title")
-  %ul
-    - t(".formats.list").each do |formatItem|
-      %li
-        %h4= formatItem[:title]
-        %p
-          - formatItem[:text].each do |text|
-            %p= text
-        %p= formatItem[:duration]
-        %p= formatItem[:public]
-
-  %h2= t(".speakers.title")
-  %p= t(".speakers.text")
-  %p= t(".speakers.desc")
-  %ul
-    - t(".speakers.desc_items").each do |speaker|
-      %li= link_to speaker[:name], speaker[:url]
+    #content
+      %p= t(".intro.program_date")
+      %br
+      %p= t(".intro.text")
+      %ul
+        = t(".intro.desc")
+        - t(".intro.elems_desc").each do |elem|
+          %li= elem
+      %br
+      %h2= t(".edu_num.title")
+      %p= t(".edu_num.text")
+      %br
+      %h2= t(".tracks.title")
+      %p= t(".tracks.text")
+      %br
+      %h2= t(".formats.title")
+      %ul
+        - t(".formats.list").each do |formatItem|
+          %li
+            %h4= formatItem[:title]
+            %p
+              - formatItem[:text].each do |text|
+                %p= text
+                %p= formatItem[:duration]
+                %p= formatItem[:public]
+      %br
+      %h2= t(".speakers.title")
+      %p= t(".speakers.text")
+      %p= t(".speakers.desc")
+      %ul
+        - t(".speakers.desc_items").each do |speaker|
+          %li= link_to speaker[:name], speaker[:url]

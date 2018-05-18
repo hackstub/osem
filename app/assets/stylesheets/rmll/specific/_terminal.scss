@@ -16,7 +16,7 @@
 
   .color {
     color: $color-cli;
-  }    position: absolute;
+  }
 
 
   .folder {
@@ -30,4 +30,57 @@
   .result p {
     white-space: pre-wrap;
   }
+}
+
+
+#vimLike {
+  width: 100%;
+  height: 100%;
+  line-height: $terminal-line-height;
+  overflow-x: hidden;
+
+  .bar {
+    @include soft_bar("Présentation");
+    background-color: $color-grey-darker;
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center;
+    position: fixed;
+    border-top: 2px solid $color-grey-lighter;
+  }
+
+  #window-content {
+    width: 100%;
+    height: calc(100% - 4rem);
+    bottom:0;
+    position: absolute;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    li, li > p {
+      padding-left: 2rem;
+    }
+
+    a {
+      color: black;
+    }
+
+    #treeView {
+      width: 20vw;
+      height:100%;
+      background-color: white;
+      position: fixed;
+      padding: 2rem;
+    }
+
+    #content {
+      width: 80vw;
+      left: 20vw;
+      background-color: black;
+      color: white;
+      position: relative;
+      padding: 2rem;
+    }
+  }
+
 }
