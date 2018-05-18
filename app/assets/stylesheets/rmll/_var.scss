@@ -8,6 +8,9 @@ $color-cli: #00ffa5;
 $root-font-size: 0.8em;
 $terminal-line-height: 1.3rem;
 
+$color-grey-medium: #b3b3b3;
+$color-shadow: rgba(100,100,100,0.3);
+
 $blue: #009cff;
 $pink: #ffdaff;
 $orange: #ffda00;
@@ -26,7 +29,7 @@ $font-sans: "Open Sans", sans-serif;
   @media (max-width: 729px) { @content; }
 }
 
-@mixin soft_bar($soft-name) {
+@mixin simple_bar($title) {
   height: 1.25rem;
   line-height: 1.4rem;
   width: 100%;
@@ -34,7 +37,7 @@ $font-sans: "Open Sans", sans-serif;
   color: black;
 
   &:before {
-    content: $soft-name;
+    content: $title;
     position: absolute;
     margin-left: 0.5rem;
   }
@@ -42,5 +45,69 @@ $font-sans: "Open Sans", sans-serif;
     content: "x";
     position: relative;
     right: calc(-100% + 1rem);
+  }
+}
+
+@mixin ugly_bar($title, $color, $shadow-op:0.3) {
+  .bar {
+    background-color: $color;
+    height: 1.5rem;
+    width: 100%;
+    border-bottom: 1px solid black;
+    border-radius: 4px;
+
+    &:before {
+      content: $title;
+      height: 1rem;
+      line-height: 1.25rem;
+      z-index: 1;
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .effect {
+      position: relative;
+      top: calc(40% - 1rem);
+      height: 60%;
+      background-color: rgba(100,100,100,$shadow-op);;
+      border: 1px solid $color;
+      border-bottom-right-radius: 4px;
+      border-bottom-left-radius: 4px;
+    }
+  }
+}
+
+@mixin ugly_button($color, $color-hover, $shadow-op:0.2) {
+  button {
+    height: 2rem;
+    padding: 0 1rem;
+    margin-top: 1rem;
+    background-color: $color;
+    border: 1px solid black;
+    border-radius: 3px;
+
+    &:hover, &:focus {
+      background-color: $color-hover;
+      .effect {
+        border-color: $color-hover;
+      }
+    }
+
+    span {
+      position: relative;
+      top: -1rem;
+      font-weight: bold;
+    }
+
+    .effect {
+      position: relative;
+      top: calc(40%); left: -1rem;
+      height: 60%; width: calc(100% + 2rem);
+      background-color: rgba(100,100,100,$shadow-op);
+      border: 1px solid $color;
+      border-bottom-right-radius: 4px;
+      border-bottom-left-radius: 4px;
+    }
   }
 }

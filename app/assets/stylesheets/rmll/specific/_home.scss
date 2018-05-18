@@ -92,7 +92,7 @@ section#home-section {
 
   }
 
-  h2 {
+  h3 {
     font-size: 12vw;
     white-space: nowrap;
     @include phone {
@@ -108,7 +108,7 @@ section#home-section {
     }
   }
 
-  h3 {
+  h2 {
     font-size: 1.2rem;
     line-height: 1.2rem;
     @include phone {
