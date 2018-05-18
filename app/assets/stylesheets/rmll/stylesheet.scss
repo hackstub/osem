@@ -33,7 +33,7 @@ section {
 @import "menu";
 @import "specific/home";
 @import "specific/terminal";
-// @import "specific/popup";
+@import "specific/popup";
 
 .noselect {
   -webkit-touch-callout: none; // iOS Safari
