@@ -6,9 +6,9 @@
   background-color: $color-dark;
   color: $color-light;
 
-  // .bar {
-  //   @include simple_bar("terminal");
-  // }
+  .bar {
+    @include simple_bar("terminal");
+  }
 
   .content {
     padding: 2rem;
@@ -17,7 +17,6 @@
   .color {
     color: $color-cli;
   }
-
 
   .folder {
     color: $blue;
@@ -29,6 +28,39 @@
 
   .result p {
     white-space: pre-wrap;
+  }
+
+  .ascii p {
+    white-space: pre;
+    // color: $color-cli;
+  }
+}
+
+#neofetch {
+  height: 100%;
+  padding-bottom: 3rem;
+  width: 100%;
+
+  @media (min-width: 1150px) {
+    width: 50%;
+  }
+
+  .sub-content {
+    @media (min-width: 600px) {
+        display: flex;
+        align-items: center;
+    }
+    .ascii {
+      margin: 2rem 0;
+      @media (min-width: 600px) {
+          margin-right: 4rem;
+      }
+
+    }
+
+    ul {
+      margin-left: 2rem;
+    }
   }
 }
 
