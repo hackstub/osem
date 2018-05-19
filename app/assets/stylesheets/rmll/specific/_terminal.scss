@@ -95,9 +95,15 @@
     li, li > p {
       padding-left: 2rem;
     }
+    .indent {
+      padding-left: 2rem;
+    }
+    .indent-more {
+      padding-left:4rem;
+    }
 
     a {
-      color: black;
+      color: white;
     }
 
     #treeView {

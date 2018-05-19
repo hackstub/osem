@@ -1,22 +1,189 @@
 %section.spreadsheet
   .bar
+    .effect
 
   .content
     %table
       %thead
         %tr
-          %th{ scope:"col" } Samedi 7 Juillet
-          %th{ scope:"col" }  Horaires
-          %th{ scope:"col" }  Université
-          %th{ scope:"col" }  Presqu´île Malraux
-          %th{ scope:"col" }  TBA
+          %th.old-button{ scope:"col" }
+          %th.old-button{ colspan:"2", scope:"colgroup" }= t("common.saturday") + " 7 " + t("common.july")
+          %th.old-button{ colspan:"2", scope:"colgroup" }= t("common.sunday") + " 8 " + t("common.july")
+          %th.old-button{ colspan:"2", scope:"colgroup" }= t("common.monday") + " 9 " + t("common.july")
+          %th.old-button{ colspan:"2", scope:"colgroup" }= t("common.tuesday") + " 10 " + t("common.july")
+          %th.old-button{ colspan:"2", scope:"colgroup" }= t("common.wednesday") + " 11 " + t("common.july")
+          %th.old-button{ colspan:"2", scope:"colgroup" }= t("common.thursday") + " 12 " + t("common.july")
         %tr
-          %th{ scope:"col" } Escarpe
-          %th{ scope:"col" } Atrium
-          %th{ scope:"col" } Platane
-      %tbody
+          %th.old-button{ scope:"row" }  10h00
+          %td{ colspan:"2", scope:"colgroup" } Ouverture, Escarpe
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
         %tr
-          %th{ scope:"row" }  10h00
-          %th{ scope:"row" }  11h00
-          %th{ scope:"row" }  12h00
-          %th{ scope:"row" }  13h00
+          %th.old-button{ scope:"row" } 10h00 -> 12h00
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" } Débriefing
+        %tr
+          %th.old-button{ rowspan:"2", scope:"rowgroup"}  10h00 -> 18h00
+          %td{ scope:"row" } Village du Libre, Presqu'île Malraux
+          %td{ scope:"row" } To Be Announced
+          %td{ scope:"row" } Village du Libre, Escarpe + Atrium
+          %td{ scope:"row" } To Be Announced
+          %td{ scope:"row" } Village du Libre, Escarpe + Atrium
+          %td{ scope:"row" } To Be Announced
+          %td{ scope:"row" } Village du Libre, Escarpe + Atrium
+          %td{ scope:"row" } To Be Announced
+          %td{ scope:"row" } Village du Libre, Escarpe + Atrium
+          %td{ scope:"row" } To Be Announced
+          %td{ colspan:"2", scope:"colgroup" }
+        %tr
+        %tr
+          %th.old-button{ scope:"row" }  18h00 -> 19h30
+          %td{ colspan:"2", scope:"colgroup" } Plénière, Atrium
+          %td{ colspan:"2", scope:"colgroup" } Plénière, Atrium
+          %td{ colspan:"2", scope:"colgroup" } Plénière, Atrium
+          %td{ colspan:"2", scope:"colgroup" } Plénière, Atrium
+          %td{ colspan:"2", scope:"colgroup" } Plénière, Atrium
+          %td{ colspan:"2", scope:"colgroup" }
+        %tr
+          %th.old-button{ scope:"row" }  20h30
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" } Repas du libre
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+        %tr
+          %th.old-button{ scope:"row" }  20h00 -> 04h00
+          %td{ colspan:"2", scope:"colgroup" } Soirée, TBA
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+        %tr
+          %th.old-button{ scope:"row" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+        %tr
+          %th.old-button{ scope:"row" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+        %tr
+          %th.old-button{ scope:"row" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+        %tr
+          %th.old-button{ scope:"row" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+        %tr
+          %th.old-button{ scope:"row" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+        %tr
+          %th.old-button{ scope:"row" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+        %tr
+          %th.old-button{ scope:"row" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+        %tr
+          %th.old-button{ scope:"row" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+        %tr
+          %th.old-button{ scope:"row" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+        %tr
+          %th.old-button{ scope:"row" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+        %tr
+          %th.old-button{ scope:"row" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+        %tr
+          %th.old-button{ scope:"row" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+        %tr
+          %th.old-button{ scope:"row" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+        %tr
+          %th.old-button{ scope:"row" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+        %tr
+          %th.old-button{ scope:"row" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }
+          %td{ colspan:"2", scope:"colgroup" }

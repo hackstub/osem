@@ -27,10 +27,10 @@
           %li= elem
       %br
       %h2= t(".edu_num.title")
-      %p= t(".edu_num.text")
+      %p.indent= t(".edu_num.text")
       %br
       %h2= t(".tracks.title")
-      %p= t(".tracks.text")
+      %p.indent= t(".tracks.text")
       %br
       %h2= t(".formats.title")
       %ul
@@ -44,8 +44,14 @@
                 %p= formatItem[:public]
       %br
       %h2= t(".speakers.title")
-      %p= t(".speakers.text")
-      %p= t(".speakers.desc")
+      %p.indent= t(".speakers.text")
+      %p.indent= t(".speakers.desc")
       %ul
         - t(".speakers.desc_items").each do |speaker|
-          %li= link_to speaker[:name], speaker[:url]
+          %li.indent-more= link_to speaker[:name], speaker[:url]
+      %br
+      %h2= t(".night.title")
+      %p.indent= t(".night.text")
+      %br
+      %h2= t(".meal.title")
+      %p.indent= t(".meal.text")

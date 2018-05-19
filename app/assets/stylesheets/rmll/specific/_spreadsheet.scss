@@ -1,0 +1,54 @@
+@import "../var";
+
+.spreadsheet {
+  width: 100%;
+  height: 100%;
+  line-height: 2rem;
+  font-family: $font-mono;
+  color: black;
+
+  @include ugly_bar("Calendrier", $cyan);
+  .bar {
+    height:3rem;
+
+    &:before {
+    line-height: 2rem;
+  }
+}
+
+
+  .content {
+    width:100%;
+    height: calc(100% - 4rem);
+    bottom:0;
+    position: absolute;
+    // overflow: hidden;
+    background-color: white;
+
+    table {
+      width: 100%;
+      height: 100%;
+      border-spacing: 0px 0px;
+    }
+
+    table, thead, th, tr, td {
+      border:1px solid black;
+      border-collapse: collapse;
+      // border-collapse: separate;
+      vertical-align: middle;
+      text-align:center;
+    }
+
+    .old-button {
+      // line-height: 2.7rem;
+      height:3rem;
+      vertical-align: middle;
+      background-color: $color-grey-medium;
+      // border-top: 2px solid $color-grey-lighter;
+      // border-right: 3px solid $color-grey-shadow;
+      // border-bottom: 3px solid $color-grey-shadow;
+      border-left: none;
+    }
+  }
+
+}
