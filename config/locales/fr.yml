@@ -13,7 +13,7 @@ fr:
   menu:
     program: Programme
     presentation: Présentation
-    calendar: Calendrier
+    calendar: Agenda
     night: Soirée du Libre
     meal: Repas du Libre
     village: Village
@@ -26,10 +26,10 @@ fr:
     tourism: Tourisme
     participate: Participer
     volunteering: Bénévolat
-    donate: Appel à don
+    donate: Appel à dons
     cfp: Appel à participations
     about: À propos
-    libre: Qu'est ce que le Libre ?
+    libre: Qu'est ce que le Libre ?
     history: Historique
     sponsors: Partenaires
     organisers: Organisateurs
@@ -62,7 +62,7 @@ fr:
           zombie: zombie
         salt:
           title: Pass the SALT
-          text_html: L'ancienne équipe du thème Sécurité organise à Lille du 2 au 4 juillet, %{href}, un événement dédiés à la sécurité informatique et aux logiciels libre.
+          text_html: L'ancienne équipe du thème Sécurité organise à Lille du 2 au 4 juillet, %{href}, un événement dédiés à la sécurité informatique et aux logiciels libres.
           url: "https://2018.pass-the-salt.org/"
     program:
       presentation:
@@ -70,25 +70,25 @@ fr:
         intro:
           program_date: Publication du programme complet le 5 juin 2018.
           text: Les Rencontres Mondiales du Logiciel Libre 2018 se tiendront du 7 au 12 juillet à Strasbourg.
-          desc: "L'événement est rythmé par :"
+          desc: "L'événement est rythmé par :"
           elems_desc:
-            - des conférences, des ateliers, des tables rondes, hackerspaces, etc. ;
-            - des stands (d'associations, de projets, etc) ;
-            - des rencontres entre les acteurs du Libre et le grand public ;
-            - des rencontres entre les différents acteurs du Libre (développeurs, décideurs/agents, publics, utilisateurs) ;
+            - des conférences, des ateliers, des tables rondes, des hackerspaces, etc. ;
+            - des stands (d'associations, de projets, etc.) ;
+            - des rencontres entre les acteurs du Libre et le grand public ;
+            - des rencontres entre les différents acteurs du Libre (développeurs, décideurs/agents, publics, utilisateurs) ;
             - des concerts, performances, projections-débats, expositions, etc.
         edu_num:
           title: Éducation numérique
           text: "Le fil rouge principal de cette édition sera « Éducation numérique : fabrique de la captivité ou nouvelle émancipation ? ». Cette thématique centrale se retrouvera sur toute la durée du festival. Elle n'est donc pas exclusive, mais nous privilégierons les propositions de formats qui s'y rattachent. La question de l'enseignement numérique permettra d'aborder les enjeux majeurs de l'éducation par/aux usages de ces technologies. Cette thématique recouvre les enseignements du primaire au supérieur, en passant par l'apprentissage associatif, amateur et continu, tout en questionnant leurs implications sociétales de manière générale."
         tracks:
           title: Tracks
-          text: "Ces RMLL sont articulées autour de « fils rouges » (ou tracks) transdisciplinaires. Le fil rouge principal est : « Éducation numérique : fabrique de la captivité ou nouvelle émancipation ? ». Les fils rouges correspondent à une succession linéaire d'évènements de formats divers sur une même thématique, permettant aux participants de suivre l'ensemble des contenus recouvrant le même sujet."
+          text: "Ces RMLL seront articulées autour de « fils rouges » (ou tracks) transdisciplinaires. Le fil rouge principal est : « Éducation numérique : fabrique de la captivité ou nouvelle émancipation ? ». Les fils rouges correspondent à une succession linéaire d'évènements de formats divers sur une même thématique, permettant aux participants de suivre l'ensemble des contenus recouvrant le même sujet."
         formats:
           title: Formats
           list:
             - title: Conférences
               text:
-                - Format classique, interactive ou non, la conférence permet de mettre en avant un progrès technique, une problématique, ou toute autre idée ou projet pertinent.
+                - De format classique, interactive ou non, la conférence permet de mettre en avant un progrès technique, une problématique, ou toute autre idée ou projet pertinent.
               duration: "Durée : 30 min ou 1 h, plus interactions avec l'audience, sauf exceptions."
               public: "Public : 50, 210 ou 520 personnes."
             - title: Ateliers
@@ -99,8 +99,7 @@ fr:
               public: "Public : 50 personnes max."
             - title: Plénières/Tables ronde
               text:
-                - Les débats ou tables-rondes permettent de discuter collectivement de questions majeures.
-                - Nous vous laissons le choix du dispositif (frontal, forum, etc.), en tenant compte de l'intérêt que présentera le degré choisi de participation du public.
+                - "Les débats ou tables rondes permettent de discuter collectivement de questions majeures sous différentes formes : déambulations, débats mouvants, théâtre-forum, etc."
               duration: "Durée : 50 min."
               public: "Public : 50 personnes max."
             - title: Salons de discussions
@@ -111,9 +110,10 @@ fr:
               public: "Public : 50 personnes max."
             - title: Hackerspaces
               text:
-                - Nous proposons des espaces autogérés dédiés à la bidouille en tout genre.
-              duration: "Durée : libre"
-              public: "Public : indéfini"
+                - "Nous proposons des hackerspaces, des espaces autogérés dédiés à la bidouille en tout genre : programmation, électronique, audio/vidéo, etc."
+                - Pour permettre aux RMLL 2018 de se dérouler idéalement et de laisser une trace durable à l'aide de toutes les bonnes volontés, un hackerspace sera dédié aux commissions internes comme l'infrastructure réseau, l ou les captations audiovisuelles.
+              duration: "Durée : libre"
+              public: "Public : indéfini"
             - title: Création
               text:
                 - "Vous pouvez nous proposer une sorte de résidence d'un à plusieurs jours pour produire des formes libres : théâtre, musique, dessin, cinéma, cuisine, etc."
@@ -123,103 +123,98 @@ fr:
         speakers:
           title: Intervenants
           text: Le programme définitif sera publié le 5 juin.
-          desc: "Pour une petite idée, les RMLL 2018 accueilleront notamment :"
+          desc: "Pour donner une petite idée, les RMLL 2018 accueilleront notamment :"
           desc_items:
-            - name: la Free Software Foundation Europe (FSFE)
-              url: ""
-            - name: Framasoft
-              url: ""
-            - name: l'APRIL
-              url: ""
-            - name: APO33
-              url: ""
-            - name: CoopCycle
-              url: ""
-            - name: Exodus Privacy
-              url: ""
-            - name: Funkwhale
-              url: ""
-            - name: Resonate
-              url: ""
-            - name: Sugarizer
-              url: ""
-            - name: Peertube
-              url: ""
-            - name: CHATONS
-              url: ""
-            - name: LinuxFr.org
-              url: ""
+            - name: la Free Software Foundation Europe (FSFE) ;
+              url: "https://fsfe.org/"
+            - name: Framasoft ;
+              url: "https://framasoft.org/"
+            - name: l'APRIL ;
+              url: "https://www.april.org/"
+            - name: APO33 ;
+              url: "http://apo33.org/index.php/fr/"
+            - name: CoopCycle ;
+              url: "https://coopcycle.org/fr/"
+            - name: Exodus Privacy ;
+              url: "https://exodus-privacy.eu.org/"
+            - name: Funkwhale ;
+              url: "https://funkwhale.audio/"
+            - name: Resonate ;
+              url: "https://resonate.is/"
+            - name: Sugarizer ;
+              url: "https://olpc-france.org/sugarizer/"
+            - name: Peertube ;
+              url: "https://joinpeertube.org/fr/"
+            - name: CHATONS ;
+              url: "https://chatons.org/"
+            - name: LinuxFr.org.
+              url: "https://linuxfr.org/"
         night:
           title: Soirée du Libre
-          text: To be announced...
+          text: To be announced…
         meal:
           title: Repas du Libre
           text: Le Repas du Libre aura lieu au FEC (place St-Étienne) le dimanche 8 juillet à partir de 20 h 30.
       calendar:
-        title: Calendrier
+        title: Agenda
         list:
           - date: Samedi 7 juillet
             program:
-              - Toute la journée - Village du libre @ Presqu'île Malraux
+              - De 10 h à 18 h - Village du libre @ Presqu'île Malraux
               - 10 h - Ouverture @ Escarpe
-              - De 10 h à 18 h [...] TBA [...]
-              - 18 h - 19 h 30 - Plénière @ Atrium
+              - De 10 h à 18 h […] TBA […]
+              - De 18 h à 19 h 30 - Plénière @ Atrium
               - De 20 h à 4 h - Soirée @ TBA
           - date: Dimanche 8 juillet
             program:
-              - Toute la journée - Village du libre @ Escarpe + Atrium
-              - De 10 h à 18 h [...] TBA [...]
-              - 18 h - 19 h 30 - Plénière @ Atrium
+              - De 10 h à 18 h - Village du libre @ Escarpe + Atrium
+              - De 10 h à 18 h […] TBA […]
+              - De 18 h à 19 h 30 - Plénière @ Atrium
               - 20 h 30 - Repas du Libre
           - date: Lundi 9 juillet
             program:
-              - De 10 h à  - Village du libre @ Escarpe + Atrium
-              - De 10 h à 18 h [...] TBA [...]
-              - 18 h - 19 h 30 - Plénière @ Atrium
+              - De 10 h à 18 h - Village du libre @ Escarpe + Atrium
+              - De 10 h à 18 h […] TBA […]
+              - De 18 h à 19 h 30 - Plénière @ Atrium
           - date: Mardi 10 juillet
             program:
-              - De 10 h à 20 h
-              - Toute la journée - Village du libre @ Escarpe + Atrium
-              - De 10 h à 18 h [...] TBA [...]
-              - 18 h - 19 h 30 - Plénière @ Atrium
+              - De 10 h à 18 h - Village du libre @ Escarpe + Atrium
+              - De 10 h à 18 h […] TBA […]
+              - De 18 h à 19 h 30 - Plénière @ Atrium
           - date: Mercredi 11 juillet
             program:
-              - De 10 h à 20 h
-              - Toute la journée - Village du libre @ Escarpe + Atrium
-              - De 10 h à 18 h [...] TBA [...]
-              - 18 h - 19 h 30 - Plénière @ Atrium
+              - De 10 h à 18 h - Village du libre @ Escarpe + Atrium
+              - De 10 h à 18 h - Conférences, ateliers, salons @ Platane + Escarpe + Atrium
+              - De 18 h à 19 h 30 - Plénière @ Atrium
           - date: Jeudi 12 juillet
             program:
-              - De 10 h à 12 h
-              - Toute la journée - Village du libre @ Escarpe + Atrium
-              - De 10 h à 18 h [...] TBA [...]
-              - 18 h - 19 h 30 - Plénière @ Atrium
+              - De 10 h à 12 h - Débriefing
       night:
         title: Soirée du Libre
       meal:
         title: Repas du Libre
     village:
       map:
-      cutributors:
+      contributors:
       cfb:
         title: Appel à stand
         text:
           - Le village associatif est un ensemble d'associations tenant des stands pour présenter au public leurs projets et actions. Le village associatif est notamment un lieu propice à la découverte des différents logiciels libres et leurs conceptions, offrant une alternative aux grosses entreprises à but lucratif.
           - Le village sera déplacé en partie sur la presque-île André-Malraux le samedi (07/07/2018).
-        call: "Vous souhaitez représenter votre logiciel, votre association ou autre ? L'appel est toujours ouvert, inscrivez-vous"
+        call: "Vous souhaitez représenter votre logiciel, votre association ou autre ? L'appel est toujours ouvert, inscrivez-vous !"
         call-url: "https://osem.aius.u-strasbg.fr/conferences/RMLL2018/booths"
     info:
       map:
         title: Carte
         options:
           checkboxes:
-            - name: Arret de tram
+            - name: Arrêts de tram
               id: tram
-            - name: Arret de bus
+            - name: Arrêts de bus
               id: bus
             - name: Parkings
               id: parking
-            - name: Hébergement
+            - name: Hébergements
               id: lodging
             - name: Tourisme
               id: tourism
@@ -227,54 +222,53 @@ fr:
         title: Accès
         places:
           title: Lieux
-          campus:
-            name: Campus Central de l'Université de Strasbourg
-            adress: 4 rue Blaise Pascal
-            buildings:
-              - name: Escarpe
-                adress: 11 Rue du Maréchal Juin, 67000 Strasbourg
-              - name: Atrium
-                adress: 16 Rue René Descartes, 67000 Strasbourg
-              - name: Platane
-                adress: Allée René Capitant, 67000 Strasbourg
-          malraux:
-            name: Presqu'île André Malraux
-            adress: Presqu'île André Malraux
-            buildings:
-              - name: Médiathèque André Malraux
-                adress: 1 Presqu'île André-Malraux, 67100 Strasbourg
-              - name: Le Shadok
-                adress: 25 presqu'ile André Malraux, 67100 Strasbourg
+          list:
+            - name: Campus Central de l'Université de Strasbourg
+              adress: 4, rue Blaise Pascal
+              buildings:
+                - name: Escarpe
+                  adress: 11, ue du Maréchal Juin, 67000 Strasbourg
+                - name: Atrium
+                  adress: 16, rue René Descartes, 67000 Strasbourg
+                - name: Platane
+                  adress: allée René Capitant, 67000 Strasbourg
+            - name: presqu'île André Malraux
+              buildings:
+                - name: Médiathèque André Malraux
+                  adress: 1, presqu'île André-Malraux, 67100 Strasbourg
+                - name: Le Shadok
+                  adress: 25, presqu'ile André Malraux, 67100 Strasbourg
         cts:
           title: Transports en commun
           url: "https://www.cts-strasbourg.eu/fr"
           tram:
           bus:
         parkings:
-          text: "Bien qu'il soit probablement possible de se garer non loin des RMLL dans les rues adjacentes en fouillant un peu, voici 4 parking payants à proximité et leurs tarifs maximaux :"
+          title: Parkings
+          text: "Bien qu'il soit probablement possible de se garer non loin des RMLL dans les rues adjacentes en cherchant un peu, voici 4 parking payants à proximité et leurs tarifs maximaux :"
           list:
             - name: Parking Esplanade Centre Commercial
-              adress: 3 Rue de Londres, 67000 Strasbourg
+              adress: 3, rue de Londres, 67000 Strasbourg
               distance: 0.6
               price: 1.2
               url: "http://www.parcus.com/index.php?parcusParam[cmpref]=11863&lang=fr&module=parcus&action=ViewDetail"
             - name: Parking des Bateliers
-              adress: Rue de Zurich, 67000 Strasbourg
+              adress: rue de Zurich, 67000 Strasbourg
               distance: 0.7
               price: 1.6
               url: "http://www.parcus.com/index.php?parcusParam%5Bcmpref%5D=871&lang=fr&module=parcus&action=ViewDetail"
             - name: Parking Étoile Cinéma
-              adress: 25 Avenue du Rhin, 67100 Strasbourg
+              adress: 25, avenue du Rhin, 67100 Strasbourg
               distance: 1
               price: 1.45
               url: "https://www.placedeshalles.com/infos-pratiques/parking"
             - name: Parking Kléber
-              adress: Place Kléber, 67000 Strasbourg
+              adress: place Kléber, 67000 Strasbourg
               distance: 2
               price: 2.4
               url: "https://www.jds.fr/strasbourg/parking/parking-kleber-homme-de-fer-4977_L"
             - name: Parking des Halles
-              adress: Rue du Marais Vert, 67000 Strasbourg
+              adress: rue du Marais Vert, 67000 Strasbourg
               distance: 2.5
               price: 1.6
               url: "https://www.placedeshalles.com/infos-pratiques/parking"
@@ -282,43 +276,48 @@ fr:
           title: Accessibilité et mobilité
           text:
             - Les bâtiments du campus universitaire sont tous équipés de rampes d'accès pour les handicapés mis à part le premier étage du Platane.
-            - Notre équipe se tiend à votre disposition lors de l'évènement pour vous aider à accéder au premier étage de ce bâtiment.
-            - Pour toutes questions complémentaires n'hésitez pas à nous contacter à contact [AT] listes2018.rmll.info
+            - Notre équipe se tient à votre disposition lors de l'évènement pour vous aider à accéder au premier étage de ce bâtiment.
+            - Pour toutes questions complémentaires, n'hésitez pas à nous contacter à contact [AT] listes2018.rmll.info
       lodging:
         title: Hébergement
-        text: Voici le lien vers notre liste des différents hébergements abordables disponibles sur Strasbourg et sa périphérie
-        url: "https://2018.rmll.info/conferences/RMLL2018/#lodging"
+        list:
+          - name: Auberges de jeunesse et hôtels
+            text: "Voici le lien vers notre liste des différents hébergements abordables disponibles sur Strasbourg et sa périphérie :"
+            url: "https://2018.rmll.info/conferences/RMLL2018/#lodging"
+          - name: Chambres à la Cité U. de la Robertsau
+            text: Vous pouvez réserver une chambre individuelle avec sanitaires et cuisine collectifs pour 6 nuits, du 6 au 12 juillet, pour 120 €, tout compris.
+            url: "https://osem.aius.u-strasbg.fr/conferences/RMLL2018/tickets"
       food:
         title: Restauration
-        daily: La restauration sera assurée tout au long de l'évènement par l'AIUS ainsi que des food trucks vegans
+        daily: La restauration sera assurée tout au long de l'évènement par l'AIUS, ainsi que par des food trucks vegans.
         alsatian: Les RMLL de Strasbourg ne pourront se faire sans nos fameuses tartes flambées alsaciennes qui seront cuisinées par des bénévoles afin de partager le patrimoine gastronomique de la région.
-        libre_meal: Les réservations pour le Repas du Libre bientôt ouvertes, promis ~
+        libre_meal: Les réservations pour le Repas du Libre seront bientôt ouvertes, promis ~
       tourism:
         title: Tourisme
-        intro: Voici quelques lieux intéressants que vous pourriez visiter lors de votre venue à Strasbourg.
+        intro: Voici quelques lieux intéressants que vous pourriez visiter lors de votre venue à Strasbourg, la plus belle ville du monde. Strasbourg est notamment la capitale de l'Alsace, du Grand Est, de l'Europe, de Noël et du Grand Hamster d'Alsace.
         museum:
-          desc: "1) Quelques musées :"
+          desc: "Quelques musées :"
           desc_items:
             - name: Le Musée Historique de Strasbourg
-              desc: Retrace de manière très détaillée et documentée l'histoire de notre ville, capitale de l'Alsace, à partir du début du moyen-age jusqu'à nos jours.
+              desc: Retrace de manière très détaillée et documentée l'histoire de notre ville, capitale de l'Alsace et de l'Europe, à partir du début du Moyen Âge jusqu'à nos jours.
               url: "https://www.musees.strasbourg.eu/web/musees/presentation-musee-historique"
               coordinates:
             - name: Le Musée Alsacien
               desc: Ce musée montre les coutumes typiquement alsaciennes, ainsi que l'architecture et les ustensiles typiques de notre région.
               url: "https://www.musees.strasbourg.eu/musee-alsacien"
               coordinates:
-            - name: Le Pixel Museum (musée du jeu-vidéo)
-              desc: Ce musée contient une grande collection d'anciennes et actuelles consoles dont beaucoups sont jouables (Atari 2600, Vectrex, bornes d'arcades, etc.), le tout accompagné d'affiches expliquant les grandes étapes des débuts du jeu-vidéo ainsi que les programmeurs célèbres.
+            - name: Le Pixel Museum (musée du jeu vidéo)
+              desc: Ce musée contient une grande collection de consoles anciennes et actuelles dont beaucoup sont jouables (Atari 2600, Vectrex, bornes d'arcades, etc.), le tout accompagné d'affiches expliquant les grandes étapes des débuts du jeu vidéo ainsi que sur les programmeurs célèbres.
               url: "https://pixel-museum.fr/"
               coordinates:
         places:
-          desc: "2) Quelques lieux intéressants où se balader :"
+          desc: "Quelques lieux intéressants où se balader :"
           desc_items:
             - name: La cathédrale Notre-Dame de Strasbourg
-              desc: Construite en plusieurs étapes entre 1015 (début) et 1439 (fin), et située au coeur de la ville, elle est incontournable pour quiconque s'intéresserait à visiter la ville de Strasbourg. Elle contient en son sein une ancienne et magnifique horloge astronomique, et on peut monter quasiment jusqu'à son sommet de 142m.
+              desc: Construite en plusieurs étapes entre 1015 (début) et 1439 (fin), et située au coeur de la ville, elle est incontournable pour quiconque intéressé à visiter la ville de Strasbourg. Elle contient en son sein une ancienne et magnifique horloge astronomique, et, pour les plus courageux, on peut monter quasiment jusqu'à son sommet culminant à 142m.
               coordinates: [7.75029391050339,48.5815988294439]
             - name: La Grande Île (centre historique)
-              desc: "L'ensemble de l'île nommée : « la grande île » avec pour centre la place Kleber, est la partie la plus ancienne de la ville où vous pourrez y admirer partout l'architecture typiquement alsacienne. Il y a aussi la petite France juste au nord de la grande île, proche du campus de médecine."
+              desc: "L'ensemble de l'île nommée : « la grande île » avec, pour centre, la place Kléber, est la partie la plus ancienne de la ville. Vous pourrez y admirer partout l'architecture typiquement alsacienne. Il y a aussi la Petite France, juste au nord de la Grande Île, proche du campus de médecine."
               coordinates: [7.74587094783783,48.5833608004904]
             - name: La Petite France
               desc: Quartier ancien typique
@@ -326,14 +325,16 @@ fr:
     participate:
       volunteering:
         title: Bénévolat
+        text: "Nous avons besoin de votre aide sur tous types de compétences. Vous pouvez nous aider en vous inscrivant sur ce pad :"
+        url: "http://pad.arn-fai.net/p/rmll-2018-help"
       donate:
-        title: Appel à don
+        title: Appel à dons
         text:
-          - Afin d'assurer la réussite de cette édition 2018, nous faisons appel à la participation de tous pour nous soutenir financièrement.
+          - Nous avons décidé de ne pas passer par un système de financement participatif, mais d'uniquement recueillir des dons directs.
           - Cette collecte nous permettra de défrayer le déplacement des intervenants et la captation des activités.
-          - Si vous souhaitez mettre votre pierre à l'édifice, n'hésitez pas !
-          - Au delà de 500€, nous afficherons votre participation sur notre site internet.
-          - Au delà de 1 000€ vous pouvez solliciter une apparition sur nos autres supports de communication.
+          - Nous afficherons votre participation sur notre site web.
+          - Au delà de 1 000€, vous pouvez solliciter une apparition sur nos autres supports de communication.
+          - Nous sommes ouverts à toutes négociations.
       cfp:
         url: ""
     medias:
@@ -341,7 +342,7 @@ fr:
       graphic_design:
     about:
       libre:
-        title: Qu'est ce que le Libre ?
+        title: Qu'est ce que le Libre ?
         intro:
           title: Description
           text:
@@ -353,16 +354,16 @@ fr:
             - Face à ce mouvement, et soucieux de préserver la liberté des logiciels, Richard M. Stallman fonda le projet GNU en 1983, formalisant ainsi la première définition du logiciel libre.
         liberties:
           title: Liberties
-          desc: "Un logiciel est alors considéré comme libre s'il confère à son utilisateur ces 4 libertés (numérotées de 0 à 3) :"
+          desc: "Un logiciel est alors considéré comme libre s'il confère à son utilisateur ces 4 libertés (numérotées de 0 à 3) :"
           desc_items:
-            - <b>0</b>, --la liberté d'<b>exécuter</b> le programme, pour tous les usages ;
-            - <b>1</b>, --la liberté d'<b>étudier</b> le fonctionnement du programme et de l'adapter à ses besoins ;
-            - <b>2</b>, --la liberté de <b>redistribuer</b> des copies du programme (ce qui implique la possibilité aussi bien de donner que de vendre des copies) ;
+            - <b>0</b>, --la liberté d'<b>exécuter</b> le programme, pour tous les usages ;
+            - <b>1</b>, --la liberté d'<b>étudier</b> le fonctionnement du programme et de l'adapter à ses besoins ;
+            - <b>2</b>, --la liberté de <b>redistribuer</b> des copies du programme (ce qui implique la possibilité aussi bien de donner que de vendre des copies) ;
             - <b>3</b>, --la liberté d'<b>améliorer</b> le programme et de distribuer ces améliorations au public, pour en faire profiter toute la communauté.
         middle: Aujourd'hui, et ce malgré l'économie du logiciel propriétaire, le logiciel libre est partout, comme le célèbre navigateur Mozilla Firefox, et même là où on ne s'y attend pas, comme le système d'exploitation mobile Android de Google.
         advantages:
           title: Advantages
-          desc: "Pour cause, les logiciels libres possédant notamment les avantages suivants :"
+          desc: "Pour cause, les logiciels libres possédant notamment les avantages suivants :"
           desc_items:
             - le code source est accessible et bénéficie ainsi de l'intelligence collective de l'ensemble des relecteurs ;
             - le logiciel peut être adapté aux besoins d'autres utilisateurs, car il possède une flexibilité permettent de l'adapter à tous les besoins ;
@@ -459,7 +460,7 @@ fr:
       organisers:
         title: Organisateurs
         text: L'édition 2018 des RMLL est organisée par la fédération alsace.netlib.re, portée par l'association Hackstub. La fédération alsacienne du Libre et du Hack est composée des associations et collectifs Hackstub, Alsace Réseau Neutre (ARN), Radio Rhino, Seeraiwer, l'AIUS, Desclicks, sxb.so et Lilo.
-        ekip: "L'équipe RMLL 2018 c'est : Harmonie, Jérémie, Jean, Jules, Phillippine, Aleks, Nicolas, Marjorie, Manu, Tsanta, Sandhose, Irina, Legaume, Ljf, Jyhem, Janka, Marie-France, Claude, Garfield, Syme, Mhep, Adeline, Franck et tous ceux qu'on a oublié (désolé)"
+        ekip: "L'équipe RMLL 2018 c'est : Harmonie, Jérémie, Jean, Jules, Phillippine, Aleks, Nicolas, Marjorie, Manu, Tsanta, Sandhose, Irina, Legaume, Ljf, Jyhem, Janka, Marie-France, Claude, Garfield, Syme, Mhep, et tous ceux qu'on a oubliés (désolé)"
       conduct_code:
         title: Code de conduite
         text:
