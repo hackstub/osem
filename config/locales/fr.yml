@@ -3,6 +3,13 @@ fr:
     submit: Valider
     all: Tout
     hour: heure
+    july: juillet
+    saturday: Samedi
+    sunday: Dimanche
+    monday: Lundi
+    tuesday: Mardi
+    wednesday: Mercredi
+    thursday: Jeudi
     total: total
     running: en cours
     sleeping: en veille
