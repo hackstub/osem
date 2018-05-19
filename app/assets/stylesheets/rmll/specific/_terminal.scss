@@ -199,7 +199,7 @@
 
     b {
       font-weight:bold;
-      color:white;
+      color: white;
     }
 
     #content2 {
@@ -211,5 +211,35 @@
       padding: 2rem;
       padding-left: 0;
     }
+  }
+}
+
+#access {
+  h4 {
+    margin-top: 2rem;
+  }
+}
+
+#food {
+  h2 {
+    margin-bottom: 2rem;
+  }
+}
+
+#lodging {
+  h5 {
+    margin-top: 2rem;
+  }
+}
+
+#tourism {
+  h2 {
+    margin-bottom: 2rem;
+  }
+  h4 {
+    margin-top: 2rem;
+  }
+  h5 {
+    margin-top: 2rem;
   }
 }

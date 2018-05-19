@@ -1,2 +1,20 @@
-%section
-  %h1 Tourisme
+%section#tourism.term
+  .bar
+
+  .content
+    %h2= t(".title")
+    %p= t(".intro")
+    %ul
+      %h4= t(".museum.desc")
+      - t(".museum.desc_items").each do |museum|
+        %li
+          %h5= museum[:name]
+          %p= museum[:desc]
+          %a= museum[:url]
+          %p= museum[:coordinates]
+      %h4= t(".places.desc")
+      - t(".places.desc_items").each do |place|
+        %li
+          %h5= place[:name]
+          %p= place[:desc]
+          %p= place[:coordinates]

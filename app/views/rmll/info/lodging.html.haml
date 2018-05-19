@@ -1,2 +1,11 @@
-%section
-  %h1 Hébergement
+%section#lodging.term
+  .bar
+
+  .content
+    %h2= t(".title")
+    %ul
+      - t(".list").each do |lodgings|
+        %li
+          %h5= lodgings[:name]
+          %p= lodgings[:text]
+          %a= lodgings[:url]
