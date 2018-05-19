@@ -39,6 +39,7 @@
   }
 }
 
+
 #neofetch {
   height: 100%;
   padding-bottom: 3rem;
@@ -87,7 +88,7 @@
   #window-content {
     width: 100%;
     height: calc(100% - 4rem);
-    bottom:0;
+    bottom: 0;
     position: absolute;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -95,20 +96,26 @@
     li, li > p {
       padding-left: 2rem;
     }
+
     .indent {
       padding-left: 2rem;
     }
+
     .indent-more {
-      padding-left:4rem;
-    }
+        padding-left: 4rem;
+      }
 
     a {
       color: white;
     }
 
+    .bold {
+      font-weight: bold;
+    }
+
     #treeView {
       width: 20vw;
-      height:100%;
+      height: 100%;
       background-color: white;
       position: fixed;
       padding: 2rem;
@@ -134,5 +141,75 @@
 
   .folder {
     margin-top: 2rem;
+  }
+}
+
+#manLike {
+
+  .bar2 {
+    @include simple_bar("Qu'est-ce que le Libre ?");
+    background-color: $color-grey-darker;
+    width: 50%;
+    height: 2rem;
+    line-height: 2rem;
+    position: fixed;
+    border-top: 2px solid $color-grey-lighter;
+
+    &:before {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      margin-left: 0;
+    }
+    &:after {
+      content: none;
+    }
+  }
+
+  #window-content2 {
+    width: 50%;
+    height: calc(100% - 4rem);
+    bottom: 0;
+    position: absolute;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    line-height: 1.5rem;
+    background-color: black;
+
+    li {
+      &:before{
+        content: "-";
+      }
+    }
+
+    .indent-more {
+      p, ul {
+        padding-left: 4rem;
+      }
+    }
+
+    a {
+      color: white;
+    }
+
+    h2 {
+      font-weight: bold;
+      color: white;
+    }
+
+    b {
+      font-weight:bold;
+      color:white;
+    }
+
+    #content2 {
+      width: 50vw;
+      height: 100%;
+      left: 0;
+      color: $color-grey-medium;
+      position: relative;
+      padding: 2rem;
+      padding-left: 0;
+    }
   }
 }

@@ -343,21 +343,25 @@ fr:
       libre:
         title: Qu'est ce que le Libre ?
         intro:
-          - À l'origine, le Libre est apparu dès les débuts de l'informatique. Les ordinateurs étaient alors des machines très volumineuses et coûteuses ne pouvant être manipulées que par quelques chercheurs.
-          - Les logiciels étaient alors très liés à leur support et n'avaient pas de valeur intrinsèque. Les chercheurs échangeaient des copies des logiciels avec leurs pairs pour les développer collectivement.
-          - Ces chercheurs en informatique se faisaient appeler hackers (bricoleurs/bidouilleurs), à ne pas confondre avec les crackers, visant des cibles spécifiques afin de leur voler des ressources.
-          - Ce n'est qu'à la fin des années 70, lorsque les logiciels ont commencé à avoir une valeur commerciale significative, que l'on a assisté à un processus de verrouillage juridique de l'informatique.
-          - "L'évènement le plus marquant de l'époque est probablement la lettre ouverte aux bricoleurs (Open Letter to Hobbyists), écrite par Bill Gates en janvier 1976, leur sommant d'arrêter de les copier et de les modifier, assimilant ces actions à du vol, ce qui à l'heure d'aujourd'hui nous paraîtrait comme tel, mais qui n'était pas encore entré dans les mentalités de l'époque. Car c'est de cette façon qu'avaient toujours été développés les logiciels : en les copiant et les modifiant pour qu'ils puissent être améliorés par d'autres personnes."
-          - Face à ce mouvement, et soucieux de préserver la liberté des logiciels, Richard M. Stallman fonda le projet GNU en 1983, formalisant ainsi la première définition du logiciel libre.
+          title: Description
+          text:
+            - À l'origine, le Libre est apparu dès les débuts de l'informatique. Les ordinateurs étaient alors des machines très volumineuses et coûteuses ne pouvant être manipulées que par quelques chercheurs.
+            - Les logiciels étaient alors très liés à leur support et n'avaient pas de valeur intrinsèque. Les chercheurs échangeaient des copies des logiciels avec leurs pairs pour les développer collectivement.
+            - Ces chercheurs en informatique se faisaient appeler hackers (bricoleurs/bidouilleurs), à ne pas confondre avec les crackers, visant des cibles spécifiques afin de leur voler des ressources.
+            - Ce n'est qu'à la fin des années 70, lorsque les logiciels ont commencé à avoir une valeur commerciale significative, que l'on a assisté à un processus de verrouillage juridique de l'informatique.
+            - "L'évènement le plus marquant de l'époque est probablement la lettre ouverte aux bricoleurs (Open Letter to Hobbyists), écrite par Bill Gates en janvier 1976, leur sommant d'arrêter de les copier et de les modifier, assimilant ces actions à du vol, ce qui à l'heure d'aujourd'hui nous paraîtrait comme tel, mais qui n'était pas encore entré dans les mentalités de l'époque. Car c'est de cette façon qu'avaient toujours été développés les logiciels : en les copiant et les modifiant pour qu'ils puissent être améliorés par d'autres personnes."
+            - Face à ce mouvement, et soucieux de préserver la liberté des logiciels, Richard M. Stallman fonda le projet GNU en 1983, formalisant ainsi la première définition du logiciel libre.
         liberties:
+          title: Liberties
           desc: "Un logiciel est alors considéré comme libre s'il confère à son utilisateur ces 4 libertés (numérotées de 0 à 3) :"
           desc_items:
-            - 0. la liberté d'exécuter le programme, pour tous les usages ;
-            - 1. la liberté d'étudier le fonctionnement du programme et de l'adapter à ses besoins ;
-            - 2. la liberté de redistribuer des copies du programme (ce qui implique la possibilité aussi bien de donner que de vendre des copies) ;
-            - 3. la liberté d'améliorer le programme et de distribuer ces améliorations au public, pour en faire profiter toute la communauté.
+            - <b>0</b>, --la liberté d'<b>exécuter</b> le programme, pour tous les usages ;
+            - <b>1</b>, --la liberté d'<b>étudier</b> le fonctionnement du programme et de l'adapter à ses besoins ;
+            - <b>2</b>, --la liberté de <b>redistribuer</b> des copies du programme (ce qui implique la possibilité aussi bien de donner que de vendre des copies) ;
+            - <b>3</b>, --la liberté d'<b>améliorer</b> le programme et de distribuer ces améliorations au public, pour en faire profiter toute la communauté.
         middle: Aujourd'hui, et ce malgré l'économie du logiciel propriétaire, le logiciel libre est partout, comme le célèbre navigateur Mozilla Firefox, et même là où on ne s'y attend pas, comme le système d'exploitation mobile Android de Google.
         advantages:
+          title: Advantages
           desc: "Pour cause, les logiciels libres possédant notamment les avantages suivants :"
           desc_items:
             - le code source est accessible et bénéficie ainsi de l'intelligence collective de l'ensemble des relecteurs ;
