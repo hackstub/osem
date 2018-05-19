@@ -2,42 +2,40 @@
   %ul
     %li
       %h4
-        %span Infos
+        %span= t("rmll.home.conky.infos.title")
       %ul.window
-        %li
-          %span.process ouverture
-          %p.tab 10h -> 18h
-        %li
-          %span.process plénières
-          %p.tab 18h -> 20h Amphithéâtre A9 (Atrium)
+        - t("rmll.home.conky.infos.process").each do |process|
+          %li
+            %span.process= process[:name]
+            %p.tab= process[:content]
+    -# %li
+    -#   %h4
+    -#     %span= t("rmll.home.conky.activities.title")
+    -#   %ul.window
+    -#     %li
+    -#       %span.number 134
+    -#       total,
+    -#       %span.number 2
+    -#       en cours,
+    -#       %span.number 2
+    -#       dormantes,
+    -#       %span.number 0
+    -#       stoppées,
+    -#       %span.number 0
+    -#       zombie
+    -#     %li
+    -#       %span.process en cours
+    -#       %ul
+    -#         %li.tab= link_to "Lorem ipsum dolor sit amet", "#"
+    -#         %li.tab= link_to "Lorem ipsum dolor sit amet", "#"
+    -#     %li
+    -#       %span.process dormantes
+    -#       %ul
+    -#         %li.tab= link_to "Lorem ipsum dolor sit amet", "#"
+    -#         %li.tab= link_to "Lorem ipsum dolor sit amet", "#"
     %li
       %h4
-        %span Activités
-      %ul.window
-        %li
-          %span.number 134
-          total,
-          %span.number 2
-          en cours,
-          %span.number 2
-          dormantes,
-          %span.number 0
-          stoppées,
-          %span.number 0
-          zombie
-        %li
-          %span.process en cours
-          %ul
-            %li.tab= link_to "Lorem ipsum dolor sit amet", "#"
-            %li.tab= link_to "Lorem ipsum dolor sit amet", "#"
-        %li
-          %span.process dormantes
-          %ul
-            %li.tab= link_to "Lorem ipsum dolor sit amet", "#"
-            %li.tab= link_to "Lorem ipsum dolor sit amet", "#"
-    %li
-      %h4
-        %span Espaces
+        %span= t("rmll.home.conky.spaces.title")
       %ul.window
         Strasbourg
         %li
@@ -46,9 +44,15 @@
             %li │ ├> Escarpe
             %li │ ├> Atrium
             %li │ └> Platane
-        %li ├> Médiathèque Malraux
+        %li ├> Médiathèque André Malraux
         %li └> Shadok
 
-    %li.window
-      wifi :
-      %span wifi-name
+    -# %li.window
+    -#   wifi :
+    -#   %span wifi-name
+    %li
+      %h4
+        %span= t("rmll.home.conky.salt.title")
+      %ul.window
+        %p
+          = t("rmll.home.conky.salt.text_html", href: link_to(t("rmll.home.conky.salt.title"), t("rmll.home.conky.salt.url")))

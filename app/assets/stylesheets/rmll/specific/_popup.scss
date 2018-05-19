@@ -1,3 +1,5 @@
+@import "../var";
+
 .popup {
   font-family: $font-sans;
   background-color: $color-light;
@@ -45,7 +47,7 @@
         margin-top: 1.5rem;
       }
     }
-    
+
     p:last-child {
       padding-bottom: 1rem;
     }

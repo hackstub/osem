@@ -3,12 +3,6 @@ fr:
     submit: Valider
     all: Tout
     hour: heure
-    total: total
-    running: en cours
-    sleeping: en veille
-    stopped: arrêtés
-    zombie: zombie
-    spaces: Espaces
   menu:
     program: Programme
     presentation: Présentation
@@ -49,11 +43,20 @@ fr:
             - name: ouverture
               content: 10h -> 18h
             - name: plénières
-              content: 18h -> 20h Amphithéâtre A9 (Atrium)
-        activities: Activités
-      salt:
-        text: L'ancienne équipe du thème Sécurité organise à Lille du 2 au 4 juillet, Pass the SALT, un événement dédiés à la sécurité informatique et aux logiciels libre.
-        url: "https://2018.pass-the-salt.org/"
+              content: 18h -> 20h Amphithéâtre AT8 (Atrium)
+        spaces:
+          title: Espaces
+        activities:
+          title: Activités
+          total: total
+          running: en cours
+          sleeping: en veille
+          stopped: arrêtés
+          zombie: zombie
+        salt:
+          title: Pass the SALT
+          text_html: L'ancienne équipe du thème Sécurité organise à Lille du 2 au 4 juillet, %{href}, un événement dédiés à la sécurité informatique et aux logiciels libre.
+          url: "https://2018.pass-the-salt.org/"
     program:
       presentation:
         title: Présentation
