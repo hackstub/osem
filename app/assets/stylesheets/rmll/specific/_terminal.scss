@@ -20,6 +20,9 @@
 
   .folder {
     color: $blue;
+    a {
+      color: $blue;
+    }
   }
 
   a {
@@ -115,4 +118,15 @@
     }
   }
 
+}
+
+#sponsors {
+  .ascii {
+    margin-bottom: 4rem;
+    margin-top: 2rem;
+  }
+
+  .folder {
+    margin-top: 2rem;
+  }
 }
