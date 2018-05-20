@@ -433,22 +433,22 @@ fr:
             url: "http://2006.rmll.info"
             city: Vandœuvre-lès-Nancy
           - txt: "drwxr-xr-x undefined          05:09 JUL 2005"
-            url: ""
+            url:
             city: Dijon
           - txt: "drwxr-xr-x ABUL               06:10 JUL 2004"
-            url: ""
+            url:
             city: Bordeaux
           - txt: "drwxr-xr-x undefined          09:12 JUL 2003"
-            url: ""
+            url:
             city: Metz
           - txt: "drwxr-xr-x ABUL               09:13 JUL 2002"
-            url: ""
+            url:
             city: Bordeaux
           - txt: "drwxr-xr-x ABUL               04:08 JUL 2001"
-            url: ""
+            url:
             city: Bordeaux
           - txt: "drwxr-xr-x ABUL               05:09 JUL 2000"
-            url: ""
+            url:
             city: Bordeaux
       sponsors:
         title: Partenaires

@@ -1,26 +1,24 @@
-%section#manLike
-  .bar2
-
-  #window-content2
-    #content2
-      .indent-more
-        %h2= t(".intro.title").upcase
-        - add_text(t(".intro.text"))
+%section#man.term.halfscreen
+  - add_bar("Terminal", "man")
+  .content
+    %h1= t(".title") + " - Manual"
+    %h2= t(".intro.title").upcase
+    - add_text(t(".intro.text"))
+    %br
+    %h2= t(".liberties.title").upcase
+    %ul
+      = t(".liberties.desc")
+      %br
+      - t(".liberties.desc_items").each do |elem|
         %br
-        %h2= t(".liberties.title").upcase
-        %ul
-          = t(".liberties.desc")
-          %br
-          - t(".liberties.desc_items").each do |elem|
-            %br
-            %li= elem.html_safe
+        %li= elem.html_safe
+    %br
+    %p= t(".middle")
+    %br
+    %h2= t(".advantages.title").upcase
+    %ul
+      = t(".advantages.desc")
+      %br
+      - t(".advantages.desc_items").each do |elem|
         %br
-        %p= t(".middle")
-        %br
-        %h2= t(".advantages.title").upcase
-        %ul
-          = t(".advantages.desc")
-          %br
-          - t(".advantages.desc_items").each do |elem|
-            %br
-            %li= elem
+        %li= elem

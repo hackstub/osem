@@ -4,7 +4,7 @@
   line-height: $terminal-line-height;
   font-family: $font-mono;
   background-color: $color-dark;
-  color: $color-light;
+  color: $color-grey-medium;
 
 
   .split-content .ascii {
@@ -45,6 +45,9 @@
 #neofetch {
   ul {
     margin-left: 2rem;
+  }
+  .ascii {
+    color: white;
   }
 }
 
@@ -117,6 +120,7 @@
   .ascii {
     margin-bottom: 4rem;
     margin-top: 2rem;
+    color: white;
     p {
       @media (max-width: 880px) {
         font-size: 1.2vw;
@@ -130,72 +134,29 @@
   }
 }
 
-#manLike {
-
-  .bar2 {
-    @include simple_bar("Qu'est-ce que le Libre ?");
-    background-color: $color-grey-darker;
-    width: 50%;
-    height: 2rem;
-    line-height: 2rem;
-    position: fixed;
-    border-top: 2px solid $color-grey-lighter;
-
-    &:before {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      margin-left: 0;
-    }
-    &:after {
-      content: none;
-    }
-  }
-
-  #window-content2 {
-    width: 50%;
-    height: calc(100% - 4rem);
-    bottom: 0;
-    position: absolute;
-    overflow-y: hidden;
-    overflow-x: hidden;
+#man {
+  .content {
     line-height: 1.5rem;
-    background-color: black;
+    padding-left: 1rem;
 
-    li {
-      &:before{
-        content: "-";
-      }
+    h1 {
+      margin-bottom: 1rem;
+      text-align: center;
     }
 
-    .indent-more {
-      p, ul {
-        padding-left: 4rem;
-      }
-    }
-
-    a {
+    h2, a, b {
       color: white;
     }
-
-    h2 {
+    h2, b {
       font-weight: bold;
-      color: white;
     }
 
-    b {
-      font-weight:bold;
-      color: white;
+    p, ul {
+      margin-left: 4rem;
     }
 
-    #content2 {
-      width: 50vw;
-      height: 100%;
-      left: 0;
-      color: $color-grey-medium;
-      position: relative;
-      padding: 2rem;
-      padding-left: 0;
+    li::before {
+      content: "-";
     }
   }
 }
