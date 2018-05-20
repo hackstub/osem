@@ -12,15 +12,15 @@
               = link_to t("menu.presentation"), "/program/presentation"
             %li{ role:"menuitem" }
               = link_to t("menu.calendar"), "/program/calendar"
-            %li{ role:"menuitem" }
-              = link_to t("menu.night"), "/program/night"
-            %li{ role:"menuitem" }
-              = link_to t("menu.meal"), "/program/meal"
+            -# %li{ role:"menuitem" }
+            -#   = link_to t("menu.night"), "/program/night"
+            -# %li{ role:"menuitem" }
+            -#   = link_to t("menu.meal"), "/program/meal"
         %li{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false" }
           %a{ tabindex:0 }= t("menu.village")
           %ul.dropdown.dropdown-menu{ role:"menu", "aria-hidden":"true" }
             %li{ role:"menuitem" }
-              = link_to t("menu.cfb"), "/village/call"
+              = link_to t("menu.cfb"), "/village/cfb"
         %li{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false" }
           %a{ tabindex:0 }= t("menu.info")
           %ul.dropdown.dropdown-menu{ role:"menu", "aria-hidden":"true" }
@@ -46,13 +46,9 @@
             -# %li{ role:"menuitem" }
             -#   = link_to "Boutique", "#"
             %li{ role:"menuitem" }
-              = link_to t("menu.volunteering"), "#"
+              = link_to t("menu.volunteering"), "/participate/volunteering"
             %li{ role:"menuitem" }
               = link_to t("menu.donate"), "/participate/donate"
-            -# %li{ role:"menuitem" }
-            -#   = link_to "Héberger", "#"
-            -# %li{ role:"menuitem" }
-            -#   = link_to "Financement participatif", "#"
             %li{ role:"menuitem" }
               = link_to t("menu.cfp"), "#"
         -# %li{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false" }
@@ -86,26 +82,22 @@
 
   %ul{ role:"menubar" }
     %li{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false" }
-      %a{ tabindex:0 } User
+      %a{ tabindex:0 }= t("menu.user")
       %ul.dropdown.dropdown-menu{ role:"menu", "aria-hidden":"true" }
         %li{ role:"menuitem" }
-          = link_to "Connection", admin_path
+          = link_to t("menu.connection"), admin_path
         %li{ role:"menuitem" }
-          = link_to "Langue", "#"
-        %li{ role:"menuitem" }
-          = link_to "Outils", "#"
+          = link_to t("menu.langue"), "#"
     %li{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false" }
-      %a{ tabindex:0 } Notifications
+      %a{ tabindex:0 }= t("menu.network")
       %ul#last-menu.dropdown.dropdown-menu{ role:"menu", "aria-hidden":"true" }
-        %li{ role:"menuitem" }
-          = link_to "Blog", "#"
-        %li{ role:"menuitem" }
-          = link_to "Radio RMLL", "#"
+        -# %li{ role:"menuitem" }
+        -#   = link_to "Blog", "#"
+        -# %li{ role:"menuitem" }
+        -#   = link_to "Radio RMLL", "#"
         %li{ role:"menuitem" }
           = link_to "Mastodon", "https://mamot.fr/@rmll2018"
         %li{ role:"menuitem" }
-          = link_to "Liste de diffusion", "#"
+          = link_to "Liste de diffusion", "https://listes2018.rmll.info/subscribe/presse"
         %li{ role:"menuitem" }
-          = link_to "IRC", "https://webchat.freenode.net/"
-        %li{ role:"menuitem" }
-          = link_to "Matrix", "#"
+          = link_to "IRC #rmll-2018", "https://webchat.freenode.net/"

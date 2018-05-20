@@ -36,6 +36,11 @@ fr:
     conduct_code: Code de conduite
     legal: Mentions légales
     site_map: Plan du site
+    user: User
+    connection: Connection
+    lang: langue
+    network: Réseau
+    mailing: liste de diffusion
   rmll:
     home:
       background:
