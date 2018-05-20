@@ -6,27 +6,29 @@
   background-color: $color-dark;
   color: $color-light;
 
-  .bar {
-    @include simple_bar("terminal");
-  }
 
-  .content {
-    padding: 2rem;
-  }
-
-  .color {
-    color: $color-cli;
-  }
-
-  .folder {
-    color: $blue;
-    a {
-      color: $blue;
+  .split-content .ascii {
+    margin: 2rem 0;
+    @media (min-width: 600px) {
+      margin-right: 4rem;
     }
   }
 
-  a {
-    color: $color-light;
+    .split-content {
+      @media (min-width: 600px) {
+        display: flex;
+        align-items: center;
+      }
+
+    }
+
+  .folder, .folder a {
+    color: $yellow;
+  }
+  &.invert  {
+    .folder, .folder a {
+      color: $color-main;
+    }
   }
 
   .result p {
@@ -35,36 +37,14 @@
 
   .ascii p {
     white-space: pre;
-    // color: $color-cli;
   }
 }
 
 
+
 #neofetch {
-  height: 100%;
-  padding-bottom: 3rem;
-  width: 100%;
-
-  @media (min-width: 1150px) {
-    width: 50%;
-  }
-
-  .sub-content {
-    @media (min-width: 600px) {
-        display: flex;
-        align-items: center;
-    }
-    .ascii {
-      margin: 2rem 0;
-      @media (min-width: 600px) {
-          margin-right: 4rem;
-      }
-
-    }
-
-    ul {
-      margin-left: 2rem;
-    }
+  ul {
+    margin-left: 2rem;
   }
 }
 
@@ -137,6 +117,12 @@
   .ascii {
     margin-bottom: 4rem;
     margin-top: 2rem;
+    p {
+      @media (max-width: 880px) {
+        font-size: 1.2vw;
+        line-height: 1.2vw;
+      }
+    }
   }
 
   .folder {

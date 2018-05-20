@@ -1,9 +1,9 @@
-%section#neofetch.term
-  .bar
+%section#neofetch.term.halfscreen
+  - add_bar("Terminal", "neofetch")
   .content
     - term_ps1("user", "~/about", "neofetch")
     -# %h1 Organisateurs
-    .sub-content
+    .split-content
       .ascii{ "aria-hidden":"true" }
         %p= "          `-:/++++/:.`          "
         %p= "      `/ohddddddddddddyo:`      "
@@ -22,9 +22,9 @@
         %p= "      `/shddddddddddddyo:`      "
         %p= "          .-/+++++/:-`          "
       %article
-        %p<
+        %p
           %span.color OS:
-          RMLL-OS v18.0
+          RMLL-OS v0.18
         %p
           %span.color Host:
           Hackstub

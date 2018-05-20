@@ -1,5 +1,5 @@
 %section#sponsors.fullscreen.term
-  .bar
+  - add_bar("Terminal", "sponsors")
   .content
     - term_ps1("user", "~/about/logos", "cat *.asc")
     .ascii{ "aria-hidden":"true" }
@@ -19,7 +19,7 @@
       %p= "                    /s-    +o-`   `:s+   .so    -s+.`   ./o-"
       %p= "                    /s.    `:+ooooo+-    `s+     `:+ooooo/. "
 
-      %p.folder= link_to t(".list")[0][:name], t(".list")[0][:url]
+    %p.folder= link_to t(".list")[0][:name], t(".list")[0][:url]
 
     .ascii{ "aria-hidden":"true" }
       %p= " ./ooo+-  ``                           /ho                                                                "
@@ -32,7 +32,7 @@
       %p= "                                                                          `so::::/+m                      "
       %p= "                                                                          :N.     :/                      "
       %p= "                                                                           ./:----`                       "
-      %p.folder= link_to t(".list")[1][:name], t(".list")[0][:url]
+    %p.folder= link_to t(".list")[1][:name], t(".list")[1][:url]
 
     .ascii{ "aria-hidden":"true" }
       %p= "┌─────────────────────────────────────────────────────────────────┬───┬───┬───────┬───────┐                "
@@ -54,7 +54,7 @@
       %p= "             │      │   │                                                                        `ooo`    │"
       %p= "             │      │   │                                                                                 │"
       %p= "             └──────┴───┴─────────────────────────────────────────────────────────────────────────────────┘"
-      %p.folder= link_to t(".list")[2][:name], t(".list")[0][:url]
+    %p.folder= link_to t(".list")[2][:name], t(".list")[2][:url]
 
     .ascii{ "aria-hidden":"true" }
       %p= "   `./+oo+:.                                    -`  -+++++++//-.`                                ./+++:`"
@@ -68,7 +68,7 @@
       %p= ".smMNy+:/yMMMN: .MMMM+     yMMMh` +/`   `-+ydNMMM/  oMMMN+///+ymMMMNo`   `+dNMMMMMMMMNh/      -hMMMNs.  "
       %p= ".omMMMMMMMMMm+  `++++.     :+++:            `dMMM/  oMMMMMMMMMMMNdo.       `-+syhhys/-`        `/mMMMm+`"
       %p= "  .:osyhyyo:.                                +sss-  :yssssssss+:.`                               .ossss/"
-      %p.folder= link_to t(".list")[3][:name], t(".list")[0][:url]
+    %p.folder= link_to t(".list")[3][:name], t(".list")[3][:url]
 
     .ascii{ "aria-hidden":"true" }
       %p= "`/////      `/////.-////     .//// /////    :////`-/////`   /////:"
@@ -85,4 +85,4 @@
       %p= "-Mh--oMs hM:--oMo  `ddmd` --oMs-- hM`.md:--/Nh`:Mo   NN .Md::::.  "
       %p= "-Mdosso. hMosNN+  .mN+oMm.  /M+   hM`+M+ `. hM-:Mo   NN .Md++++`  "
       %p= "-mo      ym` `omo.dh....hd. /m+   ym` +hyymdNh.`sdssyd/ .mdssss+  "
-      %p.folder= link_to t(".list")[4][:name], t(".list")[0][:url]
+    %p.folder= link_to t(".list")[4][:name], t(".list")[4][:url]

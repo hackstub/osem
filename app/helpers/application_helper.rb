@@ -219,4 +219,11 @@ module ApplicationHelper
       haml_tag elem + className, text
     end
   end
+
+  def add_bar(soft_type, name)
+    haml_tag ".bar" do
+      haml_tag "span", soft_type + " - " + name
+      haml_tag "a", t("common.close"), href:root_path
+    end
+  end
 end
