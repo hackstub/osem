@@ -12,25 +12,17 @@ html, body, main {
   height: 100%;
 }
 body {
+  background-image: $halftone-bg;
   background-color: $color-main;
 }
 
 main {
+  height: calc(100% - 2rem);
   overflow: hidden;
 }
 
-section {
-  overflow: auto;
-  margin-top: 2rem;
-
-  &.fullscreen {
-    height: calc(100% - 2rem);
-    width: 100%;
-  }
-
-}
-
 @import "menu";
+@import "window";
 @import "specific/home";
 @import "specific/terminal";
 @import "specific/popup";

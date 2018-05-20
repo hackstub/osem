@@ -109,14 +109,15 @@ section#home-section {
   }
 
   h2 {
-    font-size: 1.2rem;
-    line-height: 1.2rem;
+    font-size: 2rem;
+    line-height: 2.5rem;
     @include phone {
       color: black;
       background-color: white;
       padding: 0.2rem 1rem;
     }
     @include screen {
+      margin-top: 0.8rem;
       margin-left: 0.15rem;
 
       span {

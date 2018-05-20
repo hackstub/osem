@@ -1,6 +1,7 @@
 fr:
   common:
     submit: Valider
+    close: Fermer
     all: Tout
     hour: heure
     july: juillet
@@ -461,7 +462,7 @@ fr:
           - name: Le Shadok, fabrique du numérique
             url: "http://www.shadok.strasbourg.eu/"
           - name: Les éditions Diamond
-            url: ""
+            url: "https://www.editions-diamond.fr/"
       organisers:
         title: Organisateurs
         text: L'édition 2018 des RMLL est organisée par la fédération alsace.netlib.re, portée par l'association Hackstub. La fédération alsacienne du Libre et du Hack est composée des associations et collectifs Hackstub, Alsace Réseau Neutre (ARN), Radio Rhino, Seeraiwer, l'AIUS, Desclicks, sxb.so et Lilo.

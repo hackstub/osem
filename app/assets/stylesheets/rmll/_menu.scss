@@ -1,16 +1,20 @@
 nav {
-  position: fixed;
-  z-index: 3;
-  height: 2rem;
-  width: 100%;
+  position: relative;
+  background-image: $halftone-nav;
+  z-index: 10;
+  height: 2rem; width: 100%;
 
-  background-color: black;
+  background-color: white;
   font-size: 0.95rem;
   color: white;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  #home-link {
+    font-size: 1.7rem;
+  }
 
   ul {
     background-color: black;
@@ -87,11 +91,24 @@ nav {
     }
 
     .dropdown {
-      padding: 0.5rem 0 1rem 0;
+      padding-top: 0.5rem;
     }
 
-    .dropdown-menu a {
-      padding-right: 3rem;
+    .dropdown-menu {
+      a {
+        padding-right: 3rem;
+      }
+
+      &::after {
+        content:" ";
+        display: block;
+        white-space: pre;
+        top: 0.8rem;
+        position: relative;
+        width: 100%;
+        background-color: white;
+        background-image: $halftone-nav;
+      }
     }
 
     .dropdown-submenu {
