@@ -1,7 +1,5 @@
-%section#legal.over-background.popup
-  .bar
-    .effect
-
+%section#legal.over-background.popup.invert
+  - add_popup_bar("Legal Notice")
   .content
     %h1= t(".title")
     .sub-content
@@ -10,9 +8,9 @@
         - add_text(t(".text.#{title}.text"))
 
     %button
-      .effect
-      %span too long; did'nt read
+      %span still too long; did'nt read
 
 
 %section.fullscreen#home-section.no-select{ "aria-hidden":"true" }
   = render "rmll/background"
+  = render "rmll/conky"

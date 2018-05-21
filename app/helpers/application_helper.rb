@@ -226,4 +226,10 @@ module ApplicationHelper
       haml_tag "a", t("common.close"), href:root_path
     end
   end
+
+  def add_popup_bar(text)
+    haml_tag ".bar" do
+      haml_tag "span", text
+    end
+  end
 end

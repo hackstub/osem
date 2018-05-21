@@ -2,12 +2,17 @@
 
 .popup {
   font-family: $font-sans;
-  background-color: $color-light;
-  border: 1px solid black;
-  border-radius: 4px;
+  border-top-left-radius: 0.5rem; border-top-right-radius: 0.5rem;
+
+  .bar {
+    height: 2rem;
+    background-color: black;
+    border: none;
+  }
 
   .content {
     padding: 1.5rem;
+    border: 0.2rem solid black;
   }
 
   .sub-content {
@@ -27,18 +32,26 @@
 }
 
 #legal {
-  width: 40rem;
-  margin-top: 5%;
-  margin-left: calc(50% - 20rem);
+  width: 100%;
+    height: 100%;
 
-  @include ugly_bar("Legal Notice", $blue);
-  @include ugly_button($color-light, $orange);
+  .content {
+    height: 100%;
+  }
+
+  @media (min-width: 550px) {
+    height: auto; width: 40rem;
+    margin-top: 5%;
+    margin-left: calc(50% - 20rem);
+  }
 
   .sub-content {
+    overflow-y: scroll;
+    height: 15rem;
     font-family: $font-mono;
     font-size: 0.9rem;
-    height: 15rem;
-    overflow-y: scroll;
+    border: 0.2rem solid black;
+
 
     h3 {
       margin-bottom: 0.5rem;
@@ -51,5 +64,40 @@
     p:last-child {
       padding-bottom: 1rem;
     }
+  }
+
+  button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    font-family: $font-mono;
+    background-color: white;
+    border: 0.2rem solid black;
+    border-radius: 0.5rem;
+  }
+}
+
+#conduct-code {
+  // max-width: 60rem;
+  // margin: auto;
+  background-image: $halftone-window;
+  background-color: white;
+  font-family: $font-sans;
+  font-size: 1.3rem;
+
+  .content {
+    max-width: 60rem;
+    height: calc(100% - 3rem);
+    background-color: white;
+    margin: auto;
+    padding: 5rem;
+  }
+
+  h2 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    border-bottom: 0.2rem solid black;
+  }
+  p {
+    margin: 1rem 0;
   }
 }
