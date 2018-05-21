@@ -1,2 +1,128 @@
-%section
-  %h1 Plan du site
+%section.term.halfscreen
+  - add_bar("Terminal", "tree")
+
+  .content
+    -# %h1= t(".title")
+    - term_ps1("user", "~/about", "tree site_map/")
+    .result
+      %ul
+        menu
+        %li
+          %a= "├── " + t("menu.program")
+          %ul
+            %li
+              %span.pre-wrap= "│   ├── "
+              = link_to t("menu.presentation"), "/program/presentation"
+            %li
+              %span.pre-wrap= "│   └── "
+              = link_to t("menu.calendar"), "/program/calendar"
+            -# %li
+            -#   = link_to t("menu.night"), "/program/night"
+            -# %li
+            -#   = link_to t("menu.meal"), "/program/meal"
+        %li
+          %a= "├── " + t("menu.village")
+          %ul
+            %li
+              %span.pre-wrap= "│   └── "
+              = link_to t("menu.cfb"), "/village/cfb"
+        %li
+          %a= "├── " + t("menu.info")
+          %ul
+            %li
+              %span.pre-wrap= "│   ├── "
+              = link_to t("menu.map"), "/info/map"
+            %li
+              %span.pre-wrap= "│   ├── "
+              = link_to t("menu.access"), "/info/access"
+            %li
+              %span.pre-wrap= "│   ├── "
+              = link_to t("menu.lodging"), "/info/lodging"
+            %li
+              %span.pre-wrap= "│   ├── "
+              = link_to t("menu.food"), "/info/food"
+            -# %li
+            -#   = link_to "Réservation Repas du Libre", "#"
+            %li
+              %span.pre-wrap= "│   └── "
+              = link_to t("menu.tourism"), "/info/tourism"
+            -# %li
+            -#   = link_to "Réseau internet", "#"
+            -# %li
+            -#   = link_to "Se rendre à Strasbourg", "#"
+        %li
+          %a= "├── " + t("menu.participate")
+          %ul
+            -# %li
+            -#   = link_to "Boutique", "#"
+            %li
+              %span.pre-wrap= "│   ├── "
+              = link_to t("menu.volunteering"), "/participate/volunteering"
+            %li
+              %span.pre-wrap= "│   ├── "
+              = link_to t("menu.donate"), "/participate/donate"
+            %li
+              %span.pre-wrap= "│   └── "
+              = link_to t("menu.cfp"), "#"
+        -# %li
+        -#   %a Médias
+        -#   %ul
+        -#     %li
+        -#       = link_to "Communiqués/Dossier de presse", "#"
+        -#     %li
+        -#       = link_to "Communication graphique", "#"
+        -#     %li
+        -#       = link_to "Live", "#"
+        -#     %li
+        -#       = link_to "Vidéos", "#"
+        %li
+          %a= "├── " + t("menu.about")
+          %ul
+            %li
+              %span.pre-wrap= "│   ├── "
+              = link_to t("menu.libre"), "/about/libre"
+            %li
+              %span.pre-wrap= "│   ├── "
+              = link_to t("menu.history"), "/about/history"
+            %li
+              %span.pre-wrap= "│   ├── "
+              = link_to t("menu.sponsors"), "/about/sponsors"
+            %li
+              %span.pre-wrap= "│   ├── "
+              = link_to t("menu.organisers"), "/about/organisers"
+            %li
+              %span.pre-wrap= "│   ├── "
+              = link_to t("menu.legal"), "/about/legal"
+            %li
+              %span.pre-wrap= "│   ├── "
+              = link_to t("menu.conduct_code"), "/about/conduct_code"
+            %li
+              %span.pre-wrap= "│   └── "
+              = link_to t("menu.site_map"), "/about/site_map"
+
+      %ul
+        %li
+          %a= "├── " + t("menu.user")
+          %ul
+            %li
+              %span.pre-wrap= "│   ├── "
+              = link_to t("menu.connection"), admin_path
+            %li
+              %span.pre-wrap= "│   └── "
+              = link_to t("menu.langue"), "#"
+        %li
+          %a= "├── " + t("menu.network")
+          %ul#last-menu
+            -# %li
+            -#   = link_to "Blog", "#"
+            -# %li
+            -#   = link_to "Radio RMLL", "#"
+            %li
+              %span.pre-wrap= "│   ├── "
+              = link_to "Mastodon", "https://mamot.fr/@rmll2018"
+            %li
+              %span.pre-wrap= "│   ├── "
+              = link_to "Liste de diffusion", "https://listes2018.rmll.info/subscribe/presse"
+            %li
+              %span.pre-wrap= "└───└── "
+              = link_to "IRC #rmll-2018", "https://webchat.freenode.net/"
