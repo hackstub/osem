@@ -1,8 +1,23 @@
-%section#cfb.term
-  .bar
+%section.gallery
+  .img-container
+    - add_bar("Gallery", "call.jpeg")
+    .img-view
+      %h1= "rmll 2018".upcase
+      .box-container
+        .second-container
+          .box-left
 
-  .content
-    %h2= t(".title")
-    - add_text(t(".text"))
-    %p= t(".call")
-    %a= t(".call-url")
+            %p.date= "7-12"
+            %p.month= t("common.july").upcase
+
+        .box-right
+          %p.where= "Village associatif, Escarpe + Atrium, de 10h à 18h"
+          %p.msg= t(".message")
+      %h2= "appel".upcase
+      %h2.huge= "à stand".upcase
+      .text-render
+        - t(".call-bis").each do |elem|
+          %p= elem.upcase
+      %a= link_to t(".call-url"), t(".call-url")
+      .end-content
+        %p= t(".text")

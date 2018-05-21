@@ -27,6 +27,7 @@ main {
 @import "specific/terminal";
 @import "specific/popup";
 @import "specific/spreadsheet";
+@import "specific/call";
 
 .noselect {
   -webkit-touch-callout: none; // iOS Safari
