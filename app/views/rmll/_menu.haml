@@ -9,33 +9,33 @@
           %a{ tabindex:0 }= t("menu.program")
           %ul.dropdown.dropdown-menu{ role:"menu", "aria-hidden":"true" }
             %li{ role:"menuitem" }
-              = link_to t("menu.presentation"), "/program/presentation"
+              = link_to t("menu.presentation"), rmll_path(:heading => "program", :page => "presentation")
             %li{ role:"menuitem" }
-              = link_to t("menu.calendar"), "/program/calendar"
+              = link_to t("menu.calendar"), rmll_path(:heading => "program", :page => "calendar")
             -# %li{ role:"menuitem" }
-            -#   = link_to t("menu.night"), "/program/night"
+            -#   = link_to t("menu.night"), rmll_path(:heading => "program", :page => "night")
             -# %li{ role:"menuitem" }
-            -#   = link_to t("menu.meal"), "/program/meal"
+            -#   = link_to t("menu.meal"), rmll_path(:heading => "program", :page => "meal")
         %li{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false" }
           %a{ tabindex:0 }= t("menu.village")
           %ul.dropdown.dropdown-menu{ role:"menu", "aria-hidden":"true" }
             %li{ role:"menuitem" }
-              = link_to t("menu.cfb"), "/village/cfb"
+              = link_to t("menu.cfb"), rmll_path(:heading => "village", :page => "cfb")
         %li{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false" }
           %a{ tabindex:0 }= t("menu.info")
           %ul.dropdown.dropdown-menu{ role:"menu", "aria-hidden":"true" }
             %li{ role:"menuitem" }
-              = link_to t("menu.map"), "/info/map"
+              = link_to t("menu.map"), rmll_path(:heading => "info", :page => "map")
             %li{ role:"menuitem" }
-              = link_to t("menu.access"), "/info/access"
+              = link_to t("menu.access"), rmll_path(:heading => "info", :page => "access")
             %li{ role:"menuitem" }
-              = link_to t("menu.lodging"), "/info/lodging"
+              = link_to t("menu.lodging"), rmll_path(:heading => "info", :page => "lodging")
             %li{ role:"menuitem" }
-              = link_to t("menu.food"), "/info/food"
+              = link_to t("menu.food"), rmll_path(:heading => "info", :page => "food")
             -# %li{ role:"menuitem" }
             -#   = link_to "Réservation Repas du Libre", "#"
             %li{ role:"menuitem" }
-              = link_to t("menu.tourism"), "/info/tourism"
+              = link_to t("menu.tourism"), rmll_path(:heading => "info", :page => "tourism")
             -# %li{ role:"menuitem" }
             -#   = link_to "Réseau internet", "#"
             -# %li{ role:"menuitem" }
@@ -46,9 +46,9 @@
             -# %li{ role:"menuitem" }
             -#   = link_to "Boutique", "#"
             %li{ role:"menuitem" }
-              = link_to t("menu.volunteering"), "/participate/volunteering"
+              = link_to t("menu.volunteering"), rmll_path(:heading => "participate", :page => "volunteering")
             %li{ role:"menuitem" }
-              = link_to t("menu.donate"), "/participate/donate"
+              = link_to t("menu.donate"), rmll_path(:heading => "participate", :page => "donate")
             %li{ role:"menuitem" }
               = link_to t("menu.cfp"), "#"
         -# %li{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false" }
@@ -66,19 +66,19 @@
           %a{ tabindex:0 }= t("menu.about")
           %ul.dropdown.dropdown-menu{ role:"menu", "aria-hidden":"true" }
             %li{ role:"menuitem" }
-              = link_to t("menu.libre"), "/about/libre"
+              = link_to t("menu.libre"), rmll_path(:heading => "about", :page => "libre")
             %li{ role:"menuitem" }
-              = link_to t("menu.history"), "/about/history"
+              = link_to t("menu.history"), rmll_path(:heading => "about", :page => "history")
             %li{ role:"menuitem" }
-              = link_to t("menu.sponsors"), "/about/sponsors"
+              = link_to t("menu.sponsors"), rmll_path(:heading => "about", :page => "sponsors")
             %li{ role:"menuitem" }
-              = link_to t("menu.organisers"), "/about/organisers"
+              = link_to t("menu.organisers"), rmll_path(:heading => "about", :page => "organisers")
             %li{ role:"menuitem" }
-              = link_to t("menu.legal"), "/about/legal"
+              = link_to t("menu.legal"), rmll_path(:heading => "about", :page => "legal")
             %li{ role:"menuitem" }
-              = link_to t("menu.conduct_code"), "/about/conduct_code"
+              = link_to t("menu.conduct_code"), rmll_path(:heading => "about", :page => "conduct_code")
             %li{ role:"menuitem" }
-              = link_to t("menu.site_map"), "/about/site_map"
+              = link_to t("menu.site_map"), rmll_path(:heading => "about", :page => "site_map")
 
   %ul{ role:"menubar" }
     %li{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false" }
@@ -87,7 +87,12 @@
         %li{ role:"menuitem" }
           = link_to t("menu.connection"), admin_path
         %li{ role:"menuitem" }
-          = link_to t("menu.langue"), "#"
+          %a{ tabindex:0 }= t("menu.langue")
+          %ul.dropdown.dropdown-submenu{ role:"menu", "aria-hidden":"true" }
+            %li
+              = link_to "FR", url_for(params.permit(:heading, :page, :sub).merge(:locale => :fr))
+            %li
+              = link_to "EN", url_for(params.permit(:heading, :page, :sub).merge(:locale => :en))
     %li{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false" }
       %a{ tabindex:0 }= t("menu.network")
       %ul#last-menu.dropdown.dropdown-menu{ role:"menu", "aria-hidden":"true" }

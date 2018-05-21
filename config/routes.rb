@@ -214,12 +214,10 @@ Osem::Application.routes.draw do
 
   get '/admin' => redirect('/admin/conferences')
 
-  scope module: 'rmll' do
-    get "home" => "rmll#index"
-
-    get ":heading" => "rmll#static_pages"
-    get ":heading/:page" => "rmll#static_pages"
-    get ":heading/:page/:sub" => "rmll#static_pages"
+  scope("/:locale", locale: Regexp.new(I18n.available_locales.map(&:to_s).join("|"))) do
+    scope module: 'rmll' do
+      get "/(:heading(/:page(/:sub)))", to: "rmll#index", as: :rmll
+    end
   end
 
   unless ENV['OSEM_ROOT_CONFERENCE'].blank?
