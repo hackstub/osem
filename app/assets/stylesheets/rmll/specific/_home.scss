@@ -36,15 +36,15 @@ section#home-section {
     span {
       padding: 0.2rem 1rem;
 
-      background-color: white;
-      color: black;
+      background-color: $color-white;
+      color: $color-black;
       font-weight: bold;
     }
   }
 
   .process {
     background-color: $color-cli;
-    color: black;
+    color: $color-black;
     padding: 0 1rem;
   }
 
@@ -64,7 +64,7 @@ section#home-section {
   flex-direction: column;
   width: 100%;
   height: 100%;
-  color: white;
+  color: $color-white;
   @include screen {
     padding-left: 5rem;
   }
@@ -85,7 +85,7 @@ section#home-section {
       margin-left: 0.15rem;
 
       span {
-        background-color: black;
+        background-color: $color-black;
         padding: 0.4rem 1rem;
       }
     }
@@ -112,8 +112,8 @@ section#home-section {
     font-size: 2rem;
     line-height: 2.5rem;
     @include phone {
-      color: black;
-      background-color: white;
+      color: $color-black;
+      background-color: $color-white;
       padding: 0.2rem 1rem;
     }
     @include screen {
@@ -121,8 +121,8 @@ section#home-section {
       margin-left: 0.15rem;
 
       span {
-        color: black;
-        background-color: white;
+        color: $color-black;
+        background-color: $color-white;
         padding: 0.2rem 1rem;;
       }
     }

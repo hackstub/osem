@@ -4,6 +4,8 @@ $color-dark: #0f0f0f;
 $color-dark-select: #272727;
 $color-light: #d5d5d5;
 $color-cli: #00ffa5;
+$color-black: black;
+$color-white: white;
 
 $root-font-size: 0.8em;
 $terminal-line-height: 1.3rem;
@@ -11,6 +13,10 @@ $terminal-line-height: 1.3rem;
 $halftone-bg: image-url("halftone-bg.png");
 $halftone-nav: image-url("halftone-nav.png");
 $halftone-window: image-url("halftone-window.png");
+
+$border: 0.2rem solid $color-black;
+$border-rad: 4px;
+$border-rad-button: 0.5rem;
 
 $color-grey-medium: #b3b3b3;
 $color-shadow: rgba(100,100,100,0.3);

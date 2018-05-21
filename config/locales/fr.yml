@@ -11,6 +11,9 @@ fr:
     tuesday: Mardi
     wednesday: Mercredi
     thursday: Jeudi
+    description: "Description : "
+    duration: "Durée : "
+    public: "Public : "
   menu:
     program: Programme
     presentation: Présentation
@@ -95,65 +98,64 @@ fr:
             - title: Conférences
               text:
                 - De format classique, interactive ou non, la conférence permet de mettre en avant un progrès technique, une problématique, ou toute autre idée ou projet pertinent.
-              duration: "Durée : 30 min ou 1 h, plus interactions avec l'audience, sauf exceptions."
-              public: "Public : 50, 210 ou 520 personnes."
+              duration: 30 min ou 1 h, plus interactions avec l'audience, sauf exceptions.
+              public: 50, 210 ou 520 personnes.
             - title: Ateliers
               text:
                 - Destinés ou non à un public spécifique, l'atelier permet une découverte ou un approfondissement d'une pratique précise.
                 - Nous vous demandons de présenter la méthode pédagogique que vous pratiquerez pendant l'atelier.
-              duration: "Durée : par séance(s) de 1 h à 4 h."
-              public: "Public : 50 personnes max."
+              duration: par séance(s) de 1 h à 4 h.
+              public: 50 personnes max.
             - title: Plénières/Tables ronde
               text:
                 - "Les débats ou tables rondes permettent de discuter collectivement de questions majeures sous différentes formes : déambulations, débats mouvants, théâtre-forum, etc."
-              duration: "Durée : 50 min."
-              public: "Public : 50 personnes max."
+              duration: 50 min.
+              public: 50 personnes max.
             - title: Salons de discussions
               text:
                 - Nommés en référence aux t'chats, les salons de discussions permettent la rencontre physique entre toutes les personnes et communautés sensibles à un sujet particulier.
                 - Nous vous encourageons à rendre ces moments accueillants et conviviaux.
-              duration: "Durée : de 1 h à 4 h."
-              public: "Public : 50 personnes max."
+              duration: de 1 h à 4 h.
+              public: 50 personnes max.
             - title: Hackerspaces
               text:
                 - "Nous proposons des hackerspaces, des espaces autogérés dédiés à la bidouille en tout genre : programmation, électronique, audio/vidéo, etc."
                 - Pour permettre aux RMLL 2018 de se dérouler idéalement et de laisser une trace durable à l'aide de toutes les bonnes volontés, un hackerspace sera dédié aux commissions internes comme l'infrastructure réseau, l ou les captations audiovisuelles.
-              duration: "Durée : libre"
-              public: "Public : indéfini"
+              duration: libre
+              public: indéfini
             - title: Création
               text:
                 - "Vous pouvez nous proposer une sorte de résidence d'un à plusieurs jours pour produire des formes libres : théâtre, musique, dessin, cinéma, cuisine, etc."
                 - "La création est à prendre au sens large : il peut aussi bien s'agir d'une projection audiovisuelle que d'une performance musicale, culinaire ou sportive, en intérieur ou extérieur."
-              duration: "Durée : libre."
-              public: "Public : selon les cas."
+              duration: libre.
+              public: selon les cas.
         speakers:
           title: Intervenants
-          text: Le programme définitif sera publié le 5 juin.
           desc: "Pour donner une petite idée, les RMLL 2018 accueilleront notamment :"
           desc_items:
-            - name: la Free Software Foundation Europe (FSFE) ;
+            - name: la Free Software Foundation Europe (FSFE)
               url: "https://fsfe.org/"
-            - name: Framasoft ;
+            - name: Framasoft
               url: "https://framasoft.org/"
-            - name: l'APRIL ;
+            - name: l'APRIL
               url: "https://www.april.org/"
-            - name: APO33 ;
+            - name: APO33
               url: "http://apo33.org/index.php/fr/"
-            - name: CoopCycle ;
+            - name: CoopCycle
               url: "https://coopcycle.org/fr/"
-            - name: Exodus Privacy ;
+            - name: Exodus Privacy
               url: "https://exodus-privacy.eu.org/"
-            - name: Funkwhale ;
+            - name: Funkwhale
               url: "https://funkwhale.audio/"
-            - name: Resonate ;
+            - name: Resonate
               url: "https://resonate.is/"
-            - name: Sugarizer ;
+            - name: Sugarizer
               url: "https://olpc-france.org/sugarizer/"
-            - name: Peertube ;
+            - name: Peertube
               url: "https://joinpeertube.org/fr/"
-            - name: CHATONS ;
+            - name: CHATONS
               url: "https://chatons.org/"
-            - name: LinuxFr.org.
+            - name: LinuxFr.org
               url: "https://linuxfr.org/"
         night:
           title: Soirée du Libre

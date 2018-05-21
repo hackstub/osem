@@ -2,23 +2,24 @@
 
 .popup {
   font-family: $font-sans;
-  border-top-left-radius: 0.5rem; border-top-right-radius: 0.5rem;
+  border-top-left-radius: $border-rad-button;
+  border-top-right-radius: $border-rad-button;
 
   .bar {
     height: 2rem;
-    background-color: black;
+    background-color: $color-black;
     border: none;
   }
 
   .content {
     padding: 1.5rem;
-    border: 0.2rem solid black;
+    border: $border;
   }
 
   .sub-content {
     padding: 1rem;
     margin-top: 1rem;
-    background-color: white;
+    background-color: $color-white;
 
     h3 {
       font-weight: bold;
@@ -50,7 +51,7 @@
     height: 15rem;
     font-family: $font-mono;
     font-size: 0.9rem;
-    border: 0.2rem solid black;
+    border: $border;
 
 
     h3 {
@@ -70,9 +71,9 @@
     margin-top: 1rem;
     padding: 0.5rem 1rem;
     font-family: $font-mono;
-    background-color: white;
-    border: 0.2rem solid black;
-    border-radius: 0.5rem;
+    background-color: $color-white;
+    border: $border;
+    border-radius: $border-rad-button;
   }
 }
 
@@ -80,14 +81,14 @@
   // max-width: 60rem;
   // margin: auto;
   background-image: $halftone-window;
-  background-color: white;
+  background-color: $color-white;
   font-family: $font-sans;
   font-size: 1.3rem;
 
   .content {
     max-width: 60rem;
     height: calc(100% - 3rem);
-    background-color: white;
+    background-color: $color-white;
     margin: auto;
     padding: 5rem;
   }
@@ -95,7 +96,7 @@
   h2 {
     margin-bottom: 2rem;
     font-size: 2rem;
-    border-bottom: 0.2rem solid black;
+    border-bottom: $border;
   }
   p {
     margin: 1rem 0;

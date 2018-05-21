@@ -1,57 +1,112 @@
+%section#vim-like.fullscreen.term
+  - add_bar("Terminal", "/program/presentation.pc")
+  .window
+    %ul.tree-view
+      %li
+        = link_to t(".edu_num.title"), "#ed-num"
+      %li
+        = link_to t(".tracks.title"), "#tracks"
+      %li
+        %ul
+          = link_to t(".formats.title"), "#formats"
+          - t(".formats.list").each do |formatItem|
+            %li
+              %h4= formatItem[:title]
+      %li
+        = link_to t(".speakers.title"), "#speakers"
 
-%section#vimLike
-  .bar
+    .content
+      %p
+        %mark{ "aria-hidden":"true" } raise
+        = t(".intro.program_date")
 
-  #window-content
+      .function
+        %mark{ "aria-hidden":"true" } function
+        %h1= t(".title")
+        %span () {
 
-    #treeView
-      %h2= t(".edu_num.title")
-      %br
-      %h2= t(".tracks.title")
-      %br
-      %h2= t(".formats.title")
-      %ul
-        - t(".formats.list").each do |formatItem|
-          %li
-            %h4= formatItem[:title]
-      %br
-      %h2= t(".speakers.title")
+        .f-content
+          %p
+            %mark{ "aria-hidden":"true" } print
+            = t(".intro.text")
+          %ul
+            %p.var{ "aria-hidden":"true" }
+              %mark var
+              %span activities = [
+            %p.comment
+              %i= "// " + t(".intro.desc")
+            - t(".intro.elems_desc").each do |elem|
+              %li= "'" + elem + "'"
+            %span ]
 
-    #content
-      %p= t(".intro.program_date")
-      %br
-      %p= t(".intro.text")
-      %ul
-        = t(".intro.desc")
-        - t(".intro.elems_desc").each do |elem|
-          %li= elem
-      %br
-      %h2= t(".edu_num.title")
-      %p.indent= t(".edu_num.text")
-      %br
-      %h2= t(".tracks.title")
-      %p.indent= t(".tracks.text")
-      %br
-      %h2= t(".formats.title")
-      %ul
-        - t(".formats.list").each do |formatItem|
-          %li
-            %h4= formatItem[:title]
-            %p
-              - formatItem[:text].each do |text|
-                %p= text
-                %p= formatItem[:duration]
-                %p= formatItem[:public]
-      %br
-      %h2= t(".speakers.title")
-      %p.indent= t(".speakers.text")
-      %p.indent= t(".speakers.desc")
-      %ul
-        - t(".speakers.desc_items").each do |speaker|
-          %li.indent-more= link_to speaker[:name], speaker[:url]
-      %br
-      %h2= t(".night.title")
-      %p.indent= t(".night.text")
-      %br
-      %h2= t(".meal.title")
-      %p.indent= t(".meal.text")
+          .function
+            %mark{ "aria-hidden":"true" } function
+            %h2#edu-num= t(".edu_num.title")
+            %span () {
+            .f-content
+              %p
+                %mark{ "aria-hidden":"true" } return
+                = t(".edu_num.text")
+            %span }
+
+          .function
+            %mark{ "aria-hidden":"true" } function
+            %h2#tracks= t(".tracks.title")
+            %span () {
+            .f-content
+              %p
+                %mark{ "aria-hidden":"true" } return
+                = t(".tracks.text")
+            %span }
+
+          .function
+            %ul
+              %mark{ "aria-hidden":"true" } var
+              %h2#formats= t(".formats.title")
+              %span = {
+              - t(".formats.list").each do |formatItem|
+                %li.list
+                  %h3= "'" + formatItem[:title] + "'"
+                  %span : {
+                  %dl
+                    %p
+                      %dt= t("common.description")
+                      %dd
+                        - formatItem[:text].each do |text|
+                          = text
+                    %p
+                      %dt= t("common.duration")
+                      %dd= formatItem[:duration]
+                    %p
+                      %dt= t("common.public")
+                      %dd= formatItem[:public]
+                  %span },
+              %span }
+
+          .function
+            %ul
+              %mark{ "aria-hidden":"true" } var
+              %h2#speakers= t(".speakers.title")
+              %span = [
+              %p.comment
+                %i= "// " + t(".speakers.desc")
+              - t(".speakers.desc_items").each do |elem|
+                %li= link_to "'" + elem[:name] + "',", elem[:url]
+              %span ]
+
+          .function
+            %mark{ "aria-hidden":"true" } var
+            %h2= t(".night.title")
+            %span =
+            %p.span undefined
+
+          .function
+            %mark{ "aria-hidden":"true" } var
+            %h2= t(".meal.title")
+            %span =
+            %p.span= t(".meal.text")
+
+          .function
+            %mark{ "aria-hidden":"true" } return
+            %span everything
+      %span }
