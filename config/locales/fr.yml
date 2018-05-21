@@ -2,6 +2,7 @@ fr:
   common:
     submit: Valider
     close: Fermer
+    opening: Ouverture
     all: Tout
     hour: heure
     july: juillet
@@ -14,6 +15,9 @@ fr:
     description: "Description : "
     duration: "Durée : "
     public: "Public : "
+    plenary: Plénière
+    confs: Conférences
+    workshops: Ateliers
   menu:
     program: Programme
     presentation: Présentation
@@ -87,7 +91,7 @@ fr:
             - des rencontres entre les différents acteurs du Libre (développeurs, décideurs/agents, publics, utilisateurs) ;
             - des concerts, performances, projections-débats, expositions, etc.
         edu_num:
-          title: Éducation numérique
+          title: Éducation_numérique
           text: "Le fil rouge principal de cette édition sera « Éducation numérique : fabrique de la captivité ou nouvelle émancipation ? ». Cette thématique centrale se retrouvera sur toute la durée du festival. Elle n'est donc pas exclusive, mais nous privilégierons les propositions de formats qui s'y rattachent. La question de l'enseignement numérique permettra d'aborder les enjeux majeurs de l'éducation par/aux usages de ces technologies. Cette thématique recouvre les enseignements du primaire au supérieur, en passant par l'apprentissage associatif, amateur et continu, tout en questionnant leurs implications sociétales de manière générale."
         tracks:
           title: Tracks
@@ -158,10 +162,10 @@ fr:
             - name: LinuxFr.org
               url: "https://linuxfr.org/"
         night:
-          title: Soirée du Libre
+          title: Soirée_du_Libre
           text: To be announced…
         meal:
-          title: Repas du Libre
+          title: Repas_du_Libre
           text: Le Repas du Libre aura lieu au FEC (place St-Étienne) le dimanche 8 juillet à partir de 20 h 30.
       calendar:
         title: Agenda
