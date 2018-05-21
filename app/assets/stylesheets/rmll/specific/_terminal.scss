@@ -42,6 +42,11 @@
   .window {
     display: flex;
   }
+  a:hover, a:focus {
+    background-color: $orange;
+    color: $color-black;
+    padding: 0.2rem 1rem;
+  }
 
   ul.tree-view {
     min-width: 22rem;
@@ -56,8 +61,7 @@
 
     a {
       color: $color-black;
-      &:hover, &:focus {
-      }
+
       &::before {
         content: "> ";
       }
@@ -69,7 +73,7 @@
   }
 
   .content {
-    color: white;
+    color: $color-white;
     mark {
       color: $orange;
       background-color: inherit;
@@ -101,6 +105,9 @@
     }
     .f-content, li, dl {
       margin-left: 2rem;
+      @include phone {
+        margin-left: 1rem;
+      }
     }
     .comment {
       color: $color-grey-shadow;

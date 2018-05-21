@@ -1,54 +1,65 @@
 @import "../var";
 
 .spreadsheet {
-  width: 100%;
-  height: 100%;
-  line-height: 2rem;
-  font-family: $font-mono;
+  background-color: $color-white;
   color: black;
-
-  @include ugly_bar("Calendrier", $cyan);
-  .bar {
-    height:3rem;
-
-    &:before {
-    line-height: 2rem;
+  @include phone {
+    overflow: hidden;
   }
-}
-
 
   .content {
-    width:100%;
-    height: calc(100% - 4rem);
-    bottom:0;
-    position: absolute;
-    // overflow: hidden;
-    background-color: white;
+    padding: 0;
+    line-height: 2rem;
+    height: calc(100% - 3rem);
+    @include phone {
+      overflow: auto;
+    }
 
     table {
       width: 100%;
       height: 100%;
+      table-layout: fixed;
       border-spacing: 0px 0px;
+      @include phone {
+        width: 100rem;
+        overflow: auto;
+      }
     }
 
     table, thead, th, tr, td {
       border:1px solid black;
       border-collapse: collapse;
-      // border-collapse: separate;
       vertical-align: middle;
       text-align:center;
     }
-
-    .old-button {
-      // line-height: 2.7rem;
-      height:3rem;
-      vertical-align: middle;
-      background-color: $color-grey-medium;
-      // border-top: 2px solid $color-grey-lighter;
-      // border-right: 3px solid $color-grey-shadow;
-      // border-bottom: 3px solid $color-grey-shadow;
-      border-left: none;
+    caption {
+      height: 2rem;
     }
-  }
 
+    thead th:first-child {
+      background-color: $color-white;
+    }
+
+    th {
+      background-image: $halftone-window;
+      span {
+        background-color: $color-white;
+        padding: 0.5rem 1rem;
+        font-weight: bold;
+      }
+    }
+    .first {
+      @include phone {
+        width: 8rem;
+      }
+      @include screen {
+        min-width: 15rem;
+      }
+
+    }
+    td p {
+      background-color: $orange;
+    }
+
+  }
 }
