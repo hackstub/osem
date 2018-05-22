@@ -359,9 +359,14 @@ fr:
               desc: Quartier ancien typique
               coordinates: [7.74239078164101,48.581290966165]
     participate:
+      mail:
+        donate: Appel à dons pour les RMLL 2018
+        volunteering: Nous avons besoins de vous !
+        cfb: Appel à stand pour le Village du Libre 2018
       volunteering:
         title: Bénévolat
-        text: "Nous avons besoin de votre aide sur tous types de compétences. Vous pouvez nous aider en vous inscrivant sur ce pad :"
+        text_html: "Nous avons besoin de votre aide sur tous types de compétences. Vous pouvez nous aider en vous inscrivant sur %{href}"
+        link-text: ce pad
         url: "http://pad.arn-fai.net/p/rmll-2018-help"
       donate:
         title: Appel à dons
@@ -371,6 +376,14 @@ fr:
           - Nous afficherons votre participation sur notre site web.
           - Au delà de 1 000€, vous pouvez solliciter une apparition sur nos autres supports de communication.
           - Nous sommes ouverts à toutes négociations.
+      cfb:
+        title: Appel à stand
+        text:
+          - Le village associatif est un ensemble d'associations tenant des stands pour présenter au public leurs projets et actions. Le village associatif est notamment C'est un lieu propice à la découverte des différents logiciels libres et leurs conceptions, offrant une alternative aux grosses entreprises à but lucratif.
+          - Le village sera déplacé en partie sur la presque-île André-Malraux le samedi (07/07/2018).
+          - "Vous souhaitez représenter votre logiciel, votre association ou autre ? L'appel est toujours ouvert !"
+        link-text: inscrivez-vous?!
+        url: "https://osem.aius.u-strasbg.fr/conferences/RMLL2018/booths"
       cfp:
         url: ""
     medias:

@@ -4,7 +4,7 @@
   line-height: $terminal-line-height;
   font-family: $font-mono;
   background-color: $color-dark;
-  color: $color-grey-medium;
+  color: $color-light;
 
   .split-content .ascii {
     margin: 2rem 0;
@@ -35,6 +35,59 @@
 
   .ascii p {
     white-space: pre;
+  }
+
+  .tree {
+    padding: 1rem;
+
+    a {
+      color: $color-white;
+    }
+
+    li {
+      padding: 0.2rem 1rem;
+      border: 2px solid $color-grey-shadow;
+
+      &:not(:last-of-type) {
+        border-bottom: none;
+      }
+
+      &.selected {
+        border-color: $orange;
+        background-color: $orange;
+        color: $color-black;
+
+        a {
+          color: $color-black;
+        }
+
+      }
+    }
+
+    h1 {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.mail {
+  .content {
+    padding: 0.5rem;
+    margin: 1rem;
+    border: 2px solid $color-grey-shadow;
+
+    h2 {
+      margin-top: 1rem;
+      color: $orange;
+    }
+    ul {
+      margin-bottom: 2rem;
+      border-bottom: 2px solid $orange;
+    }
+
+    p {
+      margin: 1rem 2rem;
+    }
   }
 }
 
@@ -167,47 +220,5 @@
     li::before {
       content: "-";
     }
-  }
-}
-
-#food {
-  h2 {
-    margin-bottom: 2rem;
-  }
-}
-
-#lodging {
-  h5 {
-    margin-top: 2rem;
-  }
-}
-
-#tourism {
-  h2 {
-    margin-bottom: 2rem;
-  }
-  h4 {
-    margin-top: 2rem;
-  }
-  h5 {
-    margin-top: 2rem;
-  }
-}
-
-#cfb {
-  h2 {
-    margin-bottom: 2rem;
-  }
-}
-
-#donate {
-  h2 {
-    margin-bottom: 2rem;
-  }
-}
-
-#volunteering {
-  h2 {
-    margin-bottom: 2rem;
   }
 }

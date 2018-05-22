@@ -50,6 +50,8 @@
             %li{ role:"menuitem" }
               = link_to t("menu.donate"), rmll_path(:heading => "participate", :page => "donate")
             %li{ role:"menuitem" }
+              = link_to t("menu.cfb"), rmll_path(:heading => "participate", :page => "cfb")
+            %li{ role:"menuitem" }
               = link_to t("menu.cfp"), "#"
         -# %li{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false" }
         -#   %a{ tabindex:0 } Médias
@@ -81,18 +83,22 @@
               = link_to t("menu.site_map"), rmll_path(:heading => "about", :page => "site_map")
 
   %ul{ role:"menubar" }
+    %li
+      = link_to "FR", url_for(params.permit(:heading, :page, :sub).merge(:locale => :fr))
+    %li
+      = link_to "EN", url_for(params.permit(:heading, :page, :sub).merge(:locale => :en))
     %li{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false" }
       %a{ tabindex:0 }= t("menu.user")
       %ul.dropdown.dropdown-menu{ role:"menu", "aria-hidden":"true" }
         %li{ role:"menuitem" }
           = link_to t("menu.connection"), admin_path
-        %li{ role:"menuitem" }
-          %a{ tabindex:0 }= t("menu.langue")
-          %ul.dropdown.dropdown-submenu{ role:"menu", "aria-hidden":"true" }
-            %li
-              = link_to "FR", url_for(params.permit(:heading, :page, :sub).merge(:locale => :fr))
-            %li
-              = link_to "EN", url_for(params.permit(:heading, :page, :sub).merge(:locale => :en))
+        -# %li{ role:"menuitem" }
+        -#   %a{ tabindex:0 }= t("menu.langue")
+        -#   %ul.dropdown.dropdown-submenu{ role:"menu", "aria-hidden":"true" }
+        -#     %li
+        -#       = link_to "FR", url_for(params.permit(:heading, :page, :sub).merge(:locale => :fr))
+        -#     %li
+        -#       = link_to "EN", url_for(params.permit(:heading, :page, :sub).merge(:locale => :en))
     %li{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false" }
       %a{ tabindex:0 }= t("menu.network")
       %ul#last-menu.dropdown.dropdown-menu{ role:"menu", "aria-hidden":"true" }
