@@ -6,22 +6,124 @@
   @include pixel-bg($halftone-window);
   background-color: $color-white;
   font-family: $font-sans;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
+  line-height: 1.45rem;
 
   .content {
-    max-width: 60rem;
-    height: calc(100% - 3rem);
+    max-width: 50rem;
     background-color: $color-white;
     margin: auto;
-    padding: 5rem;
+    padding: 3.5rem;
+    padding-top: 4.5rem;
+    text-align: justify;
   }
 
+  .symbol {
+    &:after {
+      content: " ◆";
+    }
+  }
+
+  .headline {
+    font-size: 0.9rem;
+    width: 100%;
+    display:flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+
+    p {
+      display: inline-block;
+      color: black;
+      font-weight: bold;
+    }
+  }
+
+  .left {
+    p:nth-child(2) {
+      color: $red;
+    }
+  }
+
+  .right {
+    p:first-child {
+      color: $red;
+    }
+  }
+
+
   h2 {
-    margin-bottom: 2rem;
+    margin-top: 2rem;
+    padding: 0.5rem;
     font-size: 2rem;
-    border-bottom: $border;
+    border: $border;
+    text-align:left;
+    @include phone {
+      line-height:2rem;
+    }
   }
-  p {
-    margin: 1rem 0;
+
+
+  .main-text {
+    p {
+      margin: 1rem 0;
+    }
+
+    p:first-child {
+      margin-top: 4rem;
+
+      &:before {
+        content: "Art. 2018 ";
+        color: $red;
+        font-weight: bold;
+        margin-right: 0.5rem;
+      }
+    }
+
+    p.first-word {
+      &:before {
+        content: "RMLL ";
+        font-weight: bold;
+      }
+    }
+
+    p.first-word-bis {
+      &:before {
+        content: "The Code of Conduct ";
+        font-weight: bold;
+      }
+    }
   }
+
+
+  .columns{
+    @include screen {
+      display:flex;
+      justify-content: space-between;
+      .col-left, .col-right {
+        width:47%;
+      }
+    }
+    width:100%;
+    margin-top: 1.5rem;
+  }
+
+  .titling {
+    font-weight: bold;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 0.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .col-left {
+    p.first-word-ter {
+      &:before {
+        content: "We invite and encourage everybody to express their opinions ";
+        font-weight: bold;
+      }
+    }
+  }
+
+
 }

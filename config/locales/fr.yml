@@ -508,6 +508,21 @@ fr:
           - "Respect your environment : We trust and expect everybody to be mindful of the area, the environment and our neighbours. Some areas at RMLL are restricted for organizational and/or security reasons. Everybody is expected to follow instructions from RMLL staff at all times and respect closed doors."
           - If you have experienced or become aware of behaviour contrary to the principles enshrined in this Code of Conduct, please bring such incidents to the attention of RMLL Staff members.
           - RMLL Staff members reserve the right to deny entrance and/or eject from an event or any of its infrastructure any individual found to be engaging in misconduct contrary to the principles highlighted above.
+        text-keys:
+          first-line: RMLL (LSM) and its Staff members aim to offer a friendly and peaceful environment for every participant. All participants are expected to behave excellently towards each other. Misbehaviour can lead to exclusion from our events and/or our technical infrastructure.
+          second-words: RMLL
+          second-line : aims to be a free, open and cooperative event. This means we expect collaboration from all the participants, and for everybody to behave respectfully towards all others, including those that are different or think differently from yourself.
+          third-words: The Code of Conduct
+          third-line: applies equally to all participants including, but not limited to, speakers, volunteers, staffers, exhibitors, etc.
+          fourth-words: "Behave excellently and inclusivly to everyone:"
+          fourth-words-two: We invite and encourage everybody to express their opinions
+          fourth-line: on relevant topics. All participants should at all times feel at ease to do so without fearing any form of attack, reprisal or harassment. As a consequence we do not tolerate harassment of participants in any form. We ask everybody to be respectful and considerate towards each other, especially when attempting to provide constructive criticism.
+          fifth-words: "Consider what you share:"
+          fifth-line: All communication should be appropriate for an audience including people of many different backgrounds.
+          sixth-words: "Respect your environment :"
+          sixth-line: We trust and expect everybody to be mindful of the area, the environment and our neighbours. Some areas at RMLL are restricted for organizational and/or security reasons. Everybody is expected to follow instructions from RMLL staff at all times and respect closed doors.
+          seventh-line: If you have experienced or become aware of behaviour contrary to the principles enshrined in this Code of Conduct, please bring such incidents to the attention of RMLL Staff members.
+          eighth-line: RMLL Staff members reserve the right to deny entrance and/or eject from an event or any of its infrastructure any individual found to be engaging in misconduct contrary to the principles highlighted above.
       legal:
         title: Mentions légales
         text:
