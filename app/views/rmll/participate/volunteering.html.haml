@@ -22,4 +22,10 @@
       %li
         %h2= subject= "Subject : " + t("rmll.participate.mail.volunteering")
 
-    %p= t(".text_html", href:link_to(t(".link-text"), t(".url")))
+    %p= t(".text")
+    %p
+      = t(".mailing.text")
+      = link_to t(".mailing.url"), t(".mailing.url")
+    %p
+      = t(".pad.text")
+      = link_to t(".pad.url"), t(".pad.url")
