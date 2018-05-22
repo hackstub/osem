@@ -361,8 +361,17 @@ fr:
     participate:
       volunteering:
         title: Bénévolat
-        text: "Nous avons besoin de votre aide sur tous types de compétences. Vous pouvez nous aider en vous inscrivant sur ce pad :"
-        url: "http://pad.arn-fai.net/p/rmll-2018-help"
+        intro:
+          text: 
+            - Quelques soient vos compétences, vous pouvez nous aider !
+        mailing:
+          text: 
+            - Pour vous inscrire à la liste de diffusion des bénévoles, rendez-vous ici :
+          url: "https://listes2018.rmll.info/volunteers"
+        pad:
+          text:
+            - Vous pouvez aussi vous rendre sur le pad des appels à l'aide ici :
+          url: "http://pad.arn-fai.net/p/rmll-2018-help"
       donate:
         title: Appel à dons
         text:
