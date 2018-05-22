@@ -244,7 +244,7 @@ fr:
               adress: 4, rue Blaise Pascal
               buildings:
                 - name: Escarpe
-                  adress: 11, ue du Maréchal Juin, 67000 Strasbourg
+                  adress: 11, rue du Maréchal Juin, 67000 Strasbourg
                 - name: Atrium
                   adress: 16, rue René Descartes, 67000 Strasbourg
                 - name: Platane
@@ -253,11 +253,25 @@ fr:
               buildings:
                 - name: Médiathèque André Malraux
                   adress: 1, presqu'île André-Malraux, 67100 Strasbourg
+                  url: "http://www.mediatheques.strasbourg.eu/medias/medias.aspx?INSTANCE=EXPLOITATION&PORTAL_ID=WBCT_WBCTDOC_28.xml"
                 - name: Le Shadok
                   adress: 25, presqu'ile André Malraux, 67100 Strasbourg
+                  url: "http://www.shadok.strasbourg.eu/"
         cts:
-          title: Transports en commun
-          url: "https://www.cts-strasbourg.eu/fr"
+          title: Transports en commun (arrets de tram)
+          list:
+            - name: Campus Central de l'Université de Strasbourg
+              stops:
+                - Université
+                - Observatoire
+                - Esplanade
+            - name: presqu'île André Malraux
+              stops:
+                - Winston Churchill
+                - Étoile Bourse
+          site:
+            text: Site de la Compagnie des Transports Strasbourgeois
+            url: "https://www.cts-strasbourg.eu/fr"
           tram:
           bus:
         parkings:
@@ -266,28 +280,28 @@ fr:
           list:
             - name: Parking Esplanade Centre Commercial
               adress: 3, rue de Londres, 67000 Strasbourg
-              distance: 0.6
-              price: 1.2
+              distance: "0.6"
+              price: "1.2"
               url: "http://www.parcus.com/index.php?parcusParam[cmpref]=11863&lang=fr&module=parcus&action=ViewDetail"
             - name: Parking des Bateliers
               adress: rue de Zurich, 67000 Strasbourg
-              distance: 0.7
-              price: 1.6
+              distance: "0.7"
+              price: "1.6"
               url: "http://www.parcus.com/index.php?parcusParam%5Bcmpref%5D=871&lang=fr&module=parcus&action=ViewDetail"
             - name: Parking Étoile Cinéma
               adress: 25, avenue du Rhin, 67100 Strasbourg
-              distance: 1
-              price: 1.45
+              distance: "1"
+              price: "1.45"
               url: "https://www.placedeshalles.com/infos-pratiques/parking"
             - name: Parking Kléber
               adress: place Kléber, 67000 Strasbourg
-              distance: 2
-              price: 2.4
+              distance: "2"
+              price: "2.4"
               url: "https://www.jds.fr/strasbourg/parking/parking-kleber-homme-de-fer-4977_L"
             - name: Parking des Halles
               adress: rue du Marais Vert, 67000 Strasbourg
-              distance: 2.5
-              price: 1.6
+              distance: "2.5"
+              price: "1.6"
               url: "https://www.placedeshalles.com/infos-pratiques/parking"
         accessibility:
           title: Accessibilité et mobilité
@@ -297,13 +311,16 @@ fr:
             - Pour toutes questions complémentaires, n'hésitez pas à nous contacter à contact [AT] listes2018.rmll.info
       lodging:
         title: Hébergement
-        list:
-          - name: Auberges de jeunesse et hôtels
-            text: "Voici le lien vers notre liste des différents hébergements abordables disponibles sur Strasbourg et sa périphérie :"
-            url: "https://2018.rmll.info/conferences/RMLL2018/#lodging"
-          - name: Chambres à la Cité U. de la Robertsau
-            text: Vous pouvez réserver une chambre individuelle avec sanitaires et cuisine collectifs pour 6 nuits, du 6 au 12 juillet, pour 120 €, tout compris.
-            url: "https://osem.aius.u-strasbg.fr/conferences/RMLL2018/tickets"
+        lodge:
+          name: Auberges de jeunesse et hôtels
+          text_html: "Retrouvez notre %{href} abordables disponibles sur Strasbourg et sa périphérie."
+          url: "https://2018.rmll.info/conferences/RMLL2018/#lodging"
+          link: liste des différents hébergements
+        room:
+          name: Chambres à la Cité U. de la Robertsau
+          text_html: Vous pouvez %{href} individuelle avec sanitaires et cuisine collectifs pour 6 nuits, du 6 au 12 juillet, pour 120 €, tout compris.
+          url: "https://osem.aius.u-strasbg.fr/conferences/RMLL2018/tickets"
+          link: réserver une chambre
       food:
         title: Restauration
         daily: La restauration sera assurée tout au long de l'évènement par l'AIUS, ainsi que par des food trucks vegans.
@@ -311,9 +328,11 @@ fr:
         libre_meal: Les réservations pour le Repas du Libre seront bientôt ouvertes, promis ~
       tourism:
         title: Tourisme
-        intro: Voici quelques lieux intéressants que vous pourriez visiter lors de votre venue à Strasbourg, la plus belle ville du monde. Strasbourg est notamment la capitale de l'Alsace, du Grand Est, de l'Europe, de Noël et du Grand Hamster d'Alsace.
+        intro:
+          - Voici quelques lieux intéressants que vous pourriez visiter lors de votre venue à Strasbourg, la plus belle ville du monde.
+          - Strasbourg est notamment la capitale de l'Alsace, du Grand Est, de l'Europe, de Noël et du Grand Hamster d'Alsace.
         museum:
-          desc: "Quelques musées :"
+          desc: "Musées"
           desc_items:
             - name: Le Musée Historique de Strasbourg
               desc: Retrace de manière très détaillée et documentée l'histoire de notre ville, capitale de l'Alsace et de l'Europe, à partir du début du Moyen Âge jusqu'à nos jours.
@@ -328,7 +347,7 @@ fr:
               url: "https://pixel-museum.fr/"
               coordinates:
         places:
-          desc: "Quelques lieux intéressants où se balader :"
+          desc: "Lieux intéressants"
           desc_items:
             - name: La cathédrale Notre-Dame de Strasbourg
               desc: Construite en plusieurs étapes entre 1015 (début) et 1439 (fin), et située au coeur de la ville, elle est incontournable pour quiconque intéressé à visiter la ville de Strasbourg. Elle contient en son sein une ancienne et magnifique horloge astronomique, et, pour les plus courageux, on peut monter quasiment jusqu'à son sommet culminant à 142m.
