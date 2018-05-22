@@ -7,8 +7,13 @@
     .txt
       %h2= t(".title")
 
-      %h4= t(".lodge.name")
-      %p= t(".lodge.text_html", href: link_to(t(".lodge.link"), t(".lodge.url")))
-
       %h4= t(".room.name")
       %p= t(".room.text_html", href: link_to(t(".room.link"), t(".room.url")))
+
+      %h4= t(".lodge.name")
+      %p= t(".lodge.text_html", href: link_to(t(".lodge.link"), t(".lodge.url")))
+      %ul
+        - t(".lodge.list").each do |lodge|
+          %li
+            %p= link_to lodge[:name], lodge[:url]
+            %p= lodge[:desc]

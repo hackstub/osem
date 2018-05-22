@@ -319,9 +319,32 @@ fr:
         title: Hébergement
         lodge:
           name: Auberges de jeunesse et hôtels
-          text_html: "Retrouvez notre %{href} abordables disponibles sur Strasbourg et sa périphérie."
-          url: "https://2018.rmll.info/conferences/RMLL2018/#lodging"
-          link: liste des différents hébergements
+          text_html: Liste des différents hébergements abordables disponibles sur Strasbourg et sa périphérie.
+          list:
+            - name: Auberge des 2 rives
+              desc: A nice hostel located at the german border.
+              url: "https://hihostels.com/hostels/auberge-de-jeunesse-hi-strasbourg-2-rives#price"
+            - name: Camping de Strasbourg
+              desc: "The big camping of Strasbourg at price of 28.5e/night (and 34.2 with electricity). Caution : You need reserve before 01/06/2018 and the reservation have to be individual"
+              url: "https://www.camping-strasbourg.com/"
+            - name: Ciarus
+              desc: The Ciarus is a clean hostel, offering good meals, located at 20 min of walk from the university.
+              url: "http://www.ciarus.com/fr/"
+            - name: East Hotel
+              desc: Hostel in the Strasbourg's suburb of Hoenhein (price 45-50)
+              url: "http://www.easthotel67.com/"
+            - name: Hôtel F1
+              desc: In the Strasbourg's suburb of Illkirch, this Hostel F1 cost 40
+              url: "https://www.booking.com/searchresults.fr.html?aid=301664;label=strasbourg-x9zAIcPnaezw3AokkTmD0gS106735864684%3Apl%3Ata%3Ap1230%3Ap2%3Aac%3Aap1t1%3Aneg%3Afi%3Atikwd-5059309204%3Alp9055933%3Ali%3Adec%3Adm;sid=15c458ae77f3fc76a5d18861e37e45c9;city=-1428944;expand_sb=1;highlighted_hotels=426617;hlrd=no_dates;keep_landing=1;redirected=1;source=hotel&"
+            - name:  Hôtel roi soleil
+              desc: "Two hostel in Strasbourg: - on Mundolsheim (price 47) - on Strasbourg's train station (price 53)"
+              url: "http://www.hotel-roi-soleil.com/hotel/hotel-strasbourg-mundolsheim/"
+            - name: Ibis Hostels Strasbourg
+              desc: Some differents hostels Ibis available for price of 38-100
+              url: "https://secure.ibis.com/store/index.html#/fr/hotels?q=Strasbourg&dateIn=2018-07-06&nights=1aadults%3D1&domainId=www.ibis.com&lang=fr"
+            - name: Première classe Strasbourg OUEST
+              desc: A cheap hostel (price 35-50) near to hautepierre in Strasbourg
+              url: "https://www.premiereclasse.com/fr/hotels/premiere-classe-strasbourg-ouest?gclid=EAIaIQobChMIiLev8ar92gIVDijTCh0oEQXbEAAYASAAEgLbyPD_BwE&AspxAutoDetectCookieSupport=1"
         room:
           name: Chambres à la Cité U. de la Robertsau
           text_html: Vous pouvez %{href} individuelle avec sanitaires et cuisine collectifs pour 6 nuits, du 6 au 12 juillet, pour 120 €, tout compris.
@@ -585,5 +608,12 @@ fr:
             text:
               - Les contenus sont rédigés par les bénévoles de l’organisation. Les textes présents sur le site n'ont pas la prétention d'être d'une quelconque originalité.
               - Les graphismes ont été produits par Nicolas Chesnais et Majorie Ober sous licence EUPL 1.2.
+          fonts:
+            title: Fonts
+            text:
+              Fonts :
+                - Open Sans par Steve Matteson disponible sous la licence Apache License, Version 2.0 - http://www.opensans.com/
+                - Space Mono par Colophon Foundry disponible sous la licence SIL Open Font License v1.1 - https://www.colophon-foundry.org/custom/spacemono/
+                - Mister Pixel par Christophe Badani disponible sous la licence SIL Open Font License v1.1 - https://velvetyne.fr/fonts/mr-pixel/
       site_map:
         title: Plan du site
