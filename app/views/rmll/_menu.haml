@@ -83,32 +83,19 @@
               = link_to t("menu.site_map"), rmll_path(:heading => "about", :page => "site_map")
 
   %ul{ role:"menubar" }
-    %li
-      = link_to "FR", url_for(params.permit(:heading, :page, :sub).merge(:locale => :fr))
-    %li
-      = link_to "EN", url_for(params.permit(:heading, :page, :sub).merge(:locale => :en))
-    %li{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false" }
-      %a{ tabindex:0 }= t("menu.user")
-      %ul.dropdown.dropdown-menu{ role:"menu", "aria-hidden":"true" }
-        %li{ role:"menuitem" }
-          = link_to t("menu.connection"), admin_path
-        -# %li{ role:"menuitem" }
-        -#   %a{ tabindex:0 }= t("menu.langue")
-        -#   %ul.dropdown.dropdown-submenu{ role:"menu", "aria-hidden":"true" }
-        -#     %li
-        -#       = link_to "FR", url_for(params.permit(:heading, :page, :sub).merge(:locale => :fr))
-        -#     %li
-        -#       = link_to "EN", url_for(params.permit(:heading, :page, :sub).merge(:locale => :en))
     %li{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false" }
       %a{ tabindex:0 }= t("menu.network")
-      %ul#last-menu.dropdown.dropdown-menu{ role:"menu", "aria-hidden":"true" }
-        -# %li{ role:"menuitem" }
-        -#   = link_to "Blog", "#"
-        -# %li{ role:"menuitem" }
-        -#   = link_to "Radio RMLL", "#"
+      %ul.dropdown.dropdown-menu{ role:"menu", "aria-hidden":"true" }
         %li{ role:"menuitem" }
           = link_to "Mastodon", "https://mamot.fr/@rmll2018"
         %li{ role:"menuitem" }
           = link_to "Liste de diffusion", "https://listes2018.rmll.info/subscribe/presse"
         %li{ role:"menuitem" }
           = link_to "IRC #rmll-2018", "https://webchat.freenode.net/"
+    %li{ role:"menuitem" }
+      %a{ tabindex:0 }= I18n.locale.upcase
+      %ul.dropdown.dropdown-menu{ role:"menu", "aria-hidden":"true" }
+        %li= link_to "FR", url_for(params.permit(:heading, :page, :sub).merge(:locale => :fr))
+        %li= link_to "EN", url_for(params.permit(:heading, :page, :sub).merge(:locale => :en))
+    %li{ role:"menuitem" }
+      = link_to t("menu.connection"), admin_path

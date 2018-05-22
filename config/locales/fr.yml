@@ -47,7 +47,7 @@ fr:
     user: User
     connection: Connection
     lang: langue
-    network: Réseau
+    network: Réseaux
     mailing: liste de diffusion
   rmll:
     home:
