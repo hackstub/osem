@@ -21,10 +21,8 @@ section {
 
   @include screen {
     display: flex;
-    height: 100%;
-    section {
-      width: 50%;
-    }
+    height: calc(100% - 3rem);
+    overflow: hidden;
   }
 
 }
@@ -80,11 +78,6 @@ section {
     color: $cyan;
     font-weight: bold;
   }
-}
-
-.container {
-  width: 100%;
-  height: calc(100% - 3rem);
 }
 
 .invert {

@@ -1,11 +1,14 @@
-%section#lodging.term
-  .bar
+%section.fullscreen.map
+  - add_bar("ImgViewer", "food.png")
+  .split
+    .container
+      = image_tag "map.png"
 
-  .content
-    %h2= t(".title")
-    %ul
-      - t(".list").each do |lodgings|
-        %li
-          %h5= lodgings[:name]
-          %p= lodgings[:text]
-          %a= lodgings[:url]
+    .txt
+      %h2= t(".title")
+
+      %h4= t(".lodge.name")
+      %p= t(".lodge.text_html", href: link_to(t(".lodge.link"), t(".lodge.url")))
+
+      %h4= t(".room.name")
+      %p= t(".room.text_html", href: link_to(t(".room.link"), t(".room.url")))

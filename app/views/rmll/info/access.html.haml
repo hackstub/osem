@@ -1,38 +1,42 @@
-.split
-  %section.map.halfscreen
-    - add_bar("ImgViewer", "Strasbourg")
+%section.fullscreen.map
+  - add_bar("ImgViewer", "access_strasbourg.png")
+  .split
     .container
       = image_tag "map.png"
 
-  %section#access.term.invert.txt
-    - add_bar("Text", t("menu.access") + ".txt")
-    .content
+    .txt
       %h2= t(".title")
+      %h4= t(".places.title")
       %ul
-        %h4= t(".places.title")
         - t(".places.list").each do |place|
           %li
-            %p= place[:name]
-            %p= place[:adress]
+            = place[:name]
             %ul
               - place[:buildings].each do |building|
-                %li= building[:name]
-                %li= building[:adress]
+                %li
+                  %a{ href:building[:url] }= building[:name]
+                  %p.adress= building[:adress]
 
       %h4= t(".cts.title")
-      %a= "https://www.cts-strasbourg.eu/fr"
-
       %ul
-        %h4= t(".parkings.title")
-        %p= t(".parkings.text")
+        - t(".cts.list").each do |place|
+          %li
+            %p= place[:name]
+            %ul
+              - place[:stops].each do |stop|
+                %li= stop
+      %p
+        = link_to t(".cts.site.text"), t(".cts.site.url")
+
+      %h4= t(".parkings.title")
+      %p= t(".parkings.text")
+      %ul
         - t(".parkings.list").each do |parking|
           %li
-            %p= parking[:name]
+            %p= link_to parking[:name], parking[:url]
             %p= parking[:adress]
-            %p= parking[:distance]
-            %p= parking[:price]
-            %a= parking[:url]
+            %p= parking[:distance] + "km"
+            %p= parking[:price] + "€/h"
 
-      %ul
-        %h4= t(".accessibility.title")
-        - add_text(t(".accessibility.text"))
+      %h4= t(".accessibility.title")
+      - add_text(t(".accessibility.text"))
