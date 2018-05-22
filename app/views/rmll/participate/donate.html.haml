@@ -1,4 +1,4 @@
-%section.halfscreen.term.mail
+%section.halfscreen.term.mail.over-background
   - add_bar("Mail", t("rmll.participate.mail.donate"))
 
   .tree
@@ -23,3 +23,7 @@
         %h2= subject= "Subject : " + t("rmll.participate.mail.donate")
 
     - add_text(t(".text"))
+
+%section.fullscreen#home-section.no-select.no-overflow{ "aria-hidden":"true" }
+  = render "rmll/background"
+  = render "rmll/conky"

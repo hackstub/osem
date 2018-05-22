@@ -45,7 +45,7 @@ fr:
     legal: Mentions légales
     site_map: Plan du site
     user: User
-    connection: Connection
+    connection: Connexion
     lang: langue
     network: Réseaux
     mailing: liste de diffusion
@@ -61,9 +61,15 @@ fr:
           title: Infos
           process:
             - name: ouverture
-              content: 10h -> 18h
+              content: 10h -> 18h du 7 au 12 juillet à Strasbourg
             - name: plénières
-              content: 18h -> 20h Amphithéâtre AT8 (Atrium)
+              content: 18h -> 20h Amphithéâtre AT8 (Atrium) tous les jours
+        mails:
+          title: Notifications
+          mail:
+          process:
+            - name: mails
+              content: Vous avez 3 nouveaux mails.
         spaces:
           title: Espaces
         activities:
@@ -258,7 +264,7 @@ fr:
                   adress: 25, presqu'ile André Malraux, 67100 Strasbourg
                   url: "http://www.shadok.strasbourg.eu/"
         cts:
-          title: Transports en commun (arrets de tram)
+          title: Transports en commun (arrêts de tram)
           list:
             - name: Campus Central de l'Université de Strasbourg
               stops:
@@ -383,10 +389,10 @@ fr:
       cfb:
         title: Appel à stand
         text:
-          - Le village associatif est un ensemble d'associations tenant des stands pour présenter au public leurs projets et actions. Le village associatif est notamment C'est un lieu propice à la découverte des différents logiciels libres et leurs conceptions, offrant une alternative aux grosses entreprises à but lucratif.
+          - Le village associatif est un ensemble d'associations tenant des stands pour présenter au public leurs projets et actions. C'est un lieu propice à la découverte des différents logiciels libres et leurs conceptions, offrant une alternative aux grosses entreprises à but lucratif.
           - Le village sera déplacé en partie sur la presque-île André-Malraux le samedi (07/07/2018).
           - "Vous souhaitez représenter votre logiciel, votre association ou autre ? L'appel est toujours ouvert !"
-        link-text: inscrivez-vous?!
+        link-text: inscrivez-vous !
         url: "https://osem.aius.u-strasbg.fr/conferences/RMLL2018/booths"
       cfp:
         url: ""

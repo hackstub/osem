@@ -1,4 +1,4 @@
-%section.term.halfscreen
+%section.term.halfscreen.over-background
   - add_bar("Terminal", "tree")
 
   .content
@@ -126,3 +126,7 @@
             %li
               %span.pre-wrap= "    └── "
               = link_to "IRC #rmll-2018", "https://webchat.freenode.net/"
+
+%section.fullscreen#home-section.no-select.no-overflow{ "aria-hidden":"true" }
+  = render "rmll/background"
+  = render "rmll/conky"

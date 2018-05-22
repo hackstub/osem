@@ -1,4 +1,4 @@
-%section.term.halfscreen
+%section.term.halfscreen.over-background
   - add_bar("Terminal", "history")
   .content
     - term_ps1("user", "~/about", "ls -l history/previousEditions/")
@@ -8,3 +8,7 @@
           = edition[:txt]
           %a.folder{ href:edition[:url], target:"_blank"}<
             = edition[:city]
+
+%section.fullscreen#home-section.no-select.no-overflow{ "aria-hidden":"true" }
+  = render "rmll/background"
+  = render "rmll/conky"

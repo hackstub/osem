@@ -1,4 +1,4 @@
-%section.halfscreen.term.mail
+%section.halfscreen.term.mail.over-background
   - add_bar("Mail", t("rmll.participate.mail.cfb"))
 
   .tree
@@ -28,3 +28,7 @@
     - add_text(t(".text"))
 
     %p= link_to t(".link-text"), t(".url")
+
+%section.fullscreen#home-section.no-select.no-overflow{ "aria-hidden":"true" }
+  = render "rmll/background"
+  = render "rmll/conky"
