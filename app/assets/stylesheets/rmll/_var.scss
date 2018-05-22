@@ -34,6 +34,7 @@ $cyan: #6dffff;
 
 $font-mono: "Space Mono", monospace;
 $font-sans: "Open Sans", sans-serif;
+$font-pixel: "Mister Pixel", monospace;
 
 @mixin screen() {
   @media (min-width: 730px) { @content; }
