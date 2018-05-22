@@ -16,6 +16,18 @@ section {
   }
 }
 
+.split {
+  width: 100%;
+
+  @include screen {
+    display: flex;
+    height: 100%;
+    section {
+      width: 50%;
+    }
+  }
+
+}
 
 .bar {
   width: 100%; height: 3rem;
@@ -70,10 +82,15 @@ section {
   }
 }
 
+.container {
+  width: 100%;
+  height: calc(100% - 3rem);
+}
+
 .invert {
   .bar {
     color: $color-white;
-    background-image: $halftone-window;
+    @include pixel-bg($halftone-window);
     // background-color: $color-light;
     border-color: $color-white;
 
@@ -90,5 +107,8 @@ section {
   .content {
     background-color: $color-white;
     color: $color-black;
+    a {
+      color: $color-black;
+    }
   }
 }

@@ -1,0 +1,112 @@
+= content_for :head do
+  = stylesheet_link_tag "rmll/specific/mapbox-gl"
+  = stylesheet_link_tag "rmll/specific/map"
+
+%section.fullscreen
+  %article{ "aria-haspopup":"true", "aria-expanded":"false" }
+    %h1.noselect{ tabindex:0,  } Options
+
+    %fieldset{ "aria-hidden":"true" }
+      %legend Afficher
+      %ul
+        %input{ type:"checkbox", id:"all", name:"mapOptions", value:"all", checked:"checked" }
+        %label{ for:"all" } Tout
+
+        %li
+          %input{ type:"checkbox", id:"tram", name:"mapOptions", value:"tram", checked:"checked" }
+          %label{ for:"tram" } Arret de tram
+        %li
+          %input{ type:"checkbox", id:"bus", name:"mapOptions", value:"bus", disabled:"disable" }
+          %label{ for:"bus" } Arret de bus
+        %li
+          %input{ type:"checkbox", id:"parking", name:"mapOptions", value:"parking", disabled:"disable" }
+          %label{ for:"parking" } Parkings
+        %li
+          %input{ type:"checkbox", id:"lodging", name:"mapOptions", value:"lodging", disabled:"disable" }
+          %label{ for:"lodging" } Logements
+        %li
+          %input{ type:"checkbox", id:"tourism", name:"mapOptions", value:"tourism", disabled:"disable" }
+          %label{ for:"tourism" } Tourisme
+
+        %button{ type:"button", id:"submit", name:"mapOptions", value:"submit" } submit
+  #map
+
+= content_for :script do
+  = javascript_include_tag "rmll/lib/mapbox-gl.js"
+
+  :javascript
+    // setup click listener to checkboxes
+    var boxes = document.getElementsByTagName("input");
+    for(var i = boxes.length - 1; i >= 0; i--) {
+      boxes[i].onclick = toggleCheckboxes;
+    }
+    // setup button listener to display map specified layers
+    document.getElementsByTagName("button")[0].onclick = displayLayer;
+
+    // setup click and hover listeners to display options panel
+    function displayOptions() {
+      option.parentElement.classList.add("show");
+      option.parentElement.setAttribute("aria-expanded", "true");
+      option.nextElementSibling.setAttribute("aria-hidden", "false");
+    }
+    var option = document.getElementsByTagName("h1")[0];
+    // FIXME focus and click triggers each others
+    option.onclick = function (e) {
+      if (option.parentElement.classList.contains("show")) {
+        option.parentElement.classList.remove("show");
+        option.parentElement.setAttribute("aria-expanded", "false");
+        option.nextElementSibling.setAttribute("aria-hidden", "true");
+      } else {
+        displayOptions();
+      }
+    }
+    option.onfocus = displayOptions;
+    // display options panel if screen is wide enough
+    if (window.innerWidth >= 730) displayOptions();
+
+    var map = initMap();
+
+    function toggleCheckboxes(e) {
+      function every() {
+        for (var i = boxes.length - 1; i > 0; i--) {
+          if (!boxes[i].checked) return false;
+        }
+        return true;
+      }
+      function some() {
+        for (var i = boxes.length - 1; i > 0; i--) {
+          if (boxes[i].checked) return true;
+        }
+        return false;
+      }
+
+      var elem = e.target;
+      if (elem.id === "all") {
+        for(var i = boxes.length - 1; i > 0; i--) {
+          boxes[i].checked = elem.checked;
+        }
+      } else {
+        if (every()) {
+          boxes[0].checked = true;
+          boxes[0].indeterminate = false;
+        } else if (some()) {
+          boxes[0].indeterminate = true;
+        } else {
+          boxes[0].checked = false;
+          boxes[0].indeterminate = false;
+        }
+      }
+    }
+
+    function displayLayer() {
+      var all = boxes[0].checked;
+      for(var i = boxes.length - 1; i >= 0; i--) {
+        var id = boxes[i].id;
+        if (id === "tram") {
+          var visibility = all ? "visible" : boxes[i].checked ? "visible" : "none";
+          if (map.getLayoutProperty(id, 'visibility') !== visibility) {
+            map.setLayoutProperty(id, 'visibility', visibility);
+          }
+        }
+      }
+    }

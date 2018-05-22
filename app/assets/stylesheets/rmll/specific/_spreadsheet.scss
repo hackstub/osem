@@ -41,7 +41,7 @@
     }
 
     th {
-      background-image: $halftone-window;
+      @include pixel-bg($halftone-window);
       span {
         background-color: $color-white;
         padding: 0.5rem 1rem;

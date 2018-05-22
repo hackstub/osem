@@ -1,5 +1,9 @@
 @import "../var";
 
+// ┌─╮╭─╮┌─╮╷ ╷┌─╮
+// ├─╯│ │├─╯│ │├─╯
+// ╵  ╰─╯╵  ╰─╯╵
+
 .popup {
   font-family: $font-sans;
   border-top-left-radius: $border-rad-button;
@@ -74,31 +78,5 @@
     background-color: $color-white;
     border: $border;
     border-radius: $border-rad-button;
-  }
-}
-
-#conduct-code {
-  // max-width: 60rem;
-  // margin: auto;
-  background-image: $halftone-window;
-  background-color: $color-white;
-  font-family: $font-sans;
-  font-size: 1.3rem;
-
-  .content {
-    max-width: 60rem;
-    height: calc(100% - 3rem);
-    background-color: $color-white;
-    margin: auto;
-    padding: 5rem;
-  }
-
-  h2 {
-    margin-bottom: 2rem;
-    font-size: 2rem;
-    border-bottom: $border;
-  }
-  p {
-    margin: 1rem 0;
   }
 }

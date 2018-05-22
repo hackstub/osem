@@ -1,0 +1,33 @@
+@import "../var";
+
+.map {
+  .container {
+    overflow: hidden;
+    background-color: $color-main;
+
+    img {
+      @include screen {
+        height: 50vmax;
+      }
+
+      width: 100%;
+      image-rendering: pixelated;
+    }
+  }
+}
+
+#map {
+  background-color: $color-main;
+
+  overflow: hidden;
+  .container {
+    height: calc(100% - 3rem);
+    width: 100%;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    image-rendering: pixelated;
+  }
+}

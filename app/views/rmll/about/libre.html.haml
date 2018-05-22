@@ -1,4 +1,4 @@
-%section#man.term.halfscreen
+%section#man.term.halfscreen.over-background
   - add_bar("Terminal", "man")
   .content
     %h1= t(".title") + " - Manual"
@@ -22,3 +22,7 @@
       - t(".advantages.desc_items").each do |elem|
         %br
         %li= elem
+
+%section.fullscreen#home-section.no-select{ "aria-hidden":"true" }
+  = render "rmll/background"
+  = render "rmll/conky"

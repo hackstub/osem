@@ -12,7 +12,7 @@ html, body, main {
   height: 100%;
 }
 body {
-  background-image: $halftone-bg;
+  @include pixel-bg($halftone-bg);
   background-color: $color-main;
 }
 
@@ -28,6 +28,8 @@ main {
 @import "specific/popup";
 @import "specific/spreadsheet";
 @import "specific/call";
+@import "specific/pdf";
+@import "specific/map";
 
 .noselect {
   -webkit-touch-callout: none; // iOS Safari
@@ -40,6 +42,7 @@ main {
 
 .over-background {
   position: absolute;
+  height: calc(100% - 2rem);
 }
 
 @import "font-face";

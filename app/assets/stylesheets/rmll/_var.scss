@@ -14,7 +14,7 @@ $halftone-bg: image-url("halftone-bg.png");
 $halftone-nav: image-url("halftone-nav.png");
 $halftone-window: image-url("halftone-window.png");
 
-$border: 0.2rem solid $color-black;
+$border: 2px solid $color-black;
 $border-rad: 4px;
 $border-rad-button: 0.5rem;
 
@@ -43,6 +43,10 @@ $font-sans: "Open Sans", sans-serif;
   @media (max-width: 729px) { @content; }
 }
 
+@mixin pixel-bg($link) {
+  background-image: $link;
+  image-rendering: pixelated;
+}
 
 // keep that for v2 ?
 @mixin simple_bar($title) {
