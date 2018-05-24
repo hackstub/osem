@@ -1,26 +1,22 @@
-%nav.noselect{ role:"navigation", "aria-label":"RMLL 2018" }
+%nav.noselect{ "aria-label":"RMLL 2018" }
   %ul#left-menu{ role:"menubar", "aria-label":"Event menu" }
     %li#home-link
-      = link_to "↗", root_path, { role:"menuitem", "aria-label":"Accueil" }
+      = link_to "↗", root_path, { role:"menuitem", "aria-label":"menubar Accueil", tabindex:1 }
     %li
       %a{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false", tabindex:-1 }
         = t("menu.program")
-      %ul.dropdown.dropdown-menu{ role:"menu", "aria-label":t("menu.program") }
+      %ul.dropdown.dropdown-menu{ role:"menu" }
         %li{ role:"none" }
           = link_to t("menu.presentation"), rmll_path(:heading => "program", :page => "presentation"), { role:"menuitem", tabindex:-1 }
         %li{ role:"none" }
           = link_to t("menu.calendar"), rmll_path(:heading => "program", :page => "calendar"), { role:"menuitem", tabindex:-1 }
         %li.has-submenu{ role:"none" }
-          %a{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false", tabindex:-1 } Submenu
-          %ul.dropdown.dropdown-submenu{ role:"menu", "aria-label":"submenu" }
+          %a{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false", tabindex:-1 } gou
+          %ul.dropdown.dropdown-submenu{ role:"menu", "aria-label":"plusplus" }
             %li{ role:"none" }
               = link_to "lol", "#", { role:"menuitem", tabindex:-1 }
             %li{ role:"none" }
               = link_to "yolo", "#", { role:"menuitem", tabindex:-1 }
-        -# %li{ role:"none" }
-        -#   = link_to t("menu.night"), rmll_path(:heading => "program", :page => "night"), { role:"menuitem", tabindex:-1 }
-        -# %li{ role:"none" }
-        -#   = link_to t("menu.meal"), rmll_path(:heading => "program", :page => "meal"), { role:"menuitem", tabindex:-1 }
     %li
       %a{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false", tabindex:-1 }
         = t("menu.village")
@@ -39,20 +35,12 @@
           = link_to t("menu.lodging"), rmll_path(:heading => "info", :page => "lodging"), { role:"menuitem", tabindex:-1 }
         %li{ role:"none" }
           = link_to t("menu.food"), rmll_path(:heading => "info", :page => "food"), { role:"menuitem", tabindex:-1 }
-        -# %li{ role:"none" }
-        -#   = link_to "Réservation Repas du Libre", "#", { role:"menuitem", tabindex:-1 }
         %li{ role:"none" }
           = link_to t("menu.tourism"), rmll_path(:heading => "info", :page => "tourism"), { role:"menuitem", tabindex:-1 }
-        -# %li{ role:"none" }
-        -#   = link_to "Réseau internet", "#", { role:"menuitem", tabindex:-1 }
-        -# %li{ role:"none" }
-        -#   = link_to "Se rendre à Strasbourg", "#", { role:"menuitem", tabindex:-1 }
     %li
       %a{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false", tabindex:-1 }
         = t("menu.participate")
       %ul.dropdown.dropdown-menu{ role:"menu", "aria-label":t("menu.participate") }
-        -# %li{ role:"none" }
-        -#   = link_to "Boutique", "#", { role:"menuitem", tabindex:-1 }
         %li{ role:"none" }
           = link_to t("menu.volunteering"), rmll_path(:heading => "participate", :page => "volunteering"), { role:"menuitem", tabindex:-1 }
         %li{ role:"none" }
@@ -61,18 +49,6 @@
           = link_to t("menu.cfb"), rmll_path(:heading => "participate", :page => "cfb"), { role:"menuitem", tabindex:-1 }
         %li{ role:"none" }
           = link_to t("menu.cfp"), "/conferences/RMLL2018", { role:"menuitem", tabindex:-1 }
-    -# %li{ role:"none" }
-    -#   %a{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false", tabindex:-1 }
-    -#     = t("menu.medias")
-    -#   %ul.dropdown.dropdown-menu{ role:"menu", "aria-label":t("menu.medias") }
-    -#     %li{ role:"none" }
-    -#       = link_to "Communiqués/Dossier de presse", "#", { role:"menuitem", tabindex:-1 }
-    -#     %li{ role:"none" }
-    -#       = link_to "Communication graphique", "#", { role:"menuitem", tabindex:-1 }
-    -#     %li{ role:"none" }
-    -#       = link_to "Live", "#", { role:"menuitem", tabindex:-1 }
-    -#     %li{ role:"none" }
-    -#       = link_to "Vidéos", "#", { role:"menuitem", tabindex:-1 }
     %li
       %a{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false", tabindex:-1 }
         = t("menu.about")
@@ -94,7 +70,7 @@
 
   %ul#right-menu{ role:"menubar", "aria-label":"Options menu" }
     %li
-      %a{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false", tabindex:-1 }
+      %a{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false", tabindex:0 }
         = t("menu.network")
       %ul.dropdown.dropdown-menu{ role:"menu", "aria-label":t("menu.network") }
         %li{ role:"none" }
