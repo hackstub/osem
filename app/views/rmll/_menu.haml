@@ -1,101 +1,115 @@
-%nav.noselect{ role:"navigation", "aria-label":"Menu bar", "aria-hidden":"false" }
-  %ul#left-menu{ role:"menubar" }
-    %li#home-link{ role:"menuitem", "aria-label":"Home" }
-      = link_to "↗", root_path
-    %li{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false" }
-      %a#menu-button{ tabindex:0 } Menu
-      %ul#main-menu.dropdown{ role:"menu", "aria-hidden":"true" }
-        %li{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false"}
-          %a{ tabindex:0 }= t("menu.program")
-          %ul.dropdown.dropdown-menu{ role:"menu", "aria-hidden":"true" }
-            %li{ role:"menuitem" }
-              = link_to t("menu.presentation"), rmll_path(:heading => "program", :page => "presentation")
-            %li{ role:"menuitem" }
-              = link_to t("menu.calendar"), rmll_path(:heading => "program", :page => "calendar")
-            -# %li{ role:"menuitem" }
-            -#   = link_to t("menu.night"), rmll_path(:heading => "program", :page => "night")
-            -# %li{ role:"menuitem" }
-            -#   = link_to t("menu.meal"), rmll_path(:heading => "program", :page => "meal")
-        %li{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false" }
-          %a{ tabindex:0 }= t("menu.village")
-          %ul.dropdown.dropdown-menu{ role:"menu", "aria-hidden":"true" }
-            %li{ role:"menuitem" }
-              = link_to t("menu.cfb"), rmll_path(:heading => "village", :page => "cfb")
-        %li{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false" }
-          %a{ tabindex:0 }= t("menu.info")
-          %ul.dropdown.dropdown-menu{ role:"menu", "aria-hidden":"true" }
-            %li{ role:"menuitem" }
-              = link_to t("menu.map"), rmll_path(:heading => "info", :page => "map")
-            %li{ role:"menuitem" }
-              = link_to t("menu.access"), rmll_path(:heading => "info", :page => "access")
-            %li{ role:"menuitem" }
-              = link_to t("menu.lodging"), rmll_path(:heading => "info", :page => "lodging")
-            %li{ role:"menuitem" }
-              = link_to t("menu.food"), rmll_path(:heading => "info", :page => "food")
-            -# %li{ role:"menuitem" }
-            -#   = link_to "Réservation Repas du Libre", "#"
-            %li{ role:"menuitem" }
-              = link_to t("menu.tourism"), rmll_path(:heading => "info", :page => "tourism")
-            -# %li{ role:"menuitem" }
-            -#   = link_to "Réseau internet", "#"
-            -# %li{ role:"menuitem" }
-            -#   = link_to "Se rendre à Strasbourg", "#"
-        %li{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false" }
-          %a{ tabindex:0 }= t("menu.participate")
-          %ul.dropdown.dropdown-menu{ role:"menu", "aria-hidden":"true" }
-            -# %li{ role:"menuitem" }
-            -#   = link_to "Boutique", "#"
-            %li{ role:"menuitem" }
-              = link_to t("menu.volunteering"), rmll_path(:heading => "participate", :page => "volunteering")
-            %li{ role:"menuitem" }
-              = link_to t("menu.donate"), rmll_path(:heading => "participate", :page => "donate")
-            %li{ role:"menuitem" }
-              = link_to t("menu.cfb"), rmll_path(:heading => "participate", :page => "cfb")
-            %li{ role:"menuitem" }
-              = link_to t("menu.cfp"), "/conferences/RMLL2018"
-        -# %li{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false" }
-        -#   %a{ tabindex:0 } Médias
-        -#   %ul.dropdown.dropdown-menu{ role:"menu", "aria-hidden":"true" }
-        -#     %li{ role:"menuitem" }
-        -#       = link_to "Communiqués/Dossier de presse", "#"
-        -#     %li{ role:"menuitem" }
-        -#       = link_to "Communication graphique", "#"
-        -#     %li{ role:"menuitem" }
-        -#       = link_to "Live", "#"
-        -#     %li{ role:"menuitem" }
-        -#       = link_to "Vidéos", "#"
-        %li{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false" }
-          %a{ tabindex:0 }= t("menu.about")
-          %ul.dropdown.dropdown-menu{ role:"menu", "aria-hidden":"true" }
-            %li{ role:"menuitem" }
-              = link_to t("menu.libre"), rmll_path(:heading => "about", :page => "libre")
-            %li{ role:"menuitem" }
-              = link_to t("menu.history"), rmll_path(:heading => "about", :page => "history")
-            %li{ role:"menuitem" }
-              = link_to t("menu.sponsors"), rmll_path(:heading => "about", :page => "sponsors")
-            %li{ role:"menuitem" }
-              = link_to t("menu.organisers"), rmll_path(:heading => "about", :page => "organisers")
-            %li{ role:"menuitem" }
-              = link_to t("menu.legal"), rmll_path(:heading => "about", :page => "legal")
-            %li{ role:"menuitem" }
-              = link_to t("menu.conduct_code"), rmll_path(:heading => "about", :page => "conduct_code")
-            %li{ role:"menuitem" }
-              = link_to t("menu.site_map"), rmll_path(:heading => "about", :page => "site_map")
+%nav.noselect{ role:"navigation", "aria-label":"RMLL 2018" }
+  %ul#left-menu{ role:"menubar", "aria-label":"Event menu" }
+    %li#home-link
+      = link_to "↗", root_path, { role:"menuitem", "aria-label":"Accueil" }
+    %li
+      %a{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false", tabindex:-1 }
+        = t("menu.program")
+      %ul.dropdown.dropdown-menu{ role:"menu", "aria-label":t("menu.program") }
+        %li{ role:"none" }
+          = link_to t("menu.presentation"), rmll_path(:heading => "program", :page => "presentation"), { role:"menuitem", tabindex:-1 }
+        %li{ role:"none" }
+          = link_to t("menu.calendar"), rmll_path(:heading => "program", :page => "calendar"), { role:"menuitem", tabindex:-1 }
+        %li.has-submenu{ role:"none" }
+          %a{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false", tabindex:-1 } Submenu
+          %ul.dropdown.dropdown-submenu{ role:"menu", "aria-label":"submenu" }
+            %li{ role:"none" }
+              = link_to "lol", "#", { role:"menuitem", tabindex:-1 }
+            %li{ role:"none" }
+              = link_to "yolo", "#", { role:"menuitem", tabindex:-1 }
+        -# %li{ role:"none" }
+        -#   = link_to t("menu.night"), rmll_path(:heading => "program", :page => "night"), { role:"menuitem", tabindex:-1 }
+        -# %li{ role:"none" }
+        -#   = link_to t("menu.meal"), rmll_path(:heading => "program", :page => "meal"), { role:"menuitem", tabindex:-1 }
+    %li
+      %a{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false", tabindex:-1 }
+        = t("menu.village")
+      %ul.dropdown.dropdown-menu{ role:"menu", "aria-label":t("menu.village") }
+        %li{ role:"none" }
+          = link_to t("menu.cfb"), rmll_path(:heading => "village", :page => "cfb"), { role:"menuitem", tabindex:-1 }
+    %li
+      %a{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false", tabindex:-1 }
+        = t("menu.info")
+      %ul.dropdown.dropdown-menu{ role:"menu", "aria-label":t("menu.info") }
+        %li{ role:"none" }
+          = link_to t("menu.map"), rmll_path(:heading => "info", :page => "map"), { role:"menuitem", tabindex:-1 }
+        %li{ role:"none" }
+          = link_to t("menu.access"), rmll_path(:heading => "info", :page => "access"), { role:"menuitem", tabindex:-1 }
+        %li{ role:"none" }
+          = link_to t("menu.lodging"), rmll_path(:heading => "info", :page => "lodging"), { role:"menuitem", tabindex:-1 }
+        %li{ role:"none" }
+          = link_to t("menu.food"), rmll_path(:heading => "info", :page => "food"), { role:"menuitem", tabindex:-1 }
+        -# %li{ role:"none" }
+        -#   = link_to "Réservation Repas du Libre", "#", { role:"menuitem", tabindex:-1 }
+        %li{ role:"none" }
+          = link_to t("menu.tourism"), rmll_path(:heading => "info", :page => "tourism"), { role:"menuitem", tabindex:-1 }
+        -# %li{ role:"none" }
+        -#   = link_to "Réseau internet", "#", { role:"menuitem", tabindex:-1 }
+        -# %li{ role:"none" }
+        -#   = link_to "Se rendre à Strasbourg", "#", { role:"menuitem", tabindex:-1 }
+    %li
+      %a{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false", tabindex:-1 }
+        = t("menu.participate")
+      %ul.dropdown.dropdown-menu{ role:"menu", "aria-label":t("menu.participate") }
+        -# %li{ role:"none" }
+        -#   = link_to "Boutique", "#", { role:"menuitem", tabindex:-1 }
+        %li{ role:"none" }
+          = link_to t("menu.volunteering"), rmll_path(:heading => "participate", :page => "volunteering"), { role:"menuitem", tabindex:-1 }
+        %li{ role:"none" }
+          = link_to t("menu.donate"), rmll_path(:heading => "participate", :page => "donate"), { role:"menuitem", tabindex:-1 }
+        %li{ role:"none" }
+          = link_to t("menu.cfb"), rmll_path(:heading => "participate", :page => "cfb"), { role:"menuitem", tabindex:-1 }
+        %li{ role:"none" }
+          = link_to t("menu.cfp"), "/conferences/RMLL2018", { role:"menuitem", tabindex:-1 }
+    -# %li{ role:"none" }
+    -#   %a{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false", tabindex:-1 }
+    -#     = t("menu.medias")
+    -#   %ul.dropdown.dropdown-menu{ role:"menu", "aria-label":t("menu.medias") }
+    -#     %li{ role:"none" }
+    -#       = link_to "Communiqués/Dossier de presse", "#", { role:"menuitem", tabindex:-1 }
+    -#     %li{ role:"none" }
+    -#       = link_to "Communication graphique", "#", { role:"menuitem", tabindex:-1 }
+    -#     %li{ role:"none" }
+    -#       = link_to "Live", "#", { role:"menuitem", tabindex:-1 }
+    -#     %li{ role:"none" }
+    -#       = link_to "Vidéos", "#", { role:"menuitem", tabindex:-1 }
+    %li
+      %a{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false", tabindex:-1 }
+        = t("menu.about")
+      %ul.dropdown.dropdown-menu{ role:"menu", "aria-label":t("menu.about") }
+        %li{ role:"none" }
+          = link_to t("menu.libre"), rmll_path(:heading => "about", :page => "libre"), { role:"menuitem", tabindex:-1 }
+        %li{ role:"none" }
+          = link_to t("menu.history"), rmll_path(:heading => "about", :page => "history"), { role:"menuitem", tabindex:-1 }
+        %li{ role:"none" }
+          = link_to t("menu.sponsors"), rmll_path(:heading => "about", :page => "sponsors"), { role:"menuitem", tabindex:-1 }
+        %li{ role:"none" }
+          = link_to t("menu.organisers"), rmll_path(:heading => "about", :page => "organisers"), { role:"menuitem", tabindex:-1 }
+        %li{ role:"none" }
+          = link_to t("menu.legal"), rmll_path(:heading => "about", :page => "legal"), { role:"menuitem", tabindex:-1 }
+        %li{ role:"none" }
+          = link_to t("menu.conduct_code"), rmll_path(:heading => "about", :page => "conduct_code"), { role:"menuitem", tabindex:-1 }
+        %li{ role:"none" }
+          = link_to t("menu.site_map"), rmll_path(:heading => "about", :page => "site_map"), { role:"menuitem", tabindex:-1 }
 
-  %ul#right-menu{ role:"menubar" }
-    %li{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false" }
-      %a{ tabindex:0 }= t("menu.network")
-      %ul.dropdown.dropdown-menu{ role:"menu", "aria-hidden":"true" }
-        %li{ role:"menuitem" }
-          = link_to "Mastodon", "https://mamot.fr/@rmll2018"
-        %li{ role:"menuitem" }
-          = link_to "Liste de diffusion", "https://listes2018.rmll.info/subscribe/presse"
-        %li{ role:"menuitem" }
-          = link_to "IRC #rmll-2018", "https://webchat.freenode.net/"
-    %li{ role:"menuitem" }
-      %a{ tabindex:0 }= I18n.locale.upcase
-      %ul.dropdown.dropdown-menu{ role:"menu", "aria-hidden":"true" }
-        %li= link_to "FR", url_for(params.permit(:heading, :page, :sub).merge(:locale => :fr))
-        %li= link_to "EN", url_for(params.permit(:heading, :page, :sub).merge(:locale => :en))
-    %li{ role:"menuitem" }
-      = link_to t("menu.connection"), admin_path
+  %ul#right-menu{ role:"menubar", "aria-label":"Options menu" }
+    %li
+      %a{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false", tabindex:-1 }
+        = t("menu.network")
+      %ul.dropdown.dropdown-menu{ role:"menu", "aria-label":t("menu.network") }
+        %li{ role:"none" }
+          = link_to "Mastodon", "https://mamot.fr/@rmll2018", { role:"menuitem", tabindex:-1 }
+        %li{ role:"none" }
+          = link_to "Liste de diffusion", "https://listes2018.rmll.info/subscribe/presse", { role:"menuitem", tabindex:-1 }
+        %li{ role:"none" }
+          = link_to "IRC #rmll-2018", "https://webchat.freenode.net/", { role:"menuitem", tabindex:-1 }
+    %li
+      %a{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false", tabindex:-1, "aria-label":"Selection langue" }
+        = I18n.locale.upcase
+      %ul.dropdown.dropdown-menu{ role:"menu", "aria-label":t("menu.lang") }
+        %li{ role:"none" }
+          = link_to "FR", url_for(params.permit(:heading, :page, :sub).merge(:locale => :fr)), { role:"menuitem", tabindex:-1 }
+        %li{ role:"none" }
+          = link_to "EN", url_for(params.permit(:heading, :page, :sub).merge(:locale => :en)), { role:"menuitem", tabindex:-1 }
+    %li
+      = link_to t("menu.connection"), admin_path, { role:"menuitem", tabindex:-1 }
