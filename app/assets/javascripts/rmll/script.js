@@ -1,4 +1,30 @@
 window.onload = function () {
+  if (window.innerWidth < 730) setupSmallMenu();
+
+}
+
+
+function setupSmallMenu() {
+  var link = document.createElement("a");
+  link.appendChild(document.createTextNode("Menu"));
+  link.setAttribute("role", "menuitem");
+  link.setAttribute("aria-haspopup", "true");
+  link.setAttribute("aria-expanded", "false");
+  link.setAttribute("tabindex", "-1");
+  var subMenu = document.createElement("ul")
+  subMenu.appendChild(link);
+  subMenu.setAttribute("role", "menu")
+  subMenu.setAttribute("aria-label", "Event information");
+
+  var menu = document.getElementById("left-menu");
+  while (menu.children.length > 1) {
+    menu.children[1].setAttribute("role", "none")
+    subMenu.appendChild(menu.children[1]);
+  }
+  menu.appendChild(subMenu);
+}
+
+function load () {
   if (window.innerWidth >= 730) {
     document.getElementById("main-menu").setAttribute("role", "menubar");
   }
