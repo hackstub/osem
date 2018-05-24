@@ -611,9 +611,8 @@ fr:
           fonts:
             title: Fonts
             text:
-              Fonts :
-                - Open Sans par Steve Matteson disponible sous la licence Apache License, Version 2.0 - http://www.opensans.com/
-                - Space Mono par Colophon Foundry disponible sous la licence SIL Open Font License v1.1 - https://www.colophon-foundry.org/custom/spacemono/
-                - Mister Pixel par Christophe Badani disponible sous la licence SIL Open Font License v1.1 - https://velvetyne.fr/fonts/mr-pixel/
+              - Open Sans par Steve Matteson disponible sous la licence Apache License, Version 2.0 - http://www.opensans.com/
+              - Space Mono par Colophon Foundry disponible sous la licence SIL Open Font License v1.1 - https://www.colophon-foundry.org/custom/spacemono/
+              - Mister Pixel par Christophe Badani disponible sous la licence SIL Open Font License v1.1 - https://velvetyne.fr/fonts/mr-pixel/
       site_map:
         title: Plan du site

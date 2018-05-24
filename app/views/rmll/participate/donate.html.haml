@@ -4,12 +4,12 @@
   .tree
     %ul
       %h1 Mailing box
-      %li.selected
-        MAY 22 - from: contact [AT] 2018.rmll.info
-        = link_to t("rmll.participate.mail.donate"), rmll_path(:heading => "participate", :page => "donate")
       %li
         MAY 22 - from: contact [AT] 2018.rmll.info
         = link_to t("rmll.participate.mail.volunteering"), rmll_path(:heading => "participate", :page => "volunteering")
+      %li.selected
+        MAY 22 - from: contact [AT] 2018.rmll.info
+        = link_to t("rmll.participate.mail.donate"), rmll_path(:heading => "participate", :page => "donate")
       %li
         APR 27 - from: contact [AT] 2018.rmll.info
         = link_to t("rmll.participate.mail.cfb"), rmll_path(:heading => "participate", :page => "cfb")

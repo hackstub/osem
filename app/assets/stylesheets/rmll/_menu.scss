@@ -37,6 +37,7 @@ nav {
 
     color: white;
     text-decoration: none;
+    outline: none;
 
     &:hover {
       background-color: $color-dark-select;
@@ -60,6 +61,17 @@ nav {
     .dropdown {
       width: 100%;
       left: 0;
+    }
+
+    #main-menu::after, #right-menu ul::after {
+      content:" ";
+      display: block;
+      white-space: pre;
+      top: 0.8rem;
+      position: relative;
+      width: 100%;
+      background-color: white;
+      @include pixel-bg($halftone-nav);
     }
 
     #main-menu {

@@ -82,7 +82,7 @@
             %li{ role:"menuitem" }
               = link_to t("menu.site_map"), rmll_path(:heading => "about", :page => "site_map")
 
-  %ul{ role:"menubar" }
+  %ul#right-menu{ role:"menubar" }
     %li{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false" }
       %a{ tabindex:0 }= t("menu.network")
       %ul.dropdown.dropdown-menu{ role:"menu", "aria-hidden":"true" }

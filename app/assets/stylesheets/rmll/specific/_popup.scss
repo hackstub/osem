@@ -62,8 +62,11 @@
       margin-bottom: 0.5rem;
 
       &:not(:first-child) {
-        margin-top: 1.5rem;
+        margin-top: 2rem;
       }
+    }
+    p {
+      margin-bottom: 0.5rem;
     }
 
     p:last-child {
