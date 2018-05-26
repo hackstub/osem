@@ -209,6 +209,7 @@ var MenubarItem = function (domNode, menuObj) {
 MenubarItem.prototype.init = function () {
   this.domNode.tabIndex = -1;
 
+  this.domNode.addEventListener("touchstart", this.handleTouch.bind(this));
   this.domNode.addEventListener('keydown', this.handleKeydown.bind(this));
   this.domNode.addEventListener('focus', this.handleFocus.bind(this));
   this.domNode.addEventListener('blur', this.handleBlur.bind(this));
@@ -225,6 +226,13 @@ MenubarItem.prototype.init = function () {
   }
 
 };
+
+MenubarItem.prototype.handleTouch = function (event) {
+  console.log("menubatitem");
+  if (this.popupMenu) {
+    this.popupMenu.open();
+  }
+}
 
 MenubarItem.prototype.handleKeydown = function (event) {
   var tgt = event.currentTarget,
@@ -278,8 +286,10 @@ MenubarItem.prototype.handleKeydown = function (event) {
       break;
 
     case this.keyCode.TAB:
-      this.popupMenu.close(true);
-      break;
+      if (this.domNode.id != "home" && this.domNode.id != "connect") {
+        this.popupMenu.close(true);
+        break;
+      }
 
 
     default:
@@ -296,6 +306,34 @@ MenubarItem.prototype.handleKeydown = function (event) {
   }
 };
 
+// MenubarItem.prototype.setExpanded = function (value) {
+//   if (value) {
+//     this.domNode.setAttribute('aria-expanded', 'true');
+//   }
+//   else {
+//     this.domNode.setAttribute('aria-expanded', 'false');
+//   }
+// };
+//
+// MenubarItem.prototype.handleFocus = function (event) {
+//   this.menu.hasFocus = true;
+// };
+//
+// MenubarItem.prototype.handleBlur = function (event) {
+//   this.menu.hasFocus = false;
+// };
+//
+// MenubarItem.prototype.handleMouseover = function (event) {
+//   this.hasHover = true;
+//   this.popupMenu.open();
+// };
+//
+// MenubarItem.prototype.handleMouseout = function (event) {
+//   this.hasHover = false;
+//   setTimeout(this.popupMenu.close.bind(this.popupMenu, false), 300);
+// };
+
+
 MenubarItem.prototype.setExpanded = function (value) {
   if (value) {
     this.domNode.setAttribute('aria-expanded', 'true');
@@ -314,41 +352,17 @@ MenubarItem.prototype.handleBlur = function (event) {
 };
 
 MenubarItem.prototype.handleMouseover = function (event) {
-  this.hasHover = true;
-  this.popupMenu.open();
-};
-
-MenubarItem.prototype.handleMouseout = function (event) {
-  this.hasHover = false;
-  setTimeout(this.popupMenu.close.bind(this.popupMenu, false), 300);
-};
-
-
-MenubarItem.prototype.setExpanded = function (value) {
-  if (value) {
-    this.domNode.setAttribute('aria-expanded', 'true');
-  }
-  else {
-    this.domNode.setAttribute('aria-expanded', 'false');
+  if (this.domNode.id != "home" && this.domNode.id != "connect") {
+    this.hasHover = true;
+    this.popupMenu.open();
   }
 };
 
-MenubarItem.prototype.handleFocus = function (event) {
-  this.menu.hasFocus = true;
-};
-
-MenubarItem.prototype.handleBlur = function (event) {
-  this.menu.hasFocus = false;
-};
-
-MenubarItem.prototype.handleMouseover = function (event) {
-  this.hasHover = true;
-  this.popupMenu.open();
-};
-
 MenubarItem.prototype.handleMouseout = function (event) {
-  this.hasHover = false;
-  setTimeout(this.popupMenu.close.bind(this.popupMenu, false), 300);
+  if (this.domNode.id != "home" && this.domNode.id != "connect") {
+    this.hasHover = false;
+    setTimeout(this.popupMenu.close.bind(this.popupMenu, false), 300);
+  }
 };
 
 
@@ -401,7 +415,6 @@ PopupMenu.prototype.init = function () {
   var childElement, menuElement, menuItem, textContent, numItems, label;
 
   // Configure the domNode itself
-
   this.domNode.addEventListener('mouseover', this.handleMouseover.bind(this));
   this.domNode.addEventListener('mouseout', this.handleMouseout.bind(this));
 
@@ -429,8 +442,6 @@ PopupMenu.prototype.init = function () {
     this.lastItem = this.menuitems[ numItems - 1 ];
   }
 };
-
-/* EVENT HANDLERS */
 
 PopupMenu.prototype.handleMouseover = function (event) {
   this.hasHover = true;
@@ -566,19 +577,20 @@ PopupMenu.prototype.open = function () {
   console.log('[PopupMenu][open]');
 
   // Set CSS properties
-  if (!this.controller.isMenubarItem) {
-    this.domNode.parentNode.style.position = 'relative';
-    this.domNode.style.display = 'block';
-    this.domNode.style.position = 'absolute';
-    this.domNode.style.left = rect.width + 'px';
-    this.domNode.style.zIndex = 100;
-  }
-  else {
-    this.domNode.style.display = 'block';
-    this.domNode.style.position = 'absolute';
-    this.domNode.style.top = (rect.height - 1) + 'px';
-    this.domNode.style.zIndex = 100;
-  }
+  // if (!this.controller.isMenubarItem) {
+  //   this.domNode.parentNode.style.position = 'relative';
+  //   this.domNode.style.display = 'block';
+  //   this.domNode.style.position = 'absolute';
+  //   this.domNode.style.left = rect.width + 'px';
+  //   this.domNode.style.zIndex = 100;
+  // }
+  // else {
+  //   this.domNode.style.display = 'block';
+  //   this.domNode.style.position = 'absolute';
+  //   this.domNode.style.top = (rect.height - 1) + 'px';
+  //   this.domNode.style.zIndex = 100;
+  // }
+  this.domNode.classList.add("show");
 
   this.controller.setExpanded(true);
 
@@ -606,8 +618,9 @@ PopupMenu.prototype.close = function (force) {
   }
 
   if (force || (!hasFocus && !this.hasHover && !controllerHasHover)) {
-    this.domNode.style.display = 'none';
-    this.domNode.style.zIndex = 0;
+    // this.domNode.style.display = 'none';
+    // this.domNode.style.zIndex = 0;
+    this.domNode.classList.remove("show");
     this.controller.setExpanded(false);
   }
 };
@@ -643,6 +656,7 @@ var MenuItem = function (domNode, menuObj) {
 MenuItem.prototype.init = function () {
   this.domNode.tabIndex = -1;
 
+  this.domNode.addEventListener("touchstart", this.handleTouch.bind(this));
   this.domNode.addEventListener('keydown', this.handleKeydown.bind(this));
   this.domNode.addEventListener('click', this.handleClick.bind(this));
   this.domNode.addEventListener('focus', this.handleFocus.bind(this));
@@ -666,6 +680,16 @@ MenuItem.prototype.isExpanded = function () {
 };
 
 /* EVENT HANDLERS */
+MenuItem.prototype.handleTouch = function (event) {
+  console.log("menuItem");
+  if (this.popupMenu) {
+    this.popupMenu.open();
+    this.popupMenu.setFocusToFirstItem();
+    event.preventDefault();
+    event.stopPropagation();
+  }
+
+};
 
 MenuItem.prototype.handleKeydown = function (event) {
   var tgt  = event.currentTarget,
@@ -784,6 +808,7 @@ MenuItem.prototype.setExpanded = function (value) {
 
 MenuItem.prototype.handleClick = function (event) {
   this.menu.setFocusToController();
+  console.log("yep");
   this.menu.close(true);
 };
 
