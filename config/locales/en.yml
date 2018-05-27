@@ -12,13 +12,15 @@ en:
     tuesday: Tuesday
     wednesday: Wednesday
     thursday: Thursday
-    description: "Description : "
-    duration: "Durée : "
-    public: "Public : "
-    plenary: Plénière
-    confs: Conférences
-    workshops: Ateliers
+    description: "Description: "
+    duration: "Duration: "
+    public: "Public: "
+    plenary: plenary
+    confs: conferences
+    workshops: workshops
+    exhibitions: exhibitions
   menu:
+    home: Home
     program: Program
     presentation: Presentation
     calendar: Calendar
@@ -37,7 +39,7 @@ en:
     donate: Call for donate
     cfp: Call for participations
     about: About
-    libre: What is the Libre??
+    libre: What is the Libre?
     history: History
     sponsors: Sponsors
     organisers: Organisers
@@ -46,9 +48,11 @@ en:
     site_map: Site map
     user: User
     connection: Connection
-    lang: language
+    lang: Language
+    fr: French
+    en: English
     network: Network
-    mailing: mailing-list
+    mailing: Mailing-list
   rmll:
     home:
       background:
@@ -64,6 +68,12 @@ en:
               content: 10h -> 18h
             - name: plenaries
               content: 18h -> 20h Amphitheatre AT8 (Atrium)
+        mails:
+          title: Notifications
+          mail:
+          process:
+            - name: mails
+              content: You have 4 new mails.
         spaces:
           title: Spaces
         activities:
@@ -83,37 +93,37 @@ en:
         intro:
           program_date: Publication of the full program on June 5th.
           text: The Libre Sotware Meeting 2018 will be held from 7 to 12 July in Strasbourg.
-          desc: "The event is punctuated by?:"
+          desc: "The event is punctuated by:"
           elems_desc:
-            - conferences, workshops, debates, hackerspaces, etc.?;
-            - booths (organizations, projects, etc.)?;
-            - meetings between FOSS actors and the general public?;
-            - meetings between the different FOSS actors (developers, decision-makers/agents, public, users)?;
+            - conferences, workshops, debates, hackerspaces, etc.
+            - booths (organizations, projects, etc.)
+            - meetings between FOSS actors and the general public
+            - meetings between the different FOSS actors (developers, decision-makers/agents, public, users)
             - concerts, performances, screenings-debates, exhibitions, etc.
         edu_num:
           title: Digital education
-          text: 'The main track of this edition will be "Digital Education: captivity factory or new emancipation ?". This central track will be present throughout the festival. It is therefore not exclusive, but we will give priority to proposals for formats related to it. The question of digital education will make it possible to address the major challenges of education through the use of these technologies. This theme covers education from primary to higher education, including associative, amateur and continuous learning, while questioning their societal implications in general.'
+          text: 'The main track of this edition will be "Digital Education: captivity factory or new emancipation?". This central track will be present throughout the festival. It is therefore not exclusive, but we will give priority to proposals for formats related to it. The question of digital education will make it possible to address the major challenges of education through the use of these technologies. This theme covers education from primary to higher education, including associative, amateur and continuous learning, while questioning their societal implications in general.'
         tracks:
           title: Tracks
-          text: 'These LSM will be articulated around transdisciplinary tracks. The main track is "?Digital education?: captivity factory or new emancipation ?". A track means a linear succession of events of various formats on the same theme, allowing participants to follow all the content covering the same subject.'
+          text: 'These LSM will be articulated around transdisciplinary tracks. The main track is "Digital education: captivity factory or new emancipation?". A track means a linear succession of events of various formats on the same theme, allowing participants to follow all the content covering the same subject.'
         formats:
           title: Formats
           list:
             - title: Talks
               text:
                 - Classic format, interactive or not, the talks allow to highlight a technical progress, a problem, or any other idea or relevant project.
-              duration: "Duration?: 30 minutes or 1 hour, plus interactions with the audience, with some exceptions."
-              public: "Public?: 50, 210 or 520 people."
+              duration: "Duration: 30 minutes or 1 hour, plus interactions with the audience, with some exceptions."
+              public: "Public: 50, 210 or 520 people."
             - title: Workshops
               text:
                 - Intended or not for a specific public, the workshop allows a discovery or a deepening of a precise practice.
-              duration: Duration?: per session(s) from 1 h to 4 h"
-              public: "Public?: 50 people max."
+              duration: "Duration: per session(s) from 1 h to 4 h"
+              public: "Public: 50 people max."
             - title: Debates/Round Tables
               text:
                 - "Debates or round tables allow major issues to be discussed collectively in different forms: wandering, moving debates, forum theatre, etc."
-              duration: "Duration?: 50 min."
-              public: "Public?: 50 people max."
+              duration: "Duration: 50 min."
+              public: "Public: 50 people max."
             - title: Chatroom
               text:
                 - Named after internet chats, chatrooms allow all people and communities sensitive to a particular topic to meet physically.
@@ -123,40 +133,40 @@ en:
               text:
                 - "We offer hackerspaces, self-managed spaces dedicated to all kinds of hacking, programming, electronics, audio/video, and so on."
                 - To allow the LSM to happen idealy and to keep trace of what will be said, thanks to all good wills, a room dedicated to internal commissions like network infrastructure or audiovisual captures.
-              duration: "free"
-              public: "undefined"
+              duration: "free."
+              public: "undefined."
             - title: Création
               text:
-                - "Some artists will perform various creation of different types : theater, music, drawing, cinema, cooking, etc."
-              duration: "free."
+                - "Some artists will perform various creation of different types: theater, music, drawing, cinema, cooking, etc."
+              duration: free.
               public: "undefined."
         speakers:
           title: Participants
           desc: "To give a small idea, the LSM 2018 will welcome in particular:"
           desc_items:
-            - name: the Free Software Foundation Europe (FSFE)?;
+            - name: the Free Software Foundation Europe (FSFE)
               url: "https://fsfe.org/"
-            - name: Framasoft ;
+            - name: Framasoft
               url: "https://framasoft.org/"
-            - name: APRIL ;
+            - name: APRIL
               url: "https://www.april.org/"
-            - name: APO33 ;
+            - name: APO33
               url: "http://apo33.org/index.php/en/"
-            - name: CoopCycle ;
+            - name: CoopCycle
               url: "https://coopcycle.org/en/"
-            - name: Exodus Privacy ;
+            - name: Exodus Privacy
               url: "https://exodus-privacy.eu.org/"
-            - name: Funkwhale ;
+            - name: Funkwhale
               url: "https://funkwhale.audio/"
-            - name: Resonate ;
+            - name: Resonate
               url: "https://resonate.is/"
-            - name: Sugarizer ;
+            - name: Sugarizer
               url: "https://olpc-france.org/sugarizer/"
-            - name: Peertube?;
+            - name: Peertube
               url: "https://joinpeertube.org/en/"
-            - name: CHATONS?;
+            - name: CHATONS
               url: "https://chatons.org/"
-            - name: LinuxFr.org.
+            - name: LinuxFr.org
               url: "https://linuxfr.org/"
         night:
           title: Libre_Night
@@ -211,24 +221,25 @@ en:
       contributors:
       cfb:
         title: Call for booths
+        title-splitted: [Call for, booths]
         text: The Libre village is a group of associations holding stands to present their projects and actions to the public. It is an ideal place for discovery of the various free software and their conceptions, offering an alternative to the big companies with lucrative goal.
-        announce: The village will be partly moved to the André Malraux peninsula on Saturday (07/07/2018).
-        message: The village will take place to the André Malraux peninsula on Saturday 7th.
-        call: "You wish to represent your software, your association or other? The call is still open, sign up?!"
+        announce: The village will be partly moved to the Presqu'île André Malraux on Saturday (07/07/2018).
+        message: The village will take place to the Presqu'île Malraux on Saturday 7th.
+        call: "You wish to represent your software, your association or else? The call is still open, sign up!"
         call-bis:
-          - You wish
-          - to represent your software,
+          - You wish to
+          - represent your software,
           - your organization or else?
-          - The call is still open, subscribe !
+          - The call is still open, subscribe!
         call-url: "https://osem.aius.u-strasbg.fr/conferences/RMLL2018/booths"
     info:
       map:
         title: Map
         options:
           checkboxes:
-            - name: Tram stations
+            - name: Tram stops
               id: tram
-            - name: Bus stations
+            - name: Bus stops
               id: bus
             - name: Parking lots
               id: parking
@@ -261,12 +272,12 @@ en:
         cts:
           title: Public transport
           list:
-            - name: Central Campus
+            - name: Central Campus of the university of Strasbourg
               stops:
                 - Université
                 - Observatoire
                 - Esplanade
-            - name: presqu'île André Malraux
+            - name: presqu'île André Malraux0
               stops:
                 - Winston Churchill
                 - Étoile Bourse
@@ -277,7 +288,7 @@ en:
           bus:
         parkings:
           title: Parking lots
-          text: "Although it is probably possible to park for free not far from the LSM in the adjacent streets by looking a little (close to the campus), here are 3 paying parking nearby and their maximum rates?:"
+          text: "Although it is probably possible to park for free not far from the LSM in the adjacent streets by looking a little (close to the campus), here are 3 paying parking nearby and their maximum rates:"
           list:
             - name: Parking Esplanade Centre Commercial
               adress: 3, rue de Londres, 67000 Strasbourg
@@ -314,9 +325,32 @@ en:
         title: lodging
         lodge:
           name: Youth hostels and hotels
-          text_html: "Here is the link to our list of different affordable accommodation available in and around Strasbourg?:"
-          url: "https://2018.rmll.info/conferences/RMLL2018/#lodging"
-          link: liste des différents hébergements
+          text_html: "List of different affordable accommodation available in and around Strasbourg:"
+          list:
+            - name: Auberge des 2 rives
+              desc: A nice hostel located at the german border.
+              url: "https://hihostels.com/hostels/auberge-de-jeunesse-hi-strasbourg-2-rives#price"
+            - name: Camping de Strasbourg
+              desc: "The big camping of Strasbourg at price of 28.5e/night (and 34.2 with electricity). Caution: You need reserve before 01/06/2018 and the reservation have to be individual"
+              url: "https://www.camping-strasbourg.com/"
+            - name: Ciarus
+              desc: The Ciarus is a clean hostel, offering good meals, located at 20 min of walk from the university.
+              url: "http://www.ciarus.com/fr/"
+            - name: East Hotel
+              desc: Hostel in the Strasbourg's suburb of Hoenhein (price 45-50)
+              url: "http://www.easthotel67.com/"
+            - name: Hôtel F1
+              desc: In the Strasbourg's suburb of Illkirch, this Hostel F1 cost 40
+              url: "https://www.booking.com/searchresults.fr.html?aid=301664;label=strasbourg-x9zAIcPnaezw3AokkTmD0gS106735864684%3Apl%3Ata%3Ap1230%3Ap2%3Aac%3Aap1t1%3Aneg%3Afi%3Atikwd-5059309204%3Alp9055933%3Ali%3Adec%3Adm;sid=15c458ae77f3fc76a5d18861e37e45c9;city=-1428944;expand_sb=1;highlighted_hotels=426617;hlrd=no_dates;keep_landing=1;redirected=1;source=hotel&"
+            - name:  Hôtel roi soleil
+              desc: "Two hostel in Strasbourg: - on Mundolsheim (price 47) - on Strasbourg's train station (price 53)"
+              url: "http://www.hotel-roi-soleil.com/hotel/hotel-strasbourg-mundolsheim/"
+            - name: Ibis Hostels Strasbourg
+              desc: Some differents hostels Ibis available for price of 38-100
+              url: "https://secure.ibis.com/store/index.html#/fr/hotels?q=Strasbourg&dateIn=2018-07-06&nights=1aadults%3D1&domainId=www.ibis.com&lang=fr"
+            - name: Première classe Strasbourg OUEST
+              desc: A cheap hostel (price 35-50) near to hautepierre in Strasbourg
+              url: "https://www.premiereclasse.com/fr/hotels/premiere-classe-strasbourg-ouest?gclid=EAIaIQobChMIiLev8ar92gIVDijTCh0oEQXbEAAYASAAEgLbyPD_BwE&AspxAutoDetectCookieSupport=1"
         room:
           name: Rooms at the Cité U. de la Robertsau
           text: You can book a single room with shared bathroom and kitchen for 6 nights, from 6 to 12 July, for 120 €, all included.
@@ -333,7 +367,7 @@ en:
           - Here are some interesting places you could visit when you come to Strasbourg, the most beautiful city in the world.
           - Strasbourg is notably the capital of Alsace, the Great East, Europe, Christmas and the Great Hamster of Alsace.
         museum:
-          desc: "Some museums?:"
+          desc: "Some museums:"
           desc_items:
             - name: The Historical Museum of Strasbourg
               desc: A very detailed and documented history of our city, capital of Alsace and Europe, from the early Middle Ages to the present day.
@@ -360,21 +394,24 @@ en:
               desc: Typical old quarter
               coordinates: [7.74239078164101,48.581290966165]
     participate:
+      mail:
+        donate: Call for donations for the LSM 2018
+        volunteering: We need you!
+        cfb: Call for booths for the Village du Libre 2018
+        off: RMLL-OFF?
       volunteering:
         title: Volunteering
         intro:
-          text: 
-            - Hello !
-            - 
-            - You wish to help us for the preparation and the backstage of the LSM 2018 ?
-            - Thank you already because we need it, for every kind of skill !
+          text:
+            - Hello!
+            -
+            - You wish to help us for the preparation and the backstage of the LSM 2018?
+            - Thank you already because we need it, for every kind of skill!
         mailing:
-          text: 
-            - To subscribe to the volunteers mailing-list, click here :
+          text: "To subscribe to the volunteers mailing-list, click here:"
           url: "https://listes2018.rmll.info/volunteers"
         pad:
-          text:
-            - You can also go and check on the help board :
+          text: "You can also go and check on the help board:"
           url: "http://pad.arn-fai.net/p/rmll-2018-help"
         end:
             - Freely yours,
@@ -383,7 +420,7 @@ en:
         title: Call for donations
         text:
           - Hello everyone,
-          - 
+          -
           - This year, we organize the LSM 2018 with a very limited budget, which obliges us to a certain austerity in our capacities of reception.
           - We have long thought about the various solutions to supplement our subsidies and allow us the necessary advance to pay the suppliers and pay the interveners.
           - We decided not to go through a heavy and expensive participatory financing system, but only to collect direct donations.
@@ -396,13 +433,21 @@ en:
           - FR76 1720 6004 2193 0069 8796 454
           - BIC
           - AGRIFRPP872
+      cfb:
+        title: Appel à stand
+        text:
+          - The Libre village is a group of associations holding stands to present their projects and actions to the public. It is an ideal place for discovery of the various free software and their conceptions, offering an alternative to the big companies with lucrative goal.
+          - The village will be partly moved to the Presqu'île André Malraux on Saturday (07/07/2018).
+          - "You wish to represent your software, your association or other? The call is still open!"
+        link-text: Sign up!
+        url: "https://osem.aius.u-strasbg.fr/conferences/RMLL2018/booths"
       cfp:
         url: ""
       off:
-        title: RMLL-OFF ?
+        title: RMLL-OFF?
         text:
           - Close or far away friends, dreaming higher than ourselves,
-          - Do you have any other wishes than those represented here ?
+          - Do you have any other wishes than those represented here?
           - You're probably not the only ones and we would also be glad know that other things are being planned around the LSM.
           - Don't hesitate to ask if you need any help or contacts, and if you wish to be announced on our website.
           - Freely,
@@ -412,7 +457,7 @@ en:
       graphic_design:
     about:
       libre:
-        title: What is the Libre??
+        title: What is the Libre?
         intro:
           title: Description
           text:
@@ -424,19 +469,19 @@ en:
             - Faced with this movement, and concerned to preserve software freedom, Richard M. Stallman founded the GNU Project in 1983, formalizing the first definition of free software.
         liberties:
           title: Liberties
-          desc: "A software is then considered free if it confers to its user these 4 freedoms (numbered from 0 to 3)?:"
+          desc: "A software is then considered free if it confers to its user these 4 freedoms (numbered from 0 to 3):"
           desc_items:
-            - <b>0</b>, --The freedom of <b>execute</b> the program, for all uses?;
-            - <b>1</b>, --The freedom of <b>study</b> the operation of the programme and adapt it to its needs?;
-            - <b>2</b>, --The freedom of <b>redistribuate</b> copies of the program (which implies the possibility of both giving and selling copies)?;
+            - <b>0</b>, --The freedom of <b>execute</b> the program, for all uses;
+            - <b>1</b>, --The freedom of <b>study</b> the operation of the programme and adapt it to its needs;
+            - <b>2</b>, --The freedom of <b>redistribuate</b> copies of the program (which implies the possibility of both giving and selling copies);
             - <b>3</b>, --The freedom of <b>upgrade</b> the program and distribute these improvements to the public, for the benefit of the entire community.
         middle: Today, despite the economics of proprietary software, free software is everywhere, like the famous Mozilla Firefox browser, and even where you don't expect it, like Google's Android mobile operating system.
         advantages:
           title: Advantages
-          desc: "For good reason, free software with the following advantages in particular?:"
+          desc: "For good reason, free software with the following advantages in particular:"
           desc_items:
-            - the source code is accessible and thus benefits from the collective intelligence of all the proofreaders?;
-            - the software can be adapted to the needs of other users, as it has the flexibility to adapt it to all needs?;
+            - the source code is accessible and thus benefits from the collective intelligence of all the proofreaders;
+            - the software can be adapted to the needs of other users, as it has the flexibility to adapt it to all needs;
             - "Open source software is interoperable with other software: it is not only compatible with a defined ecosystem."
       history:
         title: History
@@ -445,73 +490,75 @@ en:
           - They took place several years in Bordeaux, then in other cities in France or neighbouring French-speaking countries.
         moar:
           committee:
-            text: You can find information on the history and philosophy of the World Free Software Meetings on the LSM Committee website.
+            text_html: You can find information on the history and philosophy of the World Free Software Meetings on the %{href}.
+            url-title: LSM Committee website
             url: "http://comite.rmll.info/?lang=fr"
           videos:
-            text: Videos from previous editions are available at
+            text: Watch %{href}.
+            url-title: videos from previous editions
             url: "http://video.rmll.info"
         previousEditions:
-          - txt: "drwxr-xr-x Alolise            01:07 JUL 2017"
+          - txt: "Alolise            01:07 JUL 2017"
             url: "https://2017.rmll.info"
             city: St-Etienne
-          - txt: "drwxr-xr-x undefined          07:10 JUL 2016"
+          - txt: "undefined          07:10 JUL 2016"
             url: "http://2016.d.rmll.info/"
             city: Saint-Joseph
-          - txt: "drwxr-xr-x équipe sécurité    04:06 JUL 2016"
+          - txt: "équipe sécurité    04:06 JUL 2016"
             url: "https://sec2016.rmll.info/"
             city: Paris
-          - txt: "drwxr-xr-x Oisux              04:10 JUL 2015"
+          - txt: "Oisux              04:10 JUL 2015"
             url: "https://2015.rmll.info"
             city: Beauvais
-          - txt: "drwxr-xr-x FRUL               05:11 JUL 2014"
+          - txt: "FRUL               05:11 JUL 2014"
             url: "https://2014.rmll.info"
             city: Montpellier
-          - txt: "drwxr-xr-x undefined          22:25 AUG 2013"
+          - txt: "undefined          22:25 AUG 2013"
             url: "http://2013.d.rmll.info/"
             city: Saint-Joseph
-          - txt: "drwxr-xr-x Abelli             06:11 JUL 2013"
+          - txt: "Abelli             06:11 JUL 2013"
             url: "https://2013.rmll.info"
             city: Bruxelles
-          - txt: "drwxr-xr-x Free-IT-Foundation 07:12 JUL 2012"
+          - txt: "Free-IT-Foundation 07:12 JUL 2012"
             url: "https://2012.rmll.info"
             city: Genève
-          - txt: "drwxr-xr-x undefined          09:14 JUL 2011"
+          - txt: "undefined          09:14 JUL 2011"
             url: "http://2011.rmll.info"
             city: Strasbourg
-          - txt: "drwxr-xr-x undefined          01:03 JUL 2011"
+          - txt: "undefined          01:03 JUL 2011"
             url: "http://2011.d.rmll.info/"
             city: Saint-Joseph
-          - txt: "drwxr-xr-x ABUL               06:11 JUL 2010"
+          - txt: "ABUL               06:11 JUL 2010"
             url: "http://2010.rmll.info"
             city: Bordeaux
-          - txt: "drwxr-xr-x Linux-Nantes       07:11 JUL 2009"
+          - txt: "Linux-Nantes       07:11 JUL 2009"
             url: "http://2009.rmll.info"
             city: Nantes
-          - txt: "drwxr-xr-x LANDINUX           01:05 JUL 2008"
+          - txt: "LANDINUX           01:05 JUL 2008"
             url: "http://2008.rmll.info"
             city: Mont-de-Marsan
-          - txt: "drwxr-xr-x Epplug             10:14 JUL 2007"
+          - txt: "Epplug             10:14 JUL 2007"
             url: "http://2007.rmll.info"
             city: Amiens
-          - txt: "drwxr-xr-x Mirabellug         04:08 JUL 2006"
+          - txt: "Mirabellug         04:08 JUL 2006"
             url: "http://2006.rmll.info"
             city: Vandœuvre-lès-Nancy
-          - txt: "drwxr-xr-x undefined          05:09 JUL 2005"
+          - txt: "undefined          05:09 JUL 2005"
             url: ""
             city: Dijon
-          - txt: "drwxr-xr-x ABUL               06:10 JUL 2004"
+          - txt: "ABUL               06:10 JUL 2004"
             url: ""
             city: Bordeaux
-          - txt: "drwxr-xr-x undefined          09:12 JUL 2003"
+          - txt: "undefined          09:12 JUL 2003"
             url: ""
             city: Metz
-          - txt: "drwxr-xr-x ABUL               09:13 JUL 2002"
+          - txt: "ABUL               09:13 JUL 2002"
             url: ""
             city: Bordeaux
-          - txt: "drwxr-xr-x ABUL               04:08 JUL 2001"
+          - txt: "ABUL               04:08 JUL 2001"
             url: ""
             city: Bordeaux
-          - txt: "drwxr-xr-x ABUL               05:09 JUL 2000"
+          - txt: "ABUL               05:09 JUL 2000"
             url: ""
             city: Bordeaux
       sponsors:
@@ -539,13 +586,13 @@ en:
           - The Code of Conduct applies equally to all participants including, but not limited to, speakers, volunteers, staffers, exhibitors, etc.
           - "Behave excellently and inclusivly to everyone: We invite and encourage everybody to express their opinions on relevant topics. All participants should at all times feel at ease to do so without fearing any form of attack, reprisal or harassment. As a consequence we do not tolerate harassment of participants in any form. We ask everybody to be respectful and considerate towards each other, especially when attempting to provide constructive criticism."
           - "Consider what you share: All communication should be appropriate for an audience including people of many different backgrounds."
-          - "Respect your environment : We trust and expect everybody to be mindful of the area, the environment and our neighbours. Some areas at RMLL are restricted for organizational and/or security reasons. Everybody is expected to follow instructions from RMLL staff at all times and respect closed doors."
+          - "Respect your environment: We trust and expect everybody to be mindful of the area, the environment and our neighbours. Some areas at RMLL are restricted for organizational and/or security reasons. Everybody is expected to follow instructions from RMLL staff at all times and respect closed doors."
           - If you have experienced or become aware of behaviour contrary to the principles enshrined in this Code of Conduct, please bring such incidents to the attention of RMLL Staff members.
           - RMLL Staff members reserve the right to deny entrance and/or eject from an event or any of its infrastructure any individual found to be engaging in misconduct contrary to the principles highlighted above.
         text-keys:
           first-line: RMLL (LSM) and its Staff members aim to offer a friendly and peaceful environment for every participant. All participants are expected to behave excellently towards each other. Misbehaviour can lead to exclusion from our events and/or our technical infrastructure.
           second-words: RMLL
-          second-line : aims to be a free, open and cooperative event. This means we expect collaboration from all the participants, and for everybody to behave respectfully towards all others, including those that are different or think differently from yourself.
+          second-line: aims to be a free, open and cooperative event. This means we expect collaboration from all the participants, and for everybody to behave respectfully towards all others, including those that are different or think differently from yourself.
           third-words: The Code of Conduct
           third-line: applies equally to all participants including, but not limited to, speakers, volunteers, staffers, exhibitors, etc.
           fourth-words: "Behave excellently and inclusivly to everyone:"
@@ -553,7 +600,7 @@ en:
           fourth-line: on relevant topics. All participants should at all times feel at ease to do so without fearing any form of attack, reprisal or harassment. As a consequence we do not tolerate harassment of participants in any form. We ask everybody to be respectful and considerate towards each other, especially when attempting to provide constructive criticism.
           fifth-words: "Consider what you share:"
           fifth-line: All communication should be appropriate for an audience including people of many different backgrounds.
-          sixth-words: "Respect your environment :"
+          sixth-words: "Respect your environment:"
           sixth-line: We trust and expect everybody to be mindful of the area, the environment and our neighbours. Some areas at RMLL are restricted for organizational and/or security reasons. Everybody is expected to follow instructions from RMLL staff at all times and respect closed doors.
           seventh-line: If you have experienced or become aware of behaviour contrary to the principles enshrined in this Code of Conduct, please bring such incidents to the attention of RMLL Staff members.
           eighth-line: RMLL Staff members reserve the right to deny entrance and/or eject from an event or any of its infrastructure any individual found to be engaging in misconduct contrary to the principles highlighted above.
@@ -565,11 +612,11 @@ en:
             text:
               - Hackstub, for the fédération alsace.netlib.re
               - Association under local law (Bas-Rhin, Haut-Rhin et Moselle)
-              - "N° Siret : 810 535 773 00016"
+              - "N° Siret: 810 535 773 00016"
           siege:
             title: Head Office
             text:
-              - Hackstub Association 
+              - Hackstub Association
               - hosted (physically) at the Shadok, Strasbourg digital factory
               - 25 presqu'île André Malraux,
               - 67100 Strasbourg
@@ -596,5 +643,11 @@ en:
             text:
               - The content is written by the organization's volunteers. The texts on the site do not claim to be of any originality.
               - The graphics were produced by Nicolas Chesnais and Majorie Ober under EUPL 1.2 license.
+          fonts:
+            title: Fonts
+            text:
+              - "Open Sans by Steve Matteson available under the Apache License, Version 2.0 - http://www.opensans.com/"
+              - "Space Mono by Colophon Foundry available under the SIL Open Font License v1.1 - https://www.colophon-foundry.org/custom/spacemono/"
+              - "Mister Pixel by Christophe Badani available under the SIL Open Font License v1.1 - https://velvetyne.fr/fonts/mr-pixel/"
       site_map:
         title: Site map

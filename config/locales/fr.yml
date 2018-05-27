@@ -15,9 +15,10 @@ fr:
     description: "Description : "
     duration: "Durée : "
     public: "Public : "
-    plenary: Plénière
-    confs: Conférences
-    workshops: Ateliers
+    plenary: plénière
+    confs: conférences
+    workshops: ateliers
+    exhibitions: salons
   menu:
     home: Accueil
     program: Programme
@@ -51,7 +52,7 @@ fr:
     fr: Français
     en: Anglais
     network: Réseaux
-    mailing: liste de diffusion
+    mailing: Liste de diffusion
   rmll:
     home:
       background:
@@ -72,7 +73,7 @@ fr:
           mail:
           process:
             - name: mails
-              content: Vous avez 3 nouveaux mails.
+              content: Vous avez 4 nouveaux mails.
         spaces:
           title: Espaces
         activities:
@@ -94,10 +95,10 @@ fr:
           text: Les Rencontres Mondiales du Logiciel Libre 2018 se tiendront du 7 au 12 juillet à Strasbourg.
           desc: "L'événement est rythmé par :"
           elems_desc:
-            - des conférences, des ateliers, des tables rondes, des hackerspaces, etc. ;
-            - des stands (d'associations, de projets, etc.) ;
-            - des rencontres entre les acteurs du Libre et le grand public ;
-            - des rencontres entre les différents acteurs du Libre (développeurs, décideurs/agents, publics, utilisateurs) ;
+            - des conférences, des ateliers, des tables rondes, des hackerspaces, etc.
+            - des stands (d'associations, de projets, etc.)
+            - des rencontres entre les acteurs du Libre et le grand public
+            - des rencontres entre les différents acteurs du Libre (développeurs, décideurs/agents, publics, utilisateurs)
             - des concerts, performances, projections-débats, expositions, etc.
         edu_num:
           title: Éducation_numérique
@@ -132,7 +133,7 @@ fr:
               text:
                 - "Nous proposons des hackerspaces, des espaces autogérés dédiés à la bidouille en tout genre : programmation, électronique, audio/vidéo, etc."
                 - Pour permettre aux RMLL 2018 de se dérouler idéalement et de laisser une trace durable à l'aide de toutes les bonnes volontés, un hackerspace sera dédié aux commissions internes comme l'infrastructure réseau ou les captations audiovisuelles.
-              duration: libre
+              duration: libre.
               public: indéfini
             - title: Création
               text:
@@ -220,6 +221,7 @@ fr:
       contributors:
       cfb:
         title: Appel à stand
+        title-splitted: [Appel, à stand]
         text: Le village du Libre est un ensemble d'associations tenant des stands pour présenter au public leurs projets et actions. C'est un lieu propice à la découverte des différents logiciels libres et leurs conceptions, offrant une alternative aux grosses entreprises à but lucratif.
         announce: Le village sera déplacé en partie sur la presque-île André-Malraux le samedi (07/07/2018).
         message: Le village se tiendra sur la Presqu'île Malraux le samedi 7 juillet.
@@ -396,12 +398,13 @@ fr:
         donate: Appel à dons pour les RMLL 2018
         volunteering: Nous avons besoin de vous !
         cfb: Appel à stand pour le Village du Libre 2018
+        off: RMLL-OFF ?
       volunteering:
         title: Bénévolat
         intro:
-          text: 
+          text:
             - Hello !
-            - 
+            -
             - Vous souhaitez nous aider sur la préparation et les coulisses des RMLL 2018 ?
             - On vous en remercie déjà car on en a bien besoin, et pour toutes les compétences !
         mailing:
@@ -417,7 +420,7 @@ fr:
         title: Appel à dons
         text:
           - Bonjour à toutes et à tous,
-          - 
+          -
           - Cette année, nous organisons les RMLL 2018 avec un budget très restreint, ce qui nous oblige à une certaine austérité dans les capacités d'accueil.
           - Nous avons longtemps réfléchi aux différentes solutions pour compléter nos subventions et nous permettre l'avance nécessaire pour payer les fournisseurs et défrayer les intervenants.
           - Nous avons décidé de ne pas passer par un système de financement participatif lourd et coûteux, mais d'uniquement recueillir des dons directs.
@@ -643,8 +646,8 @@ fr:
           fonts:
             title: Fonts
             text:
-              - Open Sans par Steve Matteson disponible sous la licence Apache License, Version 2.0 - http://www.opensans.com/
-              - Space Mono par Colophon Foundry disponible sous la licence SIL Open Font License v1.1 - https://www.colophon-foundry.org/custom/spacemono/
-              - Mister Pixel par Christophe Badani disponible sous la licence SIL Open Font License v1.1 - https://velvetyne.fr/fonts/mr-pixel/
+              - "Open Sans par Steve Matteson disponible sous la licence Apache License, Version 2.0 - http://www.opensans.com/"
+              - "Space Mono par Colophon Foundry disponible sous la licence SIL Open Font License v1.1 - https://www.colophon-foundry.org/custom/spacemono/"
+              - "Mister Pixel par Christophe Badani disponible sous la licence SIL Open Font License v1.1 - https://velvetyne.fr/fonts/mr-pixel/"
       site_map:
         title: Plan du site
