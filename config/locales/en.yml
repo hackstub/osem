@@ -37,6 +37,7 @@ en:
     participate: Participate
     volunteering: Volunteering
     donate: Call for donate
+    rmlloff: RMLL-OFF?
     cfp: Call for participations
     about: About
     libre: What is the Libre?
@@ -292,28 +293,28 @@ en:
           list:
             - name: Parking Esplanade Centre Commercial
               adress: 3, rue de Londres, 67000 Strasbourg
-              distance: 0.6
-              price: 1.2
+              distance: "0.6"
+              price: "1.2"
               url: "http://www.parcus.com/index.php?parcusParam[cmpref]=11863&lang=fr&module=parcus&action=ViewDetail"
             - name: Parking des Bateliers
               adress: rue de Zurich, 67000 Strasbourg
-              distance: 0.7
-              price: 1.6
+              distance: "0.7"
+              price: "1.6"
               url: "http://www.parcus.com/index.php?parcusParam%5Bcmpref%5D=871&lang=fr&module=parcus&action=ViewDetail"
             - name: Parking Étoile Cinéma
               adress: 25, avenue du Rhin, 67100 Strasbourg
-              distance: 1
-              price: 1.45
+              distance: "1"
+              price: "1.45"
               url: "https://www.placedeshalles.com/infos-pratiques/parking"
             - name: Parking Kléber
               adress: place Kléber, 67000 Strasbourg
-              distance: 2
-              price: 2.4
+              distance: "2"
+              price: "2.4"
               url: "https://www.jds.fr/strasbourg/parking/parking-kleber-homme-de-fer-4977_L"
             - name: Parking des Halles
               adress: rue du Marais Vert, 67000 Strasbourg
-              distance: 2.5
-              price: 1.6
+              distance: "2.5"
+              price: "1.6"
               url: "https://www.placedeshalles.com/infos-pratiques/parking"
         accessibility:
           title: Accessibility and mobility
@@ -398,15 +399,14 @@ en:
         donate: Call for donations for the LSM 2018
         volunteering: We need you!
         cfb: Call for booths for the Village du Libre 2018
-        off: RMLL-OFF?
+        rmlloff: RMLL-OFF?
       volunteering:
         title: Volunteering
-        intro:
-          text:
-            - Hello!
-            -
-            - You wish to help us for the preparation and the backstage of the LSM 2018?
-            - Thank you already because we need it, for every kind of skill!
+        text:
+          - Hello!
+          -
+          - You wish to help us for the preparation and the backstage of the LSM 2018?
+          - Thank you already because we need it, for every kind of skill!
         mailing:
           text: "To subscribe to the volunteers mailing-list, click here:"
           url: "https://listes2018.rmll.info/volunteers"
@@ -414,13 +414,14 @@ en:
           text: "You can also go and check on the help board:"
           url: "http://pad.arn-fai.net/p/rmll-2018-help"
         end:
-            - Freely yours,
-            - RMLL 2018 team
+          -  
+          - Freely yours,
+          - RMLL 2018 team
       donate:
         title: Call for donations
         text:
           - Hello everyone,
-          -
+          -  
           - This year, we organize the LSM 2018 with a very limited budget, which obliges us to a certain austerity in our capacities of reception.
           - We have long thought about the various solutions to supplement our subsidies and allow us the necessary advance to pay the suppliers and pay the interveners.
           - We decided not to go through a heavy and expensive participatory financing system, but only to collect direct donations.
@@ -428,7 +429,7 @@ en:
           - If you wish, we will post your participation on our website.
           - Beyond 1 000€, you can request an appearance on our other communication media.
           - We are open to all negotiations.
-        rib:
+          -  
           - IBAN
           - FR76 1720 6004 2193 0069 8796 454
           - BIC
@@ -443,13 +444,14 @@ en:
         url: "https://osem.aius.u-strasbg.fr/conferences/RMLL2018/booths"
       cfp:
         url: ""
-      off:
+      rmlloff:
         title: RMLL-OFF?
         text:
           - Close or far away friends, dreaming higher than ourselves,
           - Do you have any other wishes than those represented here?
           - You're probably not the only ones and we would also be glad know that other things are being planned around the LSM.
           - Don't hesitate to ask if you need any help or contacts, and if you wish to be announced on our website.
+          -  
           - Freely,
           - LSM 2018 team
     medias:

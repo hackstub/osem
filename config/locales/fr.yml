@@ -37,6 +37,7 @@ fr:
     participate: Participer
     volunteering: Bénévolat
     donate: Appel à dons
+    rmlloff: RMLL-OFF ?
     cfp: Appel à participations
     about: À propos
     libre: Qu'est ce que le Libre ?
@@ -331,7 +332,7 @@ fr:
               desc: A nice hostel located at the german border.
               url: "https://hihostels.com/hostels/auberge-de-jeunesse-hi-strasbourg-2-rives#price"
             - name: Camping de Strasbourg
-              desc: "The big camping of Strasbourg at price of 28.5e/night (and 34.2 with electricity). Caution : You need reserve before 01/06/2018 and the reservation have to be individual"
+              desc: "The big camping of Strasbourg at price of 28.5e/night (and 34.2 with electricity). Caution: You need reserve before 01/06/2018 and the reservation have to be individual"
               url: "https://www.camping-strasbourg.com/"
             - name: Ciarus
               desc: The Ciarus is a clean hostel, offering good meals, located at 20 min of walk from the university.
@@ -388,7 +389,7 @@ fr:
               desc: Construite en plusieurs étapes entre 1015 (début) et 1439 (fin), et située au coeur de la ville, elle est incontournable pour quiconque intéressé à visiter la ville de Strasbourg. Elle contient en son sein une ancienne et magnifique horloge astronomique, et, pour les plus courageux, on peut monter quasiment jusqu'à son sommet culminant à 142m.
               coordinates: [7.75029391050339,48.5815988294439]
             - name: La Grande Île (centre historique)
-              desc: "L'ensemble de l'île nommée : « la grande île » avec, pour centre, la place Kléber, est la partie la plus ancienne de la ville. Vous pourrez y admirer partout l'architecture typiquement alsacienne. Il y a aussi la Petite France, juste au Sud de la Grande Île, proche du campus de médecine."
+              desc: "L'ensemble de l'île nommée : « la grande île » avec, pour centre, la place Kléber, est la partie la plus ancienne de la ville. Vous pourrez y admirer partout l'architecture typiquement alsacienne. Il y a aussi la Petite France, juste au Sud de la Grande Île, proche du campus de médecine."
               coordinates: [7.74587094783783,48.5833608004904]
             - name: La Petite France
               desc: Quartier ancien typique
@@ -396,26 +397,26 @@ fr:
     participate:
       mail:
         donate: Appel à dons pour les RMLL 2018
-        volunteering: Nous avons besoin de vous !
+        volunteering: Nous avons besoin de vous !
         cfb: Appel à stand pour le Village du Libre 2018
-        off: RMLL-OFF ?
+        rmlloff: RMLL-OFF ?
       volunteering:
         title: Bénévolat
-        intro:
-          text:
-            - Hello !
-            -
-            - Vous souhaitez nous aider sur la préparation et les coulisses des RMLL 2018 ?
-            - On vous en remercie déjà car on en a bien besoin, et pour toutes les compétences !
+        text:
+          - Hello !
+          -  
+          - Vous souhaitez nous aider sur la préparation et les coulisses des RMLL 2018 ?
+          - On vous en remercie déjà car on en a bien besoin, et pour toutes les compétences !
         mailing:
-          text: "Pour vous inscrire à la liste de diffusion des bénévoles, rendez-vous ici :"
+          text: "Pour vous inscrire à la liste de diffusion des bénévoles, rendez-vous ici :"
           url: "https://listes2018.rmll.info/volunteers"
         pad:
-          text: "Vous pouvez aussi vous rendre sur le pad des appels à l'aide ici :"
+          text: "Vous pouvez aussi vous rendre sur le pad des appels à l'aide ici :"
           url: "http://pad.arn-fai.net/p/rmll-2018-help"
         end:
-            - Librement votre,
-            - L'équipe RMLL 2018
+          -  
+          - Librement votre,
+          - L'équipe RMLL 2018
       donate:
         title: Appel à dons
         text:
@@ -428,7 +429,7 @@ fr:
           - Si vous le souhaitez, nous afficherons votre participation sur notre site web.
           - Au delà de 1 000€, vous pouvez solliciter une apparition sur nos autres supports de communication.
           - Nous sommes ouverts à toutes négociations.
-        rib:
+          -  
           - IBAN
           - FR76 1720 6004 2193 0069 8796 454
           - BIC
@@ -438,18 +439,19 @@ fr:
         text:
           - Le village associatif est un ensemble d'associations tenant des stands pour présenter au public leurs projets et actions. C'est un lieu propice à la découverte des différents logiciels libres et leurs conceptions, offrant une alternative aux grosses entreprises à but lucratif.
           - Le village sera déplacé en partie sur la presque-île André-Malraux le samedi (07/07/2018).
-          - "Vous souhaitez représenter votre logiciel, votre association ou autre ? L'appel est toujours ouvert !"
-        link-text: inscrivez-vous !
+          - "Vous souhaitez représenter votre logiciel, votre association ou autre ? L'appel est toujours ouvert !"
+        link-text: inscrivez-vous !
         url: "https://osem.aius.u-strasbg.fr/conferences/RMLL2018/booths"
       cfp:
         url: ""
-      off:
-        title: RMLL-OFF ?
+      rmlloff:
+        title: RMLL-OFF ?
         text:
           - Amis proches ou lointains, rêvant plus haut encore que nous-même,
-          - Vous auriez d'autres envies que celles que vous pouvez voir déjà représentées ici ?
+          - Vous auriez d'autres envies que celles que vous pouvez voir déjà représentées ici ?
           - Vous n'êtes certainement pas les seuls et nous serions ravis de savoir que d'autres choses s'organisent pendant les RMLL.
           - N'hésitez pas à nous demander si vous avez besoin d'aide ou de contacts, et si vous souhaitez qu'on affiche votre programmation sur notre site.
+          -  
           - Librement,
           - L'équipe RMLL 2018
     medias:
@@ -465,7 +467,7 @@ fr:
             - Les logiciels étaient alors très liés à leur support et n'avaient pas de valeur intrinsèque. Les chercheurs échangeaient des copies des logiciels avec leurs pairs pour les développer collectivement.
             - Ces chercheurs en informatique se faisaient appeler hackers (bricoleurs/bidouilleurs), à ne pas confondre avec les crackers, visant des cibles spécifiques afin de leur voler des ressources.
             - Ce n'est qu'à la fin des années 70, lorsque les logiciels ont commencé à avoir une valeur commerciale significative, que l'on a assisté à un processus de verrouillage juridique de l'informatique.
-            - "L'évènement le plus marquant de l'époque est probablement la lettre ouverte aux bricoleurs (Open Letter to Hobbyists), écrite par Bill Gates en janvier 1976, leur sommant d'arrêter de les copier et de les modifier, assimilant ces actions à du vol, ce qui à l'heure d'aujourd'hui nous paraîtrait comme tel, mais qui n'était pas encore entré dans les mentalités de l'époque. Car c'est de cette façon qu'avaient toujours été développés les logiciels : en les copiant et les modifiant pour qu'ils puissent être améliorés par d'autres personnes."
+            - "L'évènement le plus marquant de l'époque est probablement la lettre ouverte aux bricoleurs (Open Letter to Hobbyists), écrite par Bill Gates en janvier 1976, leur sommant d'arrêter de les copier et de les modifier, assimilant ces actions à du vol, ce qui à l'heure d'aujourd'hui nous paraîtrait comme tel, mais qui n'était pas encore entré dans les mentalités de l'époque. Car c'est de cette façon qu'avaient toujours été développés les logiciels : en les copiant et les modifiant pour qu'ils puissent être améliorés par d'autres personnes."
             - Face à ce mouvement, et soucieux de préserver la liberté des logiciels, Richard M. Stallman fonda le projet GNU en 1983, formalisant ainsi la première définition du logiciel libre.
         liberties:
           title: Liberties
@@ -482,7 +484,7 @@ fr:
           desc_items:
             - le code source est accessible et bénéficie ainsi de l'intelligence collective de l'ensemble des relecteurs ;
             - le logiciel peut être adapté aux besoins d'autres utilisateurs, car il possède une flexibilité permettent de l'adapter à tous les besoins ;
-            - "les logiciels libres sont interopérables avec d'autres logiciels : ils ne sont pas uniquement compatibles avec un écosystème défini."
+            - "les logiciels libres sont interopérables avec d'autres logiciels : ils ne sont pas uniquement compatibles avec un écosystème défini."
       history:
         title: Historique
         text:
@@ -577,7 +579,7 @@ fr:
       organisers:
         title: Organisateurs
         text: L'édition 2018 des RMLL est organisée par la fédération alsace.netlib.re, portée par l'association Hackstub. La fédération alsacienne du Libre et du Hack est composée des associations et collectifs Hackstub, Alsace Réseau Neutre (ARN), Radio Rhino, Seeraiwer, l'AIUS, Desclicks, sxb.so et Lilo.
-        ekip: "L'équipe RMLL 2018 c'est : Harmonie, Jérémie, Jean, Jules, Phillippine, Aleks, Nicolas, Marjorie, Manu, Tsanta, Sandhose, Irina, Legaume, Ljf, Jyhem, Janka, Marie-France, Claude, Garfield, Syme, Mhep, et tous ceux qu'on a oubliés (désolé)"
+        ekip: "L'équipe RMLL 2018 c'est : Harmonie, Jérémie, Jean, Jules, Phillippine, Aleks, Nicolas, Marjorie, Manu, Tsanta, Sandhose, Irina, Legaume, Ljf, Jyhem, Janka, Marie-France, Claude, Garfield, Syme, Mhep, et tous ceux qu'on a oubliés (désolé)"
       conduct_code:
         title: Code de conduite
         text:
@@ -586,13 +588,13 @@ fr:
           - The Code of Conduct applies equally to all participants including, but not limited to, speakers, volunteers, staffers, exhibitors, etc.
           - "Behave excellently and inclusivly to everyone: We invite and encourage everybody to express their opinions on relevant topics. All participants should at all times feel at ease to do so without fearing any form of attack, reprisal or harassment. As a consequence we do not tolerate harassment of participants in any form. We ask everybody to be respectful and considerate towards each other, especially when attempting to provide constructive criticism."
           - "Consider what you share: All communication should be appropriate for an audience including people of many different backgrounds."
-          - "Respect your environment : We trust and expect everybody to be mindful of the area, the environment and our neighbours. Some areas at RMLL are restricted for organizational and/or security reasons. Everybody is expected to follow instructions from RMLL staff at all times and respect closed doors."
+          - "Respect your environment : We trust and expect everybody to be mindful of the area, the environment and our neighbours. Some areas at RMLL are restricted for organizational and/or security reasons. Everybody is expected to follow instructions from RMLL staff at all times and respect closed doors."
           - If you have experienced or become aware of behaviour contrary to the principles enshrined in this Code of Conduct, please bring such incidents to the attention of RMLL Staff members.
           - RMLL Staff members reserve the right to deny entrance and/or eject from an event or any of its infrastructure any individual found to be engaging in misconduct contrary to the principles highlighted above.
         text-keys:
           first-line: RMLL (LSM) and its Staff members aim to offer a friendly and peaceful environment for every participant. All participants are expected to behave excellently towards each other. Misbehaviour can lead to exclusion from our events and/or our technical infrastructure.
           second-words: RMLL
-          second-line : aims to be a free, open and cooperative event. This means we expect collaboration from all the participants, and for everybody to behave respectfully towards all others, including those that are different or think differently from yourself.
+          second-line: aims to be a free, open and cooperative event. This means we expect collaboration from all the participants, and for everybody to behave respectfully towards all others, including those that are different or think differently from yourself.
           third-words: The Code of Conduct
           third-line: applies equally to all participants including, but not limited to, speakers, volunteers, staffers, exhibitors, etc.
           fourth-words: "Behave excellently and inclusivly to everyone:"
@@ -600,7 +602,7 @@ fr:
           fourth-line: on relevant topics. All participants should at all times feel at ease to do so without fearing any form of attack, reprisal or harassment. As a consequence we do not tolerate harassment of participants in any form. We ask everybody to be respectful and considerate towards each other, especially when attempting to provide constructive criticism.
           fifth-words: "Consider what you share:"
           fifth-line: All communication should be appropriate for an audience including people of many different backgrounds.
-          sixth-words: "Respect your environment :"
+          sixth-words: "Respect your environment:"
           sixth-line: We trust and expect everybody to be mindful of the area, the environment and our neighbours. Some areas at RMLL are restricted for organizational and/or security reasons. Everybody is expected to follow instructions from RMLL staff at all times and respect closed doors.
           seventh-line: If you have experienced or become aware of behaviour contrary to the principles enshrined in this Code of Conduct, please bring such incidents to the attention of RMLL Staff members.
           eighth-line: RMLL Staff members reserve the right to deny entrance and/or eject from an event or any of its infrastructure any individual found to be engaging in misconduct contrary to the principles highlighted above.
@@ -612,7 +614,7 @@ fr:
             text:
               - Hackstub, pour la fédération alsace.netlib.re
               - Association de droit local (Bas-Rhin, Haut-Rhin et Moselle)
-              - "N° Siret : 810 535 773 00016"
+              - "N° Siret : 810 535 773 00016"
           siege:
             title: Siège social
             text:

@@ -1,5 +1,5 @@
 %section.halfscreen.term.mail.over-background
-  - add_bar("Mail", t("rmll.participate.mail.donate"))
+  - add_bar("Mail", t("rmll.participate.mail.rmlloff"))
 
   .tree
     %ul
@@ -7,10 +7,10 @@
       %li
         MAY 22 - from: contact [AT] 2018.rmll.info
         = link_to t("rmll.participate.mail.volunteering"), rmll_path(:heading => "participate", :page => "volunteering")
-      %li.selected
+      %li
         MAY 22 - from: contact [AT] 2018.rmll.info
         = link_to t("rmll.participate.mail.donate"), rmll_path(:heading => "participate", :page => "donate")
-      %li
+      %li.selected
         MAY 22 - from: contact [AT] 2018.rmll.info
         = link_to t("rmll.participate.mail.rmlloff"), rmll_path(:heading => "participate", :page => "rmlloff")
       %li
@@ -19,11 +19,11 @@
 
   .content
     %ul.info
-      %li Date: tue, 22 May 2018 16:45:42
+      %li Date: fri, 27 Apr 2018 09:12:02
       %li From: "rmll 2018 team" <contact [AT] 2018.rmll.info>
       %li To: You
       %li
-        %h2= subject= "Subject : " + t("rmll.participate.mail.donate")
+        %h2= "Subject : " + t("rmll.participate.mail.rmlloff")
 
     - add_text(t(".text"))
 

@@ -11,24 +11,28 @@
         MAY 22 - from: contact [AT] 2018.rmll.info
         = link_to t("rmll.participate.mail.donate"), rmll_path(:heading => "participate", :page => "donate")
       %li
+        MAY 22 - from: contact [AT] 2018.rmll.info
+        = link_to t("rmll.participate.mail.rmlloff"), rmll_path(:heading => "participate", :page => "rmlloff")
+      %li
         APR 27 - from: contact [AT] 2018.rmll.info
         = link_to t("rmll.participate.mail.cfb"), rmll_path(:heading => "participate", :page => "cfb")
 
   .content
     %ul.info
-      %li Date: tue, 22 May 2018 10:22:12
+      %li Date: tue, 22 May 2018 20:22:12
       %li= "From: 'rmll 2018 team' <contact [AT] 2018.rmll.info>"
       %li To: You
       %li
         %h2= subject= "Subject : " + t("rmll.participate.mail.volunteering")
 
-    %p= t(".text")
+    - add_text(t(".text"))
     %p
       = t(".mailing.text")
       = link_to t(".mailing.url"), t(".mailing.url")
     %p
       = t(".pad.text")
       = link_to t(".pad.url"), t(".pad.url")
+    - add_text(t(".end"))
 
 %section.fullscreen#home-section.no-select.no-overflow{ "aria-hidden":"true" }
   = render "rmll/background"
