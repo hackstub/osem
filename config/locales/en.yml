@@ -11,7 +11,7 @@ en:
     monday: Monday
     tuesday: Tuesday
     wednesday: Wednesday
-	thursday: Thursday
+    thursday: Thursday
     description: "Description : "
     duration: "Durée : "
     public: "Public : "
@@ -47,7 +47,7 @@ en:
     user: User
     connection: Connection
     lang: language
-	network: Network
+    network: Network
     mailing: mailing-list
   rmll:
     home:
@@ -122,7 +122,7 @@ en:
             - title: Hackerspaces
               text:
                 - "We offer hackerspaces, self-managed spaces dedicated to all kinds of hacking, programming, electronics, audio/video, and so on."
-				- To allow the LSM to happen idealy and to keep trace of what will be said, thanks to all good wills, a room dedicated to internal commissions like network infrastructure or audiovisual captures.
+                - To allow the LSM to happen idealy and to keep trace of what will be said, thanks to all good wills, a room dedicated to internal commissions like network infrastructure or audiovisual captures.
               duration: "free"
               public: "undefined"
             - title: Création
@@ -178,26 +178,26 @@ en:
             program:
               - 10 am to 6 pm - Village of libre @ Escarpe + Atrium
               - From 10 am to 6 pm - Conferences, workshops, exhibitions @ Platane + Escarpe + Atrium
-			  - From 10 am to 2 am  - Hackerspace @ Shadok
+              - From 10 am to 2 am  - Hackerspace @ Shadok
               - 6 pm to 7 pm - Plenary @ Atrium
               - 8:30 pm - Meal of Libre
           - date: Monday 9 July
             program:
               - 10 am to 6 pm - Village du libre @ Escarpe + Atrium
               - From 10 am to 6 pm - Conferences, workshops, exhibitions @ Platane + Escarpe + Atrium
-			  - From 10 am to 2 am  - Hackerspace @ Shadok
+              - From 10 am to 2 am  - Hackerspace @ Shadok
               - 6 pm to 7:30 pm - Plenary @ Atrium
           - date: Tuesday 10 July
             program:
               - 10 am to 6 pm - Village of libre @ Escarpe + Atrium
               - From 10 am to 6 pm - Conferences, workshops, exhibitions @ Platane + Escarpe + Atrium
-			  - From 10 am to 2 am  - Hackerspace @ Shadok
+              - From 10 am to 2 am  - Hackerspace @ Shadok
               - 6 pm to 7:30 pm - Plenary @ Atrium
           - date: Wednesday 11 July
             program:
               - 10 am to 6 pm - Village du libre @ Escarpe + Atrium
               - From 10 am to 6 pm - Conferences, workshops, exhibitions @ Platane + Escarpe + Atrium
-			  - From 10 am to 0 am  - Hackerspace @ Shadok
+              - From 10 am to 2 am  - Hackerspace @ Shadok
               - 6 pm to 7:30 pm - Plenary @ Atrium
           - date: Thursday 12 July
             program:
