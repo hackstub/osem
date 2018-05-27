@@ -228,7 +228,17 @@ MenubarItem.prototype.init = function () {
 
 MenubarItem.prototype.handleTouch = function (event) {
   if (this.popupMenu) {
+    // FIXME
+    for (var i = 0; i < this.menu.menubarItems.length; i++) {
+      if (this.menu.menubarItems[i].popupMenu) {
+        this.menu.menubarItems[i].popupMenu.close();
+      }
+    }
     this.popupMenu.open();
+    this.hasFocus = true;
+    this.popupMenu.setFocusToSelf();
+    event.preventDefault();
+    event.stopPropagation();
   }
 }
 
