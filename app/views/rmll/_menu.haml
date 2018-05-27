@@ -1,11 +1,11 @@
 %nav.noselect{ "aria-label":"RMLL 2018" }
   %ul#main-menu{ role:"menubar", "aria-label":"RMLL 2018" }
     %li{ role:"none" }
-      = link_to "↗", root_path, { id:"home", role:"menuitem", "aria-label":"Accueil", tabindex:0 }
+      = link_to "↗", root_path, { id:"home", role:"menuitem", "aria-label":t("menu.home"), tabindex:0 }
     %li
       %a{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false", tabindex:-1 }
         = t("menu.program")
-      %ul{ role:"menu" }
+      %ul{ role:"menu", "aria-label":t("menu.program") }
         %li{ role:"none" }
           = link_to t("menu.presentation"), rmll_path(:heading => "program", :page => "presentation"), { role:"menuitem", tabindex:-1 }
         %li{ role:"none" }
@@ -79,12 +79,12 @@
         %li{ role:"none" }
           = link_to "IRC #rmll-2018", "https://webchat.freenode.net/", { role:"menuitem", tabindex:-1 }
     %li
-      %a{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false", tabindex:-1, "aria-label":"Selection langue" }
+      %a{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false", tabindex:-1, "aria-label":t("menu.lang") }
         = I18n.locale.upcase
-      %ul{ role:"menu", "aria-label":t("menu.lang") }
+      %ul{ role:"menu", "aria-label":t("menu.lang")  }
         %li{ role:"none" }
-          = link_to "FR", url_for(params.permit(:heading, :page, :sub).merge(:locale => :fr)), { role:"menuitem", tabindex:-1 }
+          = link_to "FR", url_for(params.permit(:heading, :page, :sub).merge(:locale => :fr)), { role:"menuitem", tabindex:-1, "aria-label":t("menu.fr") }
         %li{ role:"none" }
-          = link_to "EN", url_for(params.permit(:heading, :page, :sub).merge(:locale => :en)), { role:"menuitem", tabindex:-1 }
+          = link_to "EN", url_for(params.permit(:heading, :page, :sub).merge(:locale => :en)), { role:"menuitem", tabindex:-1, "aria-label":t("menu.en") }
     %li{ role:"none" }
       = link_to t("menu.connection"), admin_path, { id:"connect", role:"menuitem", tabindex:-1 }

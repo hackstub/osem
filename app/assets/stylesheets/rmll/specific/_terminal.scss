@@ -37,6 +37,10 @@
     white-space: pre;
   }
 
+  .ps1:not(:first-of-type) {
+    margin-top: 2rem;
+  }
+
   .tree {
     padding: 1rem;
 

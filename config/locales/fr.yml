@@ -19,6 +19,7 @@ fr:
     confs: Conférences
     workshops: Ateliers
   menu:
+    home: Accueil
     program: Programme
     presentation: Présentation
     calendar: Agenda
@@ -46,7 +47,9 @@ fr:
     site_map: Plan du site
     user: User
     connection: Connexion
-    lang: langue
+    lang: Langue
+    fr: Français
+    en: Anglais
     network: Réseaux
     mailing: liste de diffusion
   rmll:
@@ -457,73 +460,75 @@ fr:
           - Elles ont eu lieu plusieurs années à Bordeaux, puis dans d'autres villes de France ou des pays voisins francophones.
         moar:
           committee:
-            text: Vous pouvez trouver des informations sur l’historique et la philosophie des Rencontres Mondiales du Logiciel Libre sur le site web du Comité des RMLL.
+            text_html: Vous pouvez trouver des informations sur l’historique et la philosophie des Rencontres Mondiales du Logiciel Libre sur le site web du %{href}.
+            url-title: Comité des RMLL
             url: "http://comite.rmll.info/?lang=fr"
           videos:
-            text: Les vidéos des éditions précédentes sont accessibles à
+            text_html: Retrouver aussi les %{href}.
+            url-title: vidéos des éditions précédentes
             url: "http://video.rmll.info"
         previousEditions:
-          - txt: "drwxr-xr-x Alolise            01:07 JUL 2017"
+          - txt: "Alolise            01:07 JUL 2017"
             url: "https://2017.rmll.info"
             city: St-Etienne
-          - txt: "drwxr-xr-x undefined          07:10 JUL 2016"
+          - txt: "undefined          07:10 JUL 2016"
             url: "http://2016.d.rmll.info/"
             city: Saint-Joseph
-          - txt: "drwxr-xr-x équipe sécurité    04:06 JUL 2016"
+          - txt: "équipe sécurité    04:06 JUL 2016"
             url: "https://sec2016.rmll.info/"
             city: Paris
-          - txt: "drwxr-xr-x Oisux              04:10 JUL 2015"
+          - txt: "Oisux              04:10 JUL 2015"
             url: "https://2015.rmll.info"
             city: Beauvais
-          - txt: "drwxr-xr-x FRUL               05:11 JUL 2014"
+          - txt: "FRUL               05:11 JUL 2014"
             url: "https://2014.rmll.info"
             city: Montpellier
-          - txt: "drwxr-xr-x undefined          22:25 AUG 2013"
+          - txt: "undefined          22:25 AUG 2013"
             url: "http://2013.d.rmll.info/"
             city: Saint-Joseph
-          - txt: "drwxr-xr-x Abelli             06:11 JUL 2013"
+          - txt: "Abelli             06:11 JUL 2013"
             url: "https://2013.rmll.info"
             city: Bruxelles
-          - txt: "drwxr-xr-x Free-IT-Foundation 07:12 JUL 2012"
+          - txt: "Free-IT-Foundation 07:12 JUL 2012"
             url: "https://2012.rmll.info"
             city: Genève
-          - txt: "drwxr-xr-x Desclicks          09:14 JUL 2011"
+          - txt: "Desclicks          09:14 JUL 2011"
             url: "http://2011.rmll.info"
             city: Strasbourg
-          - txt: "drwxr-xr-x undefined          01:03 JUL 2011"
+          - txt: "undefined          01:03 JUL 2011"
             url: "http://2011.d.rmll.info/"
             city: Saint-Joseph
-          - txt: "drwxr-xr-x ABUL               06:11 JUL 2010"
+          - txt: "ABUL               06:11 JUL 2010"
             url: "http://2010.rmll.info"
             city: Bordeaux
-          - txt: "drwxr-xr-x Linux-Nantes       07:11 JUL 2009"
+          - txt: "Linux-Nantes       07:11 JUL 2009"
             url: "http://2009.rmll.info"
             city: Nantes
-          - txt: "drwxr-xr-x LANDINUX           01:05 JUL 2008"
+          - txt: "LANDINUX           01:05 JUL 2008"
             url: "http://2008.rmll.info"
             city: Mont-de-Marsan
-          - txt: "drwxr-xr-x Epplug             10:14 JUL 2007"
+          - txt: "Epplug             10:14 JUL 2007"
             url: "http://2007.rmll.info"
             city: Amiens
-          - txt: "drwxr-xr-x Mirabellug         04:08 JUL 2006"
+          - txt: "Mirabellug         04:08 JUL 2006"
             url: "http://2006.rmll.info"
             city: Vandœuvre-lès-Nancy
-          - txt: "drwxr-xr-x undefined          05:09 JUL 2005"
+          - txt: "undefined          05:09 JUL 2005"
             url:
             city: Dijon
-          - txt: "drwxr-xr-x ABUL               06:10 JUL 2004"
+          - txt: "ABUL               06:10 JUL 2004"
             url:
             city: Bordeaux
-          - txt: "drwxr-xr-x undefined          09:12 JUL 2003"
+          - txt: "undefined          09:12 JUL 2003"
             url:
             city: Metz
-          - txt: "drwxr-xr-x ABUL               09:13 JUL 2002"
+          - txt: "ABUL               09:13 JUL 2002"
             url:
             city: Bordeaux
-          - txt: "drwxr-xr-x ABUL               04:08 JUL 2001"
+          - txt: "ABUL               04:08 JUL 2001"
             url:
             city: Bordeaux
-          - txt: "drwxr-xr-x ABUL               05:09 JUL 2000"
+          - txt: "ABUL               05:09 JUL 2000"
             url:
             city: Bordeaux
       sponsors:
