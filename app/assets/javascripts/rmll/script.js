@@ -18,7 +18,6 @@ function setupPhoneMenu() {
   link.setAttribute("aria-expanded", "false");
   link.setAttribute("tabindex", "-1");
   var subMenu = document.createElement("ul");
-  subMenu.classList.add("dropdown", "dropdown-menu")
   subMenu.setAttribute("role", "menu");
   subMenu.setAttribute("aria-label", "Event information");
 

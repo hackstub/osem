@@ -83,7 +83,6 @@ Menubar.prototype.init = function () {
 /* FOCUS MANAGEMENT METHODS */
 
 Menubar.prototype.setFocusToItem = function (newItem) {
-
   var flag = false;
 
   for (var i = 0; i < this.menubarItems.length; i++) {
@@ -228,7 +227,6 @@ MenubarItem.prototype.init = function () {
 };
 
 MenubarItem.prototype.handleTouch = function (event) {
-  console.log("menubatitem");
   if (this.popupMenu) {
     this.popupMenu.open();
   }
@@ -305,34 +303,6 @@ MenubarItem.prototype.handleKeydown = function (event) {
     event.preventDefault();
   }
 };
-
-// MenubarItem.prototype.setExpanded = function (value) {
-//   if (value) {
-//     this.domNode.setAttribute('aria-expanded', 'true');
-//   }
-//   else {
-//     this.domNode.setAttribute('aria-expanded', 'false');
-//   }
-// };
-//
-// MenubarItem.prototype.handleFocus = function (event) {
-//   this.menu.hasFocus = true;
-// };
-//
-// MenubarItem.prototype.handleBlur = function (event) {
-//   this.menu.hasFocus = false;
-// };
-//
-// MenubarItem.prototype.handleMouseover = function (event) {
-//   this.hasHover = true;
-//   this.popupMenu.open();
-// };
-//
-// MenubarItem.prototype.handleMouseout = function (event) {
-//   this.hasHover = false;
-//   setTimeout(this.popupMenu.close.bind(this.popupMenu, false), 300);
-// };
-
 
 MenubarItem.prototype.setExpanded = function (value) {
   if (value) {
@@ -503,6 +473,9 @@ PopupMenu.prototype.setFocusToController = function (command, flag) {
   }
 
 };
+PopupMenu.prototype.setFocusToSelf = function () {
+  this.domNode.previousElementSibling.focus()
+}
 
 PopupMenu.prototype.setFocusToFirstItem = function () {
   this.firstItem.domNode.focus();
@@ -572,9 +545,9 @@ PopupMenu.prototype.getIndexFirstChars = function (startIndex, char) {
 
 PopupMenu.prototype.open = function () {
   // Get position and bounding rectangle of controller object's DOM node
-  var rect = this.controller.domNode.getBoundingClientRect();
+  //var rect = this.controller.domNode.getBoundingClientRect();
 
-  console.log('[PopupMenu][open]');
+  //console.log('[PopupMenu][open]');
 
   // Set CSS properties
   // if (!this.controller.isMenubarItem) {
@@ -598,7 +571,7 @@ PopupMenu.prototype.open = function () {
 
 PopupMenu.prototype.close = function (force) {
 
-  console.log('[PopupMenu][close][force]: ' + force);
+  //console.log('[PopupMenu][close][force]: ' + force);
 
   var controllerHasHover = this.controller.hasHover;
 
@@ -611,7 +584,7 @@ PopupMenu.prototype.close = function (force) {
     }
   }
 
-  console.log('[PopupMenu][close][hasFocus]: ' + hasFocus);
+  //console.log('[PopupMenu][close][hasFocus]: ' + hasFocus);
 
   if (!this.controller.isMenubarItem) {
     controllerHasHover = false;
@@ -681,10 +654,14 @@ MenuItem.prototype.isExpanded = function () {
 
 /* EVENT HANDLERS */
 MenuItem.prototype.handleTouch = function (event) {
-  console.log("menuItem");
   if (this.popupMenu) {
+    // FIXME
+    for (var i = 0; i < this.menu.menuitems.length; i++) {
+      this.menu.menuitems[i].popupMenu.close();
+    }
     this.popupMenu.open();
-    this.popupMenu.setFocusToFirstItem();
+    this.hasFocus = true;
+    this.popupMenu.setFocusToSelf();
     event.preventDefault();
     event.stopPropagation();
   }
@@ -749,7 +726,7 @@ MenuItem.prototype.handleKeydown = function (event) {
       break;
 
     case this.keyCode.RIGHT:
-      console.log('[MenuItem][handleKeydown]: ' + this.menu.controller.isMenubarItem);
+      //console.log('[MenuItem][handleKeydown]: ' + this.menu.controller.isMenubarItem);
       if (this.popupMenu) {
         this.popupMenu.open();
         this.popupMenu.setFocusToFirstItem();
@@ -808,7 +785,6 @@ MenuItem.prototype.setExpanded = function (value) {
 
 MenuItem.prototype.handleClick = function (event) {
   this.menu.setFocusToController();
-  console.log("yep");
   this.menu.close(true);
 };
 
