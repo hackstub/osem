@@ -10,6 +10,7 @@
 html, body, main {
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 body {
   @include pixel-bg($halftone-bg);
@@ -41,8 +42,20 @@ main {
 }
 
 .over-background {
+  // WHOOPSIES
   position: absolute;
-  height: calc(100% - 2rem);
+
+  &:not(.gallery) {
+    height: calc(100% - 2rem) !important;
+  }
+  &.popup {
+    @media (min-width: 550px) {
+      height: auto !important;
+    }
+  }
+}
+.no-overflow {
+  overflow: hidden;
 }
 
 @import "font-face";

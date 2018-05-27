@@ -3,6 +3,7 @@
 .gallery {
   overflow: auto;
   height: 100%;
+  max-width: 100%;
   // @include pixel-bg($halftone-window);
   // background-color: white;
   // background-color: $color-grey-shadow;

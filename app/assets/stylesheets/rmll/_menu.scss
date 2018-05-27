@@ -1,131 +1,133 @@
 nav {
-  position: relative;
   @include pixel-bg($halftone-nav);
   z-index: 10;
   height: 2rem; width: 100%;
 
+  white-space: nowrap;
   background-color: white;
   font-size: 0.95rem;
-  color: white;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  #home-link {
-    font-size: 1.7rem;
-  }
-
-  li {
-    min-height: 2rem;
-  }
 
   ul {
-    background-color: black;
-    white-space: nowrap;
-  }
+    &[role="menubar"] {
+      display: flex;
+      width: 100%;
 
-  & > ul {
-    display: flex;
+      & > li {
+        background-color: $color-black;
+        display: inline-block;
+      }
+      @include phone {
+        // only first level menus
+        & > li > [role="menu"] {
+          position: absolute;
+          width: 100%;
+          left: 0;
+
+          &::after {
+            content:" ";
+            display: block;
+            white-space: pre;
+            top: 0.8rem;
+            position: relative;
+            width: 100%;
+            background-color: white;
+            @include pixel-bg($halftone-nav);
+          }
+        }
+      }
+    }
+
+    &[role="menu"] {
+      display: none;
+      background-color: $color-black;
+      z-index: 100;
+
+      a {
+        width: 100%;
+        padding-right: 3rem;
+
+        @include phone {
+          &[aria-haspopup="true"]::before {
+            content: "v";
+            margin-right: 0.5rem;
+            // background-color: white;
+            color: $color-white;
+            // padding: 0 0.5rem;
+          }
+        }
+        @include screen {
+          &[aria-haspopup="true"] {
+            &::after {
+                content: "> ";
+                position: relative;
+                right: -100%;
+                color: $color-white;
+            }
+            & + [role="menu"] {
+              left: 100%;
+              margin-top: -2rem;
+            }
+          }
+        }
+      }
+
+      @include phone {
+        & [role="menu"] {
+          margin-left: 1rem;
+        }
+      }
+
+      @include screen {
+        position: absolute;
+
+        &::after {
+          content:" ";
+          display: block;
+          white-space: pre;
+          top: 0.8rem;
+          position: relative;
+          width: 100%;
+          background-color: white;
+          @include pixel-bg($halftone-nav);
+        }
+      }
+    }
+
+    &.show {
+      display: block;
+      z-index: 100;
+      @include screen {
+        position: absolute;
+      }
+    }
   }
 
   a {
     display: inline-block;
     padding: 0 1rem;
-    line-height: 2rem;
-    width: 100%;
-
-    color: white;
+    outline: none;
     text-decoration: none;
+    line-height: 2rem;
+    min-height: 2rem;
+    color: white;
 
     &:hover {
       background-color: $color-dark-select;
     }
-    &:focus {
+
+    &:focus, &:hover  {
       background-color: $orange;
       color: black;
     }
+
   }
 
-  .dropdown {
-    position: absolute;
-    display: none;
-  }
+}
 
-  .show {
-    display: block;
-  }
+#home-link {
+  font-size: 1.7rem;
+}
 
-  @include phone {
-    .dropdown {
-      width: 100%;
-      left: 0;
-    }
-
-    #main-menu {
-      padding: 0.5rem 0 1rem 0;
-
-      & > li > a::before, .has-submenu > a::before {
-        content: ">";
-        display: inline-block;
-        text-align: center;
-        width: 1rem;
-        padding-right: 1rem;
-      }
-
-      ul {
-        position: static;
-        margin-left: 2rem;
-      }
-    }
-  }
-
-  @include screen {
-    #menu-button {
-      display: none;
-    }
-
-    #main-menu {
-      display: flex;
-      padding: 0;
-    }
-
-    #last-menu {
-      right: 0;
-    }
-
-    .dropdown {
-      padding-top: 0.5rem;
-    }
-
-    .dropdown-menu {
-      a {
-        padding-right: 3rem;
-      }
-
-      &::after {
-        content:" ";
-        display: block;
-        white-space: pre;
-        top: 0.8rem;
-        position: relative;
-        width: 100%;
-        background-color: white;
-        @include pixel-bg($halftone-nav);
-      }
-    }
-
-    .dropdown-submenu {
-      left: 100%;
-      margin-top: -2.5rem;
-    }
-
-    .has-submenu::after {
-      content: ">";
-      margin-left: -1.7rem;
-
-      line-height: 2rem;
-    }
-  }
-
+#separated {
+  margin-left: auto;
 }

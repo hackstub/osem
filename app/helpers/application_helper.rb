@@ -205,7 +205,7 @@ module ApplicationHelper
     haml_tag "p.ps1" do
       haml_concat "[<span class='color'>#{user}</span>@<span class='color'>rmll18</span>] #{path}"
     end
-    haml_tag "p.ps1" do
+    haml_tag "p" do
       haml_concat "<span class='color'>></span> #{command}"
     end
   end

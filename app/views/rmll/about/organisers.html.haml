@@ -1,4 +1,4 @@
-%section#neofetch.term.halfscreen
+%section#neofetch.term.halfscreen.over-background
   - add_bar("Terminal", "neofetch")
   .content
     - term_ps1("user", "~/about", "neofetch")
@@ -65,3 +65,7 @@
         %p
           %span.color Memory:
           Bookynette, Claude, Garfield, Irina, Janka, Jyhem, Legaume, Ljf, Marie-France, Mhep, Sandhose, Syme.
+
+%section.fullscreen#home-section.no-select.no-overflow{ "aria-hidden":"true" }
+  = render "rmll/background"
+  = render "rmll/conky"

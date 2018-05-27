@@ -1,5 +1,5 @@
 %section.halfscreen.term.mail.over-background
-  - add_bar("Mail", t("rmll.participate.mail.donate"))
+  - add_bar("Mail", t("rmll.participate.mail.cfb"))
 
   .tree
     %ul
@@ -7,22 +7,27 @@
       %li
         MAY 22 - from: contact [AT] 2018.rmll.info
         = link_to t("rmll.participate.mail.volunteering"), rmll_path(:heading => "participate", :page => "volunteering")
-      %li.selected
+      %li
         MAY 22 - from: contact [AT] 2018.rmll.info
         = link_to t("rmll.participate.mail.donate"), rmll_path(:heading => "participate", :page => "donate")
-      %li
+      %li.selected
         APR 27 - from: contact [AT] 2018.rmll.info
         = link_to t("rmll.participate.mail.cfb"), rmll_path(:heading => "participate", :page => "cfb")
 
   .content
     %ul.info
-      %li Date: tue, 22 May 2018 16:45:42
+      %li Date: fri, 27 Apr 2018 14:27:22
       %li From: "rmll 2018 team" <contact [AT] 2018.rmll.info>
       %li To: You
       %li
-        %h2= subject= "Subject : " + t("rmll.participate.mail.donate")
+        Attachment:
+        = link_to "call.jpg", rmll_path(:heading => "village", :page => "cfb")
+      %li
+        %h2= "Subject : " + t("rmll.participate.mail.cfb")
 
     - add_text(t(".text"))
+
+    %p= link_to t(".link-text"), t(".url")
 
 %section.fullscreen#home-section.no-select.no-overflow{ "aria-hidden":"true" }
   = render "rmll/background"

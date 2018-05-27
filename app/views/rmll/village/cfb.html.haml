@@ -1,6 +1,6 @@
-%section.gallery
+%section.gallery.over-background
   .img-container
-    - add_bar("ImgViewer", "call.jpeg")
+    - add_bar("ImgViewer", "call.jpg")
     .img-view
       %h1= "rmll 2018".upcase
       .box-container
@@ -21,3 +21,7 @@
       %a= link_to t(".call-url"), t(".call-url")
       .end-content
         %p= t(".text")
+
+%section.fullscreen#home-section.no-select.no-overflow{ "aria-hidden":"true" }
+  = render "rmll/background"
+  = render "rmll/conky"

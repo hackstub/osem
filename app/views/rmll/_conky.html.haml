@@ -8,6 +8,15 @@
           %li
             %span.process= process[:name]
             %p.tab= process[:content]
+    %li
+      %h4
+        %span= t("rmll.home.conky.mails.title")
+      %ul.window
+        - t("rmll.home.conky.mails.process").each do |process|
+          %li
+            %span.process= process[:name]
+            %p.tab
+              = link_to process[:content], rmll_path(:heading => "participate", :page => "volunteering")
     -# %li
     -#   %h4
     -#     %span= t("rmll.home.conky.activities.title")
