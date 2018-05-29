@@ -18,7 +18,7 @@
       .text-render
         - t(".call-bis").each do |elem|
           %p= elem.upcase
-      %a= link_to t(".call-url"), t(".call-url")
+      %a= link_to conference_booths_url(@conference.short_title, :locale => nil)
       .end-content
         %p= t(".text")
 

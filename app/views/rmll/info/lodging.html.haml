@@ -8,7 +8,7 @@
       %h2= t(".title")
 
       %h4= t(".room.name")
-      %p= t(".room.text_html", href: link_to(t(".room.link"), t(".room.url")))
+      %p= t(".room.text_html", href: link_to(t(".room.link"), conference_tickets_url(@conference.short_title, :locale => nil)))
 
       %h4= t(".lodge.name")
       %p= t(".lodge.text_html", href: link_to(t(".lodge.link"), t(".lodge.url")))

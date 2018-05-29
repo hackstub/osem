@@ -28,6 +28,12 @@ module Rmll
     end
 
     def index
+      unless ENV['OSEM_ROOT_CONFERENCE'].blank?
+        @conference = Conference.find_by(short_title: ENV['OSEM_ROOT_CONFERENCE'])
+      else
+        @conference = Conference.first
+      end
+
       if params[:heading].nil?
         render "rmll/index"
       elsif params[:page].nil?

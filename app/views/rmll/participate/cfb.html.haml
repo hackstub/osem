@@ -30,7 +30,8 @@
 
     - add_text(t(".text"))
 
-    %p= link_to t(".link-text"), t(".url")
+    %p= link_to t(".link-text"), conference_booths_url(@conference.short_title, :locale => nil)
+
 
 %section.fullscreen#home-section.no-select.no-overflow{ "aria-hidden":"true" }
   = render "rmll/background"

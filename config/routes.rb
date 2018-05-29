@@ -220,10 +220,5 @@ Osem::Application.routes.draw do
     end
   end
 
-  unless ENV['OSEM_ROOT_CONFERENCE'].blank?
-    root to: redirect("/conferences/#{ENV['OSEM_ROOT_CONFERENCE']}")
-  else
-    # root to: 'conferences#index', via: [:get, :options]
-    root to: 'rmll/home#index', via: [:get, :options]
-  end
+  root to: 'rmll/rmll#index'
 end

@@ -232,7 +232,6 @@ fr:
           - représenter votre logiciel,
           - votre association ou autre ?
           - L'appel est toujours ouvert, inscrivez-vous !
-        call-url: "https://osem.aius.u-strasbg.fr/conferences/RMLL2018/booths"
     info:
       map:
         title: Carte
@@ -355,7 +354,6 @@ fr:
         room:
           name: Chambres à la Cité U. de la Robertsau
           text_html: Vous pouvez %{href} individuelle avec sanitaires et cuisine collectifs pour 6 nuits, du 6 au 12 juillet, pour 120 €, tout compris.
-          url: "https://osem.aius.u-strasbg.fr/conferences/RMLL2018/tickets"
           link: réserver une chambre
       food:
         title: Restauration
@@ -441,7 +439,6 @@ fr:
           - Le village sera déplacé en partie sur la presque-île André-Malraux le samedi (07/07/2018).
           - "Vous souhaitez représenter votre logiciel, votre association ou autre ? L'appel est toujours ouvert !"
         link-text: inscrivez-vous !
-        url: "https://osem.aius.u-strasbg.fr/conferences/RMLL2018/booths"
       cfp:
         url: ""
       rmlloff:

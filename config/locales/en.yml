@@ -232,7 +232,6 @@ en:
           - represent your software,
           - your organization or else?
           - The call is still open, subscribe!
-        call-url: "https://osem.aius.u-strasbg.fr/conferences/RMLL2018/booths"
     info:
       map:
         title: Map
@@ -355,7 +354,6 @@ en:
         room:
           name: Rooms at the Cité U. de la Robertsau
           text: You can book a single room with shared bathroom and kitchen for 6 nights, from 6 to 12 July, for 120 €, all included.
-          url: "https://osem.aius.u-strasbg.fr/conferences/RMLL2018/tickets"
           link: réserver une chambre
       food:
         title: Restoration
@@ -441,7 +439,6 @@ en:
           - The village will be partly moved to the Presqu'île André Malraux on Saturday (07/07/2018).
           - "You wish to represent your software, your association or other? The call is still open!"
         link-text: Sign up!
-        url: "https://osem.aius.u-strasbg.fr/conferences/RMLL2018/booths"
       cfp:
         url: ""
       rmlloff:
