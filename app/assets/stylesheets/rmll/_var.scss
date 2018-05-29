@@ -10,9 +10,9 @@ $color-white: white;
 $root-font-size: 0.8em;
 $terminal-line-height: 1.3rem;
 
-$halftone-bg: image-url("halftone-bg.png");
-$halftone-nav: image-url("halftone-nav.png");
-$halftone-window: image-url("halftone-window.png");
+$halftone-bg: asset-data-url("halftone-bg.png");
+$halftone-nav: asset-data-url("halftone-nav.png");
+$halftone-window: asset-data-url("halftone-window.png");
 
 $border: 2px solid $color-black;
 $border-rad: 4px;
