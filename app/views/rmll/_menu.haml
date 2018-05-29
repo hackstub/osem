@@ -50,7 +50,7 @@
         %li{ role:"none" }
           = link_to t("menu.cfb"), rmll_path(:heading => "participate", :page => "cfb"), { role:"menuitem", tabindex:-1 }
         %li{ role:"none" }
-          = link_to t("menu.cfp"), "/conferences/RMLL2018", { role:"menuitem", tabindex:-1 }
+          = link_to t("menu.cfp"), conference_path(@conference.short_title, :locale => nil), { role:"menuitem", tabindex:-1 }
     %li
       %a{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false", tabindex:-1 }
         = t("menu.about")
