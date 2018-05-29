@@ -5,49 +5,49 @@
 /* OPEN SANS */
 @font-face {
     font-family: "Open Sans";
-    src: font-url("rmll/OpenSans-Light-webfont.woff") format("woff");
+    src: local('Open Sans Light'), local('OpenSans-Light'), font-url("rmll/OpenSans-Light-webfont.woff") format("woff");
     font-weight: 300;
     font-style: normal;
 }
 @font-face {
     font-family: "Open Sans";
-    src: font-url("rmll/OpenSans-LightItalic-webfont.woff") format("woff");
+    src: local('Open Sans Light Italic'), local('OpenSans-LightItalic'), font-url("rmll/OpenSans-LightItalic-webfont.woff") format("woff");
     font-weight: 300;
     font-style: italic;
 }
 @font-face {
     font-family: "Open Sans";
-    src: font-url("rmll/OpenSans-Regular-webfont.woff") format("woff");
+    src: local('Open Sans Regular'), local('Regular'), font-url("rmll/OpenSans-Regular-webfont.woff") format("woff");
     font-weight: 400;
     font-style: normal;
 }
 @font-face {
     font-family: "Open Sans";
-    src: font-url("rmll/OpenSans-Italic-webfont.woff") format("woff");
+    src: local('Open Sans Italic'), local('OpenSans-Italic'), font-url("rmll/OpenSans-Italic-webfont.woff") format("woff");
     font-weight: 400;
     font-style: italic;
 }
 @font-face {
     font-family: "Open Sans";
-    src: font-url("rmll/OpenSans-Semibold-webfont.woff") format("woff");
+    src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'), font-url("rmll/OpenSans-Semibold-webfont.woff") format("woff");
     font-weight: 600;
     font-style: normal;
 }
 @font-face {
     font-family: "Open Sans";
-    src: font-url("rmll/OpenSans-SemiboldItalic-webfont.woff") format("woff");
+    src: local('Open Sans SemiBold Italic'), local('OpenSans-SemiBoldItalic'), font-url("rmll/OpenSans-SemiboldItalic-webfont.woff") format("woff");
     font-weight: 600;
     font-style: italic;
 }
 @font-face {
     font-family: "Open Sans";
-    src: font-url("rmll/OpenSans-Bold-webfont.woff") format("woff");
+    src: local('Open Sans Bold'), local('OpenSans-Bold'), font-url("rmll/OpenSans-Bold-webfont.woff") format("woff");
     font-weight: 700;
     font-style: normal;
 }
 @font-face {
     font-family: "Open Sans";
-    src: font-url("rmll/OpenSans-BoldItalic-webfont.woff") format("woff");
+    src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'), font-url("rmll/OpenSans-BoldItalic-webfont.woff") format("woff");
     font-weight: 700;
     font-style: italic;
 }
@@ -55,19 +55,19 @@
 /* SPACE MONO */
 @font-face {
     font-family: "Space Mono";
-    src: font-url("rmll/SpaceMono-Regular-webfont.woff") format("woff");
+    src: local('Space Mono'), local('SpaceMono-Regular'), font-url("rmll/SpaceMono-Regular-webfont.woff") format("woff");
     font-weight: 400;
     font-style: normal;
 }
 @font-face {
     font-family: "Space Mono";
-    src: font-url("rmll/SpaceMono-Italic-webfont.woff") format("woff");
+    src: local('Space Mono Italic'), local('SpaceMono-Italic'), font-url("rmll/SpaceMono-Italic-webfont.woff") format("woff");
     font-weight: 400;
     font-style: italic;
 }
 @font-face {
     font-family: "Space Mono";
-    src: font-url("rmll/SpaceMono-Bold-webfont.woff") format("woff");
+    src: local('Space Mono Bold'), local('SpaceMono-Bold'), font-url("rmll/SpaceMono-Bold-webfont.woff") format("woff");
     font-weight: 700;
     font-style: normal;
 }

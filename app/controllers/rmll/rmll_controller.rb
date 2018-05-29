@@ -14,12 +14,14 @@ module Rmll
 
     def push_headers
       if request.format.html? # only on html pages
-        assets = [
+        response.headers['Link'] = [
           "<#{view_context.asset_path('rmll/stylesheet')}>; rel=preload; as=style",
           "<#{view_context.asset_path('rmll/lib/menu')}>; rel=preload; as=script",
           "<#{view_context.asset_path('rmll/script')}>; rel=preload; as=script",
+          "<#{view_context.asset_path('rmll/SpaceMono-Regular-webfont.woff')}>; rel=preload; as=font",
+          "<#{view_context.asset_path('rmll/SpaceMono-Italic-webfont.woff')}>; rel=preload; as=font",
+          "<#{view_context.asset_path('rmll/SpaceMono-Bold-webfont.woff')}>; rel=preload; as=font",
         ]
-        response.headers['Link'] = assets
       end
     end
 
