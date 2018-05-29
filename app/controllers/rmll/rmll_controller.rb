@@ -1,6 +1,5 @@
 module Rmll
   class RmllController < ApplicationController
-    layout "rmll"
     skip_authorization_check
 
     before_action :set_locale
@@ -20,7 +19,7 @@ module Rmll
           "<#{view_context.asset_path('rmll/script')}>; rel=preload; as=script",
           "<#{view_context.asset_path('rmll/SpaceMono-Regular-webfont.woff')}>; rel=preload; as=font; crossorigin",
           "<#{view_context.asset_path('rmll/SpaceMono-Italic-webfont.woff')}>; rel=preload; as=font; crossorigin",
-          "<#{view_context.asset_path('rmll/SpaceMono-Bold-webfont.woff')}>; rel=preload; as=font; crossorigin",
+          "<#{view_context.asset_path('rmll/SpaceMono-Bold-webfont.woff')}>; rel=preload; as=font; crossorigin"
         ]
       end
     end
@@ -30,20 +29,23 @@ module Rmll
     end
 
     def index
-      unless ENV['OSEM_ROOT_CONFERENCE'].blank?
-        @conference = Conference.find_by(short_title: ENV['OSEM_ROOT_CONFERENCE'])
-      else
-        @conference = Conference.first
-      end
+      # Kinda hacky but it works.
+      layout = ('rmll' unless params[:page] == 'cfp')
+
+      @conference = if ENV['OSEM_ROOT_CONFERENCE'].blank?
+                      Conference.first
+                    else
+                      Conference.find_by(short_title: ENV['OSEM_ROOT_CONFERENCE'])
+                    end
 
       if params[:heading].nil?
-        render "rmll/index"
+        render 'rmll/index', layout: layout
       elsif params[:page].nil?
-        render "rmll/#{params[:heading]}"
+        render "rmll/#{params[:heading]}", layout: layout
       elsif params[:sub].nil?
-        render "rmll/#{params[:heading]}/#{params[:page]}"
+        render "rmll/#{params[:heading]}/#{params[:page]}", layout: layout
       else
-        render "rmll/#{params[:heading]}/#{params[:page]}/#{params[:sub]}"
+        render "rmll/#{params[:heading]}/#{params[:page]}/#{params[:sub]}", layout: layout
       end
     end
   end

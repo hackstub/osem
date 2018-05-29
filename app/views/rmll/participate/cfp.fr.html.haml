@@ -1,0 +1,312 @@
+!!! 5
+%html{:lang => "fr"}
+  %head
+    %meta{:charset => "utf-8"}
+    %meta{:content => "width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0", :name => "viewport"}
+    %title RMLL 2018 Appel à participations - Rencontres Mondiales du Logiciel Libre
+    %meta{:content => "Les Rencontres Mondiales du Logiciel Libre 2018, à Strasbourg du 7 au 12 juillet, un festival transdisciplinaire ouvert à toutes et à tous.", :name => "description"}
+    %meta{:content => "rmll, 2018, rencontres, logiciel, libre, software, meeting, strasbourg, education, numérique, captivité, émancipation, liberation, festival", :name => "keywords"}
+    = stylesheet_link_tag "rmll/cfp"
+  %body
+    %h1{:style => "display:none"} RMLL 2018 Appel à participations - Rencontres Mondiales du Logiciel Libre
+    %h2{:style => "display:none"} Éducation numérique : fabrique de la captivité ou nouvelle émancipation ?
+    %nav
+      #date
+        %span 7-12 juil.
+        %span Strasbourg
+        %a#button menu
+      #rmll
+        %strong Rencontres Mondiales du Logiciel Libre 2018
+      #menu
+        %ul
+          %li
+            %a{:href => "#intro"} Appel à participations
+            %ul
+              %li
+                %a{:href => "#edition2018"} Éducation numérique
+              %li
+                %a{:href => "#themes"} Thèmes
+              %li
+                %a{:href => "#location"} Lieux
+              %li
+                %a{:href => "#orga"} Formats
+          %li
+            %a{:href => "#participate"} Participer
+          %li
+            %a{:href => "#contact"} Contact
+          %li
+            %a{:href => "#press"} Presse
+      #lang
+        = link_to "EN", params.permit(:heading, :page, :sub).merge(:locale => :en)
+        = link_to "FR", params.permit(:heading, :page, :sub).merge(:locale => :fr)
+      %a#read Lecture seule
+    %main
+      #source
+        %header
+          .t1 RMLL 2018
+          .t2 Éducation numérique :
+          .t1 RENCONTRES
+          .t2 fabrique de la captivité ou
+          .t1 MONDIALES DU
+          .t2 nouvelle émancipation ?
+          .t1 LOGICIEL LIBRE
+        %section.info
+          %p
+            %em
+              Cette page web est composée de deux couches aux proportions ajustables.
+              %br/
+              Celle du dessous est une représentation non exhaustive de sa structure (
+              %a{:href => "https://fr.wikipedia.org/wiki/Hypertext_Markup_Language#Description_de_HTML", :target => "_blank"}> HTML
+              ) et des différents effets graphiques (
+              %a{:href => "https://fr.wikipedia.org/wiki/Feuilles_de_style_en_cascade", :target => "_blank"}> CSS
+              ) appliqués à ses éléments.
+              %br/
+              Celle du dessus en est l'interprétation que fait le navigateur. Elle est destinée à la lecture.
+      #trad
+        %header
+          .t1 RMLL 2018
+          .t2 Éducation numérique :
+          .t1 RENCONTRES
+          .t2 fabrique de la captivité ou
+          .t1 MONDIALES DU
+          .t2 nouvelle émancipation ?
+          .t1 LOGICIEL LIBRE
+        %section.info
+          %p
+            %em
+              Cette page web est composée de deux couches aux proportions ajustables.
+              %br/
+              Celle du dessous est une représentation non exhaustive de sa structure (
+              %a{:href => "https://fr.wikipedia.org/wiki/Hypertext_Markup_Language#Description_de_HTML", :target => "_blank"}> HTML
+              ) et des différents effets graphiques (
+              %a{:href => "https://fr.wikipedia.org/wiki/Feuilles_de_style_en_cascade", :target => "_blank"}> CSS
+              ) appliqués à ses éléments.
+              %br/
+              Celle du dessus en est l'interprétation que fait le navigateur. Elle est destinée à la lecture.
+        %section
+          %h2#intro Appel à participations 2018
+          %h2#deadline Date limite le 30 avril
+          %p#form
+            = link_to "Formulaire de réponse", new_conference_program_proposal_path(@conference.short_title, locale: nil)
+          %p Chaque année, les Rencontres Mondiales du Logiciel Libre (RMLL) permettent aux grand débutants comme aux techniciens confirmés de se rencontrer pendant plusieurs jours pour promouvoir, discuter, développer, utiliser et questionner les outils et la culture numérique libre.
+          %p Cette année, les RMLL se tiendront, pour la seconde fois depuis leur création, à l'Université de Strasbourg, du 7 au 12 juillet 2018.
+          %p Nous lançons cet appel afin que chacun et chacune apporte sa contribution ! Nous vous remercions de lire avec attention cet appel. Les détails précis sur les lieux et le déroulé viendront au fur et à mesure. Pour tout besoin d'information supplémentaire, n'hésitez donc pas à nous contacter par e-mail à l'adresse contact-rmll2018 [at] alsace.netlib.re.
+          %h3#edition2018 Choix et orientation de cette édition 2018
+          %p
+            Nous avons décidé de centrer cette édition sur le fil rouge
+            = succeed "." do
+              %strong « Éducation numérique : fabrique de la captivité ou nouvelle émancipation ? »
+          %p Au delà de cette thématique centrale, nous souhaitons souligner le caractère transversal et transdisciplinaire du Libre. Le libre englobe la musique libre, les livres libres, les licences libres, et les problématiques de vie privée et de gouvernance des technologies parmi d'autres choses. En somme, le Libre revendique une conception humaniste de la culture : chaque individu devrait avoir le droit d'utiliser, d'étudier, de modifier, de partager une ressource. Nous encourageons donc les participants à dépasser le simple aspect technique du logiciel informatique.
+          %h3#themes Thèmes
+          %p
+            %q Ce serait peut-être l'une des plus grandes opportunités manquées de notre époque si le logiciel libre ne libérait rien d'autre que du code
+            (Framasoft).
+            %br/
+            Votre participation aux RMLL 2018 pourra s'inscrire dans l'un des grands thèmes suivants (il est normal qu'elle en concerne plusieurs). Il est évident que ces thèmes, arbitraires, se divisent eux-mêmes en un nombre incalculable de sous-thèmes dont il ne tient qu'à vous de vous saisir, et que l'on précisera une fois le programme bouclé !
+          %h4 Initiation
+          %p contact : initiation [at] listes2018.rmll.info
+          %p
+            Il est essentiel de permettre à tout le monde de s'approprier le Libre de manière accessible, stimulante, amusante, sensible.
+            %br/
+            Nous y encouragerons toutes les pédagogies qui visent à tirer parti de la diversité des approches des individus, quels que soient leurs âges.
+            %br/
+            Le
+            %strong week-end des 7 et 8 juillet
+            seront principalement axés sur l'initiation mais le reste des jours pourra aussi y faire place.
+          %p Ex : un salon « Apprendre la musique en codant » pourrait rassembler des développeurs de logiciels de live-coding avec des enseignants et des enfants.
+          %h4 Technique
+          %p contact : technique [at] listes2018.rmll.info
+          %p Les RMLL 2018 ne seraient pas des RMLL sans moments dédiés à la technique. Les Rencontres doivent permettre des émulations concrètes autant que des mises-en-lumière d'avancées actuelles. Toutes les pratiques (développement, administration système, réseau, électronique, making, etc.) sont combinables avec tous les domaines (bureautique, santé, domotique, graphisme, réseaux sociaux, etc.). Nous souhaitons promouvoir le décloisonnement des publics participants, dans l'intérêt des projets et des communautés. Merci ainsi de penser le niveau de compétences requis pour votre activité.
+          %h4 Société
+          %p contact : societe [at] listes2018.rmll.info
+          %p
+            Un groupe d'humains se définit par ce qu'il partage, ce qui lui est commun. En ouvrant l'accès à ces œuvres et leur création, nous redéfinissons nos communautés autour de ressources communes. Réfléchir à nos rapports à l'information, c'est aussi repenser la philosophie qui sous-tend nos outils juridiques, techniques et sociologiques : notre façon d'appréhender les technologies.
+            %br/
+            Peut-on contrôler nos institutions sans libre accès à leurs données ? Peut-on faire de la recherche sans un accès à l'ensemble du savoir humain ?
+            %br/
+            Peut-on être maître de soi-même sans maîtriser ses données, ses plateformes sociales et professionnelles ?
+            %br/
+            Notre identité n'est-elle pas elle-même information ?
+          %h4 Arts et culture
+          %p contact : arts [at] listes2018.rmll.info
+          %p La culture libre regroupe l'ensemble des éléments que constitue les pratiques et esthétiques qui défendent le partage et la réappropriation comme valeurs essentielle. Elle touche ainsi le cinéma, le jeu-vidéo, la musique, le théâtre, la littérature, etc. Les RMLL sont l'occasion de promouvoir les licences libres comme des méthodes de création à part entière et ainsi questionner des pratiques artistiques, des modes de diffusion et l'ensemble de l'économie culturelle.
+          %h3#location Lieux
+          %p L'Université de Strasbourg accueille les RMLL 2018 dans les bâtiments de l'Escarpe, de l'Atrium et du Platane, tous séparés de quelques dizaines de mètres par un bâtiment entre chacun d'eux.
+          %ul
+            L'Escarpe proposera les espaces suivants :
+            %li 2 amphis (521 et 221 personnes) ;
+            %li un hall pour le village associatif.
+          %ul
+            L'Atrium :
+            %li 2 amphis (210 personnes chacun) ;
+            %li un hall pour le village associatif.
+          %ul
+            Le Platane :
+            %li 20 salles (50 personnes chacune).
+          %p Les jardins du campus seront aussi à notre disposition pendant la durée du festival, dont un terrain de foot et plusieurs petites et grandes pelouses, ainsi que des allées bétonnées ou en terre battue. Ces espaces disposent de tables et bancs.
+          %p Le Shadok et la Médiathèque Malraux, situés tous les deux à quelques centaines de mètres du Campus, accueilleront des évènements du lundi au mercredi, selon les propositions.
+          %h3#orga Structure des journées
+          %h4 Fils rouges
+          %p
+            Ces RMLL seront articulées autour de « fils rouges » (ou
+            = succeed ")." do
+              %em tracks
+          %h4 Évènements
+          %p
+            Chaque événement sera rattaché à un ou plusieurs des quatre thèmes que nous venons de présenter :
+            = succeed "," do
+              %strong Initiation
+            = succeed "," do
+              %strong Technique
+            = succeed "," do
+              %strong Société
+            = succeed "." do
+              %strong Arts et culture
+          .articles
+            %article
+              %h5 Conférence
+              %p
+                Format classique, interactive ou non, la conférence permet de mettre en avant un progrès technique, une problématique, toute autre idée ou projet pertinent.
+                %br/
+                = succeed "\u{202f}:" do
+                  %u Durée
+                %br/
+                = succeed "\u{202f}:" do
+                  %u Public
+              %h5 Atelier
+              %p
+                Destinés ou non à un public spécifique, l'atelier permet une découverte ou un approfondissement d'une pratique précise.
+                %br/
+                Nous vous demandons de présenter la méthode pédagogique que vous pratiquerez pendant l'atelier.
+                %br/
+                = succeed "\u{202f}:" do
+                  %u Durée
+                %br/
+                = succeed "\u{202f}:" do
+                  %u Public
+              %h5 Salon / Devroom
+              %p
+                Nommés en référence aux t'chats, les salons de discussions permettent la rencontre physique entre toutes les personnes et communautés sensibles à un sujet particulier.
+                %br/
+                Nous vous encourageons à rendre ces moments accueillants et conviviaux.
+                %br/
+                = succeed "\u{202f}:" do
+                  %u Durée
+                %br/
+                = succeed "\u{202f}:" do
+                  %u Public
+            %article
+              %h5 Débat / table-rondes
+              %p
+                Les débats ou tables-rondes permettent de discuter collectivement de questions majeures. Vous choisirez ou nous confierez la nomination du modérateur.
+                %br/
+                Nous vous laissons le choix du dispositif (frontal, forum, etc.), en tenant compte de l'intérêt que présentera le degré choisi de participation du public.
+                %br/
+                = succeed "\u{202f}:" do
+                  %u Durée
+                %br/
+                = succeed "\u{202f}:" do
+                  %u Public
+              %h5 Création
+              %p
+                Vous pouvez nous proposer une sorte de résidence d'un à plusieurs jours pour produire des formes libres : théâtre, musique, dessin, cinéma, cuisine, etc.
+                %br/
+                La création est à prendre au sens large : il peut aussi bien s'agir d'une projection audiovisuelle que d'une performance musicale, culinaire ou sportive, en intérieur ou extérieur.
+                %br/
+                = succeed "\u{202f}:" do
+                  %u Durée
+                %br/
+                = succeed "\u{202f}:" do
+                  %u Public
+              %h5 Autre
+              %p Si votre idée ne correspond à aucune case proposée, ce n'est pas un problème tant que vous en identifiez précisément le cadre. Nous pourrons discuter avec vous de la faisabilité du projet.
+          %h4 Village associatif
+          %p contact: village [at] listes2018.rmll.info
+          %p
+            Comme chaque année, le Village du Libre prendra place pendant le week-end grand public et tout au long des RMLL. Il y accueillera des acteurs exclusivement associatifs.
+            %br/
+            C'est maintenant une habitude : ce village associatif est coordonné par Bookynette.
+          %h4 Radio RMLL
+          %p contact : radio [at] listes2018.rmll.info
+          %p
+            La radio des RMLL rassemblera cette année des équipes de plusieurs radios, réseaux et collectifs de radio dans une démarche analogue à celle de l'ensemble des RMLL 2018.
+            %br/
+            Elle sera donc programmée à partir d'une combinaison de formats et d'approches (éditoriales et artistiques) tout au long du festival.
+            %br/
+            En plus d'une diffusion sur internet (direct et podcasts), nous prévoyons une fréquence temporaire en FM pour Radio RMLL.
+          %h3#participate Comment répondre à cet appel
+          %p
+            Merci de répondre à cet appel en remplissant le formulaire disponible à
+            = succeed "." do
+              = link_to "cette addresse", new_conference_program_proposal_path(@conference.short_title, locale: nil)
+            %mark jusqu'au 30 avril 2018 à minuit
+            pour proposer votre idée. Il vous sera demandé d'anticiper le plus précisément possible votre public et vos besoins d'équipements électriques, mobiliers, audiovisuels et réseau. Avant de vous proposer vous-même pour un format, prenez le temps de penser à toutes les autres personnes que celles habituellement représentées lors de ce type d'évènements.
+          %p Au-delà de la date limite, vous pourrez rejoindre les salles autogérées qui seront laissées à disposition pendant le festival. Nous étudierons les propositions incomplètes ou nécessitant des modifications dans la limite du raisonnable. Notre disponibilité étant limitée, une spontanéité et une autonomie de votre part dans l'organisation sera plus qu'appréciable !
+          %p Pour les bénévoles, des informations seront publiées sur le site dans les prochaines semaines.
+          %h4 Logistique, modalité d'accueil
+          %h5 Défraiement
+          %p Selon notre budget définitif, nous fixerons les règles de défraiement. Nous prioriserons le remboursement des personnes aux moyens modestes ou venant de loin.
+          %h5 Langues
+          %p Nous accepterons les formats francophones, anglophones et germanophones. Pour toute autre langue, merci de nous en faire la demande spécifique.
+          %h5 Captation audiovisuelle
+          %p
+            Par défaut, des captations vidéos de vos interventions pourront être effectuées et archivées plus tard sur les vidéos des RMLL. Si vous le souhaitez, vous pourrez refuser ces captations. Par défaut, nous utiliserons la licence
+            = succeed "," do
+              %a{:href => "https://fr.wikipedia.org/wiki/Licence_publique_de_l%27Union_europ%C3%A9enne", :target => "_blank"} EUPL 1.2
+          %p.thx-margin Merci d'avoir survécu à la lecture de cet appel à propositions. Nous espérons recevoir des propositions nombreuses et enthousiasmantes !
+          %p Cordialibrement,
+          %p la nouvelle équipe RMLL Strasbourg
+          %h4#contact Contacts
+          %ul
+            %li
+              IRC : #rmll-2018 sur irc.freenode.net -
+              %a{:href => "https://webchat.freenode.net/", :target => "_blank"} client web
+            %li
+              Mastodon :
+              %a{:href => "https://mamot.fr/@rmll2018", :target => "_blank"} @rmll2018@mamot.fr
+            %li Mail : contact [at] listes2018.rmll.info
+          %h4#press Presse
+          %p
+            Pour recevoir les communiqués de presse et autres informations, merci de vous inscrire ici :
+            %a.uri{:href => "https://listes2018.rmll.info/subscribe/presse", :target => "_blank"} https://listes2018.rmll.info/subscribe/presse
+          %h3 alsace.netlib.re, la Fédération du Libre et du Hack en Alsace
+          %p
+            L'édition 2018 des RMLL vous est proposée par
+            = succeed "," do
+              %a{:href => "https://alsace.netlib.re/", :target => "_blank"} alsace.netlib.re
+            %br/
+            Progressivement initiée au long de multiples collaborations depuis 2014, la fédération alsace.netlib.re regroupe les communautés militantes alsaciennes autour de l'émancipation numérique : neutralité du Net, vie privée, accès universel à la connaissance, écologie, démocratie, etc.
+          %h3 Partenaires
+          %h4 Free Software Foundation Europe (FSFE)
+          %p
+            La
+            %a{:href => "https://fsfe.org/", :target => "_blank"} Free Software Foundation Europe
+            soutient les RMLL 2018 notamment par l'organisation d'un fil rouge complet. La FSFE est une association à but non lucratif qui donne aux utilisateurs les moyens de contrôler la technologie.
+          %h3 Crédits
+          %ul
+            Fonts :
+            %li
+              %a{:href => "http://www.opensans.com/", :target => "_blank"} Open Sans
+              disponible sous la licence
+              = succeed "\u{202f};" do
+                %a{:href => "https://github.com/googlefonts/opensans/blob/master/LICENSE.txt", :target => "_blank"} Apache License, Version 2.0
+            %li
+              %a{:href => "https://www.colophon-foundry.org/custom/spacemono/", :target => "_blank"} Space Mono
+              disponible sous la licence
+              = succeed "." do
+                %a{:href => "https://github.com/googlefonts/spacemono/blob/master/LICENSE.txt", :target => "_blank"} SIL Open Font License v1.1
+          %p
+            Les
+            %a{:href => "https://github.com/hackstub/rmll18-landpage", :target => "_blank"} textes ainsi que le code source
+            de ce site sont disponibles sour la licence
+            = succeed "." do
+              %a{:href => "https://joinup.ec.europa.eu/sites/default/files/custom-page/attachment/eupl_v1.2_en.pdf", :target => "_blank"} EUPL v1.2
+            %br/
+            graphisme et développement :
+            %a{:href => "http://marjorieober.com/", :target => "_blank"} Marjorie Ober
+            \&amp;
+            = succeed "." do
+              %a{:href => "https://autre.space/", :target => "_blank"} Nicolas Chesnais
+    #slider
+    = javascript_include_tag "rmll/cfp"
+

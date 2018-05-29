@@ -1,0 +1,306 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}
+    %meta{:content => "width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0", :name => "viewport"}
+    %title LSM 2018 Call for participation - Libre Software Meeting
+    %meta{:content => "The Libre Software Meeting 2018, in Strasbourg on july 7 to 12, a transdisciplinary festival open to all public.", :name => "description"}
+    %meta{:content => "rmll, 2018, rencontres, logiciel, libre, software, meeting, strasbourg, education, numérique, captivité, émancipation, liberation, festival", :name => "keywords"}
+    = stylesheet_link_tag "rmll/cfp"
+  %body
+    %h1{:style => "display:none"} LSM 2018 Call for participation - Libre Software Meeting
+    %h2{:style => "display:none"} Digital education: building captivity or new empowerment?
+    %nav
+      #date
+        %span July 7-12
+        %span Strasbourg
+        %a#button menu
+      #rmll
+        %strong Libre Software Meeting 2018
+      #menu
+        %ul
+          %li
+            %a{:href => "#intro"} Call for participation
+            %ul
+              %li
+                %a{:href => "#edition2018"} Digital education
+              %li
+                %a{:href => "#themes"} Themes
+              %li
+                %a{:href => "#location"} Location
+              %li
+                %a{:href => "#orga"} Formats
+          %li
+            %a{:href => "#participate"} Participate
+          %li
+            %a{:href => "#contact"} Contact
+          %li
+            %a{:href => "#press"} Press
+      #lang
+        = link_to "EN", params.permit(:heading, :page, :sub).merge(:locale => :en)
+        = link_to "FR", params.permit(:heading, :page, :sub).merge(:locale => :fr)
+      %a#read Read only
+    %main
+      #source
+        %header
+          .t1 LSM 2018
+          .t2 Digital education:
+          .t1 LIBRE
+          .t2 building captivity or
+          .t1 SOFTWARE
+          .t2 new empowerment?
+          .t1 MEETING
+        %section.info
+          %p
+            %em
+              This page is composed of two size-adjustable layers.
+              %br/
+              The bottom one is a partial representation of the structure (
+              %a{:href => "https://en.wikipedia.org/wiki/HTML", :target => "_blank"}> HTML
+              ) and graphic effects (
+              %a{:href => "https://en.wikipedia.org/wiki/Cascading_Style_Sheets", :target => "_blank"}> CSS
+              ) of this page and its elements.
+              %br/
+              The top one is the interpretation made by your browser. It is dedicated to reading.
+      #trad
+        %header
+          .t1 LSM 2018
+          .t2 Digital education:
+          .t1 LIBRE
+          .t2 building captivity or
+          .t1 SOFTWARE
+          .t2 new empowerment?
+          .t1 MEETING
+        %section.info
+          %p
+            %em
+              This page is composed of two size-adjustable layers.
+              %br/
+              The bottom one is a partial representation of the structure (
+              %a{:href => "https://en.wikipedia.org/wiki/HTML", :target => "_blank"}> HTML
+              ) and graphic effects (
+              %a{:href => "https://en.wikipedia.org/wiki/Cascading_Style_Sheets", :target => "_blank"}> CSS
+              ) of this page and its elements.
+              %br/
+              The top one is the interpretation made by your browser. It is dedicated to reading.
+        %section
+          %h2#intro Call for participation 2018
+          %h2#deadline Deadline April 30
+          %p#form
+            = link_to "Application form", new_conference_program_proposal_path(@conference.short_title, locale: nil)
+          %p The yearly Libre Software Meeting (LSM) is an opportunity for beginners as well as veteran technicians to meet during several days to promote, discuss, develop, use and interrogate the Libre technologies, tools and culture.
+          %p This year, the LSM will stand, for the second time since its creation, at the University of Strasbourg from July 7 to 12, 2018.
+          %p The goal of this call is to incite you to contribute, and to describe the organization of the meeting. Further details regarding the location and the agenda will come later. If you need any special additional information, do not hesitate to contact us by email at contact [at] listes2018.rmll.info.
+          %h3#edition2018 Choices and topics for the 2018 edition
+          %p
+            For this year, the main topic will be
+            = succeed "." do
+              %strong “Digital education: building captivity or new empowerment?”
+          %p Beyond this main topic, we wish to underline the transversal and transdisciplinary aspects of the Free-culture movement, as it gathers free music, books, licenses and questions about privacy, governance and many other things. In fact, the Free-culture movement revolves around a humanist approach of culture: every person should be able to use, study, modify and share a ressource. We therefore encourage you to see beyond the purely technical aspects of software and computing.
+          %h3#themes Themes
+          %p
+            %q It would be one of the biggest missed opportunity of our time if free software would only lead to free code.
+            (Framasoft)
+            %br/
+            Your contribution to the RMLL2018 should be related to one (or several) of the following themes. Of course, each of these themes are arbitrary and contains many sub-themes which are to be detailed once the agenda is wrapped up.
+          %h4 Initiation
+          %p contact: initiation [at] listes2018.rmll.info
+          %p
+            It is essential that everyones feels free to take part in the Free movement in an accessible, stimulating, funny and sensitive way.
+            %br/
+            We would like to encourage all kind of methods that aim to make use of the diversity of people's approaches, regardless of their age.
+            %br/
+            The main focus for the
+            %strong week-end of July, the 7th and 8th
+            will be intiation but it's also welcome during the rest of the week
+          %p Ex: a workshop “Learn music while programming” could gather live-coding software developers, teachers and children.
+          %h4 Tech
+          %p contact: technique [at] listes2018.rmll.info
+          %p The 2018 edition wouldn't be a LSM one without moments dedicated to tech. The Meetings strive to bring concrete motivation as well as exposure for the most recent technological developments. Software development, system administration, networking, electronics, fabrication are applicable to all domains (bureautics, health, domotics, graphics, social networks, etc...). We wish to welcome all kind of people, in the interest of the projects and communities involved. Thank you for evaluating the skill level required for your activity.
+          %h4 Society
+          %p contact: societe [at] listes2018.rmll.info
+          %p
+            A group of human beings can be defined by what they share, and what is common to the group. By giving access to their creations, we redefined our communities around common resources. To think about how we deal with information is also to rethink the philosophy which underlies our legal, technical, and sociological tools: our way of dealing with technology.
+            %br/
+            Can we control our institutions without a free access to their data? Can we do research without an access to the whole human knowledge?
+            %br/
+            Can we master our own lives without having a control on our data, our social and professional platforms?
+            %br/
+            Isn't our identity itself a piece of information?
+          %h4 Culture &amp; Art
+          %p contact: arts [at] listes2018.rmll.info
+          %p The free culture includes all the elements resulting from those practices and esthetics which promote sharing and reappropriation as essential values; it concerns movies, video games, musics, theater, literature, etc. The LSM represents an opportunity to promote free licenses as full creation methods, and to question artistic practices, broadcasting modes, and the whole cultural economy.
+          %h3#location Location
+          %p The 2018 edition will stand at Strasbourg University, in the following buildings: l'Escarpe, l'Atrium and le Platane. Those three are close together, just separated by a dozen meters and an intermediate building.
+          %ul
+            %li l'Escarpe has 2 large lecture rooms (amphitheaters) with capacities of 521 and 221 persons; and one hall for the associative village;
+            %li l'Atrium has 2 large lecture rooms (amphitheaters) with capacities for 210 persons each; and one hall for the associative village;
+            %li le Platane has 20 rooms with a capacity of 50 persons each.
+          %p The gardens of the University campus will also be accessible during the festival, including a football field, and several smalll and larger lawns with walking paths, tables and benches.
+          %p Besides the University Campus, events will take place in buildings located at a few hundred meters away: le Shadok and the Malraux Public Library, on Monday, Tuesday and Wednesday, depending on the actual proposals.
+          %h3#orga Daily organisation
+          %h4 Tracks (themes)
+          %p
+            The meeting will be organised around “tracks” (
+            %em> fils rouges
+            ), the main track being “Digital Education: factory for captivity or new empowerment?”. Each track corresponds to a succession of different types of events organized along the same theme.
+          %h4 Events
+          %p
+            Each event will be attached to one or several of the 4 themes quoted above:
+            = succeed "," do
+              %strong Initiation
+            = succeed "," do
+              %strong Technics
+            = succeed "," do
+              %strong Society
+            = succeed "." do
+              %strong Arts &amp; culture
+          .articles
+            %article
+              %h5 Conference
+              %p
+                The conference, which can be interactive or not, is a way to present a technical progress, a problem, or any other idea or relevant project.
+                %br/
+                = succeed ":" do
+                  %u Duration
+                %br/
+                = succeed ":" do
+                  %u Audience
+              %h5 Workshop
+              %p
+                The aim of workshops is to discover or learn more about a specific practice; workshops can be devoted to some specific audience, or not.
+                %br/
+                We ask you to present the teaching method that you will use during the workshop.
+                %br/
+                = succeed ":" do
+                  %u Duration
+                %br/
+                = succeed ":" do
+                  %u Audience
+              %h5 Chatroom
+              %p
+                Meetings gathering persons and communities who are concerned by some specific subject.
+                %br/
+                We encourage you to make such moments welcoming and friendly.
+                %br/
+                = succeed ":" do
+                  %u Duration
+                %br/
+                = succeed ":" do
+                  %u Audience
+            %article
+              %h5 Debates ("tables rondes")
+              %p
+                Debates (or round tables) allow to discuss collectively major issues. You can choose the moderator of the debate, or let us do it for you.
+                %br/
+                You can choose the form of the debate (face to face, forum, etc), taking into account the interest of a more or less level of participation of the audience.
+                %br/
+                = succeed ":" do
+                  %u Duration
+                %br/
+                = succeed ":" do
+                  %u Audience
+              %h5 Creation
+              %p
+                You can ask us for some kind of residence of 1 or several days devoted to the creation of free forms: theater, music, drawing, movies, cooking, etc).
+                %br/
+                The term creation is to be unserstood in a broad sense; it can involve a media projection, a musical, or cooking performance, indoor or outdoor sport performance.
+                %br/
+                = succeed ":" do
+                  %u Duration
+                %br/
+                = succeed ":" do
+                  %u Audience
+              %h5 Other
+              %p If your idea does not match any of the forms described above, it should not be a problem as long as you discribe its form as accurately as possible. We can talk with you about your project's feasibility.
+          %h4 Community Village
+          %p contact: village [at] listes2018.rmll.info
+          %p
+            The Community Village will take place, as usual, not only during the general audience dedicated weekend but also during the whole event. Only non-profit organisations will be present.
+            %br/
+            This is now a rule: it's coordinated by Bookynette.
+          %h4 LSM radio
+          %p contact: radio [at] listes2018.rmll.info
+          %p
+            The LSM radio will gather this year members of many radios, network and radio collectives, in the same approach as the rest of the LSM 2018.
+            %br/
+            It will be broadcasted in several formats and approaches during the whole festival.
+            %br/
+            We're planning a live internet stream, podcasts as well as a temporary radio frequency for LSM Radio.
+          %h3#participate How to respond to this call
+          %p
+            Thank you to apply to this call for participation by filling the form available
+            = succeed "." do
+              = link_to "here", new_conference_program_proposal_path(@conference.short_title, locale: nil)
+            = succeed "." do
+              %mark april 30, 12pm
+          %p
+            Beyond the deadline, you'll be able to join the self-organized rooms which will be available during the festival. We will discuss the incomplete proposals as much as we can.
+            %br/
+            Our availability being limited, a spontaneity and autonomy from you in this organisation will be more than great!
+          %p Informations about volunteering will be published on the website in the next few weeks.
+          %h4 Logistics, reception conditions
+          %h5 Expenses covered
+          %p We will set expenses reimbursement rules according to our budget. Reimbursement will be prioritized based on the person revenue and travelling distance.
+          %h5 Languages
+          %p French, English and German languages are all welcome. For any other languages, please make a special request directly to us.
+          %h5 Video recording
+          %p
+            By default, your presentation can be recorded and archived as part of the LSM videos. If you wish to, you can refuse those recordings. The
+            %a{:href => "https://en.wikipedia.org/wiki/European_Union_Public_Licence", :target => "_blank"} EUPL 1.2
+            copyleft license will be used. It is compatible with many other copyleft licenses and translated in 23 langages. However you can ask your recording to be diffused under another license.
+          %p.thx-margin Thanks a lot for having read so far this call for proposals. We hope to receive plenty of proposals on exciting topics!
+          %p Best free regards,
+          %p The new team of LSM Strasbourg
+          %h4#contact Contacts
+          %ul
+            %li
+              IRC: #rmll-2018 sur irc.freenode.net -
+              %a{:href => "https://webchat.freenode.net/"} web client
+            %li
+              Mastodon:
+              %a{:href => "https://mamot.fr/@rmll2018"} @rmll2018@mamot.fr
+            %li Mail: contact [at] listes2018.rmll.info
+          %h4#press Press
+          %p
+            To receive the press releases and other informations, please suscribe here:
+            %a.uri{:href => "https://listes2018.rmll.info/subscribe/presse", :target => "_blank"} https://listes2018.rmll.info/subscribe/presse
+          %h3 alsace.netlib.re, the Libre and Hack Alsatian Federation
+          %p
+            The 2018 edition of LSM is presented to you by
+            = succeed "," do
+              %a{:href => "https://alsace.netlib.re", :target => "_blank"} alsace.netlib.re
+            = succeed "," do
+              %a{:href => "https://alsace.netlib.re", :target => "_blank"} alsace.netlib.re
+          %h3 Partners
+          %h4 Free Software Foundation Europe (FSFE)
+          %p
+            The
+            %a{:href => "https://fsfe.org/", :target => "_blank"} Free Software Foundation Europe
+            supports the LSM 2018 by organizing a full track among other things. The Free Software Foundation Europe is a charity that empowers users to control technology.
+          %h3 Credits
+          %ul
+            Fonts:
+            %li
+              %a{:href => "http://www.opensans.com/", :target => "_blank"} Open Sans
+              available under the
+              = succeed ";" do
+                %a{:href => "https://github.com/googlefonts/opensans/blob/master/LICENSE.txt", :target => "_blank"} Apache License, Version 2.0
+            %li
+              %a{:href => "https://www.colophon-foundry.org/custom/spacemono/", :target => "_blank"} Space Mono
+              available under the
+              = succeed "." do
+                %a{:href => "https://github.com/googlefonts/spacemono/blob/master/LICENSE.txt", :target => "_blank"} SIL Open Font License v1.1
+          %p
+            %a{:href => "https://github.com/hackstub/rmll18-landpage", :target => "_blank"} Texts and source code
+            are available under the
+            %a{:href => "https://joinup.ec.europa.eu/sites/default/files/custom-page/attachment/eupl_v1.2_en.pdf", :target => "_blank"} EUPL v1.2
+            license.
+            %br/
+            graphic design and development:
+            %a{:href => "http://marjorieober.com", :target => "_blank"} Marjorie Ober
+            \&amp;
+            = succeed "." do
+              %a{:href => "https://autre.space/", :target => "_blank"} Nicolas Chesnais
+    #slider
+    = javascript_include_tag "rmll/cfp"

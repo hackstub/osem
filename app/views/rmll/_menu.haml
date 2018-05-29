@@ -50,7 +50,7 @@
         %li{ role:"none" }
           = link_to t("menu.cfb"), rmll_path(:heading => "participate", :page => "cfb"), { role:"menuitem", tabindex:-1 }
         %li{ role:"none" }
-          = link_to t("menu.cfp"), conference_path(@conference.short_title, :locale => nil), { role:"menuitem", tabindex:-1 }
+          = link_to t("menu.cfp"), rmll_path(:heading => "participate", :page => "cfp"), { role:"menuitem", tabindex:-1 }
     %li
       %a{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false", tabindex:-1 }
         = t("menu.about")
@@ -85,8 +85,8 @@
         = I18n.locale.upcase
       %ul{ role:"menu", "aria-label":t("menu.lang")  }
         %li{ role:"none" }
-          = link_to "FR", url_for(params.permit(:heading, :page, :sub).merge(:locale => :fr)), { role:"menuitem", tabindex:-1, "aria-label":t("menu.fr") }
+          = link_to "FR", params.permit(:heading, :page, :sub).merge(:locale => :fr), { role:"menuitem", tabindex:-1, "aria-label":t("menu.fr") }
         %li{ role:"none" }
-          = link_to "EN", url_for(params.permit(:heading, :page, :sub).merge(:locale => :en)), { role:"menuitem", tabindex:-1, "aria-label":t("menu.en") }
+          = link_to "EN", params.permit(:heading, :page, :sub).merge(:locale => :en), { role:"menuitem", tabindex:-1, "aria-label":t("menu.en") }
     %li{ role:"none" }
       = link_to t("menu.connection"), admin_path, { id:"connect", role:"menuitem", tabindex:-1 }
