@@ -1,7 +1,7 @@
 %nav.noselect{ "aria-label":"RMLL 2018" }
   %ul#main-menu{ role:"menubar", "aria-label":"RMLL 2018" }
     %li{ role:"none" }
-      = link_to "↗", root_path, { id:"home", role:"menuitem", "aria-label":t("menu.home"), tabindex:0 }
+      = link_to "↗", rmll_path, { id:"home", role:"menuitem", "aria-label":t("menu.home"), tabindex:0 }
     %li
       %a{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false", tabindex:-1 }
         = t("menu.program")
