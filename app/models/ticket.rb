@@ -65,7 +65,8 @@ class Ticket < ApplicationRecord
     if tickets.blank?
       Money.new(0, Ticket.find(id).price_currency)
     else
-      tickets.inject(Money.new(0, tickets.first.price_currency)){ |sum, ticket| sum + (ticket.amount_paid * ticket.quantity) }
+      currency = tickets.first.price_currency
+      tickets.inject(Money.new(0, currency)){ |sum, ticket| sum + Money.new(ticket.amount_paid * ticket.quantity, currency) }
     end
   end
 
