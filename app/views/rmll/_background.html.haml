@@ -1,8 +1,80 @@
-#background
-  %h3
-    = t("rmll.home.background.h3")
-    %span= t("rmll.home.background.version")
-  %h1
-    %span= t("rmll.home.background.h1")
-  %h2
-    %span= t("rmll.home.background.h2")
+%section#home.fullscreen{ (defined? no_aria) && no_aria === true ? {} : { "aria-hidden": "true" } }
+  #background
+    %h3
+      = t("rmll.home.background.h3")
+      %span= t("rmll.home.background.version")
+    %h1
+      %span= t("rmll.home.background.h1")
+    %h2
+      %span= t("rmll.home.background.h2")
+
+  #conky
+    %ul
+      %li
+        %h4
+          %span= t("rmll.home.conky.infos.title")
+        %ul.window
+          - t("rmll.home.conky.infos.process").each do |process|
+            %li
+              %span.process= process[:name]
+              %p.tab= process[:content]
+      %li
+        %h4
+          %span= t("rmll.home.conky.mails.title")
+        %ul.window
+          - t("rmll.home.conky.mails.process").each do |process|
+            %li
+              %span.process= process[:name]
+              %p.tab
+                = link_to process[:content], rmll_path(:heading => "participate", :page => "volunteering")
+      %li
+        %h4
+          %span= t("rmll.home.conky.activities.title")
+        %ul.window
+          %li
+            %span.number 134
+            total,
+            %span.number 2
+            en cours,
+            %span.number 2
+            dormantes,
+            %span.number 0
+            stoppées,
+            %span.number 0
+            zombie
+          %li
+            %span.process en cours
+            %ul
+              %li.tab= link_to "Lorem ipsum dolor sit amet", "#"
+              %li.tab= link_to "Lorem ipsum dolor sit amet", "#"
+          %li
+            %span.process dormantes
+            %ul
+              %li.tab= link_to "Lorem ipsum dolor sit amet", "#"
+              %li.tab= link_to "Lorem ipsum dolor sit amet", "#"
+      %li
+        %h4
+          %span= t("rmll.home.conky.spaces.title")
+        %ul.window
+          Strasbourg
+          %li
+            ├> Université de Strasbourg
+            %ul
+              %li │ ├> Escarpe
+              %li │ ├> Atrium
+              %li │ └> Platane
+          %li
+            └> Presqu'île Malraux
+            %ul
+              %li.pre-wrap= "  ├> Médiathèque André Malraux"
+              %li.pre-wrap= "  └> Shadok"
+
+      -# %li.window
+      -#   wifi :
+      -#   %span wifi-name
+      -# %li
+      -#   %h4
+      -#     %span= t("rmll.home.conky.salt.title")
+      -#   %ul.window
+      -#     %p
+      -#       = t("rmll.home.conky.salt.text_html", href: link_to(t("rmll.home.conky.salt.title"), t("rmll.home.conky.salt.url")))

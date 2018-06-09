@@ -1,28 +1,30 @@
-%section#conduct-code.fullscreen
-  - add_bar("Viewer", "conduct-code.pdf")
-  .content
-    .headline
-      .left
-        %p= "RMLL"
-        %p= "2018"
-      .right
-        %p= "2018"
-        %p= "RMLL"
+%main
+  %section#conduct-code
+    - add_bar("Viewer", "conduct-code.pdf")
+    %article.content
+      .container
+        .headline
+          .left
+            %p= "RMLL"
+            %p= "2018"
+          .right
+            %p= "2018"
+            %p= "RMLL"
 
-    %h2= t(".title").upcase
+        %h2= t(".title").upcase
 
-    .main-text
-      %p.symbol= t(".text-keys.first-line")
-      %p.first-word.symbol= t(".text-keys.second-line")
-      %p.first-word-bis.symbol= t(".text-keys.third-line")
-    .columns
-      .col-left
-        %p.titling= t(".text-keys.fourth-words")
-        %p.first-word-ter.symbol= t(".text-keys.fourth-line")
-        %p.titling= t(".text-keys.fifth-words")
-        %p= t(".text-keys.fifth-line")
-      .col-right
-        %p.titling= t(".text-keys.sixth-words")
-        %p.first-word-ter.symbol= t(".text-keys.sixth-line")
-        %p.symbol= t(".text-keys.seventh-line")
-        %p.symbol= t(".text-keys.eighth-line")
+        .main-text
+          %p.symbol= t(".text-keys.first-line")
+          %p.first-word.symbol= t(".text-keys.second-line")
+          %p.first-word-bis.symbol= t(".text-keys.third-line")
+        .columns
+          .col-left
+            %p.titling= t(".text-keys.fourth-words")
+            %p.first-word-ter.symbol= t(".text-keys.fourth-line")
+            %p.titling= t(".text-keys.fifth-words")
+            %p= t(".text-keys.fifth-line")
+          .col-right
+            %p.titling= t(".text-keys.sixth-words")
+            %p.first-word-ter.symbol= t(".text-keys.sixth-line")
+            %p.symbol= t(".text-keys.seventh-line")
+            %p.symbol= t(".text-keys.eighth-line")

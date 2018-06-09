@@ -10,7 +10,6 @@
   .content {
     padding: 0;
     line-height: 2rem;
-    height: calc(100% - 3rem);
     @include phone {
       overflow: auto;
     }

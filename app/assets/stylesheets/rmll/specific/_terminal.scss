@@ -6,6 +6,10 @@
   background-color: $color-dark;
   color: $color-light;
 
+  .content {
+    padding: 2rem;
+  }
+
   .split-content .ascii {
     margin: 2rem 0;
     @media (min-width: 600px) {
@@ -96,9 +100,6 @@
 }
 
 #vim-like {
-  .window {
-    display: flex;
-  }
   a:hover, a:focus {
     background-color: $orange;
     color: $color-black;
@@ -130,6 +131,8 @@
   }
 
   .content {
+    height: 100%;
+    overflow: auto;
     color: $color-white;
     mark {
       color: $orange;

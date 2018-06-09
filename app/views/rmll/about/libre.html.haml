@@ -1,28 +1,27 @@
-%section#man.term.halfscreen.over-background
-  - add_bar("Terminal", "man")
-  .content
-    %h1= t(".title") + " - Manual"
-    %h2= t(".intro.title").upcase
-    - add_text(t(".intro.text"))
-    %br
-    %h2= t(".liberties.title").upcase
-    %ul
-      = t(".liberties.desc")
-      %br
-      - t(".liberties.desc_items").each do |elem|
-        %br
-        %li= elem.html_safe
-    %br
-    %p= t(".middle")
-    %br
-    %h2= t(".advantages.title").upcase
-    %ul
-      = t(".advantages.desc")
-      %br
-      - t(".advantages.desc_items").each do |elem|
-        %br
-        %li= elem
+= render partial: "rmll/background"
 
-%section.fullscreen#home-section.no-select.no-overflow{ "aria-hidden":"true" }
-  = render "rmll/background"
-  = render "rmll/conky"
+%main.half
+  %section#man.term
+    - add_bar("Terminal", "man")
+    %article.content
+      %h1= t(".title") + " - Manual"
+      %h2= t(".intro.title").upcase
+      - add_text(t(".intro.text"))
+      %br
+      %h2= t(".liberties.title").upcase
+      %ul
+        = t(".liberties.desc")
+        %br
+        - t(".liberties.desc_items").each do |elem|
+          %br
+          %li= elem.html_safe
+      %br
+      %p= t(".middle")
+      %br
+      %h2= t(".advantages.title").upcase
+      %ul
+        = t(".advantages.desc")
+        %br
+        - t(".advantages.desc_items").each do |elem|
+          %br
+          %li= elem

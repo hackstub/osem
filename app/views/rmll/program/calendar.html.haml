@@ -1,116 +1,117 @@
-%section.spreadsheet.fullscreen
-  - add_bar("Calendar", "/program/calendar.odf")
-  .content
-    %table
-      -# %caption= t(".title")
-      %thead
-        %tr
-          %th.first{ scope:"col" }
-          %th{ scope:"col" }
-            %span= t("common.saturday")
-            %span 7
-            %span= t("common.july")
-          %th{ scope:"col" }<
-            %span= t("common.sunday")
-            %span 8
-            %span=t("common.july")
-          %th{ scope:"col" }
-            %span= t("common.monday")
-            %span 9
-            %span= t("common.july")
-          %th{ scope:"col" }
-            %span= t("common.tuesday")
-            %span 10
-            %span= t("common.july")
-          %th{ scope:"col" }
-            %span= t("common.wednesday")
-            %span 11
-            %span= t("common.july")
-          %th{ scope:"col" }
-            %span= t("common.thursday")
-            %span 12
-            %span= t("common.july")
-      %tbody
-        %tr
-          %th.first{ scope:"row" }
-            %span 10h00
-          %td
-            %p /Université/Escarpe
-            = t("common.opening")
-          %td
-          %td
-          %td
-          %td
-          %td
-            %p /Université/Escarpe
-            Débriefing
-        %tr
-          %th.first{ scope:"row" }
-            %span 10h00
-            %span >
-            %span 18h00
-          %td
-            %p /Presqu'île Malraux
-            Village du Libre
-            %p /Université
-            = t("common.confs") + ", " + t("common.workshops") + ", etc."
-          - 0.step(3) do
+%main
+  %section.spreadsheet.fullscreen
+    - add_bar("Calendar", "/program/calendar.odf")
+    %article.content
+      %table
+        -# %caption= t(".title")
+        %thead
+          %tr
+            %th.first{ scope:"col" }
+            %th{ scope:"col" }
+              %span= t("common.saturday")
+              %span 7
+              %span= t("common.july")
+            %th{ scope:"col" }<
+              %span= t("common.sunday")
+              %span 8
+              %span=t("common.july")
+            %th{ scope:"col" }
+              %span= t("common.monday")
+              %span 9
+              %span= t("common.july")
+            %th{ scope:"col" }
+              %span= t("common.tuesday")
+              %span 10
+              %span= t("common.july")
+            %th{ scope:"col" }
+              %span= t("common.wednesday")
+              %span 11
+              %span= t("common.july")
+            %th{ scope:"col" }
+              %span= t("common.thursday")
+              %span 12
+              %span= t("common.july")
+        %tbody
+          %tr
+            %th.first{ scope:"row" }
+              %span 10h00
             %td
+              %p /Université/Escarpe
+              = t("common.opening")
+            %td
+            %td
+            %td
+            %td
+            %td
+              %p /Université/Escarpe
+              Débriefing
+          %tr
+            %th.first{ scope:"row" }
+              %span 10h00
+              %span >
+              %span 18h00
+            %td
+              %p /Presqu'île Malraux
+              Village du Libre
               %p /Université
-              = "Village du Libre, " +  t("common.confs") + ", " + t("common.workshops") + ", etc."
-          %td
-
-        %tr
-          %th.first{ scope:"row" }
-            %span 10h00
-            %span >
-            %span 02h00
-          %td
-          %td
-            %p /Presqu'île Malraux/Shadok
-            Hackerspace
-          %td
-            %p /Presqu'île Malraux/Shadok
-            Hackerspace
-          %td
-            %p /Presqu'île Malraux/Shadok
-            Hackerspace
-          %td
-            %p /Presqu'île Malraux/Shadok
-            Hackerspace
-          %td
-
-        %tr
-          %th.first{ scope:"row" }
-            %span 18h00
-            %span >
-            %span 19h30
-          - 0.step(4) do
+              = t("common.confs") + ", " + t("common.workshops") + ", etc."
+            - 0.step(3) do
+              %td
+                %p /Université
+                = "Village du Libre, " +  t("common.confs") + ", " + t("common.workshops") + ", etc."
             %td
-              %p /Université/Atrium
-              = t("common.plenary")
-          %td
-        %tr
-          %th.first{ scope:"row" }
-            %span 20h30
-          %td
-          %td
-            %p /Place St-Étienne/FEC
-            = t("menu.meal")
-          %td
-          %td
-          %td
-          %td
-        %tr
-          %th.first{ scope:"row" }
-            %span 20h00
-            %span >
-            %span 04h00
-          %td
-            %p /undefined
-            = t("menu.night")
-          %td
-          %td
-          %td
-          %td
-          %td
+
+          %tr
+            %th.first{ scope:"row" }
+              %span 10h00
+              %span >
+              %span 02h00
+            %td
+            %td
+              %p /Presqu'île Malraux/Shadok
+              Hackerspace
+            %td
+              %p /Presqu'île Malraux/Shadok
+              Hackerspace
+            %td
+              %p /Presqu'île Malraux/Shadok
+              Hackerspace
+            %td
+              %p /Presqu'île Malraux/Shadok
+              Hackerspace
+            %td
+
+          %tr
+            %th.first{ scope:"row" }
+              %span 18h00
+              %span >
+              %span 19h30
+            - 0.step(4) do
+              %td
+                %p /Université/Atrium
+                = t("common.plenary")
+            %td
+          %tr
+            %th.first{ scope:"row" }
+              %span 20h30
+            %td
+            %td
+              %p /Place St-Étienne/FEC
+              = t("menu.meal")
+            %td
+            %td
+            %td
+            %td
+          %tr
+            %th.first{ scope:"row" }
+              %span 20h00
+              %span >
+              %span 04h00
+            %td
+              %p /undefined
+              = t("menu.night")
+            %td
+            %td
+            %td
+            %td
+            %td

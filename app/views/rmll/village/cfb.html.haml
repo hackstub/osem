@@ -1,27 +1,26 @@
-%section.gallery.over-background
-  .img-container
-    - add_bar("ImgViewer", "call.jpg")
-    .img-view
-      %h1= "rmll 2018".upcase
-      .box-container
-        .second-container
-          .box-left
+= render partial: "rmll/background"
 
-            %p.date= "7-12"
-            %p.month= t("common.july").upcase
+%main
+  %section.gallery.over-background
+    .img-container
+      - add_bar("ImgViewer", "call.jpg")
+      .img-view
+        %h1= "rmll 2018".upcase
+        .box-container
+          .second-container
+            .box-left
 
-        .box-right
-          %p.where= "Village associatif, Escarpe + Atrium, de 10h à 18h"
-          %p.msg= t(".message")
-      %h2= t(".title-splitted")[0].upcase
-      %h2.huge= t(".title-splitted")[1].upcase
-      .text-render
-        - t(".call-bis").each do |elem|
-          %p= elem.upcase
-      %a= link_to conference_booths_url(@conference.short_title, :locale => nil)
-      .end-content
-        %p= t(".text")
+              %p.date= "7-12"
+              %p.month= t("common.july").upcase
 
-%section.fullscreen#home-section.no-select.no-overflow{ "aria-hidden":"true" }
-  = render "rmll/background"
-  = render "rmll/conky"
+          .box-right
+            %p.where= "Village associatif, Escarpe + Atrium, de 10h à 18h"
+            %p.msg= t(".message")
+        %h2= t(".title-splitted")[0].upcase
+        %h2.huge= t(".title-splitted")[1].upcase
+        .text-render
+          - t(".call-bis").each do |elem|
+            %p= elem.upcase
+        %a= link_to conference_booths_url(@conference.short_title, :locale => nil)
+        .end-content
+          %p= t(".text")

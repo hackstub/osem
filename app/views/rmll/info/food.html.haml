@@ -1,11 +1,12 @@
-%section.fullscreen.map
-  - add_bar("ImgViewer", "food.png")
-  .split
-    .container
-      = image_tag "map.png", { alt:"Carte de Strasbourg très pixelisée" }
+%main
+  %section.fullscreen.map
+    - add_bar("ImgViewer", "food.png")
+    .split
+      .container
+        = image_tag "map.png", { alt:"Carte de Strasbourg très pixelisée" }
 
-    .txt
-      %h2= t(".title")
-      %p= t(".daily")
-      %p= t(".alsatian")
-      %p= t(".libre_meal")
+      .txt
+        %h2= t(".title")
+        %p= t(".daily")
+        %p= t(".alsatian")
+        %p= t(".libre_meal")

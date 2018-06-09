@@ -6,12 +6,6 @@
       .container, .txt {
         width: 50%;
       }
-      .txt {
-        overflow: auto;
-        & > :last-child {
-          margin-bottom: 2rem;
-        }
-      }
     }
   }
 
@@ -26,6 +20,8 @@
     font-size: 25px;
     background-color: $color-white;
     padding: 2em;
+    height: 100%;
+    overflow: auto;
     @include phone {
       font-size: 20px;
       padding: 1.2em;

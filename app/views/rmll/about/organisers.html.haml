@@ -1,71 +1,61 @@
-%section#neofetch.term.halfscreen.over-background
-  - add_bar("Terminal", "neofetch")
-  .content
-    - term_ps1("user", "~/about", "neofetch")
-    -# %h1 Organisateurs
-    .split-content
-      .ascii{ "aria-hidden":"true" }
-        %p= "          `-:/++++/:.`          "
-        %p= "      `/ohddddddddddddyo:`      "
-        %p= "    -sdddddddddddddddddddho.    "
-        %p= "  .sddhsssssssssssssssyhddddo`  "
-        %p= " -hdds                 .yddddy. "
-        %p= ".hddds`                 odddddy`"
-        %p= "sdddddysssssso:         odddddd+"
-        %p= "dddddddddddho.          oddddddy"
-        %p= "dddddddddh+.     -s`    oddddddy"
-        %p= "sddddddh+.     :sdd`    odddddd+"
-        %p= ".ddddh/`     :ydddd`    odddddh`"
-        %p= " :hy/`    `:ydddddd`    oddddh. "
-        %p= "  .`    `/ydddddddds/:/+ddddo`  "
-        %p= "      `/hdddddddddddddddddo.    "
-        %p= "      `/shddddddddddddyo:`      "
-        %p= "          .-/+++++/:-`          "
-      %article
-        %p
-          %span.color OS:
-          RMLL-OS v0.18
-        %p
-          %span.color Host:
-          Hackstub
-        %p
-          %span.color Kernel:
-          Fédération alsace.netlib.re
-        %p
-          %span.color Uptime:
-          6 month
-        %p
-          %span.color Packages:
-          %ul
-            %li Hackstub
-            %li Alsace Réseau Neutre (ARN)
-            %li Radio Rhino
-            %li Seeraiwer
-            %li l'AIUS
-            %li Desclicks
-            %li sxb.so
-            %li Lilo
-        -# %p
-        -#   %span.color Shell:
-        -# %p
-        -#   %span.color Resolution:
-        -# %p
-        -#   %span.color WM:
-        -# %p
-        -#   %span.color Terminal:
-        %p
-          %span.color CPU:
-          Harmonie, Jérémie, Manu, Tsanta.
-        %p
-          %span.color Threads:
-          Aleks, Jean, Jules, Phillippine.
-        %p
-          %span.color GPU:
-          Marjorie, Nicolas.
-        %p
-          %span.color Memory:
-          Bookynette, Claude, Garfield, Irina, Janka, Jyhem, Legaume, Ljf, Marie-France, Mhep, Sandhose, Syme.
+= render partial: "rmll/background"
 
-%section.fullscreen#home-section.no-select.no-overflow{ "aria-hidden":"true" }
-  = render "rmll/background"
-  = render "rmll/conky"
+%main.half
+  %section#neofetch.term
+    - add_bar("Terminal", "neofetch")
+    %article.content
+      - term_ps1("user", "~/about", "neofetch")
+      .split-content
+        .ascii{ "aria-hidden":"true" }
+          %p= "          `-:/++++/:.`          "
+          %p= "      `/ohddddddddddddyo:`      "
+          %p= "    -sdddddddddddddddddddho.    "
+          %p= "  .sddhsssssssssssssssyhddddo`  "
+          %p= " -hdds                 .yddddy. "
+          %p= ".hddds`                 odddddy`"
+          %p= "sdddddysssssso:         odddddd+"
+          %p= "dddddddddddho.          oddddddy"
+          %p= "dddddddddh+.     -s`    oddddddy"
+          %p= "sddddddh+.     :sdd`    odddddd+"
+          %p= ".ddddh/`     :ydddd`    odddddh`"
+          %p= " :hy/`    `:ydddddd`    oddddh. "
+          %p= "  .`    `/ydddddddds/:/+ddddo`  "
+          %p= "      `/hdddddddddddddddddo.    "
+          %p= "      `/shddddddddddddyo:`      "
+          %p= "          .-/+++++/:-`          "
+        %article
+          %p
+            %span.color OS:
+            RMLL-OS v0.18
+          %p
+            %span.color Host:
+            Hackstub
+          %p
+            %span.color Kernel:
+            Fédération alsace.netlib.re
+          %p
+            %span.color Uptime:
+            6 month
+          %p
+            %span.color Packages:
+            %ul
+              %li Hackstub
+              %li Alsace Réseau Neutre (ARN)
+              %li Radio Rhino
+              %li Seeraiwer
+              %li l'AIUS
+              %li Desclicks
+              %li sxb.so
+              %li Lilo
+          %p
+            %span.color CPU:
+            Harmonie, Jérémie, Manu, Tsanta.
+          %p
+            %span.color Threads:
+            Aleks, Jean, Jules, Phillippine.
+          %p
+            %span.color GPU:
+            Marjorie, Nicolas.
+          %p
+            %span.color Memory:
+            Bookynette, Claude, Garfield, Irina, Janka, Jyhem, Legaume, Ljf, Marie-France, Mhep, Sandhose, Syme.

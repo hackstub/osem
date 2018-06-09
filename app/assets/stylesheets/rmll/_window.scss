@@ -1,34 +1,28 @@
-section {
-  overflow: auto;
+.half {
+  width: 50%;
 
-  &.fullscreen {
-    height: 100%;
+  @include tablet {
     width: 100%;
   }
+}
 
-  &.halfscreen {
-    height: 100%;
-    width: 50%;
-
-    @media (max-width: 1150px) {
-      width: 100%;
-    }
-  }
+article {
+  overflow: auto;
+  height: calc(100% - #{$bar-height});
 }
 
 .split {
   width: 100%;
+  height: calc(100% - #{$bar-height});
 
   @include screen {
     display: flex;
-    height: calc(100% - 3rem);
-    overflow: hidden;
   }
 
 }
 
 .bar {
-  width: 100%; height: 3rem;
+  width: 100%; height: $bar-height;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -55,9 +49,9 @@ section {
     color: $color-black;
     background-color: $color-white;
     text-decoration: none;
-  @media (max-width: 450px) {
-    display: none;
-  }
+    @media (max-width: 450px) {
+      display: none;
+    }
 
     &:hover, &:focus {
       color: $color-white;
@@ -68,8 +62,6 @@ section {
 }
 
 .content {
-  padding: 2rem;
-
   a {
     color: $color-light;
   }

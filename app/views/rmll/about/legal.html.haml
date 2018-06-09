@@ -1,16 +1,14 @@
-%section#legal.over-background.popup.invert
-  - add_popup_bar("Legal Notice")
-  .content
-    %h1= t(".title")
-    .sub-content
-      - t(".text").each_key do |title|
-        %h3= t(".text.#{title}.title")
-        - add_text(t(".text.#{title}.text"))
+= render partial: "rmll/background"
 
-    %button
-      %span still too long; did'nt read
+%main.flex.center
+  %section#legal.popup.invert
+    - add_popup_bar("Legal Notice")
+    %article.content
+      %h1= t(".title")
+      .sub-content
+        - t(".text").each_key do |title|
+          %h3= t(".text.#{title}.title")
+          - add_text(t(".text.#{title}.text"))
 
-
-%section.fullscreen#home-section.no-select.no-overflow{ "aria-hidden":"true" }
-  = render "rmll/background"
-  = render "rmll/conky"
+      %button
+        %span still too long; did'nt read

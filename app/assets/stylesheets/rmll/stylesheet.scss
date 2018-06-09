@@ -7,19 +7,19 @@
   font-variant-ligatures: none;
 }
 
-html, body, main {
+html, body, main, section {
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
 body {
-  @include pixel-bg($halftone-bg);
+  // @include pixel-bg($halftone-bg);
   background-color: $color-main;
 }
 
 main {
   height: calc(100% - 2rem);
-  overflow: hidden;
+  position: relative;
 }
 
 @import "menu";
@@ -32,6 +32,15 @@ main {
 @import "specific/pdf";
 @import "specific/map";
 
+.flex {
+  display: flex;
+
+  &.center {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
 .noselect {
   -webkit-touch-callout: none; // iOS Safari
   user-select: none;
@@ -41,19 +50,6 @@ main {
   white-space: pre-wrap;
 }
 
-.over-background {
-  // WHOOPSIES
-  position: absolute;
-
-  &:not(.gallery) {
-    height: calc(100% - 2rem) !important;
-  }
-  &.popup {
-    @media (min-width: 550px) {
-      height: auto !important;
-    }
-  }
-}
 .no-overflow {
   overflow: hidden;
 }

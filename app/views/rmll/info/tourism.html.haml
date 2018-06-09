@@ -1,23 +1,24 @@
-%section.fullscreen.map
-  - add_bar("ImgViewer", "tourism.png")
-  .split
-    .container
-      = image_tag "map.png", { alt:"Carte de Strasbourg très pixelisée" }
+%main
+  %section.fullscreen.map
+    - add_bar("ImgViewer", "tourism.png")
+    .split
+      .container
+        = image_tag "map.png", { alt:"Carte de Strasbourg très pixelisée" }
 
-    .txt
-      %h2= t(".title")
-      - add_text(t(".intro"))
+      .txt
+        %h2= t(".title")
+        - add_text(t(".intro"))
 
-      %h4= t(".museum.desc")
-      %ul
-        - t(".museum.desc_items").each do |museum|
-          %li
-            = link_to museum[:name], museum[:url]
-            %p.desc= museum[:desc]
+        %h4= t(".museum.desc")
+        %ul
+          - t(".museum.desc_items").each do |museum|
+            %li
+              = link_to museum[:name], museum[:url]
+              %p.desc= museum[:desc]
 
-      %h4= t(".places.desc")
-      %ul
-        - t(".places.desc_items").each do |place|
-          %li
-            %p.place= place[:name]
-            %p.desc= place[:desc]
+        %h4= t(".places.desc")
+        %ul
+          - t(".places.desc_items").each do |place|
+            %li
+              %p.place= place[:name]
+              %p.desc= place[:desc]

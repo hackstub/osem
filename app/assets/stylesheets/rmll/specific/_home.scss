@@ -1,6 +1,15 @@
 @import "../var";
 
-section#home-section {
+body > #home {
+  position: absolute;
+  z-index: 0;
+  @include phone {
+    display: none;
+  }
+}
+
+section#home {
+  overflow: auto;
   display: flex;
   @include phone {
     flex-direction: column;
