@@ -25,30 +25,33 @@ article {
   width: 100%; height: $bar-height;
   display: flex;
   justify-content: flex-end;
-  align-items: center;
-  border: $border;
+  border-bottom: $border;
   background-color: $color-white;
+  color: $color-black;
   font-family: $font-mono;
   font-weight: bold;
-  line-height: $terminal-line-height;
+  line-height: 1.7rem;
 
   * {
-    border: $border;
-    border-radius: $border-rad;
-    padding: 0rem 1.5rem;
+    height: 100%;
+    // border: $border;
+    // border-radius: $border-rad;
+    // padding: 0rem 1.5rem;
   }
 
   span {
     margin: auto;
-    background-color: $color-black;
-    color: $color-white;
+    // background-color: $color-black;
+    // color: $color-white;
+    padding: 0rem 1.5rem;
   }
 
   a {
-    margin-right: 0.5rem;
+    padding: 0rem 0.5rem;
     color: $color-black;
     background-color: $color-white;
     text-decoration: none;
+    border-left: $border;
     @media (max-width: 450px) {
       display: none;
     }

@@ -22,6 +22,10 @@ main {
   position: relative;
 }
 
+section {
+  border: $border;
+}
+
 @import "menu";
 @import "window";
 @import "specific/home";
