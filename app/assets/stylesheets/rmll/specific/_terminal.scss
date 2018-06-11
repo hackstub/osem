@@ -91,13 +91,12 @@
     padding: 0.2rem 1rem;
   }
 
-  ul.tree-view {
-    min-width: 22rem;
-    padding: 2rem;
+  nav {
+    min-width: 18rem;
+    padding: 1rem;
     color: $color-black;
     background-color: $color-white;
-    border-right: 1px solid black;
-
+    border-right: $border;
     @include phone {
       display: none;
     }
@@ -110,18 +109,15 @@
       }
     }
 
-    ul li {
+    li ul li {
       margin-left: 2rem;
     }
   }
 
-  .content {
-    height: 100%;
-    overflow: auto;
-    color: $color-white;
+  article {
     mark {
       color: $orange;
-      background-color: inherit;
+      background-color: transparent;
     }
     span {
       color: $color-grey-medium;
@@ -181,9 +177,8 @@
 
 
 #sponsors {
-  .ascii {
-    margin-bottom: 4rem;
-    margin-top: 2rem;
+  .space-pre {
+    margin-top: 5rem;
     color: $color-white;
     p {
       @media (max-width: 880px) {
@@ -192,8 +187,8 @@
       }
     }
   }
-
-  .folder {
+  article a {
+    display: inline-block;
     margin-top: 2rem;
   }
 }

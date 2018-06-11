@@ -1,102 +1,53 @@
 = render partial: "rmll/background"
 
 %main.half
-  %section.term
+  %section
     - add_bar("Terminal", "tree")
-    %article.content
-      - term_ps1("user", "~/about", "tree site_map/")
-      .result
+    #tree.container.term.overflow
+      %article
+        - term_ps1("user", "~/about", "tree site_map/")
         %ul
-          menu
+          Menu
+          %li= link_to t("menu.home"), rmll_path
+          %li= link_to t("menu.connection"), admin_path
           %li
-            %a= "├── " + t("menu.program")
+            = t("menu.program")
             %ul
-              %li
-                %span.pre-wrap= "│   ├── "
-                = link_to t("menu.presentation"), "/program/presentation"
-              %li
-                %span.pre-wrap= "│   └── "
-                = link_to t("menu.calendar"), "/program/calendar"
+              %li= link_to t("menu.presentation"), rmll_path(:heading => "program", :page => "presentation")
+              %li= link_to t("menu.calendar"), rmll_path(:heading => "program", :page => "calendar")
           %li
-            %a= "├── " + t("menu.village")
+            = t("menu.village")
             %ul
-              %li
-                %span.pre-wrap= "│   └── "
-                = link_to t("menu.cfb"), "/village/cfb"
+              %li= link_to t("menu.cfb"), rmll_path(:heading => "village", :page => "cfb")
           %li
-            %a= "├── " + t("menu.info")
+            = t("menu.info")
             %ul
-              %li
-                %span.pre-wrap= "│   ├── "
-                = link_to t("menu.map"), "/info/map"
-              %li
-                %span.pre-wrap= "│   ├── "
-                = link_to t("menu.access"), "/info/access"
-              %li
-                %span.pre-wrap= "│   ├── "
-                = link_to t("menu.lodging"), "/info/lodging"
-              %li
-                %span.pre-wrap= "│   ├── "
-                = link_to t("menu.food"), "/info/food"
-              %li
-                %span.pre-wrap= "│   └── "
-                = link_to t("menu.tourism"), "/info/tourism"
+              %li= link_to t("menu.map"), rmll_path(:heading => "info", :page => "map")
+              %li= link_to t("menu.access"), rmll_path(:heading => "info", :page => "access")
+              %li= link_to t("menu.lodging"), rmll_path(:heading => "info", :page => "lodging")
+              %li= link_to t("menu.food"), rmll_path(:heading => "info", :page => "food")
+              %li= link_to t("menu.tourism"), rmll_path(:heading => "info", :page => "tourism")
           %li
-            %a= "├── " + t("menu.participate")
+            = t("menu.participate")
             %ul
-              %li
-                %span.pre-wrap= "│   ├── "
-                = link_to t("menu.volunteering"), "/participate/volunteering"
-              %li
-                %span.pre-wrap= "│   ├── "
-                = link_to t("menu.donate"), "/participate/donate"
-              %li
-                %span.pre-wrap= "│   └── "
-                = link_to t("menu.cfp"), "#"
+              %li= link_to t("menu.volunteering"), rmll_path(:heading => "participate", :page => "volunteering")
+              %li= link_to t("menu.donate"), rmll_path(:heading => "participate", :page => "donate")
+              %li= link_to t("menu.rmlloff"), rmll_path(:heading => "participate", :page => "rmlloff")
+              %li= link_to t("menu.cfb"), rmll_path(:heading => "participate", :page => "cfb")
+              %li= link_to t("menu.cfp"), rmll_path(:heading => "participate", :page => "cfp")
           %li
-            %a= "├── " + t("menu.about")
+            = t("menu.about")
             %ul
-              %li
-                %span.pre-wrap= "│   ├── "
-                = link_to t("menu.libre"), "/about/libre"
-              %li
-                %span.pre-wrap= "│   ├── "
-                = link_to t("menu.history"), "/about/history"
-              %li
-                %span.pre-wrap= "│   ├── "
-                = link_to t("menu.sponsors"), "/about/sponsors"
-              %li
-                %span.pre-wrap= "│   ├── "
-                = link_to t("menu.organisers"), "/about/organisers"
-              %li
-                %span.pre-wrap= "│   ├── "
-                = link_to t("menu.legal"), "/about/legal"
-              %li
-                %span.pre-wrap= "│   ├── "
-                = link_to t("menu.conduct_code"), "/about/conduct_code"
-              %li
-                %span.pre-wrap= "│   └── "
-                = link_to t("menu.site_map"), "/about/site_map"
-
-        %ul
+              %li= link_to t("menu.libre"), rmll_path(:heading => "about", :page => "libre")
+              %li= link_to t("menu.history"), rmll_path(:heading => "about", :page => "history")
+              %li= link_to t("menu.sponsors"), rmll_path(:heading => "about", :page => "sponsors")
+              %li= link_to t("menu.organisers"), rmll_path(:heading => "about", :page => "organisers")
+              %li= link_to t("menu.legal"),  rmll_path(:heading => "about", :page => "legal")
+              %li= link_to t("menu.conduct_code"),  rmll_path(:heading => "about", :page => "conduct_code")
+              %li= link_to t("menu.site_map"),  rmll_path(:heading => "about", :page => "site_map")
           %li
-            %a= "├── " + t("menu.user")
+            = t("menu.network")
             %ul
-              %li
-                %span.pre-wrap= "│   ├── "
-                = link_to t("menu.connection"), admin_path
-              %li
-                %span.pre-wrap= "│   └── "
-                = link_to t("menu.langue"), "#"
-          %li
-            %a= "└── " + t("menu.network")
-            %ul#last-menu
-              %li
-                %span.pre-wrap= "    ├── "
-                = link_to "Mastodon", "https://mamot.fr/@rmll2018"
-              %li
-                %span.pre-wrap= "    ├── "
-                = link_to "Liste de diffusion", "https://listes2018.rmll.info/subscribe/presse"
-              %li
-                %span.pre-wrap= "    └── "
-                = link_to "IRC #rmll-2018", "https://webchat.freenode.net/"
+              %li= link_to_blank "Mastodon", "https://mamot.fr/@rmll2018"
+              %li= link_to_blank "Liste de diffusion", "https://listes2018.rmll.info/subscribe/presse"
+              %li= link_to_blank "IRC #rmll-2018", "https://webchat.freenode.net/"

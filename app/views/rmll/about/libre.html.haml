@@ -1,27 +1,25 @@
 = render partial: "rmll/background"
 
 %main.half
-  %section#man.term
+  %section
     - add_bar("Terminal", "man")
-    %article.content
-      %h1= t(".title") + " - Manual"
-      %h2= t(".intro.title").upcase
-      - add_text(t(".intro.text"))
-      %br
-      %h2= t(".liberties.title").upcase
-      %ul
-        = t(".liberties.desc")
+    #man.container.term.overflow
+      %article
+        %h1= t(".title") + " - Manual"
+
+        %h2= t(".intro.title").upcase
+        - add_text(t(".intro.text"))
+
+        %h2= t(".liberties.title").upcase
+        %ul
+          = t(".liberties.desc")
+          - t(".liberties.desc_items").each do |elem|
+            %li= elem.html_safe
         %br
-        - t(".liberties.desc_items").each do |elem|
-          %br
-          %li= elem.html_safe
-      %br
-      %p= t(".middle")
-      %br
-      %h2= t(".advantages.title").upcase
-      %ul
-        = t(".advantages.desc")
-        %br
-        - t(".advantages.desc_items").each do |elem|
-          %br
-          %li= elem
+        %p= t(".middle")
+
+        %h2= t(".advantages.title").upcase
+        %ul
+          = t(".advantages.desc")
+          - t(".advantages.desc_items").each do |elem|
+            %li= elem

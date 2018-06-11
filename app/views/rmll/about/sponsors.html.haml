@@ -1,89 +1,90 @@
 %main
-  %section#sponsors.term
+  %section
     - add_bar("Terminal", "sponsors")
-    %article.content
-      - term_ps1("user", "~/about/logos", "cat *.asc")
-      .ascii{ "aria-hidden":"true" }
-        %p= "       -hh+-                                                "
-        %p= "       +ddddy+/:::-`                                        "
-        %p= "       sddddddddddh:                                        "
-        %p= "     .ohddddddddhy-                                         "
-        %p= ":/:-:yhyyydddddd+`                                          "
-        %p= "+yyysssssshddddd.    .::/:                `-://.            "
-        %p= "`yyyyyyyy`./shdh    -s+--.               `os:--`            "
-        %p= "-yyyyyyyy.  `-/-    +s-                  .so                "
-        %p= "oyso++osy+       `++oso++/` .:/+++/:.  :++ss+++-  .:++++/-` "
-        %p= "```    `-..:+.    ``+s:``` -o+-.`.-/o: ``-so``` .+o:.``.:o+`"
-        %p= "        :+ooo/`     /s-    :s/``    ``   .so    os.``````-s+"
-        %p= "         /oo//:     /s-     -/++o+/:.    .so   .so++++++++o+"
-        %p= "         .-`        /s-        ```./s/   .so   `so`       ` "
-        %p= "                    /s-    +o-`   `:s+   .so    -s+.`   ./o-"
-        %p= "                    /s.    `:+ooooo+-    `s+     `:+ooooo/. "
+    #sponsors.container.term.overflow
+      %article
+        - term_ps1("user", "~/about/logos", "cat *.asc")
+        .space-pre{ "aria-hidden":"true" }
+          %p= "       -hh+-                                                "
+          %p= "       +ddddy+/:::-`                                        "
+          %p= "       sddddddddddh:                                        "
+          %p= "     .ohddddddddhy-                                         "
+          %p= ":/:-:yhyyydddddd+`                                          "
+          %p= "+yyysssssshddddd.    .::/:                `-://.            "
+          %p= "`yyyyyyyy`./shdh    -s+--.               `os:--`            "
+          %p= "-yyyyyyyy.  `-/-    +s-                  .so                "
+          %p= "oyso++osy+       `++oso++/` .:/+++/:.  :++ss+++-  .:++++/-` "
+          %p= "```    `-..:+.    ``+s:``` -o+-.`.-/o: ``-so``` .+o:.``.:o+`"
+          %p= "        :+ooo/`     /s-    :s/``    ``   .so    os.``````-s+"
+          %p= "         /oo//:     /s-     -/++o+/:.    .so   .so++++++++o+"
+          %p= "         .-`        /s-        ```./s/   .so   `so`       ` "
+          %p= "                    /s-    +o-`   `:s+   .so    -s+.`   ./o-"
+          %p= "                    /s.    `:+ooooo+-    `s+     `:+ooooo/. "
 
-      %p.folder= link_to t(".list")[0][:name], t(".list")[0][:url]
+        = link_to t(".list")[0][:name], t(".list")[0][:url], { class:"color" }
 
-      .ascii{ "aria-hidden":"true" }
-        %p= " ./ooo+-  ``                           /ho                                                                "
-        %p= "oNmo+odo  hd-                          oMy                                         `                      "
-        %p= "dMh-.`  /oMMyo:.o+:os`-/--/o:   -+sso: oMh/oss/.   -+sso/.  oo`  -o+ +o:+s/ :s:-oo/yy    ./ooo/. `o.   .o`"
-        %p= ".sdmmdy/:/MMo/-:MMy+/`yd: .MM/ .NM+/o/ oMNs//sNm-`yMh//omN+ NM-  /Md mMdo/-+MN  +Mm:-   /mo---sm--M-   :M-"
-        %p= "   `-+MM- NM-  :Mm   .oh/-:MM+ `ohhhds`oMh    yMs-MN`   /Mm NM-  /Md mM/   -mN.`sNy     hNoooooh/-M-   :M-"
-        %p= "odo//yMm. mMs:.:Mm   sMM. -MMo.`o+:/NM:oMNs//sNm-`yMh//omN/ dMh/+dMd mM:   +//::/:`  /+`/mo-../+ `Ns..-hM-"
-        %p= "-+syyo/`  -oss:.o+   `/s+-./s+-`/oss+- -o//oso/.   -+sso/.  `+ss+:oo +o.   dNmmmmmm+ /o` ./ooo+-  .+oo+-o."
-        %p= "                                                                          `so::::/+m                      "
-        %p= "                                                                          :N.     :/                      "
-        %p= "                                                                           ./:----`                       "
-      %p.folder= link_to t(".list")[1][:name], t(".list")[1][:url]
+        .space-pre{ "aria-hidden":"true" }
+          %p= " ./ooo+-  ``                           /ho                                                                "
+          %p= "oNmo+odo  hd-                          oMy                                         `                      "
+          %p= "dMh-.`  /oMMyo:.o+:os`-/--/o:   -+sso: oMh/oss/.   -+sso/.  oo`  -o+ +o:+s/ :s:-oo/yy    ./ooo/. `o.   .o`"
+          %p= ".sdmmdy/:/MMo/-:MMy+/`yd: .MM/ .NM+/o/ oMNs//sNm-`yMh//omN+ NM-  /Md mMdo/-+MN  +Mm:-   /mo---sm--M-   :M-"
+          %p= "   `-+MM- NM-  :Mm   .oh/-:MM+ `ohhhds`oMh    yMs-MN`   /Mm NM-  /Md mM/   -mN.`sNy     hNoooooh/-M-   :M-"
+          %p= "odo//yMm. mMs:.:Mm   sMM. -MMo.`o+:/NM:oMNs//sNm-`yMh//omN/ dMh/+dMd mM:   +//::/:`  /+`/mo-../+ `Ns..-hM-"
+          %p= "-+syyo/`  -oss:.o+   `/s+-./s+-`/oss+- -o//oso/.   -+sso/.  `+ss+:oo +o.   dNmmmmmm+ /o` ./ooo+-  .+oo+-o."
+          %p= "                                                                          `so::::/+m                      "
+          %p= "                                                                          :N.     :/                      "
+          %p= "                                                                           ./:----`                       "
+        = link_to t(".list")[1][:name], t(".list")[1][:url], { class:"color" }
 
-      .ascii{ "aria-hidden":"true" }
-        %p= "┌─────────────────────────────────────────────────────────────────┬───┬───┬───────┬───────┐                "
-        %p= "│                                                                 │   │   │       │       │                "
-        %p= "│     N    N        o                          o   N     ./'      │   │   │       │       │                "
-        %p= "│     M    M N.oo.  n N   N .ooo.  N.oo. .owo. n °MMMM  .ooo.     │   │   │       │       │                "
-        %p= "│     M    M M   M  M 0. .0 m:.:m  M`  ` \\\\_   M   M    m:.:m     │   │   │       │       │                "
-        %p= "│     M    M M   M  M `m.m' M      M        \\\\ M   M    M         │   │   │       │       │                "
-        %p= "│     `osso' N   N  N  :N:  `owo'  N     `owo` N   `oM  `owo'     │   │   │       │       │                "
-        %p= "│                                                                 │   │   │       │       │                "
-        %p= "│                                                                 │   │   │       │       │                "
-        %p= "└────────────┬──────┬───┬─────────────────────────────────────────┴───┴───┴───────┴───────┴───────────────┐"
-        %p= "             │      │   │                                                                                 │"
-        %p= "             │      │   │        o          .owo.  N                     o                                │"
-        %p= "             │      │   │    .oo M .ooo.    o.  `°MMMM N.oo. .ooo. .owo. M oo. .ooo. N   N N.oo. .oo.N    │"
-        %p= "             │      │   │    m   M m:.:m     \\\\\\   M   M`  `  .//M \\\\_   M   m m   m M   M M`  ` m   M    │"
-        %p= "             │      │   │    m   M M           `o  M   M     o`  M    \\\\ M   m m   m M   M M     m   M    │"
-        %p= "             │      │   │    `oo'N `owo'    `owo`  `oM N     `oo'N `owo` N`oo' `ooo' `oo'N N     `oo M    │"
-        %p= "             │      │   │                                                                        `ooo`    │"
-        %p= "             │      │   │                                                                                 │"
-        %p= "             └──────┴───┴─────────────────────────────────────────────────────────────────────────────────┘"
-      %p.folder= link_to t(".list")[2][:name], t(".list")[2][:url]
+        .space-pre{ "aria-hidden":"true" }
+          %p= "┌─────────────────────────────────────────────────────────────────┬───┬───┬───────┬───────┐                "
+          %p= "│                                                                 │   │   │       │       │                "
+          %p= "│     N    N        o                          o   N     ./'      │   │   │       │       │                "
+          %p= "│     M    M N.oo.  n N   N .ooo.  N.oo. .owo. n °MMMM  .ooo.     │   │   │       │       │                "
+          %p= "│     M    M M   M  M 0. .0 m:.:m  M`  ` \\\\_   M   M    m:.:m     │   │   │       │       │                "
+          %p= "│     M    M M   M  M `m.m' M      M        \\\\ M   M    M         │   │   │       │       │                "
+          %p= "│     `osso' N   N  N  :N:  `owo'  N     `owo` N   `oM  `owo'     │   │   │       │       │                "
+          %p= "│                                                                 │   │   │       │       │                "
+          %p= "│                                                                 │   │   │       │       │                "
+          %p= "└────────────┬──────┬───┬─────────────────────────────────────────┴───┴───┴───────┴───────┴───────────────┐"
+          %p= "             │      │   │                                                                                 │"
+          %p= "             │      │   │        o          .owo.  N                     o                                │"
+          %p= "             │      │   │    .oo M .ooo.    o.  `°MMMM N.oo. .ooo. .owo. M oo. .ooo. N   N N.oo. .oo.N    │"
+          %p= "             │      │   │    m   M m:.:m     \\\\\\   M   M`  `  .//M \\\\_   M   m m   m M   M M`  ` m   M    │"
+          %p= "             │      │   │    m   M M           `o  M   M     o`  M    \\\\ M   m m   m M   M M     m   M    │"
+          %p= "             │      │   │    `oo'N `owo'    `owo`  `oM N     `oo'N `owo` N`oo' `ooo' `oo'N N     `oo M    │"
+          %p= "             │      │   │                                                                        `ooo`    │"
+          %p= "             │      │   │                                                                                 │"
+          %p= "             └──────┴───┴─────────────────────────────────────────────────────────────────────────────────┘"
+        = link_to t(".list")[2][:name], t(".list")[2][:url], { class:"color" }
 
-      .ascii{ "aria-hidden":"true" }
-        %p= "   `./+oo+:.                                    -`  -+++++++//-.`                                ./+++:`"
-        %p= "  /dMMMMMMMNy`   ----`     .---.             ./hN/  oMMMMMMMMMMNmy:`        `-/+oo+:.`          /mMMMd- "
-        %p= " +MMMNhosdNy-   .MMMM+     yMMMh`         `:smMMM:  oMMMNysssydNMMMd/     -smMMMMMMMNdo.      .sNMMNo`  "
-        %p= " yMMMm-  `.     .MMMM+     yMMMh`       .odMMMMMM/  oMMMm.    `-sNMMNo  `sNMMMmhyyhNMMMm/    :dMMMd:    "
-        %p= " :NMMMNho:.`    .MMMMy+++++dMMMh`    ./hNMMNdmMMM/  oMMMm.       oMMMN: oMMMMs.    -hMMMN: `sNMMNs`     "
-        %p= "  -yNMMMMMNh+`  .MMMMMMMMMMMMMMh` `:smMMMNy:`hMMM/  oMMMm.       .NMMM+`hMMMN.      /MMMMs.hMMMM+       "
-        %p= "    ./shmMMMMh. .MMMMdyyyyymMMMh` sNMMMMMmo:-hMMM/  oMMMm.       /MMMN/ sMMMM+`    `sMMMN/`/mMMMm+`     "
-        %p= "  ./-   .oMMMM/ .MMMM+    `yMMMh` yMmsohmNMMNNMMM/  oMMMm.     `+mMMMy` .hMMMNho//odMMMNs`  .sNMMMh:    "
-        %p= ".smMNy+:/yMMMN: .MMMM+     yMMMh` +/`   `-+ydNMMM/  oMMMN+///+ymMMMNo`   `+dNMMMMMMMMNh/      -hMMMNs.  "
-        %p= ".omMMMMMMMMMm+  `++++.     :+++:            `dMMM/  oMMMMMMMMMMMNdo.       `-+syhhys/-`        `/mMMMm+`"
-        %p= "  .:osyhyyo:.                                +sss-  :yssssssss+:.`                               .ossss/"
-      %p.folder= link_to t(".list")[3][:name], t(".list")[3][:url]
+        .space-pre{ "aria-hidden":"true" }
+          %p= "   `./+oo+:.                                    -`  -+++++++//-.`                                ./+++:`"
+          %p= "  /dMMMMMMMNy`   ----`     .---.             ./hN/  oMMMMMMMMMMNmy:`        `-/+oo+:.`          /mMMMd- "
+          %p= " +MMMNhosdNy-   .MMMM+     yMMMh`         `:smMMM:  oMMMNysssydNMMMd/     -smMMMMMMMNdo.      .sNMMNo`  "
+          %p= " yMMMm-  `.     .MMMM+     yMMMh`       .odMMMMMM/  oMMMm.    `-sNMMNo  `sNMMMmhyyhNMMMm/    :dMMMd:    "
+          %p= " :NMMMNho:.`    .MMMMy+++++dMMMh`    ./hNMMNdmMMM/  oMMMm.       oMMMN: oMMMMs.    -hMMMN: `sNMMNs`     "
+          %p= "  -yNMMMMMNh+`  .MMMMMMMMMMMMMMh` `:smMMMNy:`hMMM/  oMMMm.       .NMMM+`hMMMN.      /MMMMs.hMMMM+       "
+          %p= "    ./shmMMMMh. .MMMMdyyyyymMMMh` sNMMMMMmo:-hMMM/  oMMMm.       /MMMN/ sMMMM+`    `sMMMN/`/mMMMm+`     "
+          %p= "  ./-   .oMMMM/ .MMMM+    `yMMMh` yMmsohmNMMNNMMM/  oMMMm.     `+mMMMy` .hMMMNho//odMMMNs`  .sNMMMh:    "
+          %p= ".smMNy+:/yMMMN: .MMMM+     yMMMh` +/`   `-+ydNMMM/  oMMMN+///+ymMMMNo`   `+dNMMMMMMMMNh/      -hMMMNs.  "
+          %p= ".omMMMMMMMMMm+  `++++.     :+++:            `dMMM/  oMMMMMMMMMMMNdo.       `-+syhhys/-`        `/mMMMm+`"
+          %p= "  .:osyhyyo:.                                +sss-  :yssssssss+:.`                               .ossss/"
+        = link_to t(".list")[3][:name], t(".list")[3][:url], { class:"color" }
 
-      .ascii{ "aria-hidden":"true" }
-        %p= "`/////      `/////.-////     .//// /////    :////`-/////`   /////:"
-        %p= ":MdyhN      :MMMMM+oMMMMd.   +MMMN MMMMM    hMMMM:`mMMMMd  oMMMMm."
-        %p= ":Ms/yN      :MMMMM+oMMMMMN:  +MMMN MMMMM    hMMMM: `dMMMMs/MMMMd` "
-        %p= ":My/hN      :MMMMM+oMMMMMMMs +MMMN MMMMM    hMMMM:  `dMMMMMMMMd`  "
-        %p= ":M++sN      :MMMMM+oMMMMNMMMmhMMMN MMMMM    hMMMM:   `mMMMMMMm`   "
-        %p= ":MMmMN      :MMMMM+oMMMm`yMMMMMMMN MMMMM    hMMMM:   /MMMMMMMM+   "
-        %p= ":MMMMN      :MMMMM+oMMMm  /NMMMMMN MMMMM-  `mMMMM-  /MMMMmdMMMM+  "
-        %p= ":MMMMMMMMMMN:MMMMM+oMMMm   .hMMMMN oMMMMMmmNMMMMd  :MMMMM-`mMMMM/ "
-        %p= ":MMMMMMMMMMM:MMMMM+oMMMm     +NMMN  :hNMMMMMMMd+  :MMMMM/  -NMMMM/"
-        %p= " ..........` .....``...`      `..`     `.---.     `....`    `....`"
-        %p= "`////:.  -////:.    `//   ///////`-/   .://:`  `/.   :: `//////-  "
-        %p= "-Mh--oMs hM:--oMo  `ddmd` --oMs-- hM`.md:--/Nh`:Mo   NN .Md::::.  "
-        %p= "-Mdosso. hMosNN+  .mN+oMm.  /M+   hM`+M+ `. hM-:Mo   NN .Md++++`  "
-        %p= "-mo      ym` `omo.dh....hd. /m+   ym` +hyymdNh.`sdssyd/ .mdssss+  "
-      %p.folder= link_to t(".list")[4][:name], t(".list")[4][:url]
+        .space-pre{ "aria-hidden":"true" }
+          %p= "`/////      `/////.-////     .//// /////    :////`-/////`   /////:"
+          %p= ":MdyhN      :MMMMM+oMMMMd.   +MMMN MMMMM    hMMMM:`mMMMMd  oMMMMm."
+          %p= ":Ms/yN      :MMMMM+oMMMMMN:  +MMMN MMMMM    hMMMM: `dMMMMs/MMMMd` "
+          %p= ":My/hN      :MMMMM+oMMMMMMMs +MMMN MMMMM    hMMMM:  `dMMMMMMMMd`  "
+          %p= ":M++sN      :MMMMM+oMMMMNMMMmhMMMN MMMMM    hMMMM:   `mMMMMMMm`   "
+          %p= ":MMmMN      :MMMMM+oMMMm`yMMMMMMMN MMMMM    hMMMM:   /MMMMMMMM+   "
+          %p= ":MMMMN      :MMMMM+oMMMm  /NMMMMMN MMMMM-  `mMMMM-  /MMMMmdMMMM+  "
+          %p= ":MMMMMMMMMMN:MMMMM+oMMMm   .hMMMMN oMMMMMmmNMMMMd  :MMMMM-`mMMMM/ "
+          %p= ":MMMMMMMMMMM:MMMMM+oMMMm     +NMMN  :hNMMMMMMMd+  :MMMMM/  -NMMMM/"
+          %p= " ..........` .....``...`      `..`     `.---.     `....`    `....`"
+          %p= "`////:.  -////:.    `//   ///////`-/   .://:`  `/.   :: `//////-  "
+          %p= "-Mh--oMs hM:--oMo  `ddmd` --oMs-- hM`.md:--/Nh`:Mo   NN .Md::::.  "
+          %p= "-Mdosso. hMosNN+  .mN+oMm.  /M+   hM`+M+ `. hM-:Mo   NN .Md++++`  "
+          %p= "-mo      ym` `omo.dh....hd. /m+   ym` +hyymdNh.`sdssyd/ .mdssss+  "
+        = link_to t(".list")[4][:name], t(".list")[4][:url], { class:"color" }

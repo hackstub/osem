@@ -28,7 +28,7 @@ section {
   }
 }
 
-article {
+article, nav {
   .container, .container-flex {
     height: 100%;
   }
@@ -49,6 +49,7 @@ article {
   }
 
   span {
+    padding-left: 1rem;
     margin: auto;
   }
 

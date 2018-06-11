@@ -1,19 +1,17 @@
 = render partial: "rmll/background"
 
 %main.half
-  %section.term
+  %section
     - add_bar("Terminal", "history")
-    %article.content
-      - term_ps1("user", "~/about", "ls -l history/previousEditions/")
-      .result
-        - t(".previousEditions").each do |edition|
-          %p<
-            = "drwxr-xr-x" + edition[:txt]
-            %a.folder{ href:edition[:url], target:"_blank"}<
-              = edition[:city]
-      - term_ps1("user", "~/about", "cat history/infos.txt")
+    .container.term.overflow
+      %article
+        - term_ps1("user", "~/about", "ls -l history/previousEditions/")
+        #ls.space-wrap
+          - t(".previousEditions").each do |edition|
+            %p<
+              %span= edition[:txt]
+              %a.color{ href:edition[:url], target:"_blank"}>= edition[:city]
 
-      %p
-        = t(".moar.committee.text_html", href: link_to(t(".moar.committee.url-title"), t(".moar.committee.url")))
-      %p
-        = t(".moar.videos.text_html", href: link_to(t(".moar.videos.url-title"), t(".moar.videos.url")))
+        - term_ps1("user", "~/about", "cat history/infos.txt")
+        %p= t(".moar.committee.text_html", href: link_to_blank(t(".moar.committee.url-title"), t(".moar.committee.url")))
+        %p= t(".moar.videos.text_html", href: link_to_blank(t(".moar.videos.url-title"), t(".moar.videos.url")))
