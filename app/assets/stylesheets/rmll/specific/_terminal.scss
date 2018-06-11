@@ -85,6 +85,10 @@
 }
 
 #vim-like {
+  @include phone {
+    overflow: auto;
+  }
+
   a:hover, a:focus {
     background-color: $orange;
     color: $color-black;
