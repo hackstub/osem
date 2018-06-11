@@ -76,13 +76,20 @@
   font-family: $font-sans;
   color: $color-black;
   font-size: 1.1rem;
-  line-height: 1.45rem;
 
   &.container {
     background-color: $color-dark;
   }
   article {
     max-width: 50rem;
+  }
+}
+
+#conduct-code {
+  line-height: 1.45rem;
+
+  article {
+    text-align: justify;
     margin: auto;
     padding: 3.5rem;
     padding-top: 4.5rem;
@@ -90,12 +97,6 @@
     @include phone {
       padding: 2rem;
     }
-  }
-}
-
-#conduct-code {
-  article {
-    text-align: justify;
   }
 
   .color {
@@ -171,6 +172,129 @@
       .col-left, .col-right {
         width:47%;
       }
+    }
+  }
+}
+
+#cfb {
+  width: auto;
+  max-width: calc(50rem + 4px);
+  margin: auto;
+
+  .container {
+    @media (min-width: calc(50rem + 4px)) {
+      overflow-x: hidden;
+    }
+  }
+  article {
+    width: 50rem;
+    height: 70rem;
+    background-color: $yellow-flash;
+    padding: 2rem;
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 8.5rem;
+    color: $yellow-flash;
+    background-color: black;
+  }
+
+  .box-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .box-left {
+    margin-top: 0.75rem;
+    border: 5px solid black;
+    transform: rotate(-5deg);
+    display: inline-block;
+    padding: 0.5rem;
+    box-shadow: 12px 12px 2px 1px rgba(0, 0, 0, 0.8);
+
+    p.date {
+      font-size: 6rem;
+    }
+
+    p.month {
+      font-size: 3rem;
+    }
+  }
+
+  .second-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .box-right {
+    right: 0;
+
+    p.where {
+      font-size: 2.25rem;
+      margin-top: 2rem;
+    }
+
+    p.msg {
+      margin-top: 1.5rem;
+      font-weight: 600;
+      font-size: 1.25rem;
+    }
+  }
+
+  h2 {
+    font-size: 7.5rem;
+    font-style: normal;
+  }
+  h2:first-of-type {
+    margin-top: 2rem;
+  }
+
+  h2.huge {
+    font-size:10.25rem;
+    line-height:7rem;
+  }
+
+  a {
+    font-weight: 600;
+    font-size: 1.25rem;
+    color:black;
+  }
+
+  .text-render {
+    background-color: black;
+    color: $yellow-flash;
+    line-height: 1.25;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    padding-top: 0.25rem;
+    padding-bottom: 1rem;
+
+    p:first-child {
+      font-size: 4rem;
+    }
+
+    p:nth-child(2) {
+      font-size: 3rem;
+    }
+
+    p:nth-child(3) {
+      font-size: 2rem;
+    }
+
+    p:last-child {
+      font-size: 1.5rem;
+    }
+  }
+
+  .end-content {
+    margin-top: 1.5rem;
+
+    p {
+      font-size: 1.5rem;
     }
   }
 }
