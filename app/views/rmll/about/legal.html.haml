@@ -1,14 +1,15 @@
 = render partial: "rmll/background"
 
 %main.flex.center
-  %section#legal.popup.invert
+  %section.popup
     - add_popup_bar("Legal Notice")
-    %article.content
-      %h1= t(".title")
-      .sub-content
-        - t(".text").each_key do |title|
-          %h3= t(".text.#{title}.title")
-          - add_text(t(".text.#{title}.text"))
+    #legal
+      %article
+        %h1= t(".title")
+        
+        .box.overflow
+          - t(".text").each_key do |title|
+            %h3= t(".text.#{title}.title")
+            - add_text(t(".text.#{title}.text"))
 
-      %button
-        %span still too long; did'nt read
+        = link_to "still too long; didn't read", rmll_path, { class:"button" }

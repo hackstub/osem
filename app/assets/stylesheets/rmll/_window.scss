@@ -9,8 +9,16 @@
 section {
   border: $border;
 
-  .popup {
+  &.popup {
     border-radius: $border-rad;
+    @media (min-width: 550px) {
+      height: auto; width: 40rem;
+    }
+
+    .bar {
+      background-color: $color-black;
+      color: $color-white;
+    }
   }
 }
 
@@ -60,9 +68,6 @@ article, nav {
     text-decoration: none;
     border-left: $border;
     font-weight: bold;
-    // @media (max-width: 450px) {
-    //   display: none;
-    // }
 
     &:hover, &:focus {
       color: $color-white;
