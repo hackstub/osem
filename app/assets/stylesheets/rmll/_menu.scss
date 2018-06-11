@@ -1,11 +1,9 @@
 nav.main {
-  @include pixel-bg($halftone-nav);
   z-index: 10;
   height: 2rem; width: 100%;
 
   white-space: nowrap;
-  background-color: white;
-  font-size: 0.95rem;
+  background-color: $color-second;
 
   ul {
     &[role="menubar"] {
@@ -30,8 +28,7 @@ nav.main {
             top: 0.8rem;
             position: relative;
             width: 100%;
-            background-color: white;
-            @include pixel-bg($halftone-nav);
+            background-color: $color-second;
           }
         }
       }
@@ -50,9 +47,7 @@ nav.main {
           &[aria-haspopup="true"]::before {
             content: "v";
             margin-right: 0.5rem;
-            // background-color: white;
             color: $color-white;
-            // padding: 0 0.5rem;
           }
         }
         @include screen {
@@ -87,8 +82,7 @@ nav.main {
           top: 0.8rem;
           position: relative;
           width: 100%;
-          background-color: white;
-          @include pixel-bg($halftone-nav);
+          background-color: $color-second;
         }
       }
     }
@@ -107,7 +101,7 @@ nav.main {
     padding: 0 1rem;
     outline: none;
     text-decoration: none;
-    line-height: 2rem;
+    line-height: 1.9rem;
     min-height: 2rem;
     color: white;
 
@@ -116,12 +110,10 @@ nav.main {
     }
 
     &:focus, &:hover  {
-      background-color: $orange;
+      background-color: $color-third;
       color: black;
     }
-
   }
-
 }
 
 #home-link {

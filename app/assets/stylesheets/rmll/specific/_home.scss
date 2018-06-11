@@ -47,12 +47,13 @@ section#home {
 
       background-color: $color-white;
       color: $color-black;
-      font-weight: bold;
+      border: $border;
+      border-bottom: none;
     }
   }
 
   .process {
-    background-color: $color-cli;
+    background-color: $color-second;
     color: $color-black;
     padding: 0 1rem;
   }
