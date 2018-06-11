@@ -66,3 +66,111 @@
     }
   }
 }
+
+
+// ┌─╮┌─╮┌─╴
+// ├─╯│ │├─╴
+// ╵  └─╯╵
+
+.pdf {
+  font-family: $font-sans;
+  color: $color-black;
+  font-size: 1.1rem;
+  line-height: 1.45rem;
+
+  &.container {
+    background-color: $color-dark;
+  }
+  article {
+    max-width: 50rem;
+    margin: auto;
+    padding: 3.5rem;
+    padding-top: 4.5rem;
+    background-color: $color-white;
+    @include phone {
+      padding: 2rem;
+    }
+  }
+}
+
+#conduct-code {
+  article {
+    text-align: justify;
+  }
+
+  .color {
+    color: $red;
+  }
+
+  .headline {
+    font-size: 0.9rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    font-weight: bold;
+  }
+
+  h2 {
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+    border: $border;
+    text-align: left;
+    @include phone {
+      line-height: 2rem;
+    }
+  }
+
+  h3 {
+    font-weight: bold;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 0.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  p::after {
+    content: " ◆";
+  }
+
+  .main-text p {
+    margin: 1rem 0;
+
+    &::before {
+      font-weight: bold;
+    }
+
+    &:first-child::before {
+      content: "Art. 2018 ";
+      color: $red;
+      margin-right: 0.2rem;
+    }
+
+    &:nth-child(2)::before {
+      content: "RMLL ";
+    }
+
+    &:nth-child(3)::before {
+      content: "The Code of Conduct ";
+    }
+  }
+  .col-left p:first-of-type::before {
+    content: "We invite and encourage everybody to express their opinions ";
+    font-weight: bold;
+  }
+
+  .columns {
+    width:100%;
+    margin-top: 1.5rem;
+    @include screen {
+      display:flex;
+      justify-content: space-between;
+      .col-left, .col-right {
+        width:47%;
+      }
+    }
+  }
+}
