@@ -1,4 +1,4 @@
-nav {
+nav.main {
   @include pixel-bg($halftone-nav);
   z-index: 10;
   height: 2rem; width: 100%;
