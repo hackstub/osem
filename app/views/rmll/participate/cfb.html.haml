@@ -1,36 +1,24 @@
 = render partial: "rmll/background"
 
 %main.half
-  %section.halfscreen.term.mail.over-background
+  %section
     - add_bar("Mail", t("rmll.participate.mail.cfb"))
-    %article
-      .tree
-        %ul
-          %h1 Mailing box
-          %li
-            MAY 22 - from: contact [AT] listes2018.rmll.info
-            = link_to t("rmll.participate.mail.volunteering"), rmll_path(:heading => "participate", :page => "volunteering")
-          %li
-            MAY 22 - from: contact [AT] listes2018.rmll.info
-            = link_to t("rmll.participate.mail.donate"), rmll_path(:heading => "participate", :page => "donate")
-          %li
-            MAY 22 - from: contact [AT] listes2018.rmll.info
-            = link_to t("rmll.participate.mail.rmlloff"), rmll_path(:heading => "participate", :page => "rmlloff")
-          %li.selected
-            APR 27 - from: contact [AT] listes2018.rmll.info
-            = link_to t("rmll.participate.mail.cfb"), rmll_path(:heading => "participate", :page => "cfb")
+    #mail.container.term.overflow
+      %article
+        %h1 Mailing box
+        = render partial: "rmll/participate/mail_headings", locals: { mail: "cfb" }
 
-      .content
-        %ul.info
-          %li Date: fri, 27 Apr 2018 14:27:22
-          %li From: "rmll 2018 team" <contact [AT] listes2018.rmll.info>
-          %li To: You
-          %li
-            Attachment:
-            = link_to "call.jpg", rmll_path(:heading => "village", :page => "cfb")
-          %li
-            %h2= "Subject : " + t("rmll.participate.mail.cfb")
+        .content
+          %ul
+            %li Date: fri, 27 Apr 2018 14:27:22
+            %li From: "rmll 2018 team" <contact [AT] listes2018.rmll.info>
+            %li To: You
+            %li
+              Attachment:
+              = link_to "call.jpg", rmll_path(:heading => "village", :page => "cfb")
+            %li
+              %h2= "Subject : " + t("rmll.participate.mail.cfb")
 
-        - add_text(t(".text"))
+          - add_text(t(".text"))
 
-        %p= link_to t(".link-text"), conference_booths_url(@conference.short_title, :locale => nil)
+          %p= link_to t(".link-text"), conference_booths_url(@conference.short_title, :locale => nil)

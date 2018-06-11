@@ -1,0 +1,14 @@
+.tree
+  %ul
+    %li{ mail == "volunteering" ? { class:"selected" } : {} }
+      MAY 22 - from: contact [AT] listes2018.rmll.info
+      = link_to t("rmll.participate.mail.volunteering"), rmll_path(:heading => "participate", :page => "volunteering")
+    %li{ mail == "donate" ? { class:"selected" } : {} }
+      MAY 22 - from: contact [AT] listes2018.rmll.info
+      = link_to t("rmll.participate.mail.donate"), rmll_path(:heading => "participate", :page => "donate")
+    %li{ mail == "rmlloff" ? { class:"selected" } : {} }
+      MAY 22 - from: contact [AT] listes2018.rmll.info
+      = link_to t("rmll.participate.mail.rmlloff"), rmll_path(:heading => "participate", :page => "rmlloff")
+    %li{ mail == "cfb" ? { class:"selected" } : {} }
+      APR 27 - from: contact [AT] listes2018.rmll.info
+      = link_to t("rmll.participate.mail.cfb"), rmll_path(:heading => "participate", :page => "cfb")

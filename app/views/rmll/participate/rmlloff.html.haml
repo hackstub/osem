@@ -1,31 +1,19 @@
 = render partial: "rmll/background"
 
 %main.half
-  %section.halfscreen.term.mail.over-background
+  %section
     - add_bar("Mail", t("rmll.participate.mail.rmlloff"))
-    %article
-      .tree
-        %ul
-          %h1 Mailing box
-          %li
-            MAY 22 - from: contact [AT] listes2018.rmll.info
-            = link_to t("rmll.participate.mail.volunteering"), rmll_path(:heading => "participate", :page => "volunteering")
-          %li
-            MAY 22 - from: contact [AT] listes2018.rmll.info
-            = link_to t("rmll.participate.mail.donate"), rmll_path(:heading => "participate", :page => "donate")
-          %li.selected
-            MAY 22 - from: contact [AT] listes2018.rmll.info
-            = link_to t("rmll.participate.mail.rmlloff"), rmll_path(:heading => "participate", :page => "rmlloff")
-          %li
-            APR 27 - from: contact [AT] listes2018.rmll.info
-            = link_to t("rmll.participate.mail.cfb"), rmll_path(:heading => "participate", :page => "cfb")
+    #mail.container.term.overflow
+      %article
+        %h1 Mailing box
+        = render partial: "rmll/participate/mail_headings", locals: { mail: "rmlloff" }
 
-      .content
-        %ul.info
-          %li Date: fri, 27 Apr 2018 09:12:02
-          %li From: "rmll 2018 team" <contact [AT] listes2018.rmll.info>
-          %li To: You
-          %li
-            %h2= "Subject : " + t("rmll.participate.mail.rmlloff")
+        .content
+          %ul
+            %li Date: fri, 27 Apr 2018 09:12:02
+            %li From: "rmll 2018 team" <contact [AT] listes2018.rmll.info>
+            %li To: You
+            %li
+              %h2= "Subject : " + t("rmll.participate.mail.rmlloff")
 
-        - add_text(t(".text"))
+          - add_text(t(".text"))
