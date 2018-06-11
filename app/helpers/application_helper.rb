@@ -201,6 +201,11 @@ module ApplicationHelper
     end
   end
 
+
+  def link_to_blank(body, url_options = {}, html_options = {})
+    link_to(body, url_options, html_options.merge(target: "_blank"))
+  end
+
   def term_ps1(user, path="~", command)
     haml_tag "p.ps1" do
       haml_concat "[<span class='color'>#{user}</span>@<span class='color'>rmll18</span>] #{path}"
