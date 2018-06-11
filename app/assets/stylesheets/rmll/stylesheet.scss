@@ -2,6 +2,7 @@
 @import "reset";
 
 :root {
+  color: $color-white;
   font-family: $font-mono;
   font-size: $root-font-size;
   font-variant-ligatures: none;
@@ -13,7 +14,6 @@ html, body, main, section {
   overflow: hidden;
 }
 body {
-  // @include pixel-bg($halftone-bg);
   background-color: $color-main;
 }
 
@@ -22,19 +22,15 @@ main {
   position: relative;
 }
 
-section {
-  border: $border;
-}
-
 @import "menu";
 @import "window";
 @import "specific/home";
 @import "specific/terminal";
-@import "specific/popup";
-@import "specific/spreadsheet";
-@import "specific/call";
-@import "specific/pdf";
-@import "specific/map";
+// @import "specific/popup";
+// @import "specific/spreadsheet";
+// @import "specific/call";
+// @import "specific/pdf";
+// @import "specific/map";
 
 .flex {
   display: flex;
@@ -45,17 +41,20 @@ section {
   }
 }
 
+.overflow {
+  overflow: auto;
+}
+
 .noselect {
   -webkit-touch-callout: none; // iOS Safari
   user-select: none;
 }
 
-.pre-wrap {
-  white-space: pre-wrap;
+.space-pre p {
+  white-space: pre;
 }
-
-.no-overflow {
-  overflow: hidden;
+.space-wrap p {
+  white-space: pre-wrap;
 }
 
 @import "font-face";

@@ -6,19 +6,32 @@
   }
 }
 
-article {
-  overflow: auto;
+section {
+  border: $border;
+
+  .popup {
+    border-radius: $border-rad;
+  }
+}
+
+.container {
+  width: 100%;
   height: calc(100% - #{$bar-height});
 }
 
-.split {
+.container-flex {
   width: 100%;
   height: calc(100% - #{$bar-height});
 
   @include screen {
     display: flex;
   }
+}
 
+article {
+  .container, .container-flex {
+    height: 100%;
+  }
 }
 
 .bar {
@@ -28,22 +41,15 @@ article {
   border-bottom: $border;
   background-color: $color-white;
   color: $color-black;
-  font-family: $font-mono;
-  font-weight: bold;
   line-height: 1.7rem;
+  overflow: hidden;
 
   * {
     height: 100%;
-    // border: $border;
-    // border-radius: $border-rad;
-    // padding: 0rem 1.5rem;
   }
 
   span {
     margin: auto;
-    // background-color: $color-black;
-    // color: $color-white;
-    padding: 0rem 1.5rem;
   }
 
   a {
@@ -52,51 +58,14 @@ article {
     background-color: $color-white;
     text-decoration: none;
     border-left: $border;
-    @media (max-width: 450px) {
-      display: none;
-    }
+    font-weight: bold;
+    // @media (max-width: 450px) {
+    //   display: none;
+    // }
 
     &:hover, &:focus {
       color: $color-white;
       background-color: $color-black;
-      border-color: $color-black;
-    }
-  }
-}
-
-.content {
-  a {
-    color: $color-light;
-  }
-
-  .color {
-    color: $cyan;
-    font-weight: bold;
-  }
-}
-
-.invert {
-  .bar {
-    color: $color-white;
-    @include pixel-bg($halftone-window);
-    // background-color: $color-light;
-    border-color: $color-white;
-
-    * {
-      border-color: $color-white;
-    }
-
-    span {
-      color: $color-black;
-      background-color: $color-white;
-    }
-  }
-
-  .content {
-    background-color: $color-white;
-    color: $color-black;
-    a {
-      color: $color-black;
     }
   }
 }
