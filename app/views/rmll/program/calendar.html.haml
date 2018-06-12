@@ -1,7 +1,10 @@
+= content_for :script do
+  = javascript_include_tag "rmll/program.js"
+
 %main
   %section
     - add_bar("Calendar", "/program/calendar.odf")
-    .container.spreadsheet.overflow
+    .container.spreadsheet
       %nav
         %ul.options
           %li Version accessible
@@ -44,18 +47,12 @@
               %th{ scope:"col" } Track
               %th{ scope:"col" } Matin
               %th{ scope:"col" } Après-midi
-              %th{ scope:"col" } Soirée
-              %th{ scope:"col" } Nuit
-          %tbody
-            %tr
-              %th{ scope:"row" }
-              %td
-              %td
-              %td
-              %td
-            %tr
-              %th{ scope:"row" }
-              %td
-              %td
-              %td
-              %td
+              -# %th{ scope:"col" } Soirée
+              -# %th{ scope:"col" } Nuit
+          %tbody.overflow
+            -# %tr
+            -#   %th{ scope:"row" }
+            -#   %td
+            -#   %td
+              -# %td
+              -# %td

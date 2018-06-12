@@ -54,3 +54,19 @@ function removePhoneMenu() {
   menubar.init();
   phone = false;
 }
+
+// UTILS
+function readJSONFile(url, callback) {
+  var rawFile = new XMLHttpRequest();
+  rawFile.overrideMimeType("application/json");
+  rawFile.open("GET", url);
+  rawFile.onload = function () {
+    if (rawFile.readyState === 4 && rawFile.status == "200") {
+      callback(JSON.parse(rawFile.responseText));
+    }
+  }
+  rawFile.onerror = function () {
+    console.log("Couldn't find '" + url +"'");
+  }
+  rawFile.send();
+}
