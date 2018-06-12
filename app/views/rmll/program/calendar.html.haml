@@ -34,11 +34,16 @@
           %li Public
           %li Langue
         %ul.sheets
-          %li= t("common.saturday") + " 7"
-          %li= t("common.sunday") + " 8"
-          %li= t("common.monday") + " 9"
-          %li= t("common.tuesday") + " 10"
-          %li= t("common.wednesday") + " 11"
+          %li
+            %a{ "data-toggle":"saturday" }= t("common.saturday") + " 7"
+          %li
+            %a{ "data-toggle":"sunday" }= t("common.sunday") + " 8"
+          %li
+            %a{ "data-toggle":"monday" }= t("common.monday") + " 9"
+          %li
+            %a{ "data-toggle":"tuesday" }= t("common.tuesday") + " 10"
+          %li
+            %a{ "data-toggle":"wednesday" }= t("common.wednesday") + " 11"
       %article
         %table
           -# %caption= t(".title")
@@ -49,10 +54,3 @@
               %th{ scope:"col" } Après-midi
               -# %th{ scope:"col" } Soirée
               -# %th{ scope:"col" } Nuit
-          %tbody.overflow
-            -# %tr
-            -#   %th{ scope:"row" }
-            -#   %td
-            -#   %td
-              -# %td
-              -# %td

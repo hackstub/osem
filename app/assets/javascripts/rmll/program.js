@@ -2,9 +2,9 @@ function formatJson(json) {
   // FIXME modify api to serve well formated informations
   json = json.conferences[0];
   var data = {};
-  var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  var days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
   for (var i = 0; i < days.length; i++) {
-    data[days[i]] = [];
+    if (days[i] != "friday") data[days[i]] = [];
   }
 
   var roomsLen = json.rooms.length;
@@ -47,31 +47,40 @@ function formatJson(json) {
     }
   }
 
-  buildTable(data);
+  for (var day in data) {
+    if (data.hasOwnProperty(day)) {
+      buildTable(data[day], day);
+    }
+  }
+
 }
 
-function buildTable(data) {
-  var tbody = document.querySelector("tbody");
-  var doc = document.createDocumentFragment();
+function buildTable(data, day) {
+  var tbody = document.querySelector("table");
+  var doc = document.createElement("tbody");
+  doc.classList.add("overflow");
+  doc.id = day;
+  if (day != "saturday") {
+    doc.classList.add("hide");
+  }
 
-  console.log(data);
-  for (var i = 0; i < data.Saturday.length; i++) {
-    if (data.Saturday[i]) {
+  for (var i = 0; i < data.length; i++) {
+    if (data[i]) {
       var tr = document.createElement("tr");
       var th = document.createElement("th");
       th.setAttribute("scope", "row");
-      th.innerHTML = data.Saturday[i].track.name;
+      th.innerHTML = data[i].track.name;
       tr.appendChild(th);
 
       var morning = document.createElement("td");
-      for (var j = 0; j < data.Saturday[i].morning.length; j++) {
-        morning.appendChild(buildArticle(data.Saturday[i].morning[j]))
+      for (var j = 0; j < data[i].morning.length; j++) {
+        morning.appendChild(buildArticle(data[i].morning[j]))
       }
       tr.appendChild(morning);
 
       var afternoon = document.createElement("td");
-      for (var j = 0; j < data.Saturday[i].afternoon.length; j++) {
-        afternoon.appendChild(buildArticle(data.Saturday[i].afternoon[j]))
+      for (var j = 0; j < data[i].afternoon.length; j++) {
+        afternoon.appendChild(buildArticle(data[i].afternoon[j]))
       }
       tr.appendChild(afternoon);
 
@@ -89,8 +98,18 @@ function buildArticle(ev) {
   speaker.innerHTML = ev.speaker_names ;
   article.appendChild(title);
   article.appendChild(speaker);
+  article.setAttribute("data-type", ev.event_type_id);
+
   return article;
 }
 
 var baseUrl = "https://2018.rmll.info/api/v1/conferences/rmll2018/";
 readJSONFile(baseUrl, formatJson);
+
+var daysbutton = document.querySelectorAll(".sheets a");
+for (var i = 0; i < daysbutton.length; i++) {
+  daysbutton[i].addEventListener("click", function (e) {
+    document.querySelector("tbody:not(.hide)").classList.add("hide");
+    document.getElementById(e.target.dataset.toggle).classList.remove("hide");
+  });
+}

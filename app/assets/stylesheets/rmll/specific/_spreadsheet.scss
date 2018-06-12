@@ -86,7 +86,7 @@
   tr {
     display: flex;
     flex-direction: row;
-    max-height: 10rem;
+    height: 10rem;
 
     th, td {
       flex: 1 ;
@@ -118,11 +118,15 @@
 
   tbody {
     height: 100%;
+    &.hide {
+      display: none;
+    }
+
     th {
       padding: 1rem;
     }
     tr:nth-child(2n+0) th {
-      background-color: $color-second;
+      background-color: lighten($color-main, 25%); ;
     }
     tr {
       border-bottom: $border;
@@ -135,6 +139,7 @@
     article {
       padding: 1rem;
       background-color: $color-third;
+      border-right: $border;
       height: 100%;
       max-width: 15rem;
       position: relative;
@@ -144,9 +149,35 @@
         font-size: 1.5rem;
         font-weight: 600;
         margin-bottom: 0.5rem;
-        // hyphens: auto;
       }
-
+    }
+    [data-type="2"], [data-type="3"], [data-type="4"], [data-type="5"] {
+      // workshop
+      background-color: $color-third;
+    }
+    [data-type="6"], [data-type="7"] {
+      // conferences
+      background-color: $color-second;
+    }
+    [data-type="8"], [data-type="9"], [data-type="10"], [data-type="11"] {
+      // chatrooms
+      background-color: $pink;
+    }
+    [data-type="12"] {
+      // debate
+      background-color: $red;
+    }
+    [data-type="14"] {
+      // creation
+      background-color: $cyan;
+    }
+    [data-type="15"] {
+      // other
+      background-color: $blue;
+    }
+    [data-type="16"] {
+      // plenary
+      background-color: $color-main;
     }
   }
 }
