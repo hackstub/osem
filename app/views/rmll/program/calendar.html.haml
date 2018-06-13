@@ -7,32 +7,61 @@
     .container.spreadsheet
       %nav
         %ul.options
-          %li Version accessible
+          %li Version liste
           %li
-            Types
+            Visualisation par :
+            %ul
+              %li= link_to "Jours"
+              %li= link_to "Tracks"
+              %li= link_to "Salles"
+          %li
+            Selecteurs :
             %ul
               %li
-                %input{ type:"checkbox", id:"all", name:"event", value:"all" }
-                %label{ for:"all" } Tous
+                Type
+                %ul
+                  %li
+                    %input{ type:"checkbox", id:"all", name:"event-type", value:"all" }
+                    %label{ for:"all" } Tous
+                  %li
+                    %input{ type:"checkbox", id:"conf", name:"event-type", value:"conf" }
+                    %label{ for:"conf"} Conférences
+                  %li
+                    %input{ type:"checkbox", id:"workshop", name:"event-type", value:"workshop" }
+                    %label{ for:"workshop" } Ateliers
+                  %li
+                    %input{ type:"checkbox", id:"discussion", name:"event-type", value:"discussion" }
+                    %label{ for:"discussion" } Plénières
+                  %li
+                    %input{ type:"checkbox", id:"concert", name:"event-type", value:"concert" }
+                    %label{ for:"concert" } Concerts
+                  %li
+                    %input{ type:"checkbox", id:"outside", name:"event-type", value:"outside" }
+                    %label{ for:"outside" } Extérieur
               %li
-                %input{ type:"checkbox", id:"conf", name:"event", value:"conf" }
-                %label{ for:"conf"} Conférences
+                Niveau
+                %ul
+                  %li
+                    %input{ type:"checkbox", id:"all", name:"event-lvl", value:"all" }
+                    %label{ for:"all" } Tous
+                  %li
+                    %input{ type:"checkbox", id:"neo", name:"event-lvl", value:"neo" }
+                    %label{ for:"neo"} Néophyte
+                  %li
+                    %input{ type:"checkbox", id:"expert", name:"event-lvl", value:"expert" }
+                    %label{ for:"expert"} Connaisseur
               %li
-                %input{ type:"checkbox", id:"workshop", name:"event", value:"workshop" }
-                %label{ for:"workshop" } Ateliers
-              %li
-                %input{ type:"checkbox", id:"discussion", name:"event", value:"discussion" }
-                %label{ for:"discussion" } Plénières
-              %li
-                %input{ type:"checkbox", id:"concert", name:"event", value:"concert" }
-                %label{ for:"concert" } Concerts
-              %li
-                %input{ type:"checkbox", id:"outside", name:"event", value:"outside" }
-                %label{ for:"outside" } Extérieur
-          %li Tracks
-          %li Thèmes
-          %li Public
-          %li Langue
+                Langue
+                %ul
+                  %li
+                    %input{ type:"checkbox", id:"all", name:"event-lang", value:"all" }
+                    %label{ for:"all" } Tous
+                  %li
+                    %input{ type:"checkbox", id:"fr", name:"event-lang", value:"fr" }
+                    %label{ for:"fr"} Français
+                  %li
+                    %input{ type:"checkbox", id:"en", name:"event-lang", value:"en" }
+                    %label{ for:"en"} Anglais
         %ul.sheets
           %li
             %a{ "data-toggle":"saturday" }= t("common.saturday") + " 7"
@@ -44,7 +73,7 @@
             %a{ "data-toggle":"tuesday" }= t("common.tuesday") + " 10"
           %li
             %a{ "data-toggle":"wednesday" }= t("common.wednesday") + " 11"
-      %article
+      %article.overflow
         %table
           -# %caption= t(".title")
           %thead

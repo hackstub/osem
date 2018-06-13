@@ -9,9 +9,8 @@
       border-bottom: $border;
       display: flex;
       align-items: center;
-      // justify-content: center;
       height: 2rem;
-      line-height: 1.7rem;
+      line-height: 1.8rem;
 
       li {
         padding: 0 1rem;
@@ -19,7 +18,16 @@
       }
 
       &.options {
-        & > li:hover {
+
+        & > li, & > li > ul {
+          display: flex;
+          align-items: center;
+        }
+
+        ul ul {
+          display: none;
+        }
+        & > li li:hover {
           border-left: $border;
           border-right: $border;
           padding: 0 calc(1rem - 2px);
@@ -27,7 +35,7 @@
             display: block;
           }
         }
-        ul {
+        ul ul {
           display: none;
           position: absolute;
           margin-top: 3px;
@@ -70,12 +78,12 @@
   }
 
   & > article {
-    height: 100%;
+    height: calc(100% - 4rem);
+    width: 100%;
   }
   table {
     display: block;
-    width: 100%;
-    height: calc(100% - 6rem);
+    min-width: 1200px;
     font-family: $font-sans;
   }
 
@@ -89,19 +97,29 @@
     height: 10rem;
 
     th, td {
-      flex: 1 ;
+      flex: 1;
     }
-
   }
 
   tbody th, thead th:first-child {
-    max-width: 15rem;
+    max-width: 10rem;
+
+    @include phone {
+      p {
+        transform-origin: top right;
+        position: relative;
+        left: -8rem;
+        width: 8rem;
+        transform: rotate(-90deg);
+      }
+      max-width: 5rem;
+    }
   }
 
   thead {
     tr {
       height: 2rem;
-      background-color: black;
+      background-color: $color-black;
     }
     th {
       align-self: center;
@@ -117,7 +135,6 @@
   }
 
   tbody {
-    height: 100%;
     &.hide {
       display: none;
     }
@@ -136,14 +153,49 @@
       display: flex;
     }
 
+    .event {
+      height: 100%;
+      overflow: hidden;
+
+      &:hover {
+        z-index: 1;
+        overflow: visible;
+        height: auto;
+      }
+    }
+
     article {
       padding: 1rem;
-      background-color: $color-third;
-      border-right: $border;
-      height: 100%;
-      max-width: 15rem;
+      padding-bottom: 1.5rem;
+      width: 15rem;
+      min-height: calc(10rem + 2px);
       position: relative;
-      overflow: hidden;
+      margin-left: -2px;
+      margin-top: -2px;
+      border: $border;
+
+      & > span {
+        display: none;
+      }
+
+      aside {
+        font-family: $font-mono;
+        height: 1rem;
+        margin-bottom: 1rem;
+
+        span {
+          background-color: $color-black;
+          color: $color-white;
+          font-weight: bold;
+          padding: 0 0.5rem;
+
+          &:nth-child(2) {
+            background-color: $color-white;
+            color: $color-black;
+            font-weight: normal;
+          }
+        }
+      }
 
       h3 {
         font-size: 1.5rem;
@@ -151,6 +203,7 @@
         margin-bottom: 0.5rem;
       }
     }
+
     [data-type="2"], [data-type="3"], [data-type="4"], [data-type="5"] {
       // workshop
       background-color: $color-third;
@@ -181,66 +234,3 @@
     }
   }
 }
-
-  .spreadsheetold {
-    background-color: $color-white;
-    color: black;
-    @include phone {
-      overflow: hidden;
-    }
-
-    .content {
-      padding: 0;
-      line-height: 2rem;
-      @include phone {
-        overflow: auto;
-      }
-
-      table {
-        width: 100%;
-        height: 100%;
-        table-layout: fixed;
-        border-spacing: 0px 0px;
-        @include phone {
-          width: 100rem;
-          overflow: auto;
-        }
-      }
-
-      table, thead, th, tr, td {
-        border:1px solid black;
-        border-collapse: collapse;
-        vertical-align: middle;
-        text-align:center;
-      }
-      caption {
-        height: 2rem;
-      }
-
-      thead th:first-child {
-        background-color: $color-white;
-      }
-
-      th {
-        @include pixel-bg($halftone-window);
-        span {
-          background-color: $color-white;
-          padding: 0.5rem 1rem;
-          font-weight: bold;
-        }
-      }
-      .first {
-        @include phone {
-          width: 8rem;
-        }
-        @include screen {
-          min-width: 15rem;
-        }
-
-      }
-      td p {
-        background-color: $orange;
-      }
-
-    }
-  }
