@@ -22,31 +22,19 @@ function formatJson(json) {
       if (data[day][ev.track_id] === undefined) {
         data[day][ev.track_id] = {
           track: json.tracks[ev.track_id - 1],
-          morning: [],
-          afternoon: []
+          events: []
         };
       }
 
-      if (date.getUTCHours() <= 12) {
-        daypart = data[day][ev.track_id].morning;
-      } else {
-        daypart = data[day][ev.track_id].afternoon;
-      }
+      daypart = data[day][ev.track_id].events;
 
       ev.date = date.getUTCHours() * 100 + date.getUTCMinutes();
-      ev.type = json.event_types.find(function (eventObj) {
+      var track = json.event_types.find(function (eventObj) {
         if (eventObj.id === ev.event_type_id) return eventObj;
-      }).title.split(" ")[0];
-      var daypartLen = daypart.length;
-      if (daypartLen === 0) {
-        daypart.push(ev);
-      } else {
-        for (var a = 0; a < daypartLen; a++) {
-          if (daypart[a].date > ev.date) {
-            daypart.splice(a - 1, 0, ev);
-          }
-        }
-      }
+      });
+      ev.length = track.length;
+      ev.type = track.title.split(" ")[0];
+      daypart.push(ev);
     }
   }
 
@@ -74,17 +62,14 @@ function buildTable(data, day) {
       th.innerHTML = "<p>" + data[i].track.name + "</p>";
       tr.appendChild(th);
 
-      var morning = document.createElement("td");
-      for (var j = 0; j < data[i].morning.length; j++) {
-        morning.appendChild(buildArticle(data[i].morning[j]))
+      var elems = document.createElement("td");
+      data[i].events.sort(function(a,b) {return (a.date > b.date) ? 1 : ((b.date > a.date) ? -1 : 0);} );
+      for (var j = 0; j < data[i].events.length; j++) {
+        var timeBetween = j === 0 ? data[i].events[j].date - 1000 : data[i].events[j].date - (data[i].events[j-1].date + data[i].events[j-1].length)
+        elems.appendChild(buildArticle(data[i].events[j], timeBetween))
       }
-      tr.appendChild(morning);
+      tr.appendChild(elems);
 
-      var afternoon = document.createElement("td");
-      for (var j = 0; j < data[i].afternoon.length; j++) {
-        afternoon.appendChild(buildArticle(data[i].afternoon[j]))
-      }
-      tr.appendChild(afternoon);
 
       doc.appendChild(tr);
     }
@@ -92,16 +77,17 @@ function buildTable(data, day) {
   tbody.appendChild(doc);
 }
 
-function buildArticle(ev) {
+function buildArticle(ev, timeBetween) {
   var container = document.createElement("div");
   container.classList.add('event');
-
   var article = document.createElement("article");
+
   var title = document.createElement("h3");
   title.innerHTML = ev.title;
   var speaker = document.createElement("p");
+
   speaker.innerHTML = ev.speaker_names ;
-  var extra = document.createElement('aside')
+  var extra = document.createElement('aside');
   var hour = document.createElement("span");
   var type = document.createElement("span");
   var time = '' + ev.date;
@@ -109,13 +95,15 @@ function buildArticle(ev) {
   type.innerHTML = ev.type;
   extra.appendChild(hour);
   extra.appendChild(type);
+  container.style.width = ev.length * 0.375 + "rem";
+  container.style.marginLeft = timeBetween * 0.375 + "rem";
 
   article.appendChild(extra);
   article.appendChild(title);
   article.appendChild(speaker);
   article.setAttribute("data-type", ev.event_type_id);
   container.appendChild(article)
-  console.log(ev.type);
+  // console.log(ev.type);
 
   // var like = document.createElement("span");
   // like.textContent = "<3";
