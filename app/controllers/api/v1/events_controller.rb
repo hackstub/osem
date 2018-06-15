@@ -8,7 +8,7 @@ module Api
       skip_before_action :verify_authenticity_token
 
       def index
-        events = Event.includes(:track, :event_type, event_users: :user)
+        events = Event.includes(:track, :event_type, :event_schedules, event_users: :user)
 
         if @conference
           events = events.where(program: @conference.program)
