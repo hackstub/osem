@@ -141,21 +141,21 @@
 
     th {
       padding: 1rem;
+      border-right: $border;
     }
     tr:nth-child(2n+0) th {
       background-color: lighten($color-main, 25%);
     }
     tr {
+      box-sizing: content-box;
       border-bottom: $border;
     }
     td {
-      border-left: $border;
       display: flex;
     }
 
     .event {
-      height: 10rem;
-      overflow: hidden;
+      height: 100%;
 
       &:hover {
         z-index: 1;
@@ -171,12 +171,18 @@
     article {
       padding: 1rem;
       padding-bottom: 1.5rem;
-      width: 100%;
-      min-height: calc(10rem + 2px);
-      // position: absolute;
+      width: calc(100% + 2px);
+      height: calc(100% + 4px);
       margin-left: -2px;
       margin-top: -2px;
       border: $border;
+      overflow: hidden;
+
+      &:hover {
+        min-height: calc(100% + 4px);
+        min-width: 200px;
+        height: auto;
+      }
 
       & > span {
         display: none;

@@ -29,6 +29,7 @@ function formatJson(json) {
       daypart = data[day][ev.track_id].events;
 
       ev.date = date.getUTCHours() * 100 + date.getUTCMinutes();
+      ev.start = (date.getUTCHours() * 60 + date.getUTCMinutes()) - 10 * 60;
       var track = json.event_types.find(function (eventObj) {
         if (eventObj.id === ev.event_type_id) return eventObj;
       });
@@ -65,11 +66,10 @@ function buildTable(data, day) {
       var elems = document.createElement("td");
       data[i].events.sort(function(a,b) {return (a.date > b.date) ? 1 : ((b.date > a.date) ? -1 : 0);} );
       for (var j = 0; j < data[i].events.length; j++) {
-        var timeBetween = j === 0 ? data[i].events[j].date - 1000 : data[i].events[j].date - (data[i].events[j-1].date + data[i].events[j-1].length)
+        var timeBetween = j === 0 ? data[i].events[j].start : data[i].events[j].start - (data[i].events[j-1].start + data[i].events[j-1].length)
         elems.appendChild(buildArticle(data[i].events[j], timeBetween))
       }
       tr.appendChild(elems);
-
 
       doc.appendChild(tr);
     }
@@ -94,9 +94,10 @@ function buildArticle(ev, timeBetween) {
   hour.innerHTML = time[0] + time[1] + "h" + time[2] + time[3];
   type.innerHTML = ev.type;
   extra.appendChild(hour);
-  extra.appendChild(type);
-  container.style.width = ev.length * 0.375 + "rem";
-  container.style.marginLeft = timeBetween * 0.375 + "rem";
+  // extra.appendChild(type);
+
+  container.style.marginLeft = timeBetween * 5 + "px";
+  container.style.width = ev.length * 5 + "px";
 
   article.appendChild(extra);
   article.appendChild(title);
