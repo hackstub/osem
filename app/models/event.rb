@@ -255,7 +255,7 @@ class Event < ApplicationRecord
     if track.try(:self_organized?)
       track.room
     else
-      event_schedules.find_by(schedule_id: program.try(:selected_schedule_id)).try(:room)
+      event_schedules.detect { |s| s.schedule_id == selected_schedule_id }.try(:room)
     end
   end
 
@@ -263,7 +263,7 @@ class Event < ApplicationRecord
   # Returns the start time at which this event is scheduled
   #
   def time
-    event_schedules.find_by(schedule_id: selected_schedule_id).try(:start_time)
+    event_schedules.detect { |s| s.schedule_id == selected_schedule_id }.try(:start_time)
   end
 
   def conference
