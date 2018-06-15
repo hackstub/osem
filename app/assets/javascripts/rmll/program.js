@@ -3,6 +3,7 @@ function formatJson(json) {
   json = json.conferences[0];
   var data = {};
   var days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+  var roomsName = ['ATRIUM - AT8', 'ATRIUM - AT9', 'ESCARPE - Amphi Ortscheidt', 'ESCARPE - Amphi 29', 'PLATANE - A08', 'PLATANE - A09', 'PLATANE - A10', 'PLATANE - A11', 'PLATANE - A12', 'PLATANE - A13', 'PLATANE - B01', 'PLATANE - B02', 'PLATANE - B03', 'PLATANE - B04', 'PLATANE - B05', 'Médiathèque Malraux', 'Shadok', "Jardins de l'université", "Presqu'île Malraux", 'Salle des colonnes']
   for (var i = 0; i < days.length; i++) {
     if (days[i] != "friday") data[days[i]] = [];
   }
@@ -30,6 +31,9 @@ function formatJson(json) {
 
       ev.date = date.getUTCHours() * 100 + date.getUTCMinutes();
       ev.start = (date.getUTCHours() * 60 + date.getUTCMinutes()) - 10 * 60;
+      ev.room = roomsName[room.id]
+      var difficulty = json.difficulty_levels[ev.difficulty_level_id-1];
+      ev.difficulty = difficulty ? difficulty.title : "null";
       var track = json.event_types.find(function (eventObj) {
         if (eventObj.id === ev.event_type_id) return eventObj;
       });
@@ -80,35 +84,50 @@ function buildTable(data, day) {
 function buildArticle(ev, timeBetween) {
   var container = document.createElement("div");
   container.classList.add('event');
-  var article = document.createElement("article");
-
-  var title = document.createElement("h3");
-  title.innerHTML = ev.title;
-  var speaker = document.createElement("p");
-
-  speaker.innerHTML = ev.speaker_names ;
-  var extra = document.createElement('aside');
-  var hour = document.createElement("span");
-  var type = document.createElement("span");
-  var time = '' + ev.date;
-  hour.innerHTML = time[0] + time[1] + "h" + time[2] + time[3];
-  type.innerHTML = ev.type;
-  extra.appendChild(hour);
-  // extra.appendChild(type);
-
   container.style.marginLeft = timeBetween * 5 + "px";
   container.style.width = ev.length * 5 + "px";
 
-  article.appendChild(extra);
-  article.appendChild(title);
-  article.appendChild(speaker);
+  var article = document.createElement("article");
+  container.appendChild(article);
   article.setAttribute("data-type", ev.event_type_id);
-  container.appendChild(article)
-  // console.log(ev.type);
 
-  // var like = document.createElement("span");
-  // like.textContent = "<3";
-  // article.appendChild(like);
+  var top = document.createElement('aside');
+  top.classList.add('top');
+  var hour = document.createElement("span");
+  hour.classList.add('hour');
+  var time = '' + ev.date;
+  hour.innerHTML = time[0] + time[1] + "h" + time[2] + time[3];
+  var dur = document.createElement("span");
+  dur.innerHTML = ev.length + "'";
+  var like = document.createElement("span");
+  like.textContent = "<3";
+  top.appendChild(hour);
+  top.appendChild(dur);
+  top.appendChild(like);
+  article.appendChild(top);
+
+  var middle = document.createElement('div');
+  var title = document.createElement("h3");
+  title.innerHTML = ev.title;
+  var speaker = document.createElement("p");
+  speaker.innerHTML = ev.speaker_names;
+  middle.appendChild(title);
+  middle.appendChild(speaker);
+  article.appendChild(middle);
+
+
+  var bottom = document.createElement('aside');
+  bottom.classList.add("bottom");
+  var room = document.createElement("span");
+  room.innerHTML = ev.room;
+  var type = document.createElement("span");
+  type.innerHTML = ev.type;
+  var lvl = document.createElement("span");
+  lvl.innerHTML = ev.difficulty;
+  bottom.appendChild(room);
+  bottom.appendChild(type);
+  bottom.appendChild(lvl);
+  article.appendChild(bottom);
 
   return container;
 }
@@ -123,5 +142,3 @@ for (var i = 0; i < daysbutton.length; i++) {
     document.getElementById(e.target.dataset.toggle).classList.remove("hide");
   });
 }
-
-var events = document.getElementsByTagName("article")
