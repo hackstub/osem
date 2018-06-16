@@ -79,6 +79,25 @@ function buildTable(data, day) {
     }
   }
   tbody.appendChild(doc);
+
+  var events = document.querySelectorAll(".event article");
+  for (var i = 0; i < events.length; i++) {
+    function findArticle (el, type) {
+      while ((el = el.parentElement) && el.nodeName != type);
+      return el;
+    }
+
+    events[i].addEventListener("click", function (e) {
+      var article = e.target.nodeName == 'ARTICLE' ? e.target : findArticle(e.target, 'ARTICLE');
+      if (article.classList.contains("special")) {
+        document.getElementById("bg-card").style.display = "none";
+        article.classList.remove("special");
+      } else {
+        document.getElementById("bg-card").style.display = "block";
+        article.classList.add("special");
+      }
+    });
+  }
 }
 
 function buildArticle(ev, timeBetween) {
@@ -111,8 +130,14 @@ function buildArticle(ev, timeBetween) {
   title.innerHTML = ev.title;
   var speaker = document.createElement("p");
   speaker.innerHTML = ev.speaker_names;
+  var subtitle = document.createElement('h4');
+  subtitle.innerHTML = ev.subtitle;
+  var abstract = document.createElement('div');
+  abstract.innerHTML = ev.abstract;
   middle.appendChild(title);
+  middle.appendChild(subtitle);
   middle.appendChild(speaker);
+  middle.appendChild(abstract);
   article.appendChild(middle);
 
 
