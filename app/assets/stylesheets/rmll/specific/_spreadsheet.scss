@@ -14,6 +14,7 @@
     left: 0;
     opacity: 0.7;
     background-color: $color-dark;
+    cursor: zoom-out;
   }
 
   nav {
@@ -97,7 +98,7 @@
     display: block;
     min-width: 2700px;
     font-family: $font-sans;
-    cursor: grab;
+    cursor: move;
   }
 
   caption, tbody, tfoot, thead, tr, th, td {
@@ -123,10 +124,12 @@
         transform: rotate(-90deg);
       }
       width: 5rem;
+      min-width: 5rem;
     }
   }
 
   thead {
+    margin-top: -2rem;
     tr {
       height: 2rem;
       background-color: $color-black;
@@ -173,10 +176,6 @@
         height: auto;
       }
     }
-    // td:last-child .event:last-child:hover {
-    //   margin-left: -5rem;
-    //   margin-right: 0;
-    // }
 
     article {
       width: calc(100% + 2px);
@@ -188,7 +187,8 @@
       display: flex;
       flex-direction: column;
 
-      &:not(.special):hover {
+      &:not(.card):hover {
+        cursor: zoom-in;
         min-height: calc(100% + 4px);
         min-width: 200px;
         height: auto;
@@ -219,8 +219,9 @@
           }
         }
         &.bottom {
+          background-color: $color-white;
           margin-top: auto;
-          // flex-wrap: wrap;
+          flex-wrap: wrap;
           span:nth-child(1) {
             width: 100%;
           }
@@ -264,10 +265,11 @@
       }
       div div {
         margin-top: 1rem;
+        line-height: 1.15rem;
         display: none;
       }
 
-      &.special {
+      &.card {
         position: absolute;
         overflow: auto;
         z-index: 2;
@@ -294,10 +296,11 @@
         div div {
           display: block;
         }
-
-
         span {
           display: inline-block;
+        }
+        .bottom {
+          flex-wrap: wrap;
         }
       }
     }

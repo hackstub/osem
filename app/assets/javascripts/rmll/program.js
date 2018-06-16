@@ -87,22 +87,31 @@ function buildTable(data, day) {
       return el;
     }
 
-    events[i].addEventListener("click", function (e) {
-      var article = e.target.nodeName == 'ARTICLE' ? e.target : findArticle(e.target, 'ARTICLE');
-      if (article.classList.contains("special")) {
-        document.getElementById("bg-card").style.display = "none";
-        article.classList.remove("special");
-      } else {
-        document.getElementById("bg-card").style.display = "block";
-        article.classList.add("special");
+    events[i].addEventListener("mousedown", function (e) {
+      function toggleCard () {
+        article.removeEventListener("mouseup", toggleCard);
+        if (!isCard && Date.now() - counter > 250) {
+          return
+        }
+        if (isCard) {
+          document.getElementById("bg-card").style.display = "none";
+          article.classList.remove("card");
+        } else {
+          document.getElementById("bg-card").style.display = "block";
+          article.classList.add("card");
+        }
       }
+      var article = e.target.nodeName == 'ARTICLE' ? e.target : findArticle(e.target, 'ARTICLE');
+      var isCard = article.classList.contains("card");
+      var counter = Date.now();
+      article.addEventListener("mouseup", toggleCard);
     });
   }
 }
 
 function buildArticle(ev, timeBetween) {
   var container = document.createElement("div");
-  container.classList.add('event');
+  container.classList.add('event', 'nochilddrag');
   container.style.marginLeft = timeBetween * 5 + "px";
   container.style.width = ev.length * 5 + "px";
 
@@ -166,4 +175,9 @@ for (var i = 0; i < daysbutton.length; i++) {
     document.querySelector("tbody:not(.hide)").classList.add("hide");
     document.getElementById(e.target.dataset.toggle).classList.remove("hide");
   });
+}
+
+document.getElementById('bg-card').onclick = function (e) {
+  document.getElementById('bg-card').style.display = "none";
+  document.querySelector('.card').classList.remove("card");
 }
