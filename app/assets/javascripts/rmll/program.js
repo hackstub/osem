@@ -157,7 +157,7 @@ function buildArticle(ev, timeBetween) {
   return container;
 }
 
-var baseUrl = "https://2018.rmll.info/api/v1/conferences/rmll2018/";
+var baseUrl = "/api/v1/conferences/rmll2018/";
 readJSONFile(baseUrl, formatJson);
 
 var daysbutton = document.querySelectorAll(".sheets a");

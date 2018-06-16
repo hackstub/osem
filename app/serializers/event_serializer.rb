@@ -1,7 +1,7 @@
 class EventSerializer < ActiveModel::Serializer
   include ActionView::Helpers::TextHelper
 
-  attributes :guid, :title, :length, :scheduled_date, :language, :abstract, :speaker_ids, :type, :room, :track
+  attributes :guid, :title, :length, :scheduled_date, :language, :abstract, :abstract_html, :speaker_ids, :type, :room, :track
 
   def scheduled_date
     t = object.time
@@ -27,5 +27,15 @@ class EventSerializer < ActiveModel::Serializer
 
   def length
     object.event_type.try(:length) || object.event_type.program.schedule_interval
+  end
+
+  def abstract_html
+    options = {
+      autolink: true,
+      space_after_headers: true,
+      no_intra_emphasis: true
+    }
+    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML.new(escape_html: true), options)
+    markdown.render(object.abstract)
   end
 end
