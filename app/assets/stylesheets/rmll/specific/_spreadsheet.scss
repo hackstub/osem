@@ -171,7 +171,7 @@
       display: flex;
     }
 
-    .event {
+    .event-container {
       height: 100%;
 
       &:hover {
@@ -181,7 +181,7 @@
       }
     }
 
-    article {
+    article.event {
       width: calc(100% + 2px);
       height: calc(100% + 4px);
       margin-left: -2px;
@@ -205,7 +205,7 @@
         padding: 1rem;
       }
 
-      aside *:not(.hour) {
+      aside *:not(mark) {
         display: none;
       }
 
@@ -234,20 +234,20 @@
           }
         }
 
-        span {
-          background-color: $color-white;
+        * {
+          padding: 0 0.5rem;
           height: 2rem;
           line-height: 2rem;
-          &.hour {
-            background-color: $color-black;
-            color: $color-white;
-            border-right: $border;
-            border-bottom: $border;
-          }
+        }
 
+        mark {
+          background-color: $color-black;
+          color: $color-white;
+        }
+
+        span {
+          background-color: $color-white;
           font-weight: bold;
-          padding: 0 0.5rem;
-
           &:nth-child(2) {
             font-weight: normal;
           }
@@ -267,7 +267,7 @@
         font-style: italic;
         margin-bottom: 1.5rem;
       }
-      div div {
+      .abstract, .bio {
         margin-top: 1rem;
         line-height: 1.15rem;
         display: none;
@@ -293,7 +293,7 @@
         h3 {
           max-width: 30rem;
         }
-        h3 {
+        h4 {
           display: block;
           max-width: 40rem;
         }

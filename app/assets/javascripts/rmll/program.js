@@ -28,8 +28,9 @@ function formatJson(json) {
       }
 
       daypart = data[day][ev.track_id].events;
-
       ev.date = date.getUTCHours() * 100 + date.getUTCMinutes();
+      var dateStr = ev.date + '';
+      ev.dateStr = dateStr.substring(0, 2) + "h" + dateStr.substring(2);;
       ev.start = (date.getUTCHours() * 60 + date.getUTCMinutes()) - 10 * 60;
       ev.room = roomsName[room.id]
       var difficulty = json.difficulty_levels[ev.difficulty_level_id-1];
@@ -45,10 +46,12 @@ function formatJson(json) {
 
   for (var day in data) {
     if (data.hasOwnProperty(day)) {
+      for (var i = data[day].length; i < 0; i--) {
+        data[day][i].events.sort(function(a,b) {return (a.date > b.date) ? 1 : ((b.date > a.date) ? -1 : 0);} );
+      }
       buildTable(data[day], day);
     }
   }
-
 }
 
 function buildTable(data, day) {
@@ -68,7 +71,6 @@ function buildTable(data, day) {
       tr.appendChild(th);
 
       var elems = document.createElement("td");
-      data[i].events.sort(function(a,b) {return (a.date > b.date) ? 1 : ((b.date > a.date) ? -1 : 0);} );
       for (var j = 0; j < data[i].events.length; j++) {
         var timeBetween = j === 0 ? data[i].events[j].start : data[i].events[j].start - (data[i].events[j-1].start + data[i].events[j-1].length)
         elems.appendChild(buildArticle(data[i].events[j], timeBetween))
@@ -80,7 +82,7 @@ function buildTable(data, day) {
   }
   tbody.appendChild(doc);
 
-  var events = document.querySelectorAll(".event article");
+  var events = document.getElementsByClassName("event");
   for (var i = 0; i < events.length; i++) {
     function findArticle (el, type) {
       while ((el = el.parentElement) && el.nodeName != type);
@@ -110,57 +112,46 @@ function buildTable(data, day) {
 }
 
 function buildArticle(ev, timeBetween) {
-  var container = document.createElement("div");
-  container.classList.add('event', 'nochilddrag');
+  var container = domElem('div', 'event-container');
   container.style.marginLeft = timeBetween * 5 + "px";
   container.style.width = ev.length * 5 + "px";
 
-  var article = document.createElement("article");
+  var article = domElem('article', 'event', {"data-type": ev.event_type_id});
   container.appendChild(article);
-  article.setAttribute("data-type", ev.event_type_id);
 
-  var top = document.createElement('aside');
-  top.classList.add('top');
-  var hour = document.createElement("span");
-  hour.classList.add('hour');
-  var time = '' + ev.date;
-  hour.innerHTML = time[0] + time[1] + "h" + time[2] + time[3];
-  var dur = document.createElement("span");
-  dur.innerHTML = ev.length + "'";
-  var like = document.createElement("span");
-  like.textContent = "<3";
-  top.appendChild(hour);
-  top.appendChild(dur);
-  top.appendChild(like);
+  var top = domElem('aside', 'top');
+  var hour = domElem('mark');
+  hour.innerHTML = ev.dateStr;
+  var duration = domElem('span');
+  duration.innerHTML = ev.length + "'";
+  var like = domElem('span');
+  like.innerHTML = "<3";
+  appendChildren(top, [hour, duration, like]);
   article.appendChild(top);
+
 
   var middle = document.createElement('div');
   var title = document.createElement("h3");
   title.innerHTML = ev.title;
-  var speaker = document.createElement("p");
-  speaker.innerHTML = ev.speaker_names;
   var subtitle = document.createElement('h4');
   subtitle.innerHTML = ev.subtitle;
-  var abstract = document.createElement('div');
+  var speaker = domElem('p', 'author');
+  speaker.innerHTML = ev.speaker_names;
+  var abstract = domElem('div', 'abstract');
   abstract.innerHTML = ev.abstract;
-  middle.appendChild(title);
-  middle.appendChild(subtitle);
-  middle.appendChild(speaker);
-  middle.appendChild(abstract);
+  var bio = domElem('div', 'bio');
+  bio.innerHTML = 'bio';
+  appendChildren(middle, [title, subtitle, speaker, abstract, bio]);
   article.appendChild(middle);
 
-
-  var bottom = document.createElement('aside');
-  bottom.classList.add("bottom");
-  var room = document.createElement("span");
+  var bottom = domElem('aside', 'bottom');
+  var room = domElem('span');
   room.innerHTML = ev.room;
-  var type = document.createElement("span");
+  var type = domElem('span');
   type.innerHTML = ev.type;
-  var lvl = document.createElement("span");
+  var lvl = domElem('span');
   lvl.innerHTML = ev.difficulty;
-  bottom.appendChild(room);
-  bottom.appendChild(type);
-  bottom.appendChild(lvl);
+  appendChildren(bottom, [room, type, lvl]);
   article.appendChild(bottom);
 
   return container;

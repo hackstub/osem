@@ -71,6 +71,25 @@ function readJSONFile(url, callback) {
   rawFile.send();
 }
 
+function domElem(nodeName, cls, attr) {
+  var elem = document.createElement(nodeName);
+  if (cls) {
+    if (Array.isArray(cls)) {
+      for (var i = cls.length - 1; i >= 0; --i) elem.classList.add(cls[i]);
+    } else elem.classList.add(cls);
+  }
+  if (attr) {
+    for (var i in attr) elem.setAttribute(i, attr[i]);
+  }
+  return elem;
+}
+
+function appendChildren(elem, children) {
+  var len = children.length;
+  for (var child = 0; child < len; child++) {
+    elem.appendChild(children[child]);
+  }
+}
 
 /**
  * @fileoverview dragscroll - scroll area by dragging
