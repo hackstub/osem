@@ -156,8 +156,12 @@
       padding: 1rem;
       border-right: $border;
     }
-    tr:nth-child(2n+0) th {
-      background-color: lighten($color-main, 25%);
+    tr:nth-child(2n+0) {
+      background-color: lighten($color-main, 42%);
+      // @include pixel-bg($halftone-window);
+      th {
+        background-color: lighten($color-main, 30%);
+      }
     }
     tr {
       box-sizing: content-box;
