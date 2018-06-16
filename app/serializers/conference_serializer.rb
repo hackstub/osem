@@ -1,5 +1,8 @@
 class ConferenceSerializer < ActiveModel::Serializer
   include ApplicationHelper
+  include FormatHelper
+  cache key: 'conference', expires_in: 3.hours
+
   attributes :short_title, :title, :description, :start_date, :end_date, :picture_url,
              :difficulty_levels, :event_types, :rooms, :tracks,
              :date_range, :revision
@@ -29,6 +32,7 @@ class ConferenceSerializer < ActiveModel::Serializer
                                                                                                 title:  event_schedule.event.title,
                                                                                                 subtitle: event_schedule.event.subtitle,
                                                                                                 abstract: event_schedule.event.abstract,
+                                                                                                abstract_html: markdown(event_schedule.event.abstract),
                                                                                                 description: event_schedule.event.description,
                                                                                                 is_highlight: event_schedule.event.is_highlight,
                                                                                                 require_registration:  event_schedule.event.require_registration,

@@ -237,6 +237,7 @@ group :development do
   # as deployment system
   gem 'mina'
   # as debugger on error pages
+  gem 'meta_request'
   gem 'web-console', '~> 2.0'
 end
 
