@@ -32,32 +32,31 @@
 
       &.options {
 
-        & > li, & > li > ul {
+        [role="menubar"] {
           display: flex;
           align-items: center;
         }
 
-        ul ul {
+        ul {
           display: none;
         }
-        & > li li:hover {
-          border-left: $border;
-          border-right: $border;
-          padding: 0 calc(1rem - 2px);
-          ul {
-            display: block;
-          }
-        }
+
         ul ul {
           display: none;
-          position: absolute;
           margin-top: 3px;
           z-index: 100;
           background-color: $color-white;
           margin-left: -1rem;
           padding: 0.5rem 1rem 1rem 1rem;
           border: $border;
-          // border-top: none;
+
+          &.show {
+            display: block;
+            z-index: 100;
+            @include screen {
+              position: absolute;
+            }
+          }
 
           li {
             padding: 0;
@@ -272,6 +271,22 @@
         line-height: 1.15rem;
         display: none;
       }
+      .abstract {
+        p {
+          margin-bottom: 0.5rem;
+        }
+        strong, b {
+          font-weight: bold;
+        }
+        em, i {
+          font-style: italic;
+        }
+        img {
+          margin: 1rem 0;
+          max-width: 50%;
+          margin-left: auto;
+        }
+      }
 
       &.card {
         position: absolute;
@@ -283,6 +298,10 @@
         width: 70vw;
         max-width: 50rem;
         height: auto;
+
+        @include screen {
+          max-height: 80%;
+        }
 
         @include phone {
           width: 100%;

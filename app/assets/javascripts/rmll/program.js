@@ -1,6 +1,6 @@
 function formatJson(json) {
   // FIXME modify api to serve well formated informations
-  json = json.conferences[0];
+  json = json[0];
   var data = {};
   var days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
   var roomsName = ['ATRIUM - AT8', 'ATRIUM - AT9', 'ESCARPE - Amphi Ortscheidt', 'ESCARPE - Amphi 29', 'PLATANE - A08', 'PLATANE - A09', 'PLATANE - A10', 'PLATANE - A11', 'PLATANE - A12', 'PLATANE - A13', 'PLATANE - B01', 'PLATANE - B02', 'PLATANE - B03', 'PLATANE - B04', 'PLATANE - B05', 'Médiathèque Malraux', 'Shadok', "Jardins de l'université", "Presqu'île Malraux", 'Salle des colonnes']
@@ -129,7 +129,6 @@ function buildArticle(ev, timeBetween) {
   appendChildren(top, [hour, duration, like]);
   article.appendChild(top);
 
-
   var middle = document.createElement('div');
   var title = document.createElement("h3");
   title.innerHTML = ev.title;
@@ -138,7 +137,7 @@ function buildArticle(ev, timeBetween) {
   var speaker = domElem('p', 'author');
   speaker.innerHTML = ev.speaker_names;
   var abstract = domElem('div', 'abstract');
-  abstract.innerHTML = ev.abstract;
+  abstract.innerHTML = ev.abstract_html;
   var bio = domElem('div', 'bio');
   bio.innerHTML = 'bio';
   appendChildren(middle, [title, subtitle, speaker, abstract, bio]);
@@ -158,6 +157,7 @@ function buildArticle(ev, timeBetween) {
 }
 
 var baseUrl = "/api/v1/conferences/rmll2018/";
+// var baseUrl = "https://osem.aius.u-strasbg.fr/api/v1/conferences/rmll2018";
 readJSONFile(baseUrl, formatJson);
 
 var daysbutton = document.querySelectorAll(".sheets a");
