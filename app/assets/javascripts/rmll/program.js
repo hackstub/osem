@@ -172,3 +172,16 @@ document.getElementById('bg-card').onclick = function (e) {
   document.getElementById('bg-card').style.display = "none";
   document.querySelector('.card').classList.remove("card");
 }
+
+document.getElementsByClassName("agenda")[0].addEventListener("scroll", function (e) {
+  var tracksName = document.querySelectorAll("tbody th");
+  for (var i = tracksName.length - 1; i >= 0; i--) {
+    tracksName[i].style.left = e.target.scrollLeft + "px";
+  }
+  var ths = document.querySelectorAll("thead th")
+  for (var i = ths.length - 1; i >= 0; i--) {
+    ths[i].style.left = e.target.scrollLeft + "px";
+  }
+
+  console.log(e.target.scrollLeft);
+})
