@@ -2,79 +2,85 @@
   = stylesheet_link_tag "rmll/specific/_spreadsheet"
 = content_for :script do
   = javascript_include_tag "rmll/program.js"
+  :javascript
+    var options = new Menubar(document.getElementById("selectors"));
+    options.init();
+    var daySelection = new Menubar(document.getElementById("daySelection"));
+    daySelection.init();
 
 %main
   %section.window
     - add_bar("Calendar", "/program/calendar.odf")
     .container.spreadsheet
       %nav
-        %ul.options
-          %li Version liste
-          %li
-            Visualisation par :
-            %ul
-              %li= link_to "Jours"
-              %li= link_to "Tracks"
-              %li= link_to "Salles"
-          %li
-            Selecteurs :
-            %ul
-              %li
-                Type
-                %ul
-                  %li
-                    %input{ type:"checkbox", id:"all", name:"event-type", value:"all" }
-                    %label{ for:"all" } Tous
-                  %li
-                    %input{ type:"checkbox", id:"conf", name:"event-type", value:"conf" }
-                    %label{ for:"conf"} Conférences
-                  %li
-                    %input{ type:"checkbox", id:"workshop", name:"event-type", value:"workshop" }
-                    %label{ for:"workshop" } Ateliers
-                  %li
-                    %input{ type:"checkbox", id:"discussion", name:"event-type", value:"discussion" }
-                    %label{ for:"discussion" } Plénières
-                  %li
-                    %input{ type:"checkbox", id:"concert", name:"event-type", value:"concert" }
-                    %label{ for:"concert" } Concerts
-                  %li
-                    %input{ type:"checkbox", id:"outside", name:"event-type", value:"outside" }
-                    %label{ for:"outside" } Extérieur
-              %li
-                Niveau
-                %ul
-                  %li
-                    %input{ type:"checkbox", id:"all", name:"event-lvl", value:"all" }
-                    %label{ for:"all" } Tous
-                  %li
-                    %input{ type:"checkbox", id:"neo", name:"event-lvl", value:"neo" }
-                    %label{ for:"neo"} Néophyte
-                  %li
-                    %input{ type:"checkbox", id:"expert", name:"event-lvl", value:"expert" }
-                    %label{ for:"expert"} Connaisseur
-              %li
-                Langue
-                %ul
-                  %li
-                    %input{ type:"checkbox", id:"all", name:"event-lang", value:"all" }
-                    %label{ for:"all" } Tous
-                  %li
-                    %input{ type:"checkbox", id:"fr", name:"event-lang", value:"fr" }
-                    %label{ for:"fr"} Français
-                  %li
-                    %input{ type:"checkbox", id:"en", name:"event-lang", value:"en" }
-                    %label{ for:"en"} Anglais
-        %ul.sheets
-          %li
-            %a{ "data-toggle":"saturday" }= t("common.saturday") + " 7"
-          %li
-            %a{ "data-toggle":"sunday" }= t("common.sunday") + " 8"
-          %li
-            %a{ "data-toggle":"monday" }= t("common.monday") + " 9"
-          %li
-            %a{ "data-toggle":"tuesday" }= t("common.tuesday") + " 10"
-          %li
-            %a{ "data-toggle":"wednesday" }= t("common.wednesday") + " 11"
+        %ul.options#selectors{ role:"menubar", "aria-label":"Options d'affichage" }
+          %li{ role:"none" }
+            = link_to "liste", "", { role:"menuitem", tabindex:0, class:"not-item" }
+          %li{ role:"none" }
+            %a{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false", tabindex:-1 }
+              Type
+            %ul{ role:"menu", "aria-label":"Selectionner par type" }
+              %li{ role:"none" }
+                %a{ role:"menuitem", tabindex:-1, id:"all-type" }
+                  Tout type
+              %li{ role:"none" }
+                %a{ role:"menuitem", tabindex:-1, id:"conference" }
+                  Conférences
+              %li{ role:"none" }
+                %a{ role:"menuitem", tabindex:-1, id:"workshop" }
+                  Ateliers
+              %li{ role:"none" }
+                %a{ role:"menuitem", tabindex:-1, id:"chatroom" }
+                  Chatrooms
+              %li{ role:"none" }
+                %a{ role:"menuitem", tabindex:-1, id:"debates" }
+                  Débats
+              %li{ role:"none" }
+                %a{ role:"menuitem", tabindex:-1, id:"creation" }
+                  Création
+              %li{ role:"none" }
+                %a{ role:"menuitem", tabindex:-1, id:"other" }
+                  Autre
+          %li{ role:"none" }
+            %a{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false", tabindex:-1 }
+              Niveau
+            %ul{ role:"menu", "aria-label":"Selectionner par niveau" }
+              %li{ role:"none" }
+                %a{ role:"menuitem", tabindex:-1, id:"all-difficulty_level" }
+                  Tout niveau
+              %li{ role:"none" }
+                %a{ role:"menuitem", tabindex:-1, id:"easy" }
+                  Néophyte
+              %li{ role:"none" }
+                %a{ role:"menuitem", tabindex:-1, id:"medium" }
+                  Confirmé
+              %li{ role:"none" }
+                %a{ role:"menuitem", tabindex:-1, id:"hard" }
+                  Expert
+          %li{ role:"none" }
+            %a{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false", tabindex:-1 }
+              Langue
+            %ul{ role:"menu", "aria-label":"Selectionner par langue" }
+              %li{ role:"none" }
+                %a{ role:"menuitem", tabindex:-1, id:"all-lang" }
+                  Toute langue
+              %li{ role:"none" }
+                %a{ role:"menuitem", tabindex:-1 }
+                  Français
+              %li{ role:"none" }
+                %a{ role:"menuitem", tabindex:-1 }
+                  Anglais
+        %ul#daySelection{ role:"menubar", "aria-label":"Menu de selection du jour" }
+          %li{ role:"none" }
+            %a.not-item.selected{ "data-toggle":"saturday", role:"menuitem", tabindex:0, href:"#" }= t("common.saturday") + " 7"
+          %li{ role:"none" }
+            %a.not-item{ "data-toggle":"sunday", role:"menuitem", tabindex:-1, href:"#" }= t("common.sunday") + " 8"
+          %li{ role:"none" }
+            %a.not-item{ "data-toggle":"monday", role:"menuitem", tabindex:-1, href:"#" }= t("common.monday") + " 9"
+          %li{ role:"none" }
+            %a.not-item{ "data-toggle":"tuesday", role:"menuitem", tabindex:-1, href:"#" }= t("common.tuesday") + " 10"
+          %li{ role:"none" }
+            %a.not-item{ "data-toggle":"wednesday", role:"menuitem", tabindex:-1, href:"#" }= t("common.wednesday") + " 11"
       %article.overflow.dragscroll
         %section.starred
           - days = ["saturday", "sunday", "monday", "tuesday", "wednesday"]
@@ -84,8 +90,8 @@
             - data = t("calendar.days")[i]
             - plenary = data[:plenary]
             .starred-day{ days[i] == "saturday" ? { "data-day": "#{days[i]}" } : { class:"hide", "data-day": "#{days[i]}" } }
-              .info-black
-                %p= t("common.#{days[i]}") + " #{i + 7}"
+              -# .info-black
+              -#   %p= t("common.#{days[i]}") + " #{i + 7}"
               .row-top
                 %article.event{ "data-type":"plenary" }
                   %aside.top

@@ -294,7 +294,7 @@ MenubarItem.prototype.handleKeydown = function (event) {
       break;
 
     case this.keyCode.TAB:
-      if (this.domNode.id != "home" && this.domNode.id != "connect") {
+      if (!this.domNode.classList.contains("not-item")) {
         this.popupMenu.close(true);
         break;
       }
@@ -332,14 +332,14 @@ MenubarItem.prototype.handleBlur = function (event) {
 };
 
 MenubarItem.prototype.handleMouseover = function (event) {
-  if (this.domNode.id != "home" && this.domNode.id != "connect") {
+  if (!this.domNode.classList.contains("not-item")) {
     this.hasHover = true;
     this.popupMenu.open();
   }
 };
 
 MenubarItem.prototype.handleMouseout = function (event) {
-  if (this.domNode.id != "home" && this.domNode.id != "connect") {
+  if (!this.domNode.classList.contains("not-item")) {
     this.hasHover = false;
     setTimeout(this.popupMenu.close.bind(this.popupMenu, false), 300);
   }

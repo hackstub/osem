@@ -75,3 +75,45 @@ article, nav {
     }
   }
 }
+
+ul.options {
+  display: flex;
+  border-bottom: $border;
+  height: 2rem;
+
+  a {
+    display: inline-block;
+    width: 100%;
+    min-height: 2rem;
+    padding: 0 1rem;
+    text-decoration: none;
+    line-height: 1.9rem;
+    color: $color-black;
+
+    &:focus, &:hover {
+      height: calc(2rem - 2px);
+      background-color: $color-third;
+      color: black;
+      border-bottom: $border;
+      outline: none;
+    }
+  }
+
+  & > li {
+    border-right: $border;
+  }
+
+  [role="menu"] {
+    display: none;
+    background-color: $color-white;
+    border: $border;
+
+    &.show {
+      display: block;
+      position: absolute;
+      margin-left: -2px;
+      margin-top: -2px;
+      z-index: 50;
+    }
+  }
+}

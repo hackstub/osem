@@ -163,14 +163,20 @@ var baseUrl = "/api/v1/conferences/rmll2018/";
 // var baseUrl = "https://osem.aius.u-strasbg.fr/api/v1/conferences/rmll2018";
 readJSONFile(baseUrl, formatJson);
 
-var daysbutton = document.querySelectorAll(".sheets a");
+var daysbutton = document.querySelectorAll("#daySelection a");
 for (var i = 0; i < daysbutton.length; i++) {
   daysbutton[i].addEventListener("click", function (e) {
     var day = e.target.dataset.toggle;
+    var overflowed = document.querySelector(".overflow");
+    overflowed.scrollTop = 0;
+    overflowed.scrollLeft = 0;
     document.querySelector("tbody:not(.hide)").classList.add("hide");
     document.querySelector(".starred-day:not(.hide)").classList.add("hide");
     document.querySelector("tbody[data-day='" + day + "']").classList.remove("hide");
     document.querySelector(".starred-day[data-day='" + day + "']").classList.remove("hide");
+
+    document.querySelector(".selected").classList.remove("selected");
+    e.target.classList.add("selected")
 
   });
 }
