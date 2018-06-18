@@ -191,6 +191,9 @@
   }
 
   section.starred {
+    position: sticky;
+    left: 0;
+
     .row-top, .row-bottom {
       display: flex;
 
@@ -243,8 +246,8 @@
     tbody th, thead th:first-child {
       width: 10rem;
       min-width: 10rem;
-      position: relative;
-      z-index: 3;
+      position: sticky;
+      left: 0;
 
       @include phone {
         p {
@@ -264,7 +267,7 @@
         max-width: 100%;
       }
       th {
-        position: relative;
+        background-color: $color-black;
       }
     }
 
@@ -283,7 +286,6 @@
       }
       tr:nth-child(2n+0) {
         background-color: lighten($color-main, 42%);
-        // @include pixel-bg($halftone-window);
         th {
           background-color: lighten($color-main, 30%);
         }
@@ -293,6 +295,7 @@
         height: 10rem;
       }
       td {
+        width: 100%;
         border-bottom: $border;
         display: flex;
       }
@@ -425,27 +428,15 @@
     background-color: lighten($blue, 25%);
   }
   [data-type="night"] {
-    @include screen {
-      width: 30%;
-    }
     background-color: lighten($blue, 25%);
   }
   [data-type="plenary"] {
-    @include screen {
-      width: 70%;
-    }
     background-color: lighten($color-main, 42%);
   }
   [data-type="village"] {
-    @include screen {
-      width: 65%;
-    }
     background-color: lighten($orange, 25%);
   }
   [data-type="hackerspace"] {
-    @include screen {
-      width: 35%;
-    }
     background-color: lighten($red, 25%);
   }
 }
