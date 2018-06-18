@@ -48,6 +48,11 @@
         background-color: $orange;
         color: $color-black;
       }
+      @include phone {
+        span {
+          display: none;
+        }
+      }
     }
 
     li {

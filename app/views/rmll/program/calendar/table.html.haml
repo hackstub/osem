@@ -18,69 +18,74 @@
             = link_to "liste", "", { role:"menuitem", tabindex:0, class:"not-item" }
           %li{ role:"none" }
             %a{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false", tabindex:-1 }
-              Type
+              = t("types.name")
             %ul{ role:"menu", "aria-label":"Selectionner par type" }
               %li{ role:"none" }
                 %a{ role:"menuitem", tabindex:-1, id:"all-type" }
-                  Tout type
+                  = t("types.all")
               %li{ role:"none" }
                 %a{ role:"menuitem", tabindex:-1, id:"conference" }
-                  Conférences
+                  = t("types.conferences")
               %li{ role:"none" }
                 %a{ role:"menuitem", tabindex:-1, id:"workshop" }
-                  Ateliers
+                  = t("types.workshops")
               %li{ role:"none" }
                 %a{ role:"menuitem", tabindex:-1, id:"chatroom" }
-                  Chatrooms
+                  = t("types.chatrooms")
               %li{ role:"none" }
                 %a{ role:"menuitem", tabindex:-1, id:"debates" }
-                  Débats
+                  = t("types.debates")
               %li{ role:"none" }
                 %a{ role:"menuitem", tabindex:-1, id:"creation" }
-                  Création
+                  = t("types.debates")
               %li{ role:"none" }
                 %a{ role:"menuitem", tabindex:-1, id:"other" }
-                  Autre
+                  = t("types.others")
           %li{ role:"none" }
             %a{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false", tabindex:-1 }
-              Niveau
+              = t("lvls.name")
             %ul{ role:"menu", "aria-label":"Selectionner par niveau" }
               %li{ role:"none" }
                 %a{ role:"menuitem", tabindex:-1, id:"all-difficulty_level" }
-                  Tout niveau
+                  = t("lvls.all")
               %li{ role:"none" }
                 %a{ role:"menuitem", tabindex:-1, id:"easy" }
-                  Néophyte
+                  = t("lvls.easy")
               %li{ role:"none" }
                 %a{ role:"menuitem", tabindex:-1, id:"medium" }
-                  Confirmé
+                  = t("lvls.medium")
               %li{ role:"none" }
                 %a{ role:"menuitem", tabindex:-1, id:"hard" }
-                  Expert
+                  = t("lvls.hard")
           %li{ role:"none" }
             %a{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false", tabindex:-1 }
-              Langue
+              = t("languages.name")
             %ul{ role:"menu", "aria-label":"Selectionner par langue" }
               %li{ role:"none" }
                 %a{ role:"menuitem", tabindex:-1, id:"all-lang" }
-                  Toute langue
+                  = t("languages.all")
               %li{ role:"none" }
                 %a{ role:"menuitem", tabindex:-1 }
-                  Français
+                  = t("languages.fr")
               %li{ role:"none" }
                 %a{ role:"menuitem", tabindex:-1 }
-                  Anglais
+                  = t("languages.en")
         %ul#daySelection{ role:"menubar", "aria-label":"Menu de selection du jour" }
           %li{ role:"none" }
-            %a.not-item.selected{ "data-toggle":"saturday", role:"menuitem", tabindex:0, href:"#" }= t("common.saturday") + " 7"
+            %a.not-item.selected{ "data-toggle":"saturday", role:"menuitem", tabindex:0, href:"#" }
+              = t("common.saturday_html") + " 7"
           %li{ role:"none" }
-            %a.not-item{ "data-toggle":"sunday", role:"menuitem", tabindex:-1, href:"#" }= t("common.sunday") + " 8"
+            %a.not-item{ "data-toggle":"sunday", role:"menuitem", tabindex:-1, href:"#" }
+              = t("common.sunday_html") + " 8"
           %li{ role:"none" }
-            %a.not-item{ "data-toggle":"monday", role:"menuitem", tabindex:-1, href:"#" }= t("common.monday") + " 9"
+            %a.not-item{ "data-toggle":"monday", role:"menuitem", tabindex:-1, href:"#" }
+              = t("common.monday_html") + " 9"
           %li{ role:"none" }
-            %a.not-item{ "data-toggle":"tuesday", role:"menuitem", tabindex:-1, href:"#" }= t("common.tuesday") + " 10"
+            %a.not-item{ "data-toggle":"tuesday", role:"menuitem", tabindex:-1, href:"#" }
+              = t("common.tuesday_html") + " 10"
           %li{ role:"none" }
-            %a.not-item{ "data-toggle":"wednesday", role:"menuitem", tabindex:-1, href:"#" }= t("common.wednesday") + " 11"
+            %a.not-item{ "data-toggle":"wednesday", role:"menuitem", tabindex:-1, href:"#" }
+              = t("common.wednesday_html") + " 11"
       %article.overflow.dragscroll
         %section.starred
           - days = ["saturday", "sunday", "monday", "tuesday", "wednesday"]

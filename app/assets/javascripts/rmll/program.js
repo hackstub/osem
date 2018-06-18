@@ -166,7 +166,7 @@ readJSONFile(baseUrl, formatJson);
 var daysbutton = document.querySelectorAll("#daySelection a");
 for (var i = 0; i < daysbutton.length; i++) {
   daysbutton[i].addEventListener("click", function (e) {
-    var day = e.target.dataset.toggle;
+    var day = e.target.nodeName == "SPAN" ? e.target.parentElement.dataset.toggle : e.target.dataset.toggle;
     var overflowed = document.querySelector(".overflow");
     overflowed.scrollTop = 0;
     overflowed.scrollLeft = 0;

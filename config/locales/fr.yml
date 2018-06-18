@@ -20,12 +20,32 @@ fr:
     workshops: ateliers
     exhibitions: salons
     events: Événements
-    daysName:
-      - Samedi 7
-      - Dimanche 8
-      - Lundi 9
-      - Mardi 10
-      - Mercredi 11
+    saturday_html: Sa<span>medi</span>
+    sunday_html: Di<span>manche</span>
+    sunday_html: Di<span>manche</span>
+    monday_html: Lu<span>ndi</span>
+    tuesday_html: Ma<span>rdi</span>
+    wednesday_html: Me<span>rcredi</span>
+  types:
+    name: Type
+    all: Tout type
+    conferences: Conférences
+    workshops: Ateliers
+    chatrooms: Chatrooms
+    debates: Débats
+    creations: Créations
+    others: Autres
+  lvls:
+    name: Niveau
+    all: Tout niveau
+    easy: Néophyte
+    medium: Confirmé
+    hard: Expert
+  languages:
+    name: Langue
+    all: Toute langue
+    fr: Français
+    en: Anglais
   menu:
     home: Accueil
     program: Programme
