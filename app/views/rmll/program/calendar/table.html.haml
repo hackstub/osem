@@ -15,61 +15,61 @@
       %nav
         %ul.options#selectors{ role:"menubar", "aria-label":"Options d'affichage" }
           %li{ role:"none" }
-            = link_to "liste", "", { role:"menuitem", tabindex:0, class:"not-item" }
+            = link_to "Liste", "", { role:"menuitem", tabindex:0, class:"not-item" }
           %li{ role:"none" }
             %a{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false", tabindex:-1 }
               = t("types.name")
             %ul{ role:"menu", "aria-label":"Selectionner par type" }
               %li{ role:"none" }
-                %a{ role:"menuitem", tabindex:-1, id:"all-type" }
+                %a{ role:"menuitem", tabindex:-1, id:"type-all" }
                   = t("types.all")
               %li{ role:"none" }
-                %a{ role:"menuitem", tabindex:-1, id:"conference" }
+                %a{ role:"menuitem", tabindex:-1, id:"type-conference" }
                   = t("types.conferences")
               %li{ role:"none" }
-                %a{ role:"menuitem", tabindex:-1, id:"workshop" }
+                %a{ role:"menuitem", tabindex:-1, id:"type-workshop" }
                   = t("types.workshops")
               %li{ role:"none" }
-                %a{ role:"menuitem", tabindex:-1, id:"chatroom" }
+                %a{ role:"menuitem", tabindex:-1, id:"type-chatroom" }
                   = t("types.chatrooms")
               %li{ role:"none" }
-                %a{ role:"menuitem", tabindex:-1, id:"debates" }
+                %a{ role:"menuitem", tabindex:-1, id:"type-debates" }
                   = t("types.debates")
               %li{ role:"none" }
-                %a{ role:"menuitem", tabindex:-1, id:"creation" }
+                %a{ role:"menuitem", tabindex:-1, id:"type-creation" }
                   = t("types.debates")
               %li{ role:"none" }
-                %a{ role:"menuitem", tabindex:-1, id:"other" }
+                %a{ role:"menuitem", tabindex:-1, id:"type-other" }
                   = t("types.others")
           %li{ role:"none" }
             %a{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false", tabindex:-1 }
               = t("lvls.name")
             %ul{ role:"menu", "aria-label":"Selectionner par niveau" }
               %li{ role:"none" }
-                %a{ role:"menuitem", tabindex:-1, id:"all-difficulty_level" }
+                %a{ role:"menuitem", tabindex:-1, id:"level-all" }
                   = t("lvls.all")
               %li{ role:"none" }
-                %a{ role:"menuitem", tabindex:-1, id:"easy" }
+                %a{ role:"menuitem", tabindex:-1, id:"level-easy" }
                   = t("lvls.easy")
               %li{ role:"none" }
-                %a{ role:"menuitem", tabindex:-1, id:"medium" }
+                %a{ role:"menuitem", tabindex:-1, id:"level-medium" }
                   = t("lvls.medium")
               %li{ role:"none" }
-                %a{ role:"menuitem", tabindex:-1, id:"hard" }
+                %a{ role:"menuitem", tabindex:-1, id:"level-hard" }
                   = t("lvls.hard")
-          %li{ role:"none" }
-            %a{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false", tabindex:-1 }
-              = t("languages.name")
-            %ul{ role:"menu", "aria-label":"Selectionner par langue" }
-              %li{ role:"none" }
-                %a{ role:"menuitem", tabindex:-1, id:"all-lang" }
-                  = t("languages.all")
-              %li{ role:"none" }
-                %a{ role:"menuitem", tabindex:-1 }
-                  = t("languages.fr")
-              %li{ role:"none" }
-                %a{ role:"menuitem", tabindex:-1 }
-                  = t("languages.en")
+          -# %li{ role:"none" }
+          -#   %a{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false", tabindex:-1 }
+          -#     = t("languages.name")
+          -#   %ul{ role:"menu", "aria-label":"Selectionner par langue" }
+          -#     %li{ role:"none" }
+          -#       %a{ role:"menuitem", tabindex:-1, id:"lang-all" }
+          -#         = t("languages.all")
+          -#     %li{ role:"none" }
+          -#       %a{ role:"menuitem", tabindex:-1, id:"lang-fr" }
+          -#         = t("languages.fr")
+          -#     %li{ role:"none" }
+          -#       %a{ role:"menuitem", tabindex:-1, id:"lang-en" }
+          -#         = t("languages.en")
         %ul#daySelection{ role:"menubar", "aria-label":"Menu de selection du jour" }
           %li{ role:"none" }
             %a.not-item.selected{ "data-toggle":"saturday", role:"menuitem", tabindex:0, href:"#" }
@@ -148,7 +148,7 @@
                     %span= village[:place]
         %section.agenda
           %table
-            %caption Événements sur toute la journée de 10h à 18h
+            %caption Événements sur toute la journée
             %thead
               %tr.info-black
                 %th{ scope:"col" } Tracks

@@ -265,7 +265,7 @@
         margin-left: -2px;
       }
       tr:nth-child(2n+0) {
-        background-color: lighten($color-main, 42%);
+        // background-color: lighten($color-main, 42%);
         th {
           background-color: lighten($color-main, 30%);
         }
@@ -273,6 +273,10 @@
       tr {
         box-sizing: content-box;
         height: 10rem;
+
+        &.hide {
+          display: none;
+        }
       }
       td {
         width: 100%;
@@ -298,6 +302,10 @@
       margin-top: -2px;
       border: $border;
       overflow: hidden;
+
+      &.hide {
+        display: none;
+      }
 
       &:not(.card):hover {
         cursor: zoom-in;

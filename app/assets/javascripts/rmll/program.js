@@ -119,7 +119,10 @@ function buildArticle(ev, timeBetween) {
   container.style.marginLeft = timeBetween * 5 + "px";
   container.style.width = ev.length * 5 + "px";
 
-  var article = domElem('article', 'event', {"data-type": ev.type.toLowerCase()});
+  var article = domElem('article', 'event', {
+    "data-type": ev.type.toLowerCase(),
+    "data-level": ev.difficulty.toLowerCase(),
+  });
   container.appendChild(article);
 
   var top = domElem('aside', 'top');
@@ -184,4 +187,51 @@ for (var i = 0; i < daysbutton.length; i++) {
 document.getElementById('bg-card').onclick = function (e) {
   document.getElementById('bg-card').style.display = "none";
   document.querySelector('.card').classList.remove("card");
+}
+
+
+function allHide(htmlColl) {
+  for (var i = htmlColl.length - 1; i >= 0; i--) {
+    if (!htmlColl[i].classList.contains("hide")) return false;
+  }
+  return true;
+}
+
+// Display Selection
+var optionsDisplay = document.querySelectorAll("#selectors ul a");
+for (var i = 0; i < optionsDisplay.length; i++) {
+  optionsDisplay[i].addEventListener("click", function (e) {
+    var events = document.querySelectorAll("table .event");
+    var tracks = document.querySelectorAll("tbody tr");
+    var prop = e.target.id.split("-");
+
+    if (prop[1] == "all") {
+      // display everything
+      for (var i = events.length - 1; i >= 0; i--) {
+        events[i].classList.remove("hide");
+      }
+      for (var i = tracks.length - 1; i >= 0; i--) {
+        tracks[i].classList.remove("hide");
+      }
+    } else {
+      // display only events that match the selector
+      for (var i = events.length - 1; i >= 0; i--) {
+        if (events[i].dataset[prop[0]] == prop[1]) {
+          events[i].classList.remove("hide");
+        } else {
+          events[i].classList.add("hide");
+        }
+      }
+      // hide empty tracks rows
+      for (var i = tracks.length - 1; i >= 0; i--) {
+        var evs = tracks[i].getElementsByClassName("event");
+        if (allHide(evs)) {
+          tracks[i].classList.add("hide");
+        } else {
+          tracks[i].classList.remove("hide");
+        }
+      }
+    }
+    document.querySelector(".overflow").scrollLeft = 0;
+  });
 }
