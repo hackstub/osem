@@ -19,6 +19,13 @@ fr:
     confs: conférences
     workshops: ateliers
     exhibitions: salons
+    events: Événements
+    daysName:
+      - Samedi 7
+      - Dimanche 8
+      - Lundi 9
+      - Mardi 10
+      - Mercredi 11
   menu:
     home: Accueil
     program: Programme
@@ -54,6 +61,85 @@ fr:
     en: Anglais
     network: Réseaux
     mailing: Liste de diffusion
+  calendar:
+    hackerspace:
+      title: Hackerspace
+      place: Shadok
+      start: 11h00
+      end: 00h00
+      abstract_html: Abstract - To be announced
+    village:
+      title: Village du Libre
+      place: Campus central - ESCARPE
+      start: 12h00
+      end: 18h00
+      abstract_html: Abstract - To be announced
+    days:
+      - plenary:
+          title: Open bar de données et nuages magiques, l'Éducation sous contrat
+          speakers: Speakers - To be announced
+          abstract_html: Le grand marché de l'éducation et ses ressorts. Comment les multinationales du numérique conquièrent-elles leurs positions, quels avantages proposent-elles et à quels prix ? Du côté du Libre, d'autres modèles se dessinent et se construisent dans le monde.
+        nights:
+          - title: Soirée du Libre
+            start: 20h30
+            end: 04h00
+            place: Quartier Gare - Salle des Colonnes
+            abstract_html: Abstract - To be announced
+        village:
+          title: Village du Libre
+          place: Presqu'île Malraux / Campus Central - ESCARPE
+          start: 10h00
+          end: 18h00
+          abstract_html: Abstract - To be announced
+      - plenary:
+          title: Enseignement supérieur, recherche et Logiciel Libre
+          speakers: Speakers - To be announced
+          abstract_html: "Penser les politiques publiques numériques par le biais de l'Université et des Grandes Écoles : quelles pédagogies et quels investissements ? Enjeux et voies de transition pour les communs numériques."
+        nights:
+          - title: Repas du Libre
+            start: 20h00
+            end: 00h00
+            place: Place St Etienne - FEC
+            abstract_html: Abstract - to be announced
+      - plenary:
+          title: Enjeux pédagogiques des interfaces
+          speakers: Speakers - To be announced
+          abstract_html: "Une étude de l'éducation aux médias numériques par la question des interfaces, physiques et logicielles : de l'ordinateur fixe aux applications smartphones, la variété des approches est vaste selon l'intérêts des acteurs. Quels modèles émancipateurs opposer à ceux des multinationales dont l'un des objectifs majeurs est celui de la reproduction de leur clientèle ?"
+        nights:
+          - title: Performances
+            place: Shadok
+            start: 20h00
+            end: 00h00
+            abstract_html:
+              - "20h : Giaso - APO33"
+              - "21h : Cyberia - Simon Chanson"
+              - "22h : Sinaïve - Sinaïve"
+              - "23h : The BitchHicker - Karl Ferdinand"
+      - plenary:
+          title: Mooc, revues, ressources... Édition numérique et licences Libres
+          speakers: Speakers -To be announced
+          abstract_html: La publication en ligne de cours, d'articles scientifiques ou de documents pédagogiques progresse au sein des établissements d'enseignement supérieur, en parallèle du secteur de l'édition conventionnelle. Vers quels modèles se tourner pour des publications cohérentes avec les usages de la recherche à l'heure numérique ?
+        nights:
+          - title: Soirée jeux-vidéos
+            place: Shadok
+            start: 20h00
+            end: 00h00
+            abstract_html: Le Fabcafé du Shadok organise chaque mois une soirée jeux-vidéos. L'occasion des RMLL ne pouvait pas être manquée pour y faire des surprises...
+      - plenary:
+          title: "Accès aux nouvelles technologies : émancipation ou exploitation ?"
+          speakers: Speakers - To be announced
+          abstract_html: L'informatique et internet continuent de se répandre dans le monde, y compris dans les zones les plus pauvres, notamment grâce à la démocratisation des smartphones. Devrait-on y voir une occasion nouvelle d'émancipation des peuples ?
+        nights:
+          - title: Rencontre "pratiques créatives dans la musique libre"
+            place: Shadok
+            start: 19h00
+            end: 21h00
+            abstract_html: "Dans le cadre des RMLL Hackstub & Longevity proposent une table ronde autour des pratiques de création dans la musique libre. La musique libre c’est quoi ? On désigne habituellement comme musique libre, à l'instar d'un logiciel libre, une musique qui peut être librement copiée, distribuée et modifiée. Ainsi, la musique libre est soit de la musique du domaine public, soit de la musique diffusée sous une Licence Libre. Elle regroupe ainsi tous les genres musicaux et pourrait bien avoir une affinité toute particulière avec les musiques électroniques et le hip-hop par leurs pratiques : remix, sampling, rap, etc."
+          - title: Bal Folk
+            place: Campus central
+            start: 20h00
+            end: 22h00
+            abstract_html: Abstract - To be announced
   rmll:
     home:
       background:

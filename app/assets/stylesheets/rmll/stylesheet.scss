@@ -8,7 +8,7 @@
   font-variant-ligatures: none;
 }
 
-html, body, main, section {
+html, body, main, section.window {
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -27,7 +27,7 @@ main {
 @import "specific/home";
 @import "specific/terminal";
 @import "specific/misc";
-@import "specific/spreadsheet";
+// @import "specific/spreadsheet";
 // @import "specific/map";
 
 .flex {

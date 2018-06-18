@@ -46,8 +46,10 @@ function formatJson(json) {
 
   for (var day in data) {
     if (data.hasOwnProperty(day)) {
-      for (var i = data[day].length; i < 0; i--) {
-        data[day][i].events.sort(function(a,b) {return (a.date > b.date) ? 1 : ((b.date > a.date) ? -1 : 0);} );
+      for (var i = data[day].length - 1; i >= 0; i--) {
+        if (data[day][i]) {
+          data[day][i].events = data[day][i].events.sort(function(a,b) {return (a.date > b.date) ? 1 : ((b.date > a.date) ? -1 : 0);} );
+        }
       }
       buildTable(data[day], day);
     }
@@ -56,8 +58,9 @@ function formatJson(json) {
 
 function buildTable(data, day) {
   var tbody = document.querySelector("table");
-  var doc = document.createElement("tbody");
-  doc.id = day;
+  var doc = domElem('tbody', '', {"data-day": day});;
+
+  // doc.id = day;
   if (day != "saturday") {
     doc.classList.add("hide");
   }
@@ -82,7 +85,7 @@ function buildTable(data, day) {
   }
   tbody.appendChild(doc);
 
-  var events = document.getElementsByClassName("event");
+  var events = document.querySelectorAll("table .event");
   for (var i = 0; i < events.length; i++) {
     function findArticle (el, type) {
       while ((el = el.parentElement) && el.nodeName != type);
@@ -116,7 +119,7 @@ function buildArticle(ev, timeBetween) {
   container.style.marginLeft = timeBetween * 5 + "px";
   container.style.width = ev.length * 5 + "px";
 
-  var article = domElem('article', 'event', {"data-type": ev.event_type_id});
+  var article = domElem('article', 'event', {"data-type": ev.type.toLowerCase()});
   container.appendChild(article);
 
   var top = domElem('aside', 'top');
@@ -129,7 +132,7 @@ function buildArticle(ev, timeBetween) {
   appendChildren(top, [hour, duration, like]);
   article.appendChild(top);
 
-  var middle = document.createElement('div');
+  var middle = domElem('div', "content");
   var title = document.createElement("h3");
   title.innerHTML = ev.title;
   var subtitle = document.createElement('h4');
@@ -144,11 +147,11 @@ function buildArticle(ev, timeBetween) {
   article.appendChild(middle);
 
   var bottom = domElem('aside', 'bottom');
-  var room = domElem('span');
+  var room = domElem('span', 'room');
   room.innerHTML = ev.room;
   var type = domElem('span');
   type.innerHTML = ev.type;
-  var lvl = domElem('span');
+  var lvl = domElem('span', 'lvl');
   lvl.innerHTML = ev.difficulty;
   appendChildren(bottom, [room, type, lvl]);
   article.appendChild(bottom);
@@ -163,8 +166,12 @@ readJSONFile(baseUrl, formatJson);
 var daysbutton = document.querySelectorAll(".sheets a");
 for (var i = 0; i < daysbutton.length; i++) {
   daysbutton[i].addEventListener("click", function (e) {
+    var day = e.target.dataset.toggle;
     document.querySelector("tbody:not(.hide)").classList.add("hide");
-    document.getElementById(e.target.dataset.toggle).classList.remove("hide");
+    document.querySelector(".starred-day:not(.hide)").classList.add("hide");
+    document.querySelector("tbody[data-day='" + day + "']").classList.remove("hide");
+    document.querySelector(".starred-day[data-day='" + day + "']").classList.remove("hide");
+
   });
 }
 
@@ -182,6 +189,4 @@ document.getElementsByClassName("agenda")[0].addEventListener("scroll", function
   for (var i = ths.length - 1; i >= 0; i--) {
     ths[i].style.left = e.target.scrollLeft + "px";
   }
-
-  console.log(e.target.scrollLeft);
-})
+}, { passive: true });

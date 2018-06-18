@@ -1,8 +1,10 @@
+= content_for :head do
+  = stylesheet_link_tag "rmll/specific/_spreadsheet"
 = content_for :script do
   = javascript_include_tag "rmll/program.js"
 
 %main
-  %section
+  %section.window
     - add_bar("Calendar", "/program/calendar.odf")
     .container.spreadsheet
       %nav
@@ -74,25 +76,70 @@
           %li
             %a{ "data-toggle":"wednesday" }= t("common.wednesday") + " 11"
       %article.overflow.dragscroll
-        .unique
-          .top
-            %article#plenary
-              Plénière du jour
-            %article#night
-              Concert/Soirée/Repas
-          .bottom
-            %article#hackerspace
-              Hackerspace
-            %article#village
-              Village du Libre
-        .agenda.overflow.dragscroll
+        %section.starred
+          - days = ["saturday", "sunday", "monday", "tuesday", "wednesday"]
+          - hk = t("calendar.hackerspace")
+          - villageBase = t("calendar.village")
+          - (0..4).each do |i|
+            - data = t("calendar.days")[i]
+            - plenary = data[:plenary]
+            .starred-day{ days[i] == "saturday" ? { "data-day": "#{days[i]}" } : { class:"hide", "data-day": "#{days[i]}" } }
+              .info-black
+                %p= t("common.#{days[i]}") + " #{i + 7}"
+              .row-top
+                %article.event{ "data-type":"plenary" }
+                  %aside.top
+                    %mark 18h00
+                    %mark 19h30
+                  .content
+                    %h2= plenary[:title]
+                    %p= plenary[:speakers]
+                    .abstract
+                      = plenary[:abstract_html]
+                  %aside.bottom
+                    %span ATRIUM - AT8
+                - unless data[:nights].nil?
+                  - data[:nights].each do |night|
+                    %article.event{ "data-type":"night" }
+                      %aside.top
+                        %mark= night[:start]
+                        %mark= night[:end]
+                      .content
+                        %h2= night[:title]
+                        %p= night[:speakers]
+                        .abstract
+                          - add_text(night[:abstract_html])
+                      %aside.bottom
+                        %span= night[:place]
+              .row-bottom
+                %article.event{ "data-type":"hackerspace" }
+                  %aside.top
+                    %mark 11h00
+                    %mark 2h00
+                  .content
+                    %h2= hk[:title]
+                    .abstract
+                      = hk[:abstract_html]
+                  %aside.bottom
+                    %span= hk[:place]
+                %article.event{ "data-type":"village" }
+                  - village = data[:village]
+                  - if village.nil?
+                    - village = villageBase
+                  %aside.top
+                    %mark= village[:start]
+                    %mark= village[:end]
+                  .content
+                    %h2= village[:title]
+                    .abstract
+                      = village[:abstract_html]
+                  %aside.bottom
+                    %span= village[:place]
+        %section.agenda.overflow.dragscroll
           %table
-            -# %caption= t(".title")
+            %caption Événements sur toute la journée de 10h à 18h
             %thead
-              %tr
-                %th{ scope:"col" } Track
-                %th{ scope:"col" } Événements
-                -# %th{ scope:"col" } Après-midi
-                -# %th{ scope:"col" } Soirée
-                -# %th{ scope:"col" } Nuit
+              %tr.info-black
+                %th{ scope:"col" } Tracks
+                %th{ scope:"col" }= t("common.events")
       #bg-card

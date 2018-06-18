@@ -4,9 +4,13 @@
   background-color: $color-white;
   color: $color-black;
 
+  .hide {
+    display: none;
+  }
+
   #bg-card {
     display: none;
-    z-index: 1;
+    z-index: 5;
     position: fixed;
     width:  100%;
     height: calc(100% - 2rem);
@@ -41,10 +45,10 @@
           display: none;
         }
 
-        ul ul {
+        ul {
           display: none;
           margin-top: 3px;
-          z-index: 100;
+          z-index: 4;
           background-color: $color-white;
           margin-left: -1rem;
           padding: 0.5rem 1rem 1rem 1rem;
@@ -52,7 +56,7 @@
 
           &.show {
             display: block;
-            z-index: 100;
+            z-index: 4;
             @include screen {
               position: absolute;
             }
@@ -93,123 +97,205 @@
     height: calc(100% - 4rem);
     width: 100%;
   }
-  table {
-    display: block;
-    min-width: 2850px;
+
+  section {
     font-family: $font-sans;
-    cursor: move;
-  }
 
-  caption, tbody, tfoot, thead, tr, th, td {
-    display: block;
-  }
-
-  tr {
-    display: flex;
-    flex-direction: row;
-    height: 10rem;
-  }
-
-  tbody th, thead th:first-child {
-    width: 10rem;
-    min-width: 10rem;
-    position: relative;
-    z-index: 3;
-
-    @include phone {
-      p {
-        transform-origin: top right;
-        position: relative;
-        left: -8rem;
-        width: 8rem;
-        transform: rotate(-90deg);
+    .info-black {
+      display: flex;
+      align-items: center;
+      height: 3rem;
+      font-size: 1.3rem;
+      font-weight: 700;
+      background-color: $color-black;
+      color: $color-white;
+      * {
+        padding-left: 1rem;
       }
-      width: 5rem;
-      min-width: 5rem;
+      @include phone {
+        font-size: 1rem;
+        // line-height:
+      }
     }
   }
 
-  .unique {
+  article.event {
     display: flex;
     flex-direction: column;
-    div {
+
+    :last-child {
+      margin-top: auto;
+    }
+
+    aside {
       display: flex;
-      justify-content: space-between;
-      height: 10rem;
-      &.top {
+      font-family: $font-mono;
+
+      &.top :last-child {
+        margin-left: auto;
+      }
+
+      * {
+        padding: 0 0.5rem;
+        height: 2rem;
+        line-height: 2rem;
+        background-color: $color-white;
+      }
+
+      mark {
+        background-color: $color-black;
+        color: $color-white;
+        font-weight: bold;
+      }
+    }
+
+    .content {
+      padding: 1rem;
+    }
+
+    .abstract, .bio {
+      margin-top: 1rem;
+      line-height: 1.15rem;
+
+      p {
+        margin-bottom: 0.5rem;
+      }
+      strong, b {
+        font-weight: bold;
+      }
+      em, i {
+        font-style: italic;
+      }
+      img {
+        display: none;
+      }
+    }
+
+    h2, h3 {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    h2 {
+      font-size: 2rem;
+    }
+    h3 {
+      font-size: 1.5rem;
+    }
+    h4 {
+      font-size: 1.3rem;
+      font-weight: 300;
+      font-style: italic;
+      margin-bottom: 1.5rem;
+    }
+
+  }
+
+  section.starred {
+    .row-top, .row-bottom {
+      display: flex;
+
+      article {
+        width: 100%;
+        @include screen {
+          &:not(:last-child) {
+            border-right: $border;
+          }
+        }
+      }
+      @include phone {
+        flex-direction: column;
+        article {
+          border-bottom: $border;
+        }
+      }
+    }
+    @include screen {
+      .row-top {
         border-bottom: $border;
       }
     }
-
-    article {
-      padding: 1rem;
-      font-size: 1.5rem;
-      font-weight: bold;
-      font-family: $font-sans;
-      border-right: $border;
-      width: 100%;
-    }
-    #plenary {
-      background-color: lighten($color-main, 30%);
-    }
-    #night {
-      background-color: lighten($orange, 25%);
-    }
-    #arpentage {
-      background-color: lighten($blue, 25%);
-    }
-    #hackerspace {
-      background-color: lighten($red, 25%);
-    }
-
   }
 
+  table {
+    display: block;
+    min-width: 2850px;
+    cursor: move;
 
-  thead {
+    tbody, tfoot, thead, tr, th, td {
+      display: block;
+    }
+
+    caption {
+      height: 1rem;
+      margin-top: -1rem;
+    }
+
     tr {
-      max-width: 100%;
-      height: 2rem;
-      background-color: $color-black;
-    }
-    th {
-      position: relative;
-      align-self: center;
-      color: white;
-      padding: 1rem;
-    }
-  }
+      display: flex;
+      flex-direction: row;
 
-
-  th {
-    text-align: left;
-    font-weight: 700;
-  }
-
-  tbody {
-    &.hide {
-      display: none;
-    }
-
-    th {
-      padding: 1rem;
-      border-right: $border;
-      background-color: $color-white;
-      border-left: $border;
-      margin-left: -2px;
-    }
-    tr:nth-child(2n+0) {
-      background-color: lighten($color-main, 42%);
-      // @include pixel-bg($halftone-window);
       th {
-        background-color: lighten($color-main, 30%);
+        text-align: left;
+        font-weight: 700;
       }
     }
-    tr {
-      box-sizing: content-box;
-      border-bottom: $border;
+
+    tbody th, thead th:first-child {
+      width: 10rem;
+      min-width: 10rem;
+      position: relative;
+      z-index: 3;
+
+      @include phone {
+        p {
+          transform-origin: top right;
+          position: relative;
+          left: -8rem;
+          width: 8rem;
+          transform: rotate(-90deg);
+        }
+        width: 5rem;
+        min-width: 5rem;
+      }
     }
-    td {
-      display: flex;
+
+    thead {
+      tr {
+        max-width: 100%;
+      }
+      th {
+        position: relative;
+      }
+    }
+
+    tbody {
+      &.hide {
+        display: none;
+      }
+
+      th {
+        padding: 1rem;
+        border-right: $border;
+        background-color: $color-white;
+        border-left: $border;
+        border-bottom: $border;
+        margin-left: -2px;
+      }
+      tr:nth-child(2n+0) {
+        background-color: lighten($color-main, 42%);
+        // @include pixel-bg($halftone-window);
+        th {
+          background-color: lighten($color-main, 30%);
+        }
+      }
+      tr {
+        box-sizing: content-box;
+        height: 10rem;
+      }
+      td {
+        border-bottom: $border;
+        display: flex;
+      }
     }
 
     .event-container {
@@ -229,21 +315,16 @@
       margin-top: -2px;
       border: $border;
       overflow: hidden;
-      display: flex;
-      flex-direction: column;
 
       &:not(.card):hover {
         cursor: zoom-in;
         min-height: calc(100% + 4px);
-        min-width: 200px;
+        min-width: 250px;
         height: auto;
 
         & aside span {
           display: inline-block;
         }
-      }
-      & > div {
-        padding: 1rem;
       }
 
       aside *:not(mark) {
@@ -251,89 +332,37 @@
       }
 
       aside {
-        font-family: $font-mono;
-        display: flex;
-
         &.top {
           span:nth-child(2) {
             padding-left: 0.75rem;
           }
-          span:nth-child(3) {
-            font-weight: normal;
-            margin-left: auto;
-          }
         }
+
         &.bottom {
-          background-color: $color-white;
-          margin-top: auto;
           flex-wrap: wrap;
-          span:nth-child(1) {
+          background-color: $color-white;
+
+          .room {
+            font-weight: bold;
             width: 100%;
           }
-          span:nth-child(3) {
+          .lvl {
             margin-left: auto;
           }
         }
-
-        * {
-          padding: 0 0.5rem;
-          height: 2rem;
-          line-height: 2rem;
-        }
-
-        mark {
-          background-color: $color-black;
-          color: $color-white;
-        }
-
-        span {
-          background-color: $color-white;
-          font-weight: bold;
-          &:nth-child(2) {
-            font-weight: normal;
-          }
-        }
       }
 
-      h3 {
-        font-size: 1.5rem;
-        font-weight: 600;
-        margin-bottom: 0.5rem;
-
-      }
       h4 {
         display: none;
-        font-size: 1.3rem;
-        font-weight: 300;
-        font-style: italic;
-        margin-bottom: 1.5rem;
       }
       .abstract, .bio {
-        margin-top: 1rem;
-        line-height: 1.15rem;
         display: none;
-      }
-      .abstract {
-        p {
-          margin-bottom: 0.5rem;
-        }
-        strong, b {
-          font-weight: bold;
-        }
-        em, i {
-          font-style: italic;
-        }
-        img {
-          margin: 1rem 0;
-          max-width: 50%;
-          margin-left: auto;
-        }
       }
 
       &.card {
         position: absolute;
         overflow: auto;
-        z-index: 2;
+        z-index: 10;
         margin: auto;
         left: 2rem;
         top: 2rem;
@@ -351,6 +380,7 @@
           top: 0;
           left: 0;
         }
+
         h3 {
           max-width: 30rem;
         }
@@ -358,7 +388,8 @@
           display: block;
           max-width: 40rem;
         }
-        div div {
+
+        .content div {
           display: block;
         }
         span {
@@ -369,34 +400,52 @@
         }
       }
     }
+  }
 
-    [data-type="2"], [data-type="3"], [data-type="4"], [data-type="5"] {
-      // workshop
-      background-color: $color-third;
+  // [data-type] {
+  //   opacity: 0.5;
+  // }
+
+  [data-type="workshop"] {
+    background-color: $color-third;
+  }
+  [data-type="conference"] {
+    background-color: $color-second;
+  }
+  [data-type="chatroom"] {
+    background-color: $pink;
+  }
+  [data-type="debates"] {
+    background-color: lighten($red, 25%);
+  }
+  [data-type="creation"] {
+    background-color: $cyan;
+  }
+  [data-type="other"] {
+    background-color: lighten($blue, 25%);
+  }
+  [data-type="night"] {
+    @include screen {
+      width: 30%;
     }
-    [data-type="6"], [data-type="7"] {
-      // conferences
-      background-color: $color-second;
+    background-color: lighten($blue, 25%);
+  }
+  [data-type="plenary"] {
+    @include screen {
+      width: 70%;
     }
-    [data-type="8"], [data-type="9"], [data-type="10"], [data-type="11"] {
-      // chatrooms
-      background-color: $pink;
+    background-color: lighten($color-main, 42%);
+  }
+  [data-type="village"] {
+    @include screen {
+      width: 65%;
     }
-    [data-type="12"] {
-      // debate
-      background-color: lighten($red, 25%);
+    background-color: lighten($orange, 25%);
+  }
+  [data-type="hackerspace"] {
+    @include screen {
+      width: 35%;
     }
-    [data-type="14"] {
-      // creation
-      background-color: $cyan;
-    }
-    [data-type="15"] {
-      // other
-      background-color: lighten($blue, 25%);
-    }
-    [data-type="16"] {
-      // plenary
-      background-color: $color-main;
-    }
+    background-color: lighten($red, 25%);
   }
 }
