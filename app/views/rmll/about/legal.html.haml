@@ -1,12 +1,12 @@
 = render partial: "rmll/background"
 
 %main.flex.center
-  %section.popup
+  %section.window.popup
     - add_popup_bar("Legal Notice")
     #legal
       %article
         %h1= t(".title")
-        
+
         .box.overflow
           - t(".text").each_key do |title|
             %h3= t(".text.#{title}.title")

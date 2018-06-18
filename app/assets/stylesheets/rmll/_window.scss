@@ -6,7 +6,7 @@
   }
 }
 
-section:not(#home) {
+section.window:not(#home) {
   border: $border;
 
   &.popup {
