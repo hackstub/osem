@@ -15,7 +15,7 @@
       %nav
         %ul.options#selectors{ role:"menubar", "aria-label":"Options d'affichage" }
           %li{ role:"none" }
-            = link_to "Liste", "", { role:"menuitem", tabindex:0, class:"not-item" }
+            = link_to t("menu.list"), rmll_path(:heading => "program", :page => "calendar", :sub => "list"), { role:"menuitem", tabindex:0, class:"not-item" }
           %li{ role:"none" }
             %a{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false", tabindex:-1 }
               = t("types.name")

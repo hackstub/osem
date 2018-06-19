@@ -21,48 +21,6 @@
     cursor: zoom-out;
   }
 
-  #daySelection {
-    display: flex;
-    height: 2rem;
-    line-height: 1.9rem;
-    background-color: black;
-    font-family: $font-sans;
-    font-size: 1.1rem;
-    font-weight: 700;
-    border-bottom: $border;
-
-    a {
-      color: $color-white;
-      padding: 0 1rem;
-      display: inline-block;
-      width: 100%;
-      height: calc(2rem - 2px);
-      text-decoration: none;
-
-      &.selected {
-        background-color: $color-main;
-        color: $color-white;
-      }
-
-      &:focus, &:hover {
-        background-color: $orange;
-        color: $color-black;
-      }
-      @include phone {
-        span {
-          display: none;
-        }
-      }
-    }
-
-    li {
-      width: 100%;
-      &:not(:last-child) {
-        border-right: 2px solid $color-white;
-      }
-    }
-  }
-
   & > article {
     height: calc(100% - 4rem);
     width: 100%;
@@ -114,7 +72,8 @@
       mark {
         background-color: $color-black;
         color: $color-white;
-        font-weight: bold;
+        font-weight: 700;
+        font-family: $font-sans;
       }
     }
 
@@ -277,6 +236,14 @@
         &.hide {
           display: none;
         }
+        &::after {
+          content: "";
+          height: 100%;
+          width: 1rem;
+          border-left: $border;
+          background-color: lighten($color-main, 30%);
+
+        }
       }
       td {
         width: 100%;
@@ -292,6 +259,13 @@
         z-index: 1;
         overflow: visible;
         height: auto;
+      }
+
+      &.double-top, &.double-bottom {
+        height: 50%;
+      }
+      &.double-bottom {
+        margin-top: calc(5rem - 1px);
       }
     }
 
@@ -315,6 +289,10 @@
 
         & aside span {
           display: inline-block;
+        }
+
+        h3 {
+          max-width: 25rem;
         }
       }
 
