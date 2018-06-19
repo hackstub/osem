@@ -94,12 +94,11 @@ function buildTable(data, day) {
   tbody.appendChild(doc);
 
   var events = document.querySelectorAll("table .event");
+  function findArticle (el, type) {
+    while ((el = el.parentElement) && el.nodeName != type);
+    return el;
+  }
   for (var i = 0; i < events.length; i++) {
-    function findArticle (el, type) {
-      while ((el = el.parentElement) && el.nodeName != type);
-      return el;
-    }
-
     events[i].addEventListener("mousedown", function (e) {
       function toggleCard () {
         article.removeEventListener("mouseup", toggleCard);
@@ -109,9 +108,15 @@ function buildTable(data, day) {
         if (isCard) {
           document.getElementById("bg-card").style.display = "none";
           article.classList.remove("card");
+          article.parentElement.classList.remove("card");
+          document.querySelector(".overflow").classList.add("dragscroll");
+          dragscroll.reset();
         } else {
           document.getElementById("bg-card").style.display = "block";
           article.classList.add("card");
+          article.parentElement.classList.add("card");
+          document.querySelector(".overflow").classList.remove("dragscroll");
+          dragscroll.reset();
         }
       }
       var article = e.target.nodeName == 'ARTICLE' ? e.target : findArticle(e.target, 'ARTICLE');
@@ -197,7 +202,9 @@ for (var i = 0; i < daysbutton.length; i++) {
 
 document.getElementById('bg-card').onclick = function (e) {
   document.getElementById('bg-card').style.display = "none";
-  document.querySelector('.card').classList.remove("card");
+  document.querySelector('.event.card').classList.remove("card");
+  document.querySelector('.event-container.card').classList.remove("card");
+  document.querySelector('.dragscroll').classList.add("overflow");
 }
 
 

@@ -10,7 +10,7 @@
 
   #bg-card {
     display: none;
-    z-index: 5;
+    z-index: 10;
     position: fixed;
     width:  100%;
     height: calc(100% - 2rem);
@@ -254,7 +254,7 @@
     .event-container {
       height: 100%;
 
-      &:hover {
+      &:hover:not(.card) {
         z-index: 1;
         overflow: visible;
         height: auto;
@@ -263,7 +263,7 @@
       &.double-top, &.double-bottom {
         height: calc(50% - 1px);
 
-        article.event:not(:hover) {
+        article.event:not(:hover):not(.card) {
           flex-direction: row;
         }
       }
@@ -336,16 +336,17 @@
       &.card {
         position: absolute;
         overflow: auto;
-        z-index: 6;
+        z-index: 11;
         margin: auto;
         left: 2rem;
         top: 2rem;
         width: 70vw;
         max-width: 50rem;
         height: auto;
+        cursor: zoom-out;
 
         @include screen {
-          max-height: 80%;
+          max-height: calc(100% - 4rem);
         }
 
         @include phone {
@@ -363,22 +364,22 @@
           max-width: 40rem;
         }
 
-        .content div {
-          display: block;
+        .content {
+          height: calc(100% - 7rem);
+          overflow: auto;
+          margin-bottom: 1rem;
+
+          div {
+            display: block;
+          }
         }
+
         span {
           display: inline-block;
-        }
-        .bottom {
-          flex-wrap: wrap;
         }
       }
     }
   }
-
-  // [data-type] {
-  //   opacity: 0.5;
-  // }
 
   [data-type="workshop"] {
     background-color: $color-third;
