@@ -262,10 +262,14 @@
       }
 
       &.double-top, &.double-bottom {
-        height: 50%;
+        height: calc(50% - 1px);
+
+        article.event:not(:hover) {
+          flex-direction: row;
+        }
       }
       &.double-bottom {
-        margin-top: calc(5rem - 1px);
+        margin-top: 5rem;
       }
     }
 
@@ -302,6 +306,8 @@
 
       aside {
         &.top {
+          flex: 0 0 2rem;
+          
           span:nth-child(2) {
             padding-left: 0.75rem;
           }
