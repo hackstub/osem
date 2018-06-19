@@ -141,7 +141,7 @@
       }
     }
     @include screen {
-      .row-top {
+      .row-top, .row-bottom {
         border-bottom: $border;
       }
     }
@@ -150,6 +150,9 @@
   table {
     display: block;
     min-width: 2850px;
+    background-color: lighten($color-main, 30%);
+    padding: 0 1.5rem 1.5rem 0;
+
     cursor: move;
 
     tbody, tfoot, thead, tr, th, td {
@@ -211,6 +214,8 @@
     }
 
     tbody {
+      background-color: $color-white;
+
       &.hide {
         display: none;
       }
@@ -232,17 +237,11 @@
       tr {
         box-sizing: content-box;
         height: 10rem;
+        border-right: $border;
+
 
         &.hide {
           display: none;
-        }
-        &::after {
-          content: "";
-          height: 100%;
-          width: 1rem;
-          border-left: $border;
-          background-color: lighten($color-main, 30%);
-
         }
       }
       td {
@@ -307,7 +306,7 @@
       aside {
         &.top {
           flex: 0 0 2rem;
-          
+
           span:nth-child(2) {
             padding-left: 0.75rem;
           }

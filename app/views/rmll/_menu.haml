@@ -9,13 +9,9 @@
         %li{ role:"none" }
           = link_to t("menu.presentation"), rmll_path(:heading => "program", :page => "presentation"), { role:"menuitem", tabindex:-1 }
         %li{ role:"none" }
-          %a{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false", tabindex:-1 }
-            = t("menu.calendar")
-          %ul{ role:"menu", "aria-label":t("menu.calendar") }
-            %li{ role:"none" }
-              = link_to t("menu.table"), rmll_path(:heading => "program", :page => "calendar", :sub => "table"), { role:"menuitem", tabindex:-1 }
-            %li{ role:"none" }
-              = link_to t("menu.list"), rmll_path(:heading => "program", :page => "calendar", :sub => "list"), { role:"menuitem", tabindex:-1 }
+          = link_to t("menu.calendar") + " " + t("menu.table"), rmll_path(:heading => "program", :page => "calendar", :sub => "table"), { role:"menuitem", tabindex:-1 }
+        %li{ role:"none" }
+          = link_to t("menu.calendar") + " " + t("menu.list"), rmll_path(:heading => "program", :page => "calendar", :sub => "list"), { role:"menuitem", tabindex:-1 }
         -# %li{ role:"none" }
         -#   %a{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false", tabindex:-1 } gou
         -#   %ul{ role:"menu", "aria-label":"plusplus" }
