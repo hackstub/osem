@@ -22,18 +22,16 @@ fr:
     events: Événements
     saturday_html: Sa<span>medi</span>
     sunday_html: Di<span>manche</span>
-    sunday_html: Di<span>manche</span>
     monday_html: Lu<span>ndi</span>
     tuesday_html: Ma<span>rdi</span>
     wednesday_html: Me<span>rcredi</span>
   types:
     name: Type
-    all: Tout type
+    all: Tous types
     conferences: Conférences
     workshops: Ateliers
     chatrooms: Chatrooms
     debates: Débats
-    creations: Créations
     others: Autres
   lvls:
     name: Niveau
@@ -89,7 +87,7 @@ fr:
       place: Shadok
       start: 11h00
       end: 00h00
-      abstract_html: Abstract - To be announced
+      abstract_html: Un espace de travail et de jeu collectif autogéré où rencontrer des personnes connues ou inconnues, prendre une bière ou un soda et partager des idées, du code ou des astuces.
     village:
       title: Village du Libre
       place: Campus central - ESCARPE
@@ -106,7 +104,8 @@ fr:
             start: 20h30
             end: 04h00
             place: Quartier Gare - Salle des Colonnes
-            abstract_html: Abstract - To be announced
+            bands: Collectif Chipbangers, Monplaisir, Beta Kitten, Extraterra, Strass et Paresse...
+            abstract_html: Une nuit pour se rencontrer et danser sur de la bonne musique libre <3
         village:
           title: Village du Libre
           place: Presqu'île Malraux / Campus Central - ESCARPE
@@ -134,8 +133,11 @@ fr:
             end: 00h00
             abstract_html:
               - "20h : Giaso - APO33"
+                url: https://vimeo.com/78420038
               - "21h : Cyberia - Simon Chanson"
+                url: https://exode.me/videos/watch/7e5f59d0-238c-4259-94a7-3d606adf8eef
               - "22h : Sinaïve - Sinaïve"
+                url: https://sinaive.bandcamp.com/album/poptones
               - "23h : The BitchHicker - Karl Ferdinand"
       - plenary:
           title: Mooc, revues, ressources... Édition numérique et licences Libres
@@ -377,6 +379,8 @@ fr:
                 - name: Le Shadok
                   adress: 25, presqu'ile André Malraux, 67100 Strasbourg
                   url: "http://www.shadok.strasbourg.eu/"
+                - name: UGC Ciné Cité
+                  adress: 25, route du Rhin, 67100, Strasbourg
         cts:
           title: Transports en commun (arrêts de tram)
           list:
@@ -423,6 +427,19 @@ fr:
               distance: "2.5"
               price: "1.6"
               url: "https://www.placedeshalles.com/infos-pratiques/parking"
+        airports:
+          title: Aéroports
+          text: Même si Strasbourg a son propre aéroport international, elle est accessible par 2 aéroports internationaux autrement plus importants.
+          list:
+            - name: Strasbourg-Entzheim (SXB)
+              access: À 10 minutes en train (TER) de la gare de Strasbourg.
+              price: "2.6"
+            - name: Francfort-sur-le-Main (FRA)
+              access: À 2 h de bus (compagnies privées) ou de voiture de la presqu'île Malraux (gare routière, place de l'Étoile).
+              price: "10-30"
+            - name: Bâle-Mulhouse (EAP)
+              access: À 1 h en train (TER, TGV) ou en voiture de la gare de Strasbourg.
+              price: "10-20"
         accessibility:
           title: Accessibilité et mobilité
           text:

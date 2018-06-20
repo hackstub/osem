@@ -19,11 +19,38 @@ en:
     confs: conferences
     workshops: workshops
     exhibitions: exhibitions
+    events: Événements
+    saturday_html: Sat<span>urday</span>
+    sunday_html: Sun<span>day</span>
+    monday_html: Mon<span>day</span>
+    tuesday_html: Tue<span>sday</span>
+    wednesday_html: Wed<span>nesday</span>
+  types:
+    name: Type
+    all: All types
+    conferences: Talks
+    workshops: Workshops
+    chatrooms: Chatrooms
+    debates: Debates
+    others: Others
+  lvls:
+    name: Level
+    all: All levels
+    easy: Begginer
+    medium: Insider
+    hard: Expert
+  languages:
+    name: Language
+    all: All languages
+    fr: French
+    en: English
   menu:
     home: Home
     program: Program
     presentation: Presentation
     calendar: Calendar
+    table: Table
+    list: List
     night: Libre's Night
     meal: Meal of Libre
     village: Village
@@ -48,12 +75,95 @@ en:
     legal: Legal
     site_map: Site map
     user: User
-    connection: Connection
+    connection: Login
     lang: Language
     fr: French
     en: English
     network: Network
     mailing: Mailing-list
+  calendar:
+    hackerspace:
+      title: Hackerspace
+      place: Shadok
+      start: 11am
+      end: 12pm
+      abstract_html: A collective, self-managed working and playing space where you can meet known and unknown people, have a beer or a soda and share some ideas, codes and tricks.
+    village:
+      title: Libre Village
+      place: Central campus - ESCARPE
+      start: 12h00
+      end: 18h00
+      abstract_html: Abstract - To be announced
+    days:
+      - plenary:
+          title:     Education under contract - data open bar and magic clouds
+          speakers: Speakers - To be announced
+          abstract_html: The large education market and its driving forces. How do digital multinationals conquer their positions, what advantages do they offer and at what price? On the Free Software side, other models are emerging and being built around the world.
+        nights:
+          - title: Libre night
+            start: 8.30pm
+            end: 4am
+            place: Quartier Gare - Salle des Colonnes (en face de la Laiterie)
+            bands: Chipbangers collective, Monplaisir, Beta Kitten, Extraterra, Strass et Paresse...
+            abstract_html: A night to meet and dance on some great libre music <3
+        village:
+          title: Libre Village
+          place: Presqu'île Malraux - Médiathèque, UGC / Campus Central - ESCARPE
+          start: 10am
+          end: 6pm
+          abstract_html: The Libre village is a group of associations holding stands to present their projects and actions to the public. It is an ideal place for discovery of the various free software and their conceptions, offering an alternative to the big companies with lucrative goal.
+      - plenary:
+          title: Higher learning, research and Free Software
+          speakers: Speakers - To be announced
+          abstract_html: "Thinking digital public policies through the Universities: what pedagogies and what investments? Issues and transition paths for digital commons as a vector of porosity between teaching, research and development."
+        nights:
+          - title: Libre meal
+            start: 8pm
+            end: 12pm
+            place: Place St Etienne - FEC
+            abstract_html: For 20 €, you can join the Libre meal to discuss with veteran Free Software supporters.
+      - plenary:
+          title: Pedagogical issues of interfaces
+          speakers: Speakers - To be announced
+          abstract_html: "A study of digital media education through the question of interfaces, physical and software: from the desktop computer to smartphone applications, the variety of approaches is vast according to the interests of stakeholders and the pedagogy of teachers. Which models should be opposed to those of multinationals, one of whose major objectives is the reproduction of their clients?"
+        nights:
+          - title: Performances
+            place: Shadok
+            start: 8pm
+            end: 12pm
+            abstract_html:
+              - "8pm : Giaso - APO33"
+                url: https://vimeo.com/78420038
+              - "9pm : Cyberia - Simon Chanson"
+                url: https://exode.me/videos/watch/7e5f59d0-238c-4259-94a7-3d606adf8eef
+              - "10pm : Sinaïve - Sinaïve"
+                url: https://sinaive.bandcamp.com/album/poptones
+              - "11pm : The BitchHicker - Karl Ferdinand"
+      - plenary:
+          title: Mooc, reviews, resources... Digital publishing and free licenses
+          speakers: Speakers -To be announced
+          abstract_html: The online publication of courses, scientific articles or educational documents is progressing within higher education institutions, in parallel with the conventional publishing sector. Which models should be used for publications consistent with the uses of research in the digital age?
+        nights:
+          - title: Video-games night
+            place: Shadok
+            start: 8pm
+            end: 12pm
+            abstract_html: The Fabcafé, the bar in Shadok, organizes every month a video games evening. The occasion of the RMLL could not be missed to make surprises...
+      - plenary:
+          title: "Access to new technologies: emancipation or exploitation?"
+          speakers: Speakers - To be announced
+          abstract_html: Computers and the Internet continue to spread throughout the world, including in the poorest areas, thanks in particular to the democratization of smartphones. Should this be seen as a new opportunity for the emancipation of peoples?
+        nights:
+          - title: Meeting - "creative practices in free music"
+            place: Shadok
+            start: 7pm
+            end: 9pm
+            abstract_html: "Within the framework of the RMLL Hackstub & Longevity propose a round table around the practices of creation in free music. What is free music? Free music, like free software, is usually defined as music that can be freely copied, distributed and modified. Thus, free music is either music from the public domain or music broadcast under a Free License. It thus gathers all musical genres and could well have a very particular affinity with electronic music and hip-hop by their practices: remix, sampling, rap, and so on."
+          - title: Folk ball
+            place: Campus central
+            start: 8pm
+            end: 10pm
+            abstract_html: Abstract - To be announced
   rmll:
     home:
       background:
@@ -66,9 +176,9 @@ en:
           title: Infos
           process:
             - name: opening
-              content: 10h -> 18h
+              content: 10am -> 6pm
             - name: plenaries
-              content: 18h -> 20h Amphitheatre AT8 (Atrium)
+              content: 6pm -> 8pm Amphitheatre AT8 (Atrium)
         mails:
           title: Notifications
           mail:
@@ -269,6 +379,8 @@ en:
                 - name: Le Shadok
                   adress: 25, presqu'ile André Malraux, 67100 Strasbourg
                   url: "http://www.shadok.strasbourg.eu/"
+                - name: UGC Ciné Cité
+                  adress: 25, route du Rhin, 67100, Strasbourg
         cts:
           title: Public transport
           list:
@@ -315,6 +427,19 @@ en:
               distance: "2.5"
               price: "1.6"
               url: "https://www.placedeshalles.com/infos-pratiques/parking"
+        airports:
+          title: Airports
+          text: Even if Strasbourg has its own international airport, it is accessible by 2 much larger international airports.
+          list:
+            - name: Entzheim (SXB)
+              access: 10 minutes by train (TER) from Strasbourg station.
+              price: "2.6"
+            - name: Frankfurt-am-Main (FRA)
+              access: 2 hours by bus (private companies) or car from the Presqu'île Malraux (bus station, Place de l'Étoile).
+              price: "10-30"
+            - name: Basel-Mulhouse (EAP)
+              access: 1 hour by train (TER, TGV) or by car from Strasbourg station.
+              price: "10-20"
         accessibility:
           title: Accessibility and mobility
           text:
@@ -622,7 +747,7 @@ en:
           dirlo:
             title: Director of Publication
             text:
-              - Harmonie VO VIET ANH – President des RMLL 2018
+              - Harmonie VO VIET ANH – President of the RMLL 2018
           data:
             title: Information on the processing of personal data
             text:
