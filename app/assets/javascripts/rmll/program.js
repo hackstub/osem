@@ -1,5 +1,5 @@
-// var baseUrl = "/api/v1/conferences/rmll2018/";
-var baseUrl = "https://osem.aius.u-strasbg.fr/api/v1/conferences/rmll2018";
+var baseUrl = "/api/v1/conferences/rmll2018/";
+// var baseUrl = "https://osem.aius.u-strasbg.fr/api/v1/conferences/rmll2018";
 
 // ╭─╮┌─╴╭╮╷┌─╴┌─╮╶┬╴╭─╴
 // │╶╮├─╴│││├─╴├┬╯ │ │
@@ -8,7 +8,6 @@ var baseUrl = "https://osem.aius.u-strasbg.fr/api/v1/conferences/rmll2018";
 function formatJson(json, callbackBuilding) {
   // FIXME modify api to serve well formated informations
   json = json[0];
-  console.log(json);
   var data = {};
   var days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
   var roomsName = ['ATRIUM - AT8', 'ATRIUM - AT9', 'ESCARPE - Amphi Ortscheidt', 'ESCARPE - Amphi 29', 'PLATANE - A08', 'PLATANE - A09', 'PLATANE - A10', 'PLATANE - A11', 'PLATANE - A12', 'PLATANE - A13', 'PLATANE - B01', 'PLATANE - B02', 'PLATANE - B03', 'PLATANE - B04', 'PLATANE - B05', 'Médiathèque Malraux', 'Shadok', "Jardins de l'université", "Presqu'île Malraux", 'Salle des colonnes']
@@ -40,14 +39,17 @@ function formatJson(json, callbackBuilding) {
       var dateStr = ev.date + '';
       ev.dateStr = dateStr.substring(0, 2) + "h" + dateStr.substring(2);;
       ev.start = (date.getUTCHours() * 60 + date.getUTCMinutes()) - 10 * 60;
-      ev.room = roomsName[room.id]
+      ev.room = roomsName[i];
       var difficulty = json.difficulty_levels[ev.difficulty_level_id-1];
-      ev.difficulty = difficulty ? difficulty.title : "null";
+      ev.difficulty = difficulty ? difficulty.title.split("*")[lang] : "null";
+
       var track = json.event_types.find(function (eventObj) {
         if (eventObj.id === ev.event_type_id) return eventObj;
       });
       ev.length = track.length;
-      ev.type = track.title.split(" ")[0];
+      var type = track.title.split(" (")[0].split("*");
+      ev.type = type[0];
+      ev.typeName = type[lang];
       daypart.push(ev);
     }
   }
@@ -156,9 +158,9 @@ function buildTableArticle(ev, timeBetween) {
   hour.innerHTML = ev.dateStr;
   var duration = domElem('span');
   duration.innerHTML = ev.length + "'";
-  var like = domElem('span');
-  like.innerHTML = "<3";
-  appendChildren(top, [hour, duration, like]);
+  // var like = domElem('span');
+  // like.innerHTML = "<3";
+  appendChildren(top, [hour, duration]);
   article.appendChild(top);
 
   var middle = domElem('div', "content");
@@ -170,16 +172,16 @@ function buildTableArticle(ev, timeBetween) {
   speaker.innerHTML = ev.speaker_names;
   var abstract = domElem('div', 'abstract');
   abstract.innerHTML = ev.abstract_html;
-  var bio = domElem('div', 'bio');
-  bio.innerHTML = 'bio';
-  appendChildren(middle, [title, subtitle, speaker, abstract, bio]);
+  // var bio = domElem('div', 'bio');
+  // bio.innerHTML = 'bio';
+  appendChildren(middle, [title, subtitle, speaker, abstract]);
   article.appendChild(middle);
 
   var bottom = domElem('aside', 'bottom');
   var room = domElem('span', 'room');
   room.innerHTML = ev.room;
   var type = domElem('span');
-  type.innerHTML = ev.type;
+  type.innerHTML = ev.typeName;
   var lvl = domElem('span', 'lvl');
   lvl.innerHTML = ev.difficulty;
   appendChildren(bottom, [room, type, lvl]);
@@ -202,7 +204,7 @@ function initTableListeners () {
       function toggleCard () {
         article.removeEventListener("mouseup", toggleCard);
         if (!isCard && Date.now() - counter > 250) {
-          return
+          return;
         }
         if (isCard) {
           document.getElementById("bg-card").style.display = "none";
@@ -226,6 +228,17 @@ function initTableListeners () {
   }
 
   // Table Selectors Listeners
+  function hideEmptyTracks(tracks) {
+    for (var i = tracks.length - 1; i >= 0; i--) {
+      var evs = tracks[i].getElementsByClassName("event");
+      if (allHide(evs)) {
+        tracks[i].classList.add("hide");
+      } else {
+        tracks[i].classList.remove("hide");
+      }
+    }
+  }
+
   var optionsDisplay = document.querySelectorAll("#selectors ul a");
   for (var i = 0; i < optionsDisplay.length; i++) {
     optionsDisplay[i].addEventListener("click", function (e) {
@@ -244,21 +257,19 @@ function initTableListeners () {
       } else {
         // display only events that match the selector
         for (var i = events.length - 1; i >= 0; i--) {
-          if (events[i].dataset[prop[0]] == prop[1]) {
+          var isToShow = events[i].dataset[prop[0]] == prop[1];
+          if (e.target.id == "type-other") {
+            var other = ["debate", "chatroom", "arpentage littéraire"];
+            isToShow = other.indexOf(events[i].dataset[prop[0]]) > -1;
+          }
+
+          if (isToShow) {
             events[i].classList.remove("hide");
           } else {
             events[i].classList.add("hide");
           }
         }
-        // hide empty tracks rows
-        for (var i = tracks.length - 1; i >= 0; i--) {
-          var evs = tracks[i].getElementsByClassName("event");
-          if (allHide(evs)) {
-            tracks[i].classList.add("hide");
-          } else {
-            tracks[i].classList.remove("hide");
-          }
-        }
+        hideEmptyTracks(tracks);
       }
       var container = document.querySelector(".overflow");
       container.scrollLeft = 0;

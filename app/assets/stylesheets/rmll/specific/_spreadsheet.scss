@@ -83,17 +83,38 @@
 
     .abstract, .bio {
       margin-top: 1rem;
-      line-height: 1.15rem;
+      line-height: 1.2rem;
+
+      h1, h2, h3, h4, h5, h6 {
+        margin: 1rem 0 0.5rem 0;
+        font-size: 1.1rem;
+        font-weight: 600;
+      }
 
       p {
         margin-bottom: 0.5rem;
       }
+
+      li {
+        &::before {
+          content: "- ";
+        }
+        p {
+          display: inline;
+        }
+      }
+      ul {
+        margin-bottom: 0.5rem;
+      }
+
       strong, b {
         font-weight: bold;
       }
+
       em, i {
         font-style: italic;
       }
+
       img {
         display: none;
       }
@@ -310,6 +331,9 @@
           span:nth-child(2) {
             padding-left: 0.75rem;
           }
+          & :last-child {
+            margin-left: 0;
+          }
         }
 
         &.bottom {
@@ -394,13 +418,13 @@
   [data-type="chatroom"] {
     background-color: $pink;
   }
-  [data-type="debates"] {
+  [data-type="debate"] {
     background-color: lighten($red, 25%);
   }
   [data-type="creation"] {
     background-color: $cyan;
   }
-  [data-type="other"] {
+  [data-type="other"], [data-type="arpentage littéraire"] {
     background-color: lighten($blue, 25%);
   }
   [data-type="night"] {

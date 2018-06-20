@@ -1,13 +1,18 @@
 = content_for :head do
   = stylesheet_link_tag "rmll/specific/_spreadsheet"
 = content_for :script do
+  - langIndex = ["en", "fr"].index("#{I18n.locale}")
   = javascript_include_tag "rmll/program.js"
   :javascript
-    var options = new Menubar(document.getElementById("selectors"));
-    options.init();
-    var daySelection = new Menubar(document.getElementById("daySelection"));
-    daySelection.init();
-    window.onload = readJSONFile(baseUrl, formatJson, buildTable);
+    var lang = parseInt("#{ langIndex }");
+    window.onload = function () {
+      initMenuBar();
+      var options = new Menubar(document.getElementById("selectors"));
+      options.init();
+      var daySelection = new Menubar(document.getElementById("daySelection"));
+      daySelection.init();
+      readJSONFile(baseUrl, formatJson, buildTable);
+    }
 
 
 %main
@@ -31,15 +36,15 @@
               %li{ role:"none" }
                 %a{ role:"menuitem", tabindex:-1, id:"type-workshop" }
                   = t("types.workshops")
-              %li{ role:"none" }
-                %a{ role:"menuitem", tabindex:-1, id:"type-chatroom" }
-                  = t("types.chatrooms")
-              %li{ role:"none" }
-                %a{ role:"menuitem", tabindex:-1, id:"type-debates" }
-                  = t("types.debates")
-              %li{ role:"none" }
-                %a{ role:"menuitem", tabindex:-1, id:"type-creation" }
-                  = t("types.debates")
+              -# %li{ role:"none" }
+              -#   %a{ role:"menuitem", tabindex:-1, id:"type-chatroom" }
+              -#     = t("types.chatrooms")
+              -# %li{ role:"none" }
+              -#   %a{ role:"menuitem", tabindex:-1, id:"type-debate" }
+              -#     = t("types.debates")
+              -# %li{ role:"none" }
+              -#   %a{ role:"menuitem", tabindex:-1, id:"type-creation" }
+              -#     = t("types.creations")
               %li{ role:"none" }
                 %a{ role:"menuitem", tabindex:-1, id:"type-other" }
                   = t("types.others")

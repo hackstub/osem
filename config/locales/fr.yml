@@ -27,21 +27,21 @@ fr:
     wednesday_html: Me<span>rcredi</span>
   types:
     name: Type
-    all: Tous types
+    all: Tout
     conferences: Conférences
     workshops: Ateliers
-    chatrooms: Chatrooms
+    chatrooms: Salons de discussion
     debates: Débats
     others: Autres
   lvls:
     name: Niveau
-    all: Tout niveau
-    easy: Néophyte
-    medium: Confirmé
+    all: Tout
+    easy: Débutant
+    medium: Initié
     hard: Expert
   languages:
     name: Langue
-    all: Toute langue
+    all: Tout
     fr: Français
     en: Anglais
   menu:
@@ -96,7 +96,7 @@ fr:
       abstract_html: Le Village du Libre est un groupe d'associations qui tiennent des stands pour présenter leurs projets et actions au public, c'est un lieu idéal pour découvrir les différents logiciels libres et leurs conceptions, offrant une alternative aux grandes entreprises à but lucratif.
     days:
       - plenary:
-          title: Open bar de données et nuages magiques, l'Éducation sous contrat
+          title: Plénière - Open bar de données et nuages magiques, l'Éducation sous contrat
           speakers: Speakers - To be announced
           abstract_html: Le grand marché de l'éducation et ses ressorts. Comment les multinationales du numérique conquièrent-elles leurs positions, quels avantages proposent-elles et à quels prix ? Du côté du Libre, d'autres modèles se dessinent et se construisent dans le monde.
         nights:
@@ -113,7 +113,7 @@ fr:
           end: 18h00
           abstract_html: Le Village du Libre est un groupe d'associations qui tiennent des stands pour présenter leurs projets et actions au public, c'est un lieu idéal pour découvrir les différents logiciels libres et leurs conceptions, offrant une alternative aux grandes entreprises à but lucratif.
       - plenary:
-          title: Enseignement supérieur, recherche et Logiciel Libre
+          title: Plénière - Enseignement supérieur, recherche et Logiciel Libre
           speakers: Speakers - To be announced
           abstract_html: "Penser les politiques publiques numériques par le biais de l'Université et des Grandes Écoles : quelles pédagogies et quels investissements ? Enjeux et voies de transition pour les communs numériques."
         nights:
@@ -123,7 +123,7 @@ fr:
             place: Place St Etienne - FEC
             abstract_html: Abstract - to be announced
       - plenary:
-          title: Enjeux pédagogiques des interfaces
+          title: Plénière - Enjeux pédagogiques des interfaces
           speakers: Speakers - To be announced
           abstract_html: "Une étude de l'éducation aux médias numériques par la question des interfaces, physiques et logicielles : de l'ordinateur fixe aux applications smartphones, la variété des approches est vaste selon l'intérêts des acteurs. Quels modèles émancipateurs opposer à ceux des multinationales dont l'un des objectifs majeurs est celui de la reproduction de leur clientèle ?"
         nights:
@@ -140,7 +140,7 @@ fr:
                 url: https://sinaive.bandcamp.com/album/poptones
               - "23h : The BitchHicker - Karl Ferdinand"
       - plenary:
-          title: Mooc, revues, ressources... Édition numérique et licences Libres
+          title: Plénière - Mooc, revues, ressources... Édition numérique et licences Libres
           speakers: Speakers -To be announced
           abstract_html: La publication en ligne de cours, d'articles scientifiques ou de documents pédagogiques progresse au sein des établissements d'enseignement supérieur, en parallèle du secteur de l'édition conventionnelle. Vers quels modèles se tourner pour des publications cohérentes avec les usages de la recherche à l'heure numérique ?
         nights:
@@ -150,7 +150,7 @@ fr:
             end: 00h00
             abstract_html: Le Fabcafé du Shadok organise chaque mois une soirée jeux-vidéos. L'occasion des RMLL ne pouvait pas être manquée pour y faire des surprises...
       - plenary:
-          title: "Accès aux nouvelles technologies : émancipation ou exploitation ?"
+          title: "Plénière - Accès aux nouvelles technologies : émancipation ou exploitation ?"
           speakers: Speakers - To be announced
           abstract_html: L'informatique et internet continuent de se répandre dans le monde, y compris dans les zones les plus pauvres, notamment grâce à la démocratisation des smartphones. Devrait-on y voir une occasion nouvelle d'émancipation des peuples ?
         nights:

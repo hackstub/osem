@@ -1,6 +1,6 @@
 var menubar;
 var phone;
-window.onload = function () {
+function initMenuBar () {
   menubar = new Menubar(document.getElementById("main-menu"));
   if (window.innerWidth < 730) setupPhoneMenu();
   else menubar.init();
@@ -9,6 +9,7 @@ window.onload = function () {
     else if (window.innerWidth >= 730 && phone) removePhoneMenu();
   }
 }
+window.onload = initMenuBar;
 
 function setupPhoneMenu() {
   var link = document.createElement("a");
