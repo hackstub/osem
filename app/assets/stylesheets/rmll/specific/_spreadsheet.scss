@@ -364,6 +364,10 @@
           max-width: 40rem;
         }
 
+        aside.bottom {
+          flex: 0 0 4rem;
+        }
+
         .content {
           height: calc(100% - 7rem);
           overflow: auto;

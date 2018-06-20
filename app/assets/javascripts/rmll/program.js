@@ -1,6 +1,14 @@
-function formatJson(json) {
+// var baseUrl = "/api/v1/conferences/rmll2018/";
+var baseUrl = "https://osem.aius.u-strasbg.fr/api/v1/conferences/rmll2018";
+
+// ╭─╮┌─╴╭╮╷┌─╴┌─╮╶┬╴╭─╴
+// │╶╮├─╴│││├─╴├┬╯ │ │
+// ╰─╯╰─╴╵╰╯╰─╴╵ ╰╶┴╴╰─╴
+
+function formatJson(json, callbackBuilding) {
   // FIXME modify api to serve well formated informations
   json = json[0];
+  console.log(json);
   var data = {};
   var days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
   var roomsName = ['ATRIUM - AT8', 'ATRIUM - AT9', 'ESCARPE - Amphi Ortscheidt', 'ESCARPE - Amphi 29', 'PLATANE - A08', 'PLATANE - A09', 'PLATANE - A10', 'PLATANE - A11', 'PLATANE - A12', 'PLATANE - A13', 'PLATANE - B01', 'PLATANE - B02', 'PLATANE - B03', 'PLATANE - B04', 'PLATANE - B05', 'Médiathèque Malraux', 'Shadok', "Jardins de l'université", "Presqu'île Malraux", 'Salle des colonnes']
@@ -59,12 +67,44 @@ function formatJson(json) {
         }
 
       }
-      buildTable(data[day], day);
+      callbackBuilding(data[day], day);
     }
   }
 }
 
-// TABLE SPECIFIC
+function allHide(htmlColl) {
+  for (var i = htmlColl.length - 1; i >= 0; i--) {
+    if (!htmlColl[i].classList.contains("hide")) return false;
+  }
+  return true;
+}
+
+function initCommonListeners() {
+
+  // Day selection Listeners
+  var daysbutton = document.querySelectorAll("#daySelection a");
+  for (var i = 0; i < daysbutton.length; i++) {
+    daysbutton[i].addEventListener("click", function (e) {
+      var day = e.target.nodeName == "SPAN" ? e.target.parentElement.dataset.toggle : e.target.dataset.toggle;
+      var overflowed = document.querySelector(".overflow");
+      overflowed.scrollTop = 0;
+      overflowed.scrollLeft = 0;
+      document.querySelector("tbody:not(.hide)").classList.add("hide");
+      document.querySelector(".starred-day:not(.hide)").classList.add("hide");
+      document.querySelector("tbody[data-day='" + day + "']").classList.remove("hide");
+      document.querySelector(".starred-day[data-day='" + day + "']").classList.remove("hide");
+
+      document.querySelector(".selected").classList.remove("selected");
+      e.target.classList.add("selected")
+
+    });
+  }
+}
+
+// ╶┬╴╭─┐┌─╮╷  ┌─╴
+//  │ ├─┤│╶┤│  ├─╴
+//  ╵ ╵ ╵└─╯╰─╴╰─╴
+
 function buildTable(data, day) {
   var tbody = document.querySelector("table");
   var doc = domElem('tbody', '', {"data-day": day});;
@@ -84,7 +124,7 @@ function buildTable(data, day) {
       var elems = document.createElement("td");
       for (var j = 0; j < data[i].events.length; j++) {
         var timeBetween = j === 0 ? data[i].events[j].start : data[i].events[j].start - (data[i].events[j-1].start + data[i].events[j-1].length)
-        elems.appendChild(buildArticle(data[i].events[j], timeBetween))
+        elems.appendChild(buildTableArticle(data[i].events[j], timeBetween))
       }
       tr.appendChild(elems);
 
@@ -93,41 +133,11 @@ function buildTable(data, day) {
   }
   tbody.appendChild(doc);
 
-  var events = document.querySelectorAll("table .event");
-  function findArticle (el, type) {
-    while ((el = el.parentElement) && el.nodeName != type);
-    return el;
-  }
-  for (var i = 0; i < events.length; i++) {
-    events[i].addEventListener("mousedown", function (e) {
-      function toggleCard () {
-        article.removeEventListener("mouseup", toggleCard);
-        if (!isCard && Date.now() - counter > 250) {
-          return
-        }
-        if (isCard) {
-          document.getElementById("bg-card").style.display = "none";
-          article.classList.remove("card");
-          article.parentElement.classList.remove("card");
-          document.querySelector(".overflow").classList.add("dragscroll");
-          dragscroll.reset();
-        } else {
-          document.getElementById("bg-card").style.display = "block";
-          article.classList.add("card");
-          article.parentElement.classList.add("card");
-          document.querySelector(".overflow").classList.remove("dragscroll");
-          dragscroll.reset();
-        }
-      }
-      var article = e.target.nodeName == 'ARTICLE' ? e.target : findArticle(e.target, 'ARTICLE');
-      var isCard = article.classList.contains("card");
-      var counter = Date.now();
-      article.addEventListener("mouseup", toggleCard);
-    });
-  }
+  initCommonListeners();
+  initTableListeners();
 }
 
-function buildArticle(ev, timeBetween) {
+function buildTableArticle(ev, timeBetween) {
   var container = domElem('div', 'event-container');
   container.style.marginLeft = timeBetween * 5 + "px";
   container.style.width = ev.length * 5 + "px";
@@ -178,80 +188,90 @@ function buildArticle(ev, timeBetween) {
   return container;
 }
 
-var baseUrl = "/api/v1/conferences/rmll2018/";
-// var baseUrl = "https://osem.aius.u-strasbg.fr/api/v1/conferences/rmll2018";
-readJSONFile(baseUrl, formatJson);
+function initTableListeners () {
 
-var daysbutton = document.querySelectorAll("#daySelection a");
-for (var i = 0; i < daysbutton.length; i++) {
-  daysbutton[i].addEventListener("click", function (e) {
-    var day = e.target.nodeName == "SPAN" ? e.target.parentElement.dataset.toggle : e.target.dataset.toggle;
-    var overflowed = document.querySelector(".overflow");
-    overflowed.scrollTop = 0;
-    overflowed.scrollLeft = 0;
-    document.querySelector("tbody:not(.hide)").classList.add("hide");
-    document.querySelector(".starred-day:not(.hide)").classList.add("hide");
-    document.querySelector("tbody[data-day='" + day + "']").classList.remove("hide");
-    document.querySelector(".starred-day[data-day='" + day + "']").classList.remove("hide");
-
-    document.querySelector(".selected").classList.remove("selected");
-    e.target.classList.add("selected")
-
-  });
-}
-
-document.getElementById('bg-card').onclick = function (e) {
-  document.getElementById('bg-card').style.display = "none";
-  document.querySelector('.event.card').classList.remove("card");
-  document.querySelector('.event-container.card').classList.remove("card");
-  document.querySelector('.dragscroll').classList.add("overflow");
-}
-
-
-function allHide(htmlColl) {
-  for (var i = htmlColl.length - 1; i >= 0; i--) {
-    if (!htmlColl[i].classList.contains("hide")) return false;
+  function findArticle (el, type) {
+    while ((el = el.parentElement) && el.nodeName != type);
+    return el;
   }
-  return true;
-}
 
-// Display Selection
-var optionsDisplay = document.querySelectorAll("#selectors ul a");
-for (var i = 0; i < optionsDisplay.length; i++) {
-  optionsDisplay[i].addEventListener("click", function (e) {
-    var events = document.querySelectorAll("table .event");
-    var tracks = document.querySelectorAll("tbody tr");
-    var prop = e.target.id.split("-");
-
-    if (prop[1] == "all") {
-      // display everything
-      for (var i = events.length - 1; i >= 0; i--) {
-        events[i].classList.remove("hide");
-      }
-      for (var i = tracks.length - 1; i >= 0; i--) {
-        tracks[i].classList.remove("hide");
-      }
-    } else {
-      // display only events that match the selector
-      for (var i = events.length - 1; i >= 0; i--) {
-        if (events[i].dataset[prop[0]] == prop[1]) {
-          events[i].classList.remove("hide");
+  // event onclick card display
+  var events = document.querySelectorAll("table .event");
+  for (var i = 0; i < events.length; i++) {
+    events[i].addEventListener("mousedown", function (e) {
+      function toggleCard () {
+        article.removeEventListener("mouseup", toggleCard);
+        if (!isCard && Date.now() - counter > 250) {
+          return
+        }
+        if (isCard) {
+          document.getElementById("bg-card").style.display = "none";
+          article.classList.remove("card");
+          article.parentElement.classList.remove("card");
+          document.querySelector(".overflow").classList.add("dragscroll");
+          dragscroll.reset();
         } else {
-          events[i].classList.add("hide");
+          document.getElementById("bg-card").style.display = "block";
+          article.classList.add("card");
+          article.parentElement.classList.add("card");
+          document.querySelector(".overflow").classList.remove("dragscroll");
+          dragscroll.reset();
         }
       }
-      // hide empty tracks rows
-      for (var i = tracks.length - 1; i >= 0; i--) {
-        var evs = tracks[i].getElementsByClassName("event");
-        if (allHide(evs)) {
-          tracks[i].classList.add("hide");
-        } else {
+      var article = e.target.nodeName == 'ARTICLE' ? e.target : findArticle(e.target, 'ARTICLE');
+      var isCard = article.classList.contains("card");
+      var counter = Date.now();
+      article.addEventListener("mouseup", toggleCard);
+    });
+  }
+
+  // Table Selectors Listeners
+  var optionsDisplay = document.querySelectorAll("#selectors ul a");
+  for (var i = 0; i < optionsDisplay.length; i++) {
+    optionsDisplay[i].addEventListener("click", function (e) {
+      var events = document.querySelectorAll("table .event");
+      var tracks = document.querySelectorAll("tbody tr");
+      var prop = e.target.id.split("-");
+
+      if (prop[1] == "all") {
+        // display everything
+        for (var i = events.length - 1; i >= 0; i--) {
+          events[i].classList.remove("hide");
+        }
+        for (var i = tracks.length - 1; i >= 0; i--) {
           tracks[i].classList.remove("hide");
         }
+      } else {
+        // display only events that match the selector
+        for (var i = events.length - 1; i >= 0; i--) {
+          if (events[i].dataset[prop[0]] == prop[1]) {
+            events[i].classList.remove("hide");
+          } else {
+            events[i].classList.add("hide");
+          }
+        }
+        // hide empty tracks rows
+        for (var i = tracks.length - 1; i >= 0; i--) {
+          var evs = tracks[i].getElementsByClassName("event");
+          if (allHide(evs)) {
+            tracks[i].classList.add("hide");
+          } else {
+            tracks[i].classList.remove("hide");
+          }
+        }
       }
-    }
-    var container = document.querySelector(".overflow");
-    container.scrollLeft = 0;
-    container.scrollTop = document.querySelector(".starred:not(.hide)").getBoundingClientRect().height + 2;
-  });
+      var container = document.querySelector(".overflow");
+      container.scrollLeft = 0;
+      container.scrollTop = document.querySelector(".starred:not(.hide)").getBoundingClientRect().height + 2;
+    });
+  }
+
+  // Grey card zone listeners
+  document.getElementById('bg-card').onclick = function (e) {
+    document.getElementById('bg-card').style.display = "none";
+    document.querySelector('.event.card').classList.remove("card");
+    document.querySelector('.event-container.card').classList.remove("card");
+    document.querySelector('.overflow').classList.add("dragscroll");
+    dragscroll.reset();
+  }
 }
