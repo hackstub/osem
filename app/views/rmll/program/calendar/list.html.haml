@@ -1,0 +1,155 @@
+= content_for :head do
+  = stylesheet_link_tag "rmll/specific/list"
+= content_for :script do
+  - langIndex = ["en", "fr"].index("#{I18n.locale}")
+  = javascript_include_tag "rmll/program.js"
+  :javascript
+    var lang = parseInt("#{ langIndex }");
+    window.onload = function () {
+      initMenuBar();
+      var options = new Menubar(document.getElementById("selectors"));
+      options.init();
+      // var daySelection = new Menubar(document.getElementById("daySelection"));
+      // daySelection.init();
+      // readJSONFile(baseUrl, formatJson, buildList);
+    }
+
+%main
+  %section.window
+    - add_bar("Slides", "/program/calendar-list.odp")
+    .container.list
+      %nav
+        %ul.options#selectors{ role:"menubar", "aria-label":"Options d'affichage" }
+          %li{ role:"none" }
+            = link_to t("menu.table"), rmll_path(:heading => "program", :page => "calendar", :sub => "table"), { role:"menuitem", tabindex:0, class:"not-item", "aria-label":"Afficher sous forme de tableur" }
+          %li{ role:"none" }
+            %a{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false", tabindex:-1, "aria-label":"Selectionner par type" }
+              = t("types.name")
+            %ul{ role:"menu" }
+              %li{ role:"none" }
+                %a{ role:"menuitem", tabindex:-1, id:"type-all" }
+                  = t("types.all")
+              %li{ role:"none" }
+                %a{ role:"menuitem", tabindex:-1, id:"type-conference" }
+                  = t("types.conferences")
+              %li{ role:"none" }
+                %a{ role:"menuitem", tabindex:-1, id:"type-workshop" }
+                  = t("types.workshops")
+              %li{ role:"none" }
+                %a{ role:"menuitem", tabindex:-1, id:"type-other" }
+                  = t("types.others")
+          %li{ role:"none" }
+            %a{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false", tabindex:-1 }
+              = t("lvls.name")
+            %ul{ role:"menu", "aria-label":"Selectionner par niveau" }
+              %li{ role:"none" }
+                %a{ role:"menuitem", tabindex:-1, id:"level-all" }
+                  = t("lvls.all")
+              %li{ role:"none" }
+                %a{ role:"menuitem", tabindex:-1, id:"level-easy" }
+                  = t("lvls.easy")
+              %li{ role:"none" }
+                %a{ role:"menuitem", tabindex:-1, id:"level-medium" }
+                  = t("lvls.medium")
+              %li{ role:"none" }
+                %a{ role:"menuitem", tabindex:-1, id:"level-hard" }
+                  = t("lvls.hard")
+          -# %li{ role:"none" }
+          -#   %a{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false", tabindex:-1 }
+          -#     = t("languages.name")
+          -#   %ul{ role:"menu", "aria-label":"Selectionner par langue" }
+          -#     %li{ role:"none" }
+          -#       %a{ role:"menuitem", tabindex:-1, id:"lang-all" }
+          -#         = t("languages.all")
+          -#     %li{ role:"none" }
+          -#       %a{ role:"menuitem", tabindex:-1, id:"lang-fr" }
+          -#         = t("languages.fr")
+          -#     %li{ role:"none" }
+          -#       %a{ role:"menuitem", tabindex:-1, id:"lang-en" }
+          -#         = t("languages.en")
+      %section
+        %nav#days
+          %h2= t("common.days")
+          %ul{ role:"menubar", "aria-label":"Menu de selection du jour" }
+            %li{ role:"none" }
+              %a{ role:"menuitem", href:"#saturday" }
+                = t("common.saturday_html") + " 7"
+            %li{ role:"none" }
+              %a.not-item{ role:"menuitem", href:"#sunday" }
+                = t("common.sunday_html") + " 8"
+            %li{ role:"none" }
+              %a.not-item{ role:"menuitem", href:"#monday" }
+                = t("common.monday_html") + " 9"
+            %li{ role:"none" }
+              %a.not-item{ role:"menuitem", href:"#tuesday" }
+                = t("common.tuesday_html") + " 10"
+            %li{ role:"none" }
+              %a.not-item{ role:"menuitem", href:"#wednesday" }
+                = t("common.wednesday_html") + " 11"
+
+        - days = ["saturday", "sunday", "monday", "tuesday", "wednesday"]
+        - hk = t("calendar.hackerspace")
+
+        %section.overflow
+          %h2= t("common.events")
+          - (0..4).each do |i|
+            %section.day{ id:"#{days[i]}", "data-day":"#{days[i]}" }
+              %article
+                %h3= t("common.#{days[i]}") + " #{i + 7}"
+
+            %section.starred{ "data-day":"#{days[i]}" }
+              - villageBase = t("calendar.village")
+              - data = t("calendar.days")[i]
+              - plenary = data[:plenary]
+
+              %article.event{ "data-type":"plenary" }
+                %aside.top
+                  %mark 18h00
+                  %mark 19h30
+                %section
+                  %h4= plenary[:title]
+                  %p= plenary[:speakers]
+                  .abstract
+                    = plenary[:abstract_html]
+                %aside.bottom
+                  %span ATRIUM - AT8
+
+              - unless data[:nights].nil?
+                - data[:nights].each do |night|
+                  %article.event{ "data-type":"night" }
+                    %aside.top
+                      %mark= night[:start]
+                      %mark= night[:end]
+                    .content
+                      %h4= night[:title]
+                      %p= night[:speakers]
+                      .abstract
+                        - add_text(night[:abstract_html])
+                    %aside.bottom
+                      %span= night[:place]
+
+              %article.event{ "data-type":"hackerspace" }
+                %aside.top
+                  %mark 11h00
+                  %mark 2h00
+                .content
+                  %h4= hk[:title]
+                  .abstract
+                    = hk[:abstract_html]
+                %aside.bottom
+                  %span= hk[:place]
+
+              %article.event{ "data-type":"village" }
+                - village = data[:village]
+                - if village.nil?
+                  - village = villageBase
+                %aside.top
+                  %mark= village[:start]
+                  %mark= village[:end]
+                .content
+                  %h4= village[:title]
+                  .abstract
+                    = village[:abstract_html]
+                %aside.bottom
+                  %span= village[:place]
+            %section.agenda{ "data-day":"#{days[i]}" }

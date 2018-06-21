@@ -1,0 +1,75 @@
+@import "../var";
+
+section.window {
+  background-color: $color-white;
+}
+
+.list {
+  color: $color-black;
+
+  & > section {
+    font-family: $font-sans;
+    background-color: $color-white;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    & > section {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+nav#days {
+  min-width: 8vw;
+  width: 20vw;
+  height: 100%;
+  border-right: $border;
+
+  ul {
+    height: 100%;
+  }
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 65%;
+    height: 15%;
+    margin: auto;
+    margin-top: 5%;
+    border: $border;
+    background-color: $pink;
+  }
+
+  a {
+    color: $color-black;
+    font-size: 1.5rem;
+    font-weight: 600;
+
+    @include tablet {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+section.overflow > section {
+  h2 {
+    font-family: $font-mono;
+    height: 2rem;
+    line-height: 1.9rem;
+    border-bottom: $border;
+    text-align: center;
+    @include phone {
+      display: none;
+    }
+  }
+
+  article {
+    width: 90%;
+    max-width: 65vw;
+    min-height: 70vh;
+    margin: auto;
+    margin-top: 3rem;
+    background-color: yellow;
+  }
+}
