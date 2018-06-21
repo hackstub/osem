@@ -93,7 +93,7 @@ fr:
       place: Campus central - ESCARPE
       start: 12h00
       end: 18h00
-      abstract_html: Abstract - To be announced
+      abstract_html: Le Village du Libre est un groupe d'associations qui tiennent des stands pour présenter leurs projets et actions au public, c'est un lieu idéal pour découvrir les différents logiciels libres et leurs conceptions, offrant une alternative aux grandes entreprises à but lucratif.
     days:
       - plenary:
           title: Open bar de données et nuages magiques, l'Éducation sous contrat
@@ -111,7 +111,7 @@ fr:
           place: Presqu'île Malraux / Campus Central - ESCARPE
           start: 10h00
           end: 18h00
-          abstract_html: Abstract - To be announced
+          abstract_html: Le Village du Libre est un groupe d'associations qui tiennent des stands pour présenter leurs projets et actions au public, c'est un lieu idéal pour découvrir les différents logiciels libres et leurs conceptions, offrant une alternative aux grandes entreprises à but lucratif.
       - plenary:
           title: Enseignement supérieur, recherche et Logiciel Libre
           speakers: Speakers - To be announced
