@@ -131,14 +131,7 @@ en:
             place: Shadok
             start: 8pm
             end: 12pm
-            abstract_html:
-              - "8pm : Giaso - APO33"
-                url: https://vimeo.com/78420038
-              - "9pm : Cyberia - Simon Chanson"
-                url: https://exode.me/videos/watch/7e5f59d0-238c-4259-94a7-3d606adf8eef
-              - "10pm : Sinaïve - Sinaïve"
-                url: https://sinaive.bandcamp.com/album/poptones
-              - "11pm : The BitchHicker - Karl Ferdinand"
+            abstract_html: "<ul><li>20h : <a href='https://vimeo.com/78420038' target='_blank'>Giaso</a> - APO33</li> <li>21h : <a href='https://exode.me/videos/watch/7e5f59d0-238c-4259-94a7-3d606adf8eef' target='_blank'>Cyberia</a> - Simon Chanson</li> <li>22h : <a href='https://sinaive.bandcamp.com/album/poptones' target='_blank'>Sinaïve</a> - Sinaïve</li> <li>23h : The BitchHicker - Karl Ferdinand</li></ul>"
       - plenary:
           title: Mooc, reviews, resources... Digital publishing and free licenses
           speakers: Speakers -To be announced

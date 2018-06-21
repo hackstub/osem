@@ -36,15 +36,6 @@
               %li{ role:"none" }
                 %a{ role:"menuitem", tabindex:-1, id:"type-workshop" }
                   = t("types.workshops")
-              -# %li{ role:"none" }
-              -#   %a{ role:"menuitem", tabindex:-1, id:"type-chatroom" }
-              -#     = t("types.chatrooms")
-              -# %li{ role:"none" }
-              -#   %a{ role:"menuitem", tabindex:-1, id:"type-debate" }
-              -#     = t("types.debates")
-              -# %li{ role:"none" }
-              -#   %a{ role:"menuitem", tabindex:-1, id:"type-creation" }
-              -#     = t("types.creations")
               %li{ role:"none" }
                 %a{ role:"menuitem", tabindex:-1, id:"type-other" }
                   = t("types.others")
@@ -126,7 +117,7 @@
                         %h2= night[:title]
                         %p= night[:speakers]
                         .abstract
-                          - add_text(night[:abstract_html])
+                          = night[:abstract_html].html_safe
                       %aside.bottom
                         %span= night[:place]
               .row-bottom

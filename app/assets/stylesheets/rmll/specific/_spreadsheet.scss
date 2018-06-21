@@ -21,9 +21,52 @@
     cursor: zoom-out;
   }
 
+  #daySelection {
+    display: flex;
+    height: 2rem;
+    line-height: 1.9rem;
+    background-color: black;
+    font-family: $font-sans;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-bottom: $border;
+
+    a {
+      color: $color-white;
+      padding: 0 1rem;
+      display: inline-block;
+      width: 100%;
+      height: calc(2rem - 2px);
+      text-decoration: none;
+
+      &.selected {
+        background-color: $color-main;
+        color: $color-white;
+      }
+
+      &:focus, &:hover {
+        background-color: $orange;
+        color: $color-black;
+      }
+      @include phone {
+        span {
+          display: none;
+        }
+      }
+    }
+
+    li {
+      width: 100%;
+      &:not(:last-child) {
+        border-right: 2px solid $color-white;
+      }
+    }
+  }
+
   & > article {
     height: calc(100% - 4rem);
     width: 100%;
+    cursor: move;
   }
 
   section {
@@ -173,8 +216,6 @@
     min-width: 2850px;
     background-color: lighten($color-main, 30%);
     padding: 0 1.5rem 1.5rem 0;
-
-    cursor: move;
 
     tbody, tfoot, thead, tr, th, td {
       display: block;

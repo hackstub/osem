@@ -19,6 +19,7 @@ fr:
     confs: conférences
     workshops: ateliers
     exhibitions: salons
+    days: Jours
     events: Événements
     saturday_html: Sa<span>medi</span>
     sunday_html: Di<span>manche</span>
@@ -131,14 +132,7 @@ fr:
             place: Shadok
             start: 20h00
             end: 00h00
-            abstract_html:
-              - "20h : Giaso - APO33"
-                url: https://vimeo.com/78420038
-              - "21h : Cyberia - Simon Chanson"
-                url: https://exode.me/videos/watch/7e5f59d0-238c-4259-94a7-3d606adf8eef
-              - "22h : Sinaïve - Sinaïve"
-                url: https://sinaive.bandcamp.com/album/poptones
-              - "23h : The BitchHicker - Karl Ferdinand"
+            abstract_html: "<ul><li>20h : <a href='https://vimeo.com/78420038' target='_blank'>Giaso</a> - APO33</li> <li>21h : <a href='https://exode.me/videos/watch/7e5f59d0-238c-4259-94a7-3d606adf8eef' target='_blank'>Cyberia</a> - Simon Chanson</li> <li>22h : <a href='https://sinaive.bandcamp.com/album/poptones' target='_blank'>Sinaïve</a> - Sinaïve</li> <li>23h : The BitchHicker - Karl Ferdinand</li></ul>"
       - plenary:
           title: Plénière - Mooc, revues, ressources... Édition numérique et licences Libres
           speakers: Speakers -To be announced
