@@ -3,6 +3,7 @@ fr:
     submit: Valider
     close: Fermer
     opening: Ouverture
+    to: " à "
     all: Tout
     hour: heure
     july: juillet
@@ -19,7 +20,11 @@ fr:
     confs: conférences
     workshops: ateliers
     exhibitions: salons
+    night: Soirée
     days: Jours
+    hour: Heure
+    building: Bâtiment
+    duration: Durée
     events: Événements
     saturday_html: Sa<span>medi</span>
     sunday_html: Di<span>manche</span>

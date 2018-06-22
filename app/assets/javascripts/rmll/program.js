@@ -1,5 +1,5 @@
-var baseUrl = "/api/v1/conferences/rmll2018/";
-// var baseUrl = "https://osem.aius.u-strasbg.fr/api/v1/conferences/rmll2018";
+// var baseUrl = "/api/v1/conferences/rmll2018/";
+var baseUrl = "https://osem.aius.u-strasbg.fr/api/v1/conferences/rmll2018";
 
 // ╭─╮┌─╴╭╮╷┌─╴┌─╮╶┬╴╭─╴
 // │╶╮├─╴│││├─╴├┬╯ │ │
@@ -12,7 +12,7 @@ function formatJson(json, callbackBuilding) {
   var days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
   var roomsName = ['ATRIUM - AT8', 'ATRIUM - AT9', 'ESCARPE - Amphi Ortscheidt', 'ESCARPE - Amphi 29', 'PLATANE - A08', 'PLATANE - A09', 'PLATANE - A10', 'PLATANE - A11', 'PLATANE - A12', 'PLATANE - A13', 'PLATANE - B01', 'PLATANE - B02', 'PLATANE - B03', 'PLATANE - B04', 'PLATANE - B05', 'Médiathèque Malraux', 'Shadok', "Jardins de l'université", "Presqu'île Malraux", 'Salle des colonnes']
   for (var i = 0; i < days.length; i++) {
-    if (days[i] != "friday") data[days[i]] = [];
+    if (days[i] != "friday" && days[i] != "thursday") data[days[i]] = [];
   }
 
   var roomsLen = json.rooms.length;
@@ -70,6 +70,7 @@ function formatJson(json, callbackBuilding) {
 
       }
       callbackBuilding(data[day], day);
+      // return;
     }
   }
 }
@@ -285,4 +286,113 @@ function initTableListeners () {
     document.querySelector('.overflow').classList.add("dragscroll");
     dragscroll.reset();
   }
+}
+
+
+// ╷  ╶┬╴╭─╴╶┬╴
+// │   │ ╰─╮ │
+// ╰─╴╶┴╴╶─╯ ╵
+
+function buildList(data, day) {
+  // FIXME change it directly in formatJson()
+  data = data.filter(function(track) { return track != undefined });
+  var tracks = data.map(function(track) { return { name: track.track.name, id: day + "-track" + track.track.id, events: track.events } });
+
+  var dayDom = document.querySelector("[data-day=" + day + "]")
+  dayDom.querySelector(".pres nav").appendChild(buildNavList(tracks));
+
+  var agenda = document.createDocumentFragment();
+  for (var i = 0; i < tracks.length; i++) {
+    agenda.appendChild(buildTrackSection(tracks[i]));
+  }
+  dayDom.querySelector(".agenda").appendChild(agenda);
+
+}
+
+function buildNavList(links, day) {
+  var ul = document.createElement("ul");
+  for (var i = 0; i < links.length; i++) {
+    var li = document.createElement("li");
+    var a = domElement("a", {href: "#" + links[i].id});
+    a.innerHTML = links[i].name;
+    li.appendChild(a);
+    ul.appendChild(li);
+  }
+  return ul;
+}
+
+function buildTrackSection(track) {
+  var section = domElement("section", {class: "track", id: track.id });
+  var trackPres = domElement("article");
+  section.appendChild(trackPres);
+
+  var title = domElement("h4");
+  title.innerHTML = track.name;
+  var nav = domElement("nav");
+  appendChildren(trackPres, [title, nav]);
+
+  var ul = domElement("ul");
+  nav.appendChild(ul);
+
+
+  var events = track.events;
+  for (var i = 0; i < events.length; i++) {
+    events[i].id = track.id + "-" + i;
+    var li = document.createElement("li");
+    var a = domElement("a", {href: "#" + events[i].id});
+    a.innerHTML = events[i].title;
+    li.appendChild(a);
+    ul.appendChild(li);
+
+    section.appendChild(buildListArticle(track.events[i]));
+  }
+
+  return section;
+}
+
+function buildListArticle(ev) {
+  var article = domElement("article", {
+    class: "event",
+    id: ev.id,
+    "data-type": ev.type.toLowerCase(),
+    "data-level": ev.difficulty.toLowerCase(),
+  });
+
+  var title = document.createElement("h5");
+  title.innerHTML = ev.title;
+  var subtitle = document.createElement("h6");
+  subtitle.innerHTML = ev.subtitle;
+
+  var content = domElement("div", {class: "content"});
+  var speakers = domElement("p");
+  speakers.innerHTML = ev.speaker_names;
+  var abstract = domElement("div", {class: "abstract"});
+  abstract.innerHTML = ev.abstract_html;
+  appendChildren(content, [speakers, abstract]);
+
+  var infosKeys = [
+    ["Hour", "Type", "Building", "Duration", "Difficulty"],
+    ["Heure", "Type", "Batiment", "Durée", "Niveau"]
+  ];
+  var infosValues = [ev.dateStr.replace("h", ":"), ev.typeName, ev.room, ev.length + "'", ev.difficulty];
+  var infos = domElement("dl", {class: "infos"});
+  for (var i = 0; i < infosValues.length; i++) {
+    var container = document.createElement("div");
+    var desc = document.createElement("dt");
+    if (i == 0) {
+      var hour = document.createElement("time");
+      hour.innerHTML = infosKeys[lang][i];
+      desc.appendChild(hour);
+    } else {
+      desc.innerHTML = infosKeys[lang][i];
+    }
+    var val = document.createElement("dd");
+    val.innerHTML = infosValues[i];
+    appendChildren(container, [desc, val])
+    infos.appendChild(container);
+  }
+
+  appendChildren(article, [title, subtitle, content, infos]);
+
+  return article;
 }

@@ -85,6 +85,14 @@ function domElem(nodeName, cls, attr) {
   return elem;
 }
 
+function domElement(nodeName, attr) {
+  var elem = document.createElement(nodeName);
+  if (attr) {
+    for (var i in attr) elem.setAttribute(i, attr[i]);
+  }
+  return elem;
+}
+
 function appendChildren(elem, children) {
   var len = children.length;
   for (var child = 0; child < len; child++) {

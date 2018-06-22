@@ -9,9 +9,7 @@
       initMenuBar();
       var options = new Menubar(document.getElementById("selectors"));
       options.init();
-      // var daySelection = new Menubar(document.getElementById("daySelection"));
-      // daySelection.init();
-      // readJSONFile(baseUrl, formatJson, buildList);
+      readJSONFile(baseUrl, formatJson, buildList);
     }
 
 %main
@@ -67,8 +65,11 @@
           -#     %li{ role:"none" }
           -#       %a{ role:"menuitem", tabindex:-1, id:"lang-en" }
           -#         = t("languages.en")
-      %section
-        %nav#days
+      .container.overflow
+        - days = ["saturday", "sunday", "monday", "tuesday", "wednesday"]
+        - hk = t("calendar.hackerspace")
+
+        %nav.days
           %h2= t("common.days")
           %ul{ role:"menubar", "aria-label":"Menu de selection du jour" }
             %li{ role:"none" }
@@ -87,69 +88,111 @@
               %a.not-item{ role:"menuitem", href:"#wednesday" }
                 = t("common.wednesday_html") + " 11"
 
-        - days = ["saturday", "sunday", "monday", "tuesday", "wednesday"]
-        - hk = t("calendar.hackerspace")
-
-        %section.overflow
+        %section.days
           %h2= t("common.events")
+          - villageBase = t("calendar.village")
           - (0..4).each do |i|
-            %section.day{ id:"#{days[i]}", "data-day":"#{days[i]}" }
-              %article
-                %h3= t("common.#{days[i]}") + " #{i + 7}"
+            - data = t("calendar.days")[i]
+            %section.day{ "data-day":"#{days[i]}" }
+              %section.pres{ id:"#{days[i]}"  }
+                %article
+                  %h3= t("common.#{days[i]}") + " #{i + 7}"
+                  %nav
+                    %ul
+                      %li= link_to data[:plenary][:title], "##{days[i]}-plenary"
+                      - unless data[:nights].nil?
+                        - data[:nights].each_with_index do |night, index|
+                          %li= link_to data[:nights][index][:title], "##{days[i]}-night#{index}"
+                      %li= link_to villageBase[:title], "##{days[i]}-village"
+                      %li= link_to hk[:title], "##{days[i]}-hackerspace"
 
-            %section.starred{ "data-day":"#{days[i]}" }
-              - villageBase = t("calendar.village")
-              - data = t("calendar.days")[i]
-              - plenary = data[:plenary]
+              %section.starred
+                - plenary = data[:plenary]
+                %article.event{ "data-type":"plenary", id:"#{days[i]}-plenary" }
+                  %h5= plenary[:title]
+                  .content
+                    %p= plenary[:speakers]
+                    .abstract
+                      = plenary[:abstract_html]
+                  %dl.infos
+                    %div
+                      %dt= t("common.hour")
+                      %dd
+                        %time= "18:00"
+                        = t("common.to")
+                        %time= "19:00"
+                    %div
+                      %dt= t("types.name")
+                      %dd= t("common.plenary")
+                    %div
+                      %dt= t("common.building")
+                      %dd ATRIUM - AT8
 
-              %article.event{ "data-type":"plenary" }
-                %aside.top
-                  %mark 18h00
-                  %mark 19h30
-                %section
-                  %h4= plenary[:title]
-                  %p= plenary[:speakers]
-                  .abstract
-                    = plenary[:abstract_html]
-                %aside.bottom
-                  %span ATRIUM - AT8
 
-              - unless data[:nights].nil?
-                - data[:nights].each do |night|
-                  %article.event{ "data-type":"night" }
-                    %aside.top
-                      %mark= night[:start]
-                      %mark= night[:end]
-                    .content
-                      %h4= night[:title]
-                      %p= night[:speakers]
-                      .abstract
-                        - add_text(night[:abstract_html])
-                    %aside.bottom
-                      %span= night[:place]
+                - unless data[:nights].nil?
+                  - data[:nights].each_with_index do |night, index|
+                    %article.event{ "data-type":"night", id:"#{days[i]}-night#{index}" }
+                      %h5= night[:title]
+                      .content
+                        %p= night[:speakers]
+                        .abstract
+                          = night[:abstract_html].html_safe
+                      %dl.infos
+                        %div
+                          %dt= t("common.hour")
+                          %dd
+                            %time= night[:start].gsub('h', ':')
+                            = t("common.to")
+                            %time= night[:end].gsub('h', ':')
+                        %div
+                          %dt= t("types.name")
+                          %dd= t("common.night")
+                        %div
+                          %dt= t("common.building")
+                          %dd= night[:place]
 
-              %article.event{ "data-type":"hackerspace" }
-                %aside.top
-                  %mark 11h00
-                  %mark 2h00
-                .content
-                  %h4= hk[:title]
-                  .abstract
-                    = hk[:abstract_html]
-                %aside.bottom
-                  %span= hk[:place]
+                %article.event{ "data-type":"hackerspace", id:"#{days[i]}-hackerspace" }
+                  %h5= hk[:title]
+                  .content
+                    %p= hk[:speakers]
+                    .abstract
+                      = hk[:abstract_html].html_safe
+                  %dl.infos
+                    %div
+                      %dt= t("common.hour")
+                      %dd
+                        %time= hk[:start].gsub('h', ':')
+                        = t("common.to")
+                        %time= hk[:end].gsub('h', ':')
+                    %div
+                      %dt= t("types.name")
+                      %dd Hackerspace
+                    %div
+                      %dt= t("common.building")
+                      %dd= hk[:place]
 
-              %article.event{ "data-type":"village" }
-                - village = data[:village]
-                - if village.nil?
-                  - village = villageBase
-                %aside.top
-                  %mark= village[:start]
-                  %mark= village[:end]
-                .content
-                  %h4= village[:title]
-                  .abstract
-                    = village[:abstract_html]
-                %aside.bottom
-                  %span= village[:place]
-            %section.agenda{ "data-day":"#{days[i]}" }
+                %article.event{ "data-type":"village", id:"#{days[i]}-village" }
+                  - village = data[:village]
+                  - if village.nil?
+                    - village = villageBase
+                  %h5= village[:title]
+                  .content
+                    %p= village[:speakers]
+                    .abstract
+                      = village[:abstract_html].html_safe
+                  %dl.infos
+                    %div
+                      %dt= t("common.hour")
+                      %dd
+                        %time= village[:start].gsub('h', ':')
+                        = t("common.to")
+                        %time= village[:end].gsub('h', ':')
+                    %div
+                      %dt= t("types.name")
+                      %dd= village[:title]
+                    %div
+                      %dt= t("common.building")
+                      %dd= village[:place]
+
+
+              %section.agenda
