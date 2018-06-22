@@ -15,6 +15,11 @@ function formatJson(json, callbackBuilding) {
     if (days[i] != "friday" && days[i] != "thursday") data[days[i]] = [];
   }
 
+  for (var i = 0; i < json.tracks.length; i++) {
+    json.tracks[i].name = json.tracks[i].name.split("*")[lang];
+    console.log(json.tracks[i]);
+  }
+
   var roomsLen = json.rooms.length;
   for (var i = 0; i < roomsLen; i++) {
     var room = json.rooms[i];
@@ -310,7 +315,11 @@ function buildList(data, day) {
 }
 
 function buildNavList(links, day) {
-  var ul = document.createElement("ul");
+  var ul = domElement("ul", {class: "right"});
+  var ulTitle = domElement("h4");
+  ulTitle.innerHTML = "Tracks";
+  ul.appendChild(ulTitle);
+
   for (var i = 0; i < links.length; i++) {
     var li = document.createElement("li");
     var a = domElement("a", {href: "#" + links[i].id});
@@ -322,8 +331,8 @@ function buildNavList(links, day) {
 }
 
 function buildTrackSection(track) {
-  var section = domElement("section", {class: "track", id: track.id });
-  var trackPres = domElement("article");
+  var section = domElement("section", {class: "track", id: track.id});
+  var trackPres = domElement("article", {class: "pres"});
   section.appendChild(trackPres);
 
   var title = domElement("h4");
@@ -333,7 +342,9 @@ function buildTrackSection(track) {
 
   var ul = domElement("ul");
   nav.appendChild(ul);
-
+  var ulTitle = domElement("h4");
+  ulTitle.innerHTML = ["Events", "Événements"][lang];
+  ul.appendChild(ulTitle);
 
   var events = track.events;
   for (var i = 0; i < events.length; i++) {
@@ -360,8 +371,12 @@ function buildListArticle(ev) {
 
   var title = document.createElement("h5");
   title.innerHTML = ev.title;
-  var subtitle = document.createElement("h6");
-  subtitle.innerHTML = ev.subtitle;
+  article.appendChild(title);
+  if (ev.subtitle && ev.subtitle != "") {
+    var subtitle = document.createElement("h6");
+    subtitle.innerHTML = ev.subtitle;
+    article.appendChild(subtitle);
+  }
 
   var content = domElement("div", {class: "content"});
   var speakers = domElement("p");
@@ -392,7 +407,7 @@ function buildListArticle(ev) {
     infos.appendChild(container);
   }
 
-  appendChildren(article, [title, subtitle, content, infos]);
+  appendChildren(article, [content, infos]);
 
   return article;
 }

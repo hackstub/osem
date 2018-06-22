@@ -94,11 +94,12 @@
           - (0..4).each do |i|
             - data = t("calendar.days")[i]
             %section.day{ "data-day":"#{days[i]}" }
-              %section.pres{ id:"#{days[i]}"  }
-                %article
+              %section{ id:"#{days[i]}"  }
+                %article.pres
                   %h3= t("common.#{days[i]}") + " #{i + 7}"
                   %nav
-                    %ul
+                    %ul.left
+                      %h4= t("common.special-events")
                       %li= link_to data[:plenary][:title], "##{days[i]}-plenary"
                       - unless data[:nights].nil?
                         - data[:nights].each_with_index do |night, index|

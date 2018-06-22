@@ -7,28 +7,36 @@ section.window {
 .list {
   color: $color-black;
 
-  & > section {
+  & > .container {
     font-family: $font-sans;
     background-color: $color-white;
-    height: 100%;
+    height: calc(100% - 2rem);
     width: 100%;
     display: flex;
-    & > section {
+    background-color: lighten($color-main, 45%);
+    @include screen {
+      font-size: 1.2rem;
+    }
+    section.days {
       height: 100%;
       width: 100%;
     }
   }
 }
 
-nav#days {
+nav.days {
   min-width: 8vw;
   width: 20vw;
   height: 100%;
   border-right: $border;
+  position: sticky;
+  top: 0;
+  background-color: $color-white;
 
   ul {
     height: 100%;
   }
+
   li {
     display: flex;
     align-items: center;
@@ -39,6 +47,10 @@ nav#days {
     margin-top: 5%;
     border: $border;
     background-color: $pink;
+
+    &:hover {
+      border-style: dashed;
+    }
   }
 
   a {
@@ -52,15 +64,17 @@ nav#days {
   }
 }
 
-section.overflow > section {
-  h2 {
-    font-family: $font-mono;
+.days {
+  & > h2 {
     height: 2rem;
     line-height: 1.9rem;
-    border-bottom: $border;
     text-align: center;
-    @include phone {
-      display: none;
+    font-weight: 700;
+    background-color: $color-black;
+    color: $color-white;
+    @include screen {
+      position: sticky;
+      top: 0;
     }
   }
 
@@ -70,6 +84,224 @@ section.overflow > section {
     min-height: 70vh;
     margin: auto;
     margin-top: 3rem;
-    background-color: yellow;
+    border: $border;
+    background-color: $color-white;
+
+    & > * {
+      padding: 2rem;
+    }
+
+    & > h3 {
+      font-size: 3rem;
+      font-weight: 700;
+      background-color: $color-main;
+      color: $color-white;
+      border-bottom: $border;
+      padding: 4rem 2rem;
+    }
+
+    & > h4 {
+      font-size: 3rem;
+      font-weight: 700;
+      background-color: $blue;
+      color: $color-white;
+      border-bottom: $border;
+      padding: 4rem 2rem;
+
+      &::before {
+        content: "Track : ";
+      }
+    }
+
+    dl {
+      border-top: $border;
+    }
   }
+}
+
+.pres {
+  display: flex;
+  flex-direction: column;
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+
+    h4 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+
+      &::after {
+        content: " :";
+      }
+    }
+
+    ul {
+      width: 100%;
+      padding: 2rem 4rem;
+
+      li {
+        margin-top: 0.5rem;
+
+        &::before {
+          content: "● ";
+          padding-right: 0.5rem;
+        }
+      }
+
+      a {
+        color: $color-black;
+      }
+
+      &.left {
+        li {
+          margin-top: 0.75rem;
+        }
+
+        a {
+          font-size: 1.5rem;
+        }
+      }
+
+      &.right {
+        margin-left: 5%;
+      }
+    }
+  }
+}
+
+.event {
+  display: flex;
+  flex-direction: column;
+  background-color: $color-white;
+
+  h5 {
+    font-size: 3rem;
+    padding: 2rem;
+    font-weight: 600;
+    border-bottom: $border;
+    border-style: dashed;
+  }
+
+  h6 {
+    font-size: 2.5rem;
+    font-style: italic;
+    font-weight: 300;
+    padding-bottom: 0;
+  }
+
+  .content {
+
+    & > p {
+      margin-bottom: 2rem;
+      font-weight: bold;
+
+      &::before {
+        content: "Par ";
+      }
+    }
+
+    .abstract {
+      max-width: 50rem;
+      line-height: 1.35rem;
+      border-top: $border;
+      padding-top: 1rem;
+
+      h1, h2, h3, h4, h5, h6 {
+        margin: 1rem 0 0.5rem 0;
+        font-size: 1.3rem;
+        font-weight: 600;
+      }
+
+      p {
+        margin-bottom: 0.5rem;
+      }
+
+      li {
+        &::before {
+          content: "- ";
+        }
+        p {
+          display: inline;
+        }
+      }
+      ul {
+        margin-bottom: 0.5rem;
+      }
+
+      strong, b {
+        font-weight: bold;
+      }
+
+      em, i {
+        font-style: italic;
+      }
+
+      img {
+        display: none;
+      }
+    }
+  }
+
+  dl.infos {
+    border-style: dashed;
+    margin-top: auto;
+    font-family: $font-mono;
+
+    @include screen {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    div {
+      background-color: white;
+      padding: 0.5rem 1rem;
+    }
+
+    dt, dd {
+      display: inline;
+    }
+
+    dt::after {
+      content: " : ";
+    }
+    dd {
+      font-weight: bold;
+    }
+  }
+}
+
+
+[data-type="workshop"] h5 {
+  background-color: $color-third;
+}
+[data-type="conference"] h5 {
+  background-color: $color-second;
+}
+[data-type="chatroom"] h5 {
+  background-color: $pink;
+}
+[data-type="debate"] h5 {
+  background-color: lighten($red, 25%);
+}
+[data-type="creation"] h5 {
+  background-color: $cyan;
+}
+[data-type="other"] h5, [data-type="arpentage littéraire"] h5 {
+  background-color: lighten($blue, 25%);
+}
+[data-type="night"] h5, [data-type="night"] dl {
+  background-color: lighten($blue, 25%);
+}
+[data-type="plenary"] h5, [data-type="plenary"] dl {
+  background-color: lighten($color-main, 30%);
+}
+[data-type="village"] h5, [data-type="village"] dl {
+  background-color: lighten($orange, 25%);
+}
+[data-type="hackerspace"] h5, [data-type="hackerspace"] dl {
+  background-color: lighten($red, 25%);
 }

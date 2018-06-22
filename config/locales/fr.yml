@@ -26,6 +26,7 @@ fr:
     building: Bâtiment
     duration: Durée
     events: Événements
+    special-events: Événements spéciaux
     saturday_html: Sa<span>medi</span>
     sunday_html: Di<span>manche</span>
     monday_html: Lu<span>ndi</span>
