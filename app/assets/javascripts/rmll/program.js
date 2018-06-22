@@ -1,5 +1,5 @@
-// var baseUrl = "/api/v1/conferences/rmll2018/";
-var baseUrl = "https://osem.aius.u-strasbg.fr/api/v1/conferences/rmll2018";
+var baseUrl = "/api/v1/conferences/rmll2018/";
+// var baseUrl = "https://osem.aius.u-strasbg.fr/api/v1/conferences/rmll2018";
 
 // ╭─╮┌─╴╭╮╷┌─╴┌─╮╶┬╴╭─╴
 // │╶╮├─╴│││├─╴├┬╯ │ │
