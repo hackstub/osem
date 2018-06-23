@@ -1,43 +1,41 @@
-%main
-  %section.window.map
-    - add_bar("ImgViewer", "access_strasbourg.png")
-    .split
-      .container
-        = image_tag "map.png", { alt:"Carte de Strasbourg très pixelisée" }
+= render partial: "rmll/background"
 
-      .txt
-        %h2= t(".title")
-        %h4= t(".places.title")
-        %ul
-          - t(".places.list").each do |place|
-            %li
-              = place[:name]
-              %ul
-                - place[:buildings].each do |building|
-                  %li
-                    %a{ href:building[:url] }= building[:name]
-                    %p.adress= building[:adress]
+%main.half
+  %section.window
+    - add_bar("Text", "access-strasbourg.txt")
+    .container.overflow.text
+      %h2= t(".title")
+      %h3= t(".places.title")
+      %ul
+        - t(".places.list").each do |place|
+          %li
+            %p.bold= place[:name]
+            %ul
+              - place[:buildings].each do |building|
+                %li
+                  %a{ href:building[:url] }= building[:name]
+                  %p.adress= building[:adress]
 
-        %h4= t(".cts.title")
-        %ul
-          - t(".cts.list").each do |place|
-            %li
-              %p= place[:name]
-              %ul
-                - place[:stops].each do |stop|
-                  %li= stop
-        %p
-          = link_to t(".cts.site.text"), t(".cts.site.url")
+      %h3= t(".cts.title")
+      %ul
+        - t(".cts.list").each do |place|
+          %li
+            %p.bold= place[:name]
+            %ul
+              - place[:stops].each do |stop|
+                %li= stop
+      %p
+        = link_to t(".cts.site.text"), t(".cts.site.url")
 
-        %h4= t(".parkings.title")
-        %p= t(".parkings.text")
-        %ul
-          - t(".parkings.list").each do |parking|
-            %li
-              %p= link_to parking[:name], parking[:url]
-              %p= parking[:adress]
-              %p= parking[:distance] + "km"
-              %p= parking[:price] + "€/h"
+      %h3= t(".parkings.title")
+      %p= t(".parkings.text")
+      %ul
+        - t(".parkings.list").each do |parking|
+          %li
+            %p= link_to parking[:name], parking[:url]
+            %p= parking[:adress]
+            %p= parking[:distance] + "km"
+            %p= parking[:price] + "€/h"
 
-        %h4= t(".accessibility.title")
-        - add_text(t(".accessibility.text"))
+      %h3= t(".accessibility.title")
+      - add_text(t(".accessibility.text"))

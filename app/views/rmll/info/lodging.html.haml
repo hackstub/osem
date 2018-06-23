@@ -1,20 +1,18 @@
-%main
-  %section.window.fullscreen.map
-    - add_bar("ImgViewer", "lodging.png")
-    .split
-      .container
-        = image_tag "map.png", { alt:"Carte de Strasbourg très pixelisée" }
+= render partial: "rmll/background"
 
-      .txt
-        %h2= t(".title")
+%main.half
+  %section.window
+    - add_bar("Text", "access-strasbourg.txt")
+    .container.overflow.text
+      %h2= t(".title")
 
-        %h4= t(".room.name")
-        %p= t(".room.text_html", href: link_to(t(".room.link"), conference_tickets_url(@conference.short_title, :locale => nil)))
+      %h3= t(".room.name")
+      %p= t(".room.text_html", href: link_to(t(".room.link"), conference_tickets_url(@conference.short_title, :locale => nil)))
 
-        %h4= t(".lodge.name")
-        %p= t(".lodge.text_html", href: link_to(t(".lodge.link"), t(".lodge.url")))
-        %ul
-          - t(".lodge.list").each do |lodge|
-            %li
-              %p= link_to lodge[:name], lodge[:url]
-              %p= lodge[:desc]
+      %h3= t(".lodge.name")
+      %p= t(".lodge.text_html", href: link_to(t(".lodge.link"), t(".lodge.url")))
+      %ul
+        - t(".lodge.list").each do |lodge|
+          %li
+            %p= link_to lodge[:name], lodge[:url]
+            %p= lodge[:desc]

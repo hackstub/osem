@@ -1,0 +1,75 @@
+.text {
+  font-family: $font-sans;
+  background-color: $color-white;
+  padding: 2em;
+  color: $color-black;
+  font-size: 1.3rem;
+  line-height: 1.3rem;
+  @include phone {
+    padding: 1.2em;
+  }
+
+  h2, h3 {
+    font-size: 2rem;
+    line-height: 2.3rem;
+    font-weight: bold;
+    padding: 1rem;
+  }
+
+  h2 {
+    background-color: lighten($color-main, 30%);
+    margin-bottom: 2em;
+  }
+
+  h3 {
+    display: inline-block;
+    background-color: $color-second;
+    margin-bottom: 1em;
+
+    &:not(:first-of-type) {
+      margin-top: 1em;
+    }
+  }
+
+  & > ul, p {
+    line-height: 1.5rem;
+    margin-bottom: 1em;
+  }
+  ul p {
+    margin: 0;
+  }
+
+  .adress {
+    margin: 0.3em 0 0 1em;
+    color: $color-grey-shadow;
+  }
+  .place {
+    text-decoration: underline;
+  }
+  .desc {
+    margin-top: 0.5em;
+  }
+  .bold {
+    font-weight: bold;
+  }
+
+  li ul li {
+    &::before {
+      content: "> ";
+    }
+    margin-top: 0.5em;
+
+    @include screen {
+      margin-left: 2rem;
+    }
+  }
+
+  & > ul > li {
+    &:not(:first-of-type){
+      margin-top: 2rem;
+    }
+    &:last-of-type {
+      margin-bottom: 2rem;
+    }
+  }
+}

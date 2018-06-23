@@ -27,8 +27,7 @@ main {
 @import "specific/home";
 @import "specific/terminal";
 @import "specific/misc";
-// @import "specific/spreadsheet";
-// @import "specific/map";
+@import "specific/text";
 
 .flex {
   display: flex;

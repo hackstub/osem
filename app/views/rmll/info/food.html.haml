@@ -1,12 +1,10 @@
-%main
-  %section.window.fullscreen.map
-    - add_bar("ImgViewer", "food.png")
-    .split
-      .container
-        = image_tag "map.png", { alt:"Carte de Strasbourg très pixelisée" }
+= render partial: "rmll/background"
 
-      .txt
-        %h2= t(".title")
-        %p= t(".daily")
-        %p= t(".alsatian")
-        %p= t(".libre_meal")
+%main.half
+  %section.window
+    - add_bar("Text", "food.txt")
+    .container.overflow.text
+      %h2= t(".title")
+      %p= t(".daily")
+      %p= t(".alsatian")
+      %p= t(".libre_meal")
