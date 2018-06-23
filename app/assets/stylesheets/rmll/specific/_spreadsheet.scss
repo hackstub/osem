@@ -450,6 +450,9 @@
     }
   }
 
+  [data-type] {
+    background-color: $color-white;
+  }
   [data-type="workshop"] {
     background-color: $color-third;
   }
