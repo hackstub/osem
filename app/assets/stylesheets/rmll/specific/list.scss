@@ -27,6 +27,9 @@ section.window {
         overflow-y: auto;
         overflow-x: hidden;
       }
+      &.hide {
+        display: none;
+      }
     }
   }
 }

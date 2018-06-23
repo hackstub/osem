@@ -9,7 +9,7 @@
       initMenuBar();
       var options = new Menubar(document.getElementById("selectors"));
       options.init();
-      readJSONFile(baseUrl, formatJson, buildList);
+      readJSONFile(baseUrl, formatJson, buildList, setupList);
     }
 
 %main
@@ -88,7 +88,7 @@
               %a.not-item{ role:"menuitem", href:"#wednesday" }
                 = t("common.wednesday_html") + " 11"
 
-        %section.days
+        %section.days.hide
           %h2= t("common.events")
           - villageBase = t("calendar.village")
           - (0..4).each do |i|

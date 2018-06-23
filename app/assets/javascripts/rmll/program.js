@@ -5,7 +5,7 @@ var baseUrl = "/api/v1/conferences/rmll2018/";
 // │╶╮├─╴│││├─╴├┬╯ │ │
 // ╰─╯╰─╴╵╰╯╰─╴╵ ╰╶┴╴╰─╴
 
-function formatJson(json, callbackBuilding) {
+function formatJson(json, callbackBuilding, callbackSetup) {
   // FIXME modify api to serve well formated informations
   json = json[0];
   var data = {};
@@ -17,7 +17,7 @@ function formatJson(json, callbackBuilding) {
 
   for (var i = 0; i < json.tracks.length; i++) {
     json.tracks[i].name = json.tracks[i].name.split("*")[lang];
-    console.log(json.tracks[i]);
+    // console.log(json.tracks[i]);
   }
 
   var roomsLen = json.rooms.length;
@@ -75,8 +75,10 @@ function formatJson(json, callbackBuilding) {
 
       }
       callbackBuilding(data[day], day);
-      // return;
     }
+  }
+  if (callbackSetup) {
+    callbackSetup();
   }
 }
 
@@ -108,6 +110,7 @@ function initCommonListeners() {
     });
   }
 }
+
 
 // ╶┬╴╭─┐┌─╮╷  ┌─╴
 //  │ ├─┤│╶┤│  ├─╴
@@ -311,7 +314,15 @@ function buildList(data, day) {
     agenda.appendChild(buildTrackSection(tracks[i]));
   }
   dayDom.querySelector(".agenda").appendChild(agenda);
+}
 
+function setupList() {
+  document.querySelector("section.days").classList.remove("hide");
+  var url = window.location.href;
+  if (url.indexOf('#') > -1) {
+    var id = url.substring(url.lastIndexOf('#') + 1);
+    document.getElementById(id).scrollIntoView();
+  }
 }
 
 function buildNavList(links, day) {

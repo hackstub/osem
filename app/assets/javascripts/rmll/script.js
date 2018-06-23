@@ -57,13 +57,13 @@ function removePhoneMenu() {
 }
 
 // UTILS
-function readJSONFile(url, callbackParsing, callbackBuilding) {
+function readJSONFile(url, callbackParsing, callbackBuilding, callbackSetup) {
   var rawFile = new XMLHttpRequest();
   rawFile.overrideMimeType("application/json");
   rawFile.open("GET", url);
   rawFile.onload = function () {
     if (rawFile.readyState === 4 && rawFile.status == "200") {
-      callbackParsing(JSON.parse(rawFile.responseText), callbackBuilding);
+      callbackParsing(JSON.parse(rawFile.responseText), callbackBuilding, callbackSetup);
     }
   }
   rawFile.onerror = function () {
