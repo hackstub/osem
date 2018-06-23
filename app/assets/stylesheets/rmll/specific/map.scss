@@ -159,10 +159,42 @@ article {
 
   .mapboxgl-ctrl {
     box-shadow: none;
+    border-radius: 0;
+    border: $border;
+    width: 2rem;
+    button {
+      height: 2rem;
+      background-image: none;
+      font-family: $font-mono;
+      font-size: 1.5rem;
 
-        button:focus {
-          background-color: $orange;
-        }
+      &:nth-child(1) {
+        border-bottom: $border;
+      }
+
+      &:nth-child(1)::before {
+        content: "+";
+        position: relative;
+        margin-left: -8px;
+        top: -2px;
+      }
+
+      &:nth-child(2)::before {
+        content: "-";
+        position: relative;
+        margin-left: -8px;
+        top: -4px;
+      }
+
+      &:nth-child(3) {
+        display: none;
+      }
+    }
+
+
+    button:focus {
+      background-color: $orange;
+    }
   }
 
   button {
@@ -173,6 +205,8 @@ article {
   .mapboxgl-ctrl-attrib {
     background-color: #272727;
     padding: 0 1rem;
+    width: auto;
+    border: none;
 
     a {
       font-family: $font-mono;

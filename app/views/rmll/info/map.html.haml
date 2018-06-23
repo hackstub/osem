@@ -1,5 +1,38 @@
+= content_for :head do
+  = stylesheet_link_tag "rmll/specific/mapbox-gl"
+  = stylesheet_link_tag "rmll/specific/map"
+= content_for :script do
+  = javascript_include_tag "rmll/lib/mapbox-gl.js"
+  = javascript_include_tag "rmll/map.js"
+
 %main
-  %section.window#map.fullscreen
-    - add_bar("ImgViewer", "Strasbourg.png")
+  %section.window
+    - add_bar("Map", "Strasbourg")
+    -# %article{ "aria-haspopup":"true", "aria-expanded":"false" }
+    -#   %h1.noselect{ tabindex:0,  } Options
+    -#
+    -#   %fieldset{ "aria-hidden":"true" }
+    -#     %legend Afficher
+    -#     %ul
+    -#       %input{ type:"checkbox", id:"all", name:"mapOptions", value:"all", checked:"checked" }
+    -#       %label{ for:"all" } Tout
+    -#
+    -#       %li
+    -#         %input{ type:"checkbox", id:"tram", name:"mapOptions", value:"tram", checked:"checked" }
+    -#         %label{ for:"tram" } Arret de tram
+    -#       %li
+    -#         %input{ type:"checkbox", id:"bus", name:"mapOptions", value:"bus", disabled:"disable" }
+    -#         %label{ for:"bus" } Arret de bus
+    -#       %li
+    -#         %input{ type:"checkbox", id:"parking", name:"mapOptions", value:"parking", disabled:"disable" }
+    -#         %label{ for:"parking" } Parkings
+    -#       %li
+    -#         %input{ type:"checkbox", id:"lodging", name:"mapOptions", value:"lodging", disabled:"disable" }
+    -#         %label{ for:"lodging" } Logements
+    -#       %li
+    -#         %input{ type:"checkbox", id:"tourism", name:"mapOptions", value:"tourism", disabled:"disable" }
+    -#         %label{ for:"tourism" } Tourisme
+    -#
+    -#       %button{ type:"button", id:"submit", name:"mapOptions", value:"submit" } submit
     .container
-      = image_tag "mapfull.png", { alt:"Carte de Strasbourg très pixelisée" }
+      #map
