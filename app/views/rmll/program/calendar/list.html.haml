@@ -97,7 +97,7 @@
               %section{ id:"#{days[i]}"  }
                 %article.pres
                   %h3= t("common.#{days[i]}") + " #{i + 7}"
-                  %nav
+                  %nav.day-nav
                     %ul.left
                       %h4= t("common.special-events")
                       %li= link_to data[:plenary][:title], "##{days[i]}-plenary"

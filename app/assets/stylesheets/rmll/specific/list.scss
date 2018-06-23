@@ -130,10 +130,14 @@ nav.days {
     @include screen {
       width: 90%;
       max-width: 65vw;
-      min-height: 70vh;
       margin: auto;
       margin-top: 3rem;
       border: $border;
+
+      &:not(.pres) {
+        min-height: 70vh;
+      }
+
     }
     @include phone {
       border-top: $border;
@@ -241,6 +245,10 @@ nav.days {
   display: flex;
   flex-direction: column;
   background-color: $color-white;
+
+  &.hide {
+    display: none;
+  }
 
   h5 {
     font-size: 3rem;
@@ -360,6 +368,9 @@ nav.days {
   }
 }
 
+.track.hide, .starred.hide, li.hide, nav.hide {
+  display: none;
+}
 
 [data-type="workshop"] h5 {
   background-color: $color-third;

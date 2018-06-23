@@ -46,7 +46,8 @@ function formatJson(json, callbackBuilding, callbackSetup) {
       ev.start = (date.getUTCHours() * 60 + date.getUTCMinutes()) - 10 * 60;
       ev.room = roomsName[i];
       var difficulty = json.difficulty_levels[ev.difficulty_level_id-1];
-      ev.difficulty = difficulty ? difficulty.title.split("*")[lang] : "null";
+      ev.difficulty = difficulty ? difficulty.title.split("*")[0] : "null";
+      ev.difficultyName = difficulty ? difficulty.title.split("*")[lang] : "null";
 
       var track = json.event_types.find(function (eventObj) {
         if (eventObj.id === ev.event_type_id) return eventObj;
@@ -72,7 +73,6 @@ function formatJson(json, callbackBuilding, callbackSetup) {
             }
           }
         }
-
       }
       callbackBuilding(data[day], day);
     }
@@ -82,31 +82,94 @@ function formatJson(json, callbackBuilding, callbackSetup) {
   }
 }
 
-function allHide(htmlColl) {
-  for (var i = htmlColl.length - 1; i >= 0; i--) {
-    if (!htmlColl[i].classList.contains("hide")) return false;
+function initSelectorsListeners(eventCSSselector, sectionCSSselector) {
+  function allHide(htmlColl) {
+    for (var i = htmlColl.length - 1; i >= 0; i--) {
+      if (!htmlColl[i].classList.contains("hide")) return false;
+    }
+    return true;
   }
-  return true;
-}
 
-function initCommonListeners() {
+  function hideEmptyTracks(tracks) {
+    for (var i = tracks.length - 1; i >= 0; i--) {
+      var evs = tracks[i].getElementsByClassName("event");
+      if (allHide(evs)) {
+        tracks[i].classList.add("hide");
+      } else {
+        tracks[i].classList.remove("hide");
+      }
+    }
+  }
 
-  // Day selection Listeners
-  var daysbutton = document.querySelectorAll("#daySelection a");
-  for (var i = 0; i < daysbutton.length; i++) {
-    daysbutton[i].addEventListener("click", function (e) {
-      var day = e.target.nodeName == "SPAN" ? e.target.parentElement.dataset.toggle : e.target.dataset.toggle;
-      var overflowed = document.querySelector(".overflow");
-      overflowed.scrollTop = 0;
-      overflowed.scrollLeft = 0;
-      document.querySelector("tbody:not(.hide)").classList.add("hide");
-      document.querySelector(".starred-day:not(.hide)").classList.add("hide");
-      document.querySelector("tbody[data-day='" + day + "']").classList.remove("hide");
-      document.querySelector(".starred-day[data-day='" + day + "']").classList.remove("hide");
+  var optionsDisplay = document.querySelectorAll("#selectors ul a");
+  var isList = eventCSSselector != "table .event";
+  for (var i = 0; i < optionsDisplay.length; i++) {
+    optionsDisplay[i].addEventListener("click", function (e) {
+      var events = document.querySelectorAll(eventCSSselector);
+      var tracks = document.querySelectorAll(sectionCSSselector);
+      var starred = document.getElementsByClassName("starred");
+      if (isList) {
+        var navDay = document.getElementsByClassName("day-nav");
+        console.log(navDay);
+      }
 
-      document.querySelector(".selected").classList.remove("selected");
-      e.target.classList.add("selected")
 
+      var prop = e.target.id.split("-");
+
+      if (prop[1] == "all") {
+        // display everything
+        for (var i = events.length - 1; i >= 0; i--) {
+          events[i].classList.remove("hide");
+          if (isList) {
+            document.querySelector("a[href='#"+ events[i].id + "']").parentElement.classList.remove("hide");
+          }
+        }
+        for (var i = tracks.length - 1; i >= 0; i--) {
+          tracks[i].classList.remove("hide");
+        }
+        for (var i = starred.length - 1; i >= 0; i--) {
+          starred[i].classList.remove("hide");
+          if (isList) {
+            navDay[i].classList.remove("hide");
+          }
+        }
+      } else {
+        for (var i = starred.length - 1; i >= 0; i--) {
+          starred[i].classList.add("hide");
+          if (isList) {
+            navDay[i].classList.add("hide");
+          }
+        }
+        // display only events that match the selector
+        for (var i = events.length - 1; i >= 0; i--) {
+          var isToShow = events[i].dataset[prop[0]] == prop[1];
+          if (e.target.id == "type-other") {
+            var other = ["debate", "chatroom", "arpentage littéraire"];
+            isToShow = other.indexOf(events[i].dataset[prop[0]]) > -1;
+          }
+
+          if (isToShow) {
+            events[i].classList.remove("hide");
+            if (isList) {
+              document.querySelector("a[href='#"+ events[i].id + "']").parentElement.classList.remove("hide");
+            }
+          } else {
+            events[i].classList.add("hide");
+            if (isList) {
+              document.querySelector("a[href='#"+ events[i].id + "']").parentElement.classList.add("hide");
+            }
+          }
+        }
+        hideEmptyTracks(tracks);
+      }
+
+      if (isList) {
+        document.querySelector(".agenda").scrollIntoView();
+      } else {
+        var container = document.querySelector(".overflow");
+        container.scrollLeft = 0;
+        container.scrollTop = document.querySelector(".starred:not(.hide)").getBoundingClientRect().height + 2;
+      }
     });
   }
 }
@@ -143,8 +206,10 @@ function buildTable(data, day) {
     }
   }
   tbody.appendChild(doc);
+}
 
-  initCommonListeners();
+function setupTable() {
+  initSelectorsListeners("table .event", "tbody tr");
   initTableListeners();
 }
 
@@ -192,7 +257,7 @@ function buildTableArticle(ev, timeBetween) {
   var type = domElem('span');
   type.innerHTML = ev.typeName;
   var lvl = domElem('span', 'lvl');
-  lvl.innerHTML = ev.difficulty;
+  lvl.innerHTML = ev.difficultyName;
   appendChildren(bottom, [room, type, lvl]);
   article.appendChild(bottom);
 
@@ -200,6 +265,24 @@ function buildTableArticle(ev, timeBetween) {
 }
 
 function initTableListeners () {
+  // Day selection Listeners
+  var daysbutton = document.querySelectorAll("#daySelection a");
+  for (var i = 0; i < daysbutton.length; i++) {
+    daysbutton[i].addEventListener("click", function (e) {
+      var day = e.target.nodeName == "SPAN" ? e.target.parentElement.dataset.toggle : e.target.dataset.toggle;
+      var overflowed = document.querySelector(".overflow");
+      overflowed.scrollTop = 0;
+      overflowed.scrollLeft = 0;
+      document.querySelector("tbody:not(.hide)").classList.add("hide");
+      document.querySelector(".starred-day:not(.hide)").classList.add("hide");
+      document.querySelector("tbody[data-day='" + day + "']").classList.remove("hide");
+      document.querySelector(".starred-day[data-day='" + day + "']").classList.remove("hide");
+
+      document.querySelector(".selected").classList.remove("selected");
+      e.target.classList.add("selected")
+
+    });
+  }
 
   function findArticle (el, type) {
     while ((el = el.parentElement) && el.nodeName != type);
@@ -233,56 +316,6 @@ function initTableListeners () {
       var isCard = article.classList.contains("card");
       var counter = Date.now();
       article.addEventListener("mouseup", toggleCard);
-    });
-  }
-
-  // Table Selectors Listeners
-  function hideEmptyTracks(tracks) {
-    for (var i = tracks.length - 1; i >= 0; i--) {
-      var evs = tracks[i].getElementsByClassName("event");
-      if (allHide(evs)) {
-        tracks[i].classList.add("hide");
-      } else {
-        tracks[i].classList.remove("hide");
-      }
-    }
-  }
-
-  var optionsDisplay = document.querySelectorAll("#selectors ul a");
-  for (var i = 0; i < optionsDisplay.length; i++) {
-    optionsDisplay[i].addEventListener("click", function (e) {
-      var events = document.querySelectorAll("table .event");
-      var tracks = document.querySelectorAll("tbody tr");
-      var prop = e.target.id.split("-");
-
-      if (prop[1] == "all") {
-        // display everything
-        for (var i = events.length - 1; i >= 0; i--) {
-          events[i].classList.remove("hide");
-        }
-        for (var i = tracks.length - 1; i >= 0; i--) {
-          tracks[i].classList.remove("hide");
-        }
-      } else {
-        // display only events that match the selector
-        for (var i = events.length - 1; i >= 0; i--) {
-          var isToShow = events[i].dataset[prop[0]] == prop[1];
-          if (e.target.id == "type-other") {
-            var other = ["debate", "chatroom", "arpentage littéraire"];
-            isToShow = other.indexOf(events[i].dataset[prop[0]]) > -1;
-          }
-
-          if (isToShow) {
-            events[i].classList.remove("hide");
-          } else {
-            events[i].classList.add("hide");
-          }
-        }
-        hideEmptyTracks(tracks);
-      }
-      var container = document.querySelector(".overflow");
-      container.scrollLeft = 0;
-      container.scrollTop = document.querySelector(".starred:not(.hide)").getBoundingClientRect().height + 2;
     });
   }
 
@@ -323,6 +356,7 @@ function setupList() {
     var id = url.substring(url.lastIndexOf('#') + 1);
     document.getElementById(id).scrollIntoView();
   }
+  initSelectorsListeners(".track .event", ".track");
 }
 
 function buildNavList(links, day) {
@@ -400,7 +434,7 @@ function buildListArticle(ev) {
     ["Hour", "Type", "Building", "Duration", "Difficulty"],
     ["Heure", "Type", "Batiment", "Durée", "Niveau"]
   ];
-  var infosValues = [ev.dateStr.replace("h", ":"), ev.typeName, ev.room, ev.length + "'", ev.difficulty];
+  var infosValues = [ev.dateStr.replace("h", ":"), ev.typeName, ev.room, ev.length + "'", ev.difficultyName];
   var infos = domElement("dl", {class: "infos"});
   for (var i = 0; i < infosValues.length; i++) {
     var container = document.createElement("div");
