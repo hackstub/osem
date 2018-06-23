@@ -24,14 +24,19 @@ section.window:not(#home) {
 
 .container {
   width: 100%;
-  height: calc(100% - #{$bar-height});
+  height: 100%;
+
+  @include screen {
+    height: calc(100% - #{$bar-height});
+  }
 }
 
 .container-flex {
   width: 100%;
-  height: calc(100% - #{$bar-height});
+  height: 100%;
 
   @include screen {
+    height: calc(100% - #{$bar-height});
     display: flex;
   }
 }
@@ -51,6 +56,10 @@ article, nav {
   color: $color-black;
   line-height: 1.7rem;
   overflow: hidden;
+
+  @include phone {
+    display: none;
+  }
 
   * {
     height: 100%;

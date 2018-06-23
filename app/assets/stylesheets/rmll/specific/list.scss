@@ -7,46 +7,76 @@ section.window {
 .list {
   color: $color-black;
 
-  & > .container {
+  & > .container-flex {
     font-family: $font-sans;
     background-color: $color-white;
-    height: calc(100% - 2rem);
-    width: 100%;
-    display: flex;
     background-color: lighten($color-main, 45%);
+    overflow-x: hidden;
+    height: calc(100% - 2rem);
     @include screen {
       font-size: 1.2rem;
+    }
+    @include phone {
+      overflow: hidden;
     }
     section.days {
       height: 100%;
       width: 100%;
+      @include phone {
+        height: calc(100% - 2rem);
+        overflow-y: auto;
+        overflow-x: hidden;
+      }
     }
   }
 }
 
 nav.days {
-  min-width: 8vw;
-  width: 20vw;
-  height: 100%;
-  border-right: $border;
-  position: sticky;
-  top: 0;
   background-color: $color-white;
+
+  @include screen {
+    position: sticky;
+    top: 0;
+    min-width: 8vw;
+    width: 20vw;
+    height: 100%;
+    border-right: $border;
+  }
+  @include phone {
+    height: 2rem;
+  }
 
   ul {
     height: 100%;
+    @include phone {
+      display: flex;
+      justify-content: space-between;
+      background-color: $pink;
+      border-bottom: $border;
+    }
   }
 
   li {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 65%;
-    height: 15%;
-    margin: auto;
-    margin-top: 5%;
-    border: $border;
-    background-color: $pink;
+    @include screen {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 65%;
+      height: 15%;
+      margin: auto;
+      margin-top: 5%;
+      background-color: $pink;
+      border: $border;
+    }
+    @include phone {
+      height: 2rem;
+      line-height: 1.9rem;
+      width: 100%;
+
+      &:not(:last-of-type) {
+        border-right: $border;
+      }
+    }
 
     &:hover {
       border-style: dashed;
@@ -55,11 +85,22 @@ nav.days {
 
   a {
     color: $color-black;
-    font-size: 1.5rem;
-    font-weight: 600;
 
+    @include screen {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+    @include phone {
+      display: inline-block;
+      font-family: $font-mono;
+      text-decoration: none;
+      width: 100%;
+      text-align: center;
+    }
     @include tablet {
-      font-size: 1.1rem;
+      span {
+        display: none;
+      }
     }
   }
 }
@@ -72,42 +113,56 @@ nav.days {
     font-weight: 700;
     background-color: $color-black;
     color: $color-white;
-    @include screen {
-      position: sticky;
-      top: 0;
+    position: sticky;
+    top: 0;
+    @include phone {
+      display: none;
     }
   }
 
   article {
-    width: 90%;
-    max-width: 65vw;
-    min-height: 70vh;
-    margin: auto;
     margin-top: 3rem;
-    border: $border;
     background-color: $color-white;
 
+    @include screen {
+      width: 90%;
+      max-width: 65vw;
+      min-height: 70vh;
+      margin: auto;
+      margin-top: 3rem;
+      border: $border;
+    }
+    @include phone {
+      border-top: $border;
+      border-bottom: $border;
+    }
+
     & > * {
+      padding: 1rem;
+
+      @include screen {
+        padding: 2rem;
+      }
+    }
+
+    & > h3, & > h4 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: $color-white;
+      border-bottom: $border;
       padding: 2rem;
+      @include screen {
+        font-size: 3rem;
+        padding: 4rem 2rem;
+      }
     }
 
     & > h3 {
-      font-size: 3rem;
-      font-weight: 700;
       background-color: $color-main;
-      color: $color-white;
-      border-bottom: $border;
-      padding: 4rem 2rem;
     }
 
     & > h4 {
-      font-size: 3rem;
-      font-weight: 700;
-      background-color: $blue;
-      color: $color-white;
-      border-bottom: $border;
-      padding: 4rem 2rem;
-
+      background-color: $color-black;
       &::before {
         content: "Track : ";
       }
@@ -120,18 +175,23 @@ nav.days {
 }
 
 .pres {
-  display: flex;
-  flex-direction: column;
 
   nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 100%;
+    @include screen {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+    }
 
     h4 {
-      font-size: 2rem;
-      margin-bottom: 2rem;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+
+      @include screen {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+      }
 
       &::after {
         content: " :";
@@ -140,11 +200,13 @@ nav.days {
 
     ul {
       width: 100%;
-      padding: 2rem 4rem;
+      padding: 1rem;
+
+      @include screen {
+        padding: 2rem 4rem;
+      }
 
       li {
-        margin-top: 0.5rem;
-
         &::before {
           content: "● ";
           padding-right: 0.5rem;
@@ -153,20 +215,20 @@ nav.days {
 
       a {
         color: $color-black;
+        line-height: 1.4rem;
       }
-
-      &.left {
-        li {
-          margin-top: 0.75rem;
+      @include screen {
+        &.left {
+          a {
+            font-size: 1.5rem;
+            line-height: 2rem;
+          }
         }
 
-        a {
-          font-size: 1.5rem;
+        &.right {
+          margin-left: 5%;
+          line-height: 2rem;
         }
-      }
-
-      &.right {
-        margin-left: 5%;
       }
     }
   }
@@ -183,6 +245,10 @@ nav.days {
     font-weight: 600;
     border-bottom: $border;
     border-style: dashed;
+    @include phone {
+      font-size: 2rem;
+      padding-left: 1rem;
+    }
   }
 
   h6 {
@@ -190,13 +256,20 @@ nav.days {
     font-style: italic;
     font-weight: 300;
     padding-bottom: 0;
+    @include phone {
+      font-size: 1.5rem;
+    }
   }
 
   .content {
-
     & > p {
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
       font-weight: bold;
+      @include phone {
+        padding-bottom: 1rem;
+        border-bottom: $border;
+        margin-bottom: 2rem;
+      }
 
       &::before {
         content: "Par ";
@@ -206,8 +279,12 @@ nav.days {
     .abstract {
       max-width: 50rem;
       line-height: 1.35rem;
-      border-top: $border;
-      padding-top: 1rem;
+
+      @include screen {
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: $border;
+      }
 
       h1, h2, h3, h4, h5, h6 {
         margin: 1rem 0 0.5rem 0;
@@ -216,7 +293,7 @@ nav.days {
       }
 
       p {
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.7rem;
       }
 
       li {
@@ -254,12 +331,18 @@ nav.days {
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
+      div {
+        background-color: white;
+        padding: 0.5rem 1rem;
+      }
+    }
+    @include phone {
+      div {
+        line-height: 1.5rem;
+      }
     }
 
-    div {
-      background-color: white;
-      padding: 0.5rem 1rem;
-    }
+
 
     dt, dd {
       display: inline;

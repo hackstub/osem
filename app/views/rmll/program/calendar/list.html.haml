@@ -65,7 +65,7 @@
           -#     %li{ role:"none" }
           -#       %a{ role:"menuitem", tabindex:-1, id:"lang-en" }
           -#         = t("languages.en")
-      .container.overflow
+      .container-flex.overflow
         - days = ["saturday", "sunday", "monday", "tuesday", "wednesday"]
         - hk = t("calendar.hackerspace")
 
@@ -155,7 +155,6 @@
                 %article.event{ "data-type":"hackerspace", id:"#{days[i]}-hackerspace" }
                   %h5= hk[:title]
                   .content
-                    %p= hk[:speakers]
                     .abstract
                       = hk[:abstract_html].html_safe
                   %dl.infos
@@ -178,7 +177,6 @@
                     - village = villageBase
                   %h5= village[:title]
                   .content
-                    %p= village[:speakers]
                     .abstract
                       = village[:abstract_html].html_safe
                   %dl.infos

@@ -228,7 +228,7 @@ module ApplicationHelper
   def add_bar(soft_type, name)
     haml_tag ".bar" do
       haml_tag "span", soft_type + " - " + name
-      haml_tag "a", "?", href:rmll_path
+      # haml_tag "a", "?", href:rmll_path
       haml_tag "a", "X", href:rmll_path
     end
   end
