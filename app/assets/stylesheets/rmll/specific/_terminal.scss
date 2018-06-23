@@ -179,24 +179,6 @@
   }
 }
 
-
-#sponsors {
-  .space-pre {
-    margin-top: 5rem;
-    color: $color-white;
-    p {
-      @media (max-width: 880px) {
-        font-size: 1vw;
-        line-height: 1.2vw;
-      }
-    }
-  }
-  article a {
-    display: inline-block;
-    margin-top: 2rem;
-  }
-}
-
 #man {
   article {
     line-height: 1.5rem;

@@ -688,6 +688,8 @@ fr:
       sponsors:
         title: Partenaires
         list:
+          - name: alsace.netlib.re
+            url: "https://alsace.netlib.re/"
           - name: Free Software Foundation Europe (FSFE)
             url: "https://fsfe.org/"
           - name: La Ville et l'Eurométropole de Strasbourg
@@ -696,6 +698,24 @@ fr:
             url: "http://www.unistra.fr/"
           - name: Le Shadok, fabrique du numérique
             url: "http://www.shadok.strasbourg.eu/"
+          - name: La Médiathèque André Malraux
+            url: "http://www.mediatheques.strasbourg.eu/medias/medias.aspx?INSTANCE=EXPLOITATION&PORTAL_ID=WBCT_WBCTDOC_28.xml"
+          - name: l@ppli, Espace de médiation numérique
+            url: "https://lappliblog.wordpress.com/"
+          - name: April, promouvoir et défendre le logiciel libre
+            url: "https://www.april.org/"
+          - name: Code Lutin
+            url: "https://www.codelutin.com/"
+          - name: Stiftung Erneuerbare Freiheit
+            url: "https://erneuerbare-freiheit.de/"
+          - name: Oisux, promotion des logiciels libres dans l'Oise
+            url: "https://oisux.org/"
+          - name: Lilo
+            url: "https://www.lilo.org/fr/"
+          - name: Framasoft
+            url: "https://framasoft.org/"
+          - name: Les Mongueurs de Perl
+            url: "http://www.mongueurs.net/"
           - name: Les éditions Diamond
             url: "https://www.editions-diamond.fr/"
       organisers:
