@@ -27,31 +27,31 @@
               %span.process= process[:name]
               %p.tab
                 = link_to process[:content], rmll_path(:heading => "participate", :page => "volunteering")
-      %li
-        %h4
-          %span= t("rmll.home.conky.activities.title")
-        %ul.window
-          %li
-            %span.number 134
-            total,
-            %span.number 2
-            en cours,
-            %span.number 2
-            dormantes,
-            %span.number 0
-            stoppées,
-            %span.number 0
-            zombie
-          %li
-            %span.process en cours
-            %ul
-              %li.tab= link_to "Lorem ipsum dolor sit amet", "#"
-              %li.tab= link_to "Lorem ipsum dolor sit amet", "#"
-          %li
-            %span.process dormantes
-            %ul
-              %li.tab= link_to "Lorem ipsum dolor sit amet", "#"
-              %li.tab= link_to "Lorem ipsum dolor sit amet", "#"
+      -# %li
+      -#   %h4
+      -#     %span= t("rmll.home.conky.activities.title")
+      -#   %ul.window
+      -#     %li
+      -#       %span.number 134
+      -#       total,
+      -#       %span.number 2
+      -#       en cours,
+      -#       %span.number 2
+      -#       dormantes,
+      -#       %span.number 0
+      -#       stoppées,
+      -#       %span.number 0
+      -#       zombie
+      -#     %li
+      -#       %span.process en cours
+      -#       %ul
+      -#         %li.tab= link_to "Lorem ipsum dolor sit amet", "#"
+      -#         %li.tab= link_to "Lorem ipsum dolor sit amet", "#"
+      -#     %li
+      -#       %span.process dormantes
+      -#       %ul
+      -#         %li.tab= link_to "Lorem ipsum dolor sit amet", "#"
+      -#         %li.tab= link_to "Lorem ipsum dolor sit amet", "#"
       %li
         %h4
           %span= t("rmll.home.conky.spaces.title")

@@ -53,9 +53,11 @@ section#home {
   }
 
   .process {
+    display: inline-block;
     background-color: $color-second;
     color: $color-black;
     padding: 0 1rem;
+    margin: 0.5rem 0;
   }
 
   .tab {

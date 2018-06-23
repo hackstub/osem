@@ -110,7 +110,6 @@ function initSelectorsListeners(eventCSSselector, sectionCSSselector) {
       var starred = document.getElementsByClassName("starred");
       if (isList) {
         var navDay = document.getElementsByClassName("day-nav");
-        console.log(navDay);
       }
 
 
@@ -163,13 +162,11 @@ function initSelectorsListeners(eventCSSselector, sectionCSSselector) {
         hideEmptyTracks(tracks);
       }
 
-      if (isList) {
-        document.querySelector(".agenda").scrollIntoView();
-      } else {
-        var container = document.querySelector(".overflow");
+      var container = document.querySelector(".overflow");
+      if (!isList) {
         container.scrollLeft = 0;
-        container.scrollTop = document.querySelector(".starred:not(.hide)").getBoundingClientRect().height + 2;
       }
+      container.scrollTop = 0;
     });
   }
 }
