@@ -4,7 +4,7 @@ initMap();
 function initMap() {
   var map = new mapboxgl.Map({
     container: 'map',
-    style: '/assets/rmll/map-style.json',
+    style: mapStyleURL,
     center: [7.76399,48.576662],
     zoom: window.innerWidth > 700 ? 14 : 14.5,
     hash: true,
@@ -32,7 +32,7 @@ function initMap() {
   // .setHTML("yolo")
   // .addTo(map);
 
-  readJSONFile("/assets/rmll/map-extra.json", function (layers) {
+  readJSONFile(mapExtraURL, function (layers) {
     map.on('load', function () {
       map.addLayer({
         "id": "batiments",
