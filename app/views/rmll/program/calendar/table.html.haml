@@ -98,8 +98,8 @@
               .row-top
                 %article.event{ "data-type":"plenary" }
                   %aside.top
-                    %mark 18h00
-                    %mark 19h30
+                    %mark= t("calendar.plenary_general.start")
+                    %mark= t("calendar.plenary_general.end")
                   .content
                     %h2= plenary[:title]
                     %p= plenary[:speakers]
@@ -123,8 +123,8 @@
               .row-bottom
                 %article.event{ "data-type":"hackerspace" }
                   %aside.top
-                    %mark 11h00
-                    %mark 2h00
+                    %mark= hk[:start]
+                    %mark= hk[:end]
                   .content
                     %h2= hk[:title]
                     .abstract

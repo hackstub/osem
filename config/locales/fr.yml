@@ -89,6 +89,9 @@ fr:
     network: Réseaux
     mailing: Liste de diffusion
   calendar:
+    plenary_general:
+      start: 18h00
+      end: 19h30
     hackerspace:
       title: Hackerspace
       place: Shadok
@@ -110,9 +113,8 @@ fr:
           - title: Soirée du Libre
             start: 20h30
             end: 04h00
-            place: Quartier Gare - Salle des Colonnes
-            bands: Collectif Chipbangers, Monplaisir, Beta Kitten, Extraterra, Strass et Paresse...
-            abstract_html: Une nuit pour se rencontrer et danser sur de la bonne musique libre <3
+            place: Friche Laiterie - Salle des Colonnes
+            abstract_html: "<p>Une nuit pour se rencontrer et danser sur de la bonne musique libre <3</p><ul><li>20:30 : Media Choreographies Joana Chicau</li><li>21:00 : Strass et Paresse</li><li>22:00 : Nygel Panasco</li><li>23:00 : Monplaisir</li><li>00:00 : 3D63</li><li>01:00 : Beta Kitten</li><li>02:00 : Extra Terra</li><li>03:00 : CŽARCŽAR</li></ul>"
         village:
           title: Village du Libre
           place: Presqu'île Malraux / Campus Central - ESCARPE
@@ -138,7 +140,7 @@ fr:
             place: Shadok
             start: 20h00
             end: 00h00
-            abstract_html: "<ul><li>20h : <a href='https://vimeo.com/78420038' target='_blank'>Giaso</a> - APO33</li> <li>21h : <a href='https://exode.me/videos/watch/7e5f59d0-238c-4259-94a7-3d606adf8eef' target='_blank'>Cyberia</a> - Simon Chanson</li> <li>22h : <a href='https://sinaive.bandcamp.com/album/poptones' target='_blank'>Sinaïve</a> - Sinaïve</li> <li>23h : The BitchHicker - Karl Ferdinand</li></ul>"
+            abstract_html: "<ul><li> 20:00 : Chelsea - <a href='http://www.sakasama.net/' target='_blank'>Anne Laforêt</a> (performance 15 min) </li><li> 20:30 : <a href='https://vimeo.com/78420038' target='_blank'>Giaso</a> - APO33 (performance 45 min) </li><li> 21:15 : <a href='https://exode.me/videos/watch/7e5f59d0-238c-4259-94a7-3d606adf8eef' target='_blank'>Cyberia</a> - Simon Chanson (perf./concert 1h) </li><li> 22:00 : <a href='https://sinaive.bandcamp.com/album/poptones' target='_blank'>Sinaïve</a> - Sinaïve (perf./concert 40 min) </li></ul>"
       - plenary:
           title: Plénière - Mooc, revues, ressources... Édition numérique et licences Libres
           speakers: Speakers -To be announced
