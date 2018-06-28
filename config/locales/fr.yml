@@ -117,7 +117,7 @@ fr:
             abstract_html: "<p>Une nuit pour se rencontrer et danser sur de la bonne musique libre <3</p><ul><li>20:30 : Media Choreographies - Joana Chicau</li><li>21:00 : Strass et Paresse</li><li>22:00 : Nygel Panasco</li><li>23:00 : Monplaisir</li><li>00:00 : 3D63</li><li>01:00 : Beta Kitten</li><li>02:00 : Extra Terra</li><li>03:00 : CŽARCŽAR</li></ul>"
         village:
           title: Village du Libre
-          place: Presqu'île Malraux / Campus Central - ESCARPE
+          place: Presqu'île Malraux / Campus Central
           start: 10h00
           end: 18h00
           abstract_html: Le Village du Libre est un groupe d'associations qui tiennent des stands pour présenter leurs projets et actions au public, c'est un lieu idéal pour découvrir les différents logiciels libres et leurs conceptions, offrant une alternative aux grandes entreprises à but lucratif.
@@ -546,7 +546,7 @@ fr:
           - Cet été, du 7 au 12 juillet, une webradio temporaire diffusera ses ondes depuis les RMLL 2018. Radio Ronronne sera programmée durant le mois de juin, pour rassembler, dans son studio au Shadok, des collectifs d'artistes/auteurs et de journalistes qui seront présents sur le festival.
           - "··· ··  ···− −−− ··− ···  ··· −−− ··− ···· ·− ·· − · −−··  ·−· · ·−−− −−− ·· −· −·· ·−· ·  ··· −−− −·  −−− ·−· −−· ·− −· ·· ··· ·− − ·· −−− −·  ·−−· −−− ··− ·−·  ·−−· ·−· −−− −−· ·−· ·− −− −− · ·−·  ··− −· ·  ··−·· −− ·· ··· ··· ·· −−− −·  ·−−· −−− − · −· − ·· · ·−·· ·−·· · −−··−−  ···− −−− ··− ···  ·−−· −−− ··− ···− · −−··  ···− −−− ··− ···  ·· −· ··· −·−· ·−· ·· ·−· ·  ··· ··− ·−·  ·−·· ·−  −− ·− ·· ·−·· ·· −· −−·  ·−·· ·· ··· −  −·· ··−·· −·· ·· ··−·· ·  −−−··· "
           - "Si vous souhaitez rejoindre son organisation pour programmer une émission potentielle (tout format, vous pouvez vous inscrire sur la mailing list dédiée :"
-          url: "https://listes2018.rmll.info/radio"
+        url: "https://listes2018.rmll.info/radio"
       donate:
         title: Appel à dons
         text:
@@ -794,6 +794,8 @@ fr:
             text:
               - Les contenus sont rédigés par les bénévoles de l’organisation. Les textes présents sur le site n'ont pas la prétention d'être d'une quelconque originalité.
               - Les graphismes ont été produits par Nicolas Chesnais et Majorie Ober sous licence EUPL 1.2.
+              - Cette plateforme est un fork de OSEM (MIT license), développé par OpenSUSE
+            osem: "https://github.com/hackstub/rmll18-osem"
           fonts:
             title: Fonts
             text:

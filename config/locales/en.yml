@@ -3,6 +3,7 @@ en:
     submit: Submit
     close: Close
     opening: Open
+    to: " to "
     all: all
     hour: hour
     july: july
@@ -18,8 +19,14 @@ en:
     plenary: plenary
     confs: conferences
     workshops: workshops
+    night: Night
+    days: Days
+    hour: Hour
+    building: Building
+    duration: Duration
     exhibitions: chatrooms
     events: Events
+    special-events: Starred events
     saturday_html: Sat<span>urday</span>
     sunday_html: Sun<span>day</span>
     monday_html: Mon<span>day</span>
@@ -27,7 +34,7 @@ en:
     wednesday_html: Wed<span>nesday</span>
   types:
     name: Type
-    all: All types
+    all: All
     conferences: Talks
     workshops: Workshops
     chatrooms: Chatrooms
@@ -35,13 +42,13 @@ en:
     others: Others
   lvls:
     name: Level
-    all: All levels
+    all: All
     easy: Begginer
     medium: Insider
     hard: Expert
   languages:
     name: Language
-    all: All languages
+    all: All
     fr: French
     en: English
   menu:
@@ -82,17 +89,20 @@ en:
     network: Network
     mailing: Mailing-list
   calendar:
+    plenary_general:
+      start: 06:00pm
+      end: 07:30pm
     hackerspace:
       title: Hackerspace
       place: Shadok
-      start: 11am
-      end: 12pm
+      start: 11:00am
+      end: midnight
       abstract_html: A collective, self-managed working and playing space where you can meet known and unknown people, have a beer or a soda and share some ideas, codes and tricks.
     village:
       title: Libre Village
       place: Central campus - ESCARPE
-      start: 12h00
-      end: 18h00
+      start: noon
+      end: 06:00pm
       abstract_html: Abstract - To be announced
     days:
       - plenary:
@@ -101,16 +111,16 @@ en:
           abstract_html: The large education market and its driving forces. How do digital multinationals conquer their positions, what advantages do they offer and at what price? On the Free Software side, other models are emerging and being built around the world.
         nights:
           - title: Libre night
-            start: 8.30pm
-            end: 4am
+            start: 08:30pm
+            end: 04:00am
             place: Quartier Gare - Salle des Colonnes (en face de la Laiterie)
             bands: 3D63, Monplaisir, Nygel Panasco, Beta Kitten, Extra Terra, Strass et Paresse, CŽARCŽAR
-            abstract_html: A night to meet and dance on some great libre music <3
+            abstract_html: "<p>A night to meet and dance on some great libre music <3</p><ul><li>08:30pm : Media Choreographies - Joana Chicau</li><li>09:00pm : Strass et Paresse</li><li>10:00pm : Nygel Panasco</li><li>11:00pm : Monplaisir</li><li>midnight : 3D63</li><li>01:00am : Beta Kitten</li><li>02:00am : Extra Terra</li><li>03:00am : CŽARCŽAR</li></ul>"
         village:
           title: Libre Village
-          place: Presqu'île Malraux - Médiathèque, UGC / Campus Central - ESCARPE
-          start: 10am
-          end: 6pm
+          place: Presqu'île Malraux - Médiathèque, UGC
+          start: 10:00am
+          end: 06:00pm
           abstract_html: The Libre village is a group of associations holding stands to present their projects and actions to the public. It is an ideal place for discovery of the various free software and their conceptions, offering an alternative to the big companies with lucrative goal.
       - plenary:
           title: Higher learning, research and Free Software
@@ -118,8 +128,8 @@ en:
           abstract_html: "Thinking digital public policies through the Universities: what pedagogies and what investments? Issues and transition paths for digital commons as a vector of porosity between teaching, research and development."
         nights:
           - title: Libre meal
-            start: 8pm
-            end: 12pm
+            start: 08:00pm
+            end: midnight
             place: Place St Etienne - FEC
             abstract_html: For 20 €, you can join the Libre meal to discuss with veteran Free Software supporters.
       - plenary:
@@ -129,9 +139,9 @@ en:
         nights:
           - title: Performances
             place: Shadok
-            start: 8pm
-            end: 12pm
-            abstract_html: "<ul><li>20h : <a href='https://vimeo.com/78420038' target='_blank'>Giaso</a> - APO33</li> <li>21h : <a href='https://exode.me/videos/watch/7e5f59d0-238c-4259-94a7-3d606adf8eef' target='_blank'>Cyberia</a> - Simon Chanson</li> <li>22h : <a href='https://sinaive.bandcamp.com/album/poptones' target='_blank'>Sinaïve</a> - Sinaïve</li> <li>23h : The BitchHicker - Karl Ferdinand</li></ul>"
+            start: 08:00pm
+            end: midnight
+            abstract_html: "<ul><li> 08:00pm : Chelsea - <a href='http://www.sakasama.net/' target='_blank'>Anne Laforêt</a> (performance 15 min) </li><li> 08:30pm : <a href='https://vimeo.com/78420038' target='_blank'>Giaso</a> - APO33 (performance 45 min) </li><li> 09:15pm : <a href='https://exode.me/videos/watch/7e5f59d0-238c-4259-94a7-3d606adf8eef' target='_blank'>Cyberia</a> - Simon Chanson (perf./concert 1h) </li><li> 10:00pm : <a href='https://sinaive.bandcamp.com/album/poptones' target='_blank'>Sinaïve</a> - Sinaïve (perf./concert 40 min) </li></ul>"
       - plenary:
           title: Mooc, reviews, resources... Digital publishing and free licenses
           speakers: Speakers -To be announced
@@ -139,8 +149,8 @@ en:
         nights:
           - title: Video-games night
             place: Shadok
-            start: 8pm
-            end: 12pm
+            start: 08:00pm
+            end: midnight
             abstract_html: The Fabcafé, the bar in Shadok, organizes every month a video games evening. The occasion of the RMLL could not be missed to make surprises...
       - plenary:
           title: "Access to new technologies: emancipation or exploitation?"
@@ -149,13 +159,13 @@ en:
         nights:
           - title: Meeting - "creative practices in free music"
             place: Shadok
-            start: 7pm
-            end: 9pm
+            start: 07:00pm
+            end: 09:00pm
             abstract_html: "Within the framework of the RMLL Hackstub & Longevity propose a round table around the practices of creation in free music. What is free music? Free music, like free software, is usually defined as music that can be freely copied, distributed and modified. Thus, free music is either music from the public domain or music broadcast under a Free License. It thus gathers all musical genres and could well have a very particular affinity with electronic music and hip-hop by their practices: remix, sampling, rap, and so on."
           - title: Folk ball
             place: Campus central
-            start: 8pm
-            end: 10pm
+            start: 08:00pm
+            end: 10:00pm
             abstract_html: Abstract - To be announced
   rmll:
     home:
@@ -277,7 +287,7 @@ en:
           text:
         meal:
           title: Libre_Meal
-          text: "<p>Reservations are open for the Meal of Libre, Sunday July 8 at  8 pm at the FEC (17 place St-Étienne, in homage to the previous edition ^^) ! It will be prepared by Cuisine Itinérante caterers and a vegan dish is proposed. Both menus are at a single price of 20 €, drinks not included (a bar will be proposed with wines, beer and soft drinks).<ul><li>appetizer - Babaganoush and marinated vegetables (salade de crudités) ;</li><li>plat de resistance:</li><ul><li>meaty - Beef curry with lemongrass and coconut milk served with Jasmin rice ;</li><li>vegan - Vegetables and tofu curry with lemongrass and coconut milk served with Jasmin rice ;</li></ul><li>dessert - Cookie.</li><p>To book and pay in advance, you can checkout <a href='https://2018.rmll.info/conferences/RMLL2018/tickets'>here</a>"
+          text: "<p>Reservations are open for the Meal of Libre, Sunday July 8 at 8 pm at the FEC (17 place St-Étienne, in homage to the previous edition ^^) ! It will be prepared by Cuisine Itinérante caterers and a vegan dish is proposed. Both menus are at a single price of 20 €, drinks not included (a bar will be proposed with wines, beer and soft drinks).<ul><li>appetizer - Babaganoush and marinated vegetables (salade de crudités) ;</li><li>plat de resistance:</li><ul><li>meaty - Beef curry with lemongrass and coconut milk served with Jasmin rice ;</li><li>vegan - Vegetables and tofu curry with lemongrass and coconut milk served with Jasmin rice ;</li></ul><li>dessert - Cookie.</li><p>To book and pay in advance, you can checkout <a href='https://2018.rmll.info/conferences/RMLL2018/tickets'>here</a>"
       calendar:
         title: Agenda
         list:
@@ -689,8 +699,10 @@ en:
             url: ""
             city: Bordeaux
       sponsors:
-        title: Partenaires
+        title: Sponsors
         list:
+          - name: alsace.netlib.re
+            url: "https://alsace.netlib.re/"
           - name: Free Software Foundation Europe (FSFE)
             url: "https://fsfe.org/"
           - name: The town of the Eurométropole of Strasbourg
@@ -699,6 +711,24 @@ en:
             url: "http://www.unistra.fr/"
           - name: Le Shadok, fabrique du numérique
             url: "http://www.shadok.strasbourg.eu/"
+          - name: La Médiathèque André Malraux
+            url: "http://www.mediatheques.strasbourg.eu/medias/medias.aspx?INSTANCE=EXPLOITATION&PORTAL_ID=WBCT_WBCTDOC_28.xml"
+          - name: l@ppli, Espace de médiation numérique
+            url: "https://lappliblog.wordpress.com/"
+          - name: April, promouvoir et défendre le logiciel libre
+            url: "https://www.april.org/"
+          - name: Code Lutin
+            url: "https://www.codelutin.com/"
+          - name: Stiftung Erneuerbare Freiheit
+            url: "https://erneuerbare-freiheit.de/"
+          - name: Oisux, promotion des logiciels libres dans l'Oise
+            url: "https://oisux.org/"
+          - name: Lilo
+            url: "https://www.lilo.org/fr/"
+          - name: Framasoft
+            url: "https://framasoft.org/"
+          - name: Les Mongueurs de Perl
+            url: "http://www.mongueurs.net/"
           - name: Les éditions Diamond
             url: ""
       organisers:
@@ -753,7 +783,8 @@ en:
               - Harmonie VO VIET ANH – President of the RMLL 2018
           data:
             title: Information on the processing of personal data
-          text:      - The Hackstub association collects personal information from users (name, e-mail address, telephone number) to ensure the coordination and logistics of the event, in particular to respond to proposals for contributions. The user provides this information in full knowledge of the facts, in particular when he enters it himself.
+            text:
+              - The Hackstub association collects personal information from users (name, e-mail address, telephone number) to ensure the coordination and logistics of the event, in particular to respond to proposals for contributions. The user provides this information in full knowledge of the facts, in particular when he enters it himself.
               - The Hackstub association does not carry out any transaction of these data.
           data_access:
             title: Right of access and rectification of personal information
@@ -768,6 +799,7 @@ en:
             title: Intellectual Property
             text:
               - The content is written by the organization's volunteers. The texts on the site do not claim to be of any originality.
+              - The graphics were produced by Nicolas Chesnais and Majorie Ober under EUPL 1.2 license.
               - This platform is fork of OSEM (MIT license), developed by the OpenSUSE team
             osem: "https://github.com/hackstub/rmll18-osem"
           fonts:
