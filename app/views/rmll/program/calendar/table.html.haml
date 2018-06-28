@@ -123,8 +123,8 @@
               .row-bottom
                 %article.event{ "data-type":"hackerspace" }
                   %aside.top
-                    %mark= hk[:start]
-                    %mark= hk[:end]
+                    %mark= data[:hackerspace].nil? ? hk[:start] : data[:hackerspace][:start]
+                    %mark= data[:hackerspace].nil? ? hk[:end] : data[:hackerspace][:end]
                   .content
                     %h2= hk[:title]
                     .abstract

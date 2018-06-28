@@ -109,6 +109,9 @@ en:
           title: Education under contract - data open bar and magic clouds
           speakers: Speakers - To be announced
           abstract_html: The large education market and its driving forces. How do digital multinationals conquer their positions, what advantages do they offer and at what price? On the Free Software side, other models are emerging and being built around the world.
+        hackerspace:
+          start: 11:00am
+          end: 07:00pm
         nights:
           - title: Libre night
             start: 08:30pm
@@ -118,7 +121,7 @@ en:
             abstract_html: "<p>A night to meet and dance on some great libre music <3</p><ul><li>08:30pm : Media Choreographies - Joana Chicau</li><li>09:00pm : Strass et Paresse</li><li>10:00pm : Nygel Panasco</li><li>11:00pm : Monplaisir</li><li>midnight : 3D63</li><li>01:00am : Beta Kitten</li><li>02:00am : Extra Terra</li><li>03:00am : CŽARCŽAR</li></ul>"
         village:
           title: Libre Village
-          place: Presqu'île Malraux - Médiathèque, UGC / Campus Central - ESCARPE
+          place: Presqu'île Malraux - Médiathèque, UGC
           start: 10:00am
           end: 06:00pm
           abstract_html: The Libre village is a group of associations holding stands to present their projects and actions to the public. It is an ideal place for discovery of the various free software and their conceptions, offering an alternative to the big companies with lucrative goal.
@@ -126,6 +129,9 @@ en:
           title: Higher learning, research and Free Software
           speakers: Speakers - To be announced
           abstract_html: "Thinking digital public policies through the Universities: what pedagogies and what investments? Issues and transition paths for digital commons as a vector of porosity between teaching, research and development."
+        hackerspace:
+          start: 11:00am
+          end: 08:00pm
         nights:
           - title: Libre meal
             start: 08:00pm
