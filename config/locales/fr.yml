@@ -546,7 +546,7 @@ fr:
           - Cet été, du 7 au 12 juillet, une webradio temporaire diffusera ses ondes depuis les RMLL 2018. Radio Ronronne sera programmée durant le mois de juin, pour rassembler, dans son studio au Shadok, des collectifs d'artistes/auteurs et de journalistes qui seront présents sur le festival.
           - "··· ··  ···− −−− ··− ···  ··· −−− ··− ···· ·− ·· − · −−··  ·−· · ·−−− −−− ·· −· −·· ·−· ·  ··· −−− −·  −−− ·−· −−· ·− −· ·· ··· ·− − ·· −−− −·  ·−−· −−− ··− ·−·  ·−−· ·−· −−− −−· ·−· ·− −− −− · ·−·  ··− −· ·  ··−·· −− ·· ··· ··· ·· −−− −·  ·−−· −−− − · −· − ·· · ·−·· ·−·· · −−··−−  ···− −−− ··− ···  ·−−· −−− ··− ···− · −−··  ···− −−− ··− ···  ·· −· ··· −·−· ·−· ·· ·−· ·  ··· ··− ·−·  ·−·· ·−  −− ·− ·· ·−·· ·· −· −−·  ·−·· ·· ··· −  −·· ··−·· −·· ·· ··−·· ·  −−−··· "
           - "Si vous souhaitez rejoindre son organisation pour programmer une émission potentielle (tout format, vous pouvez vous inscrire sur la mailing list dédiée :"
-          url: "https://listes2018.rmll.info/radio"
+        url: "https://listes2018.rmll.info/radio"
       donate:
         title: Appel à dons
         text:
@@ -794,6 +794,8 @@ fr:
             text:
               - Les contenus sont rédigés par les bénévoles de l’organisation. Les textes présents sur le site n'ont pas la prétention d'être d'une quelconque originalité.
               - Les graphismes ont été produits par Nicolas Chesnais et Majorie Ober sous licence EUPL 1.2.
+              - Cette plateforme est un fork de OSEM (MIT license), développé par OpenSUSE
+            osem: "https://github.com/hackstub/rmll18-osem"
           fonts:
             title: Fonts
             text:
