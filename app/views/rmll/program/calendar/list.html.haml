@@ -161,9 +161,9 @@
                     %div
                       %dt= t("common.hour")
                       %dd
-                        %time= hk[:start].gsub('h', ':')
+                        %time= data[:hackerspace].nil? ? hk[:start] : data[:hackerspace][:start]
                         = t("common.to")
-                        %time= hk[:end].gsub('h', ':')
+                        %time= data[:hackerspace].nil? ? hk[:end] : data[:hackerspace][:end]
                     %div
                       %dt= t("types.name")
                       %dd Hackerspace

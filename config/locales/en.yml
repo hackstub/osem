@@ -109,6 +109,9 @@ en:
           title: Education under contract - data open bar and magic clouds
           speakers: Speakers - To be announced
           abstract_html: The large education market and its driving forces. How do digital multinationals conquer their positions, what advantages do they offer and at what price? On the Free Software side, other models are emerging and being built around the world.
+        hackerspace:
+          start: 11:00am
+          end: 07:00pm
         nights:
           - title: Libre night
             start: 08:30pm
@@ -126,6 +129,9 @@ en:
           title: Higher learning, research and Free Software
           speakers: Speakers - To be announced
           abstract_html: "Thinking digital public policies through the Universities: what pedagogies and what investments? Issues and transition paths for digital commons as a vector of porosity between teaching, research and development."
+        hackerspace:
+          start: 11:00am
+          end: 08:00pm
         nights:
           - title: Libre meal
             start: 08:00pm
