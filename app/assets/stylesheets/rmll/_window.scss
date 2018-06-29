@@ -116,13 +116,13 @@ ul.options {
     display: none;
     background-color: $color-white;
     border: $border;
+  }
 
-    &.show {
-      display: block;
-      position: absolute;
-      margin-left: -2px;
-      margin-top: -2px;
-      z-index: 50;
-    }
+  li:hover > ul, [role="menu"].show {
+    display: block;
+    position: absolute;
+    margin-left: -2px;
+    margin-top: -2px;
+    z-index: 50;
   }
 }

@@ -87,7 +87,7 @@ nav.main {
       }
     }
 
-    &.show {
+    li:hover > ul, &.show {
       display: block;
       z-index: 100;
       @include screen {
