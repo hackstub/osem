@@ -16,10 +16,12 @@ en:
     description: "Description: "
     duration: "Duration: "
     public: "Public: "
+    website: "website: "
     plenary: plenary
     confs: conferences
     workshops: workshops
     night: Night
+    booths: Booths
     days: Days
     hour: Hour
     building: Building
@@ -60,7 +62,8 @@ en:
     list: List
     night: Libre's Night
     meal: Meal of Libre
-    village: Village
+    village: Libre's Village
+    nights: Nights
     cfb: Call for papers
     info: Pratical Info
     map: Map

@@ -16,10 +16,12 @@ fr:
     description: "Description : "
     duration: "Durée : "
     public: "Public : "
+    website: "Site web : "
     plenary: plénière
     confs: conférences
     workshops: ateliers
     exhibitions: salons
+    booths: Stands
     night: Soirée
     days: Jours
     hour: Heure
@@ -60,7 +62,8 @@ fr:
     list: Liste
     night: Soirée du Libre
     meal: Repas du Libre
-    village: Village
+    village: Village du Libre
+    nights: Soirées
     cfb: Appel à stand
     info: Info pratiques
     map: Carte

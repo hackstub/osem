@@ -1,0 +1,29 @@
+%main
+  %section.window
+    - add_bar("Village du libre", "Contacts list")
+    #adress-book.container.overflow
+      .flex
+        %section.tree
+          %h2 Village du Libre
+          %article.pres
+            %p= t("calendar.village.abstract_html")
+          %nav.days
+            %h2= t("common.booths")
+            %ul{ role:"menubar" }
+              - @conference.booths.each_with_index do |booth, index|
+                %li{ role:"none" }
+                  = link_to booth.title, "##{index}", role: "menuitem"
+
+        %section.content
+          - @conference.booths.each_with_index do |booth, index|
+            %article{ id:"#{index}" }
+              .title-container
+                .img-container
+                  - unless booth.picture.thumb.url.nil?
+                    = image_tag( booth.picture.thumb.url, alt: booth.title + " logo")
+                %h3= booth.title
+              %p
+                = t("common.website")
+                = link_to_blank booth.website_url, booth.website_url
+              .abstract
+                = markdown(booth.description)

@@ -12,6 +12,12 @@
           = link_to t("menu.calendar") + " " + t("menu.table"), rmll_path(:heading => "program", :page => "calendar", :sub => "table"), { role:"menuitem", tabindex:-1 }
         %li{ role:"none" }
           = link_to t("menu.calendar") + " " + t("menu.list"), rmll_path(:heading => "program", :page => "calendar", :sub => "list"), { role:"menuitem", tabindex:-1 }
+        %li{ role:"none" }
+          = link_to t("menu.village"), rmll_path(:heading => "program", :page => "village"), { role:"menuitem", tabindex:-1 }
+        -# %li{ role:"none" }
+        -#   = link_to "Hackerspace", rmll_path(:heading => "program", :page => "hackerspace"), { role:"menuitem", tabindex:-1 }
+        -# %li{ role:"none" }
+        -#   = link_to t("menu.nights"), rmll_path(:heading => "program", :page => "nights"), { role:"menuitem", tabindex:-1 }
         -# %li{ role:"none" }
         -#   %a{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false", tabindex:-1 } gou
         -#   %ul{ role:"menu", "aria-label":"plusplus" }
@@ -19,12 +25,12 @@
         -#       = link_to "lol", "#", { role:"menuitem", tabindex:-1 }
         -#     %li{ role:"none" }
         -#       = link_to "yolo", "#", { role:"menuitem", tabindex:-1 }
-    %li
-      %a{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false", tabindex:-1 }
-        = t("menu.village")
-      %ul{ role:"menu", "aria-label":t("menu.village") }
-        %li{ role:"none" }
-          = link_to t("menu.cfb"), rmll_path(:heading => "village", :page => "cfb"), { role:"menuitem", tabindex:-1 }
+    -# %li
+    -#   %a{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false", tabindex:-1 }
+    -#     = t("menu.village")
+    -#   %ul{ role:"menu", "aria-label":t("menu.village") }
+    -#     %li{ role:"none" }
+    -#       = link_to t("menu.cfb"), rmll_path(:heading => "village", :page => "cfb"), { role:"menuitem", tabindex:-1 }
     %li
       %a{ role:"menuitem", "aria-haspopup":"true", "aria-expanded":"false", tabindex:-1 }
         = t("menu.info")
