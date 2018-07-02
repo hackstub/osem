@@ -207,6 +207,9 @@ en:
           title: Pass the SALT
           text_html: The former team of the Security theme organizes an event dedicated to computer security in free software in Lille from July 2 to 4, %{href}.
           url: "https://2018.pass-the-salt.org/"
+        meal:
+          title: Meal of Libre
+          text_html: "<a href='https://2018.rmll.info/conferences/RMLL2018/tickets' target='_blank'>Reservations are open</a> for the Meal of Libre, <strong>sunday july 8 at 8pm at the FEC</strong> (17 place St-Étienne)"
     program:
       presentation:
         title: Presentation
