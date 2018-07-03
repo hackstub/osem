@@ -20,6 +20,11 @@
               %p.tab= process[:content]
       %li
         %h4
+          %span= t("rmll.home.conky.meal.title")
+        %ul.window
+          %p= t("rmll.home.conky.meal.text_html")
+      %li
+        %h4
           %span= t("rmll.home.conky.mails.title")
         %ul.window
           - t("rmll.home.conky.mails.process").each do |process|

@@ -210,6 +210,9 @@ en:
           title: Pass the SALT
           text_html: The former team of the Security theme organizes an event dedicated to computer security in free software in Lille from July 2 to 4, %{href}.
           url: "https://2018.pass-the-salt.org/"
+        meal:
+          title: Meal of Libre
+          text_html: "<a href='https://2018.rmll.info/conferences/RMLL2018/tickets' target='_blank'>Reservations are open</a> for the Meal of Libre, <strong>sunday july 8 at 8pm at the FEC</strong> (17 place St-Étienne)"
     program:
       presentation:
         title: Presentation
@@ -296,7 +299,7 @@ en:
           text:
         meal:
           title: Libre_Meal
-          text: "<p>Reservations are open for the Meal of Libre, Sunday July 8 at 8 pm at the FEC (17 place St-Étienne, in homage to the previous edition ^^) ! It will be prepared by Cuisine Itinérante caterers and a vegan dish is proposed. Both menus are at a single price of 20 €, drinks not included (a bar will be proposed with wines, beer and soft drinks).<ul><li>appetizer - Babaganoush and marinated vegetables (salade de crudités) ;</li><li>plat de resistance:</li><ul><li>meaty - Beef curry with lemongrass and coconut milk served with Jasmin rice ;</li><li>vegan - Vegetables and tofu curry with lemongrass and coconut milk served with Jasmin rice ;</li></ul><li>dessert - Cookie.</li><p>To book and pay in advance, you can checkout <a href='https://2018.rmll.info/conferences/RMLL2018/tickets'>here</a>"
+          text_html: "<p>Reservations are open for the Meal of Libre, Sunday July 8 at 8 pm at the FEC (17 place St-Étienne, in homage to the previous edition ^^) ! It will be prepared by Cuisine Itinérante caterers and a vegan dish is proposed. Both menus are at a single price of 20 €, drinks not included (a bar will be proposed with wines, beer and soft drinks).<ul><li>appetizer - Babaganoush and marinated vegetables (salade de crudités) ;</li><li>plat de resistance:</li><ul><li>meaty - Beef curry with lemongrass and coconut milk served with Jasmin rice ;</li><li>vegan - Vegetables and tofu curry with lemongrass and coconut milk served with Jasmin rice ;</li></ul><li>dessert - Cookie.</li><p>To book and pay in advance, you can checkout <a href='https://2018.rmll.info/conferences/RMLL2018/tickets'>here</a>"
       calendar:
         title: Agenda
         list:
@@ -496,7 +499,7 @@ en:
         title: Food
         daily: Catering will be provided throughout the event by AIUS, as well as by vegan food trucks.
         alsatian: The LSM of Strasbourg will not be able to be made without our famous Alsatian flambé tarts which will be cooked by volunteers in order to share the gastronomic heritage of the region.
-        libre_meal: "<p>Reservations are open for the Meal of Libre, Sunday July 8 at  8 pm at the FEC (17 place St-Étienne, in homage to the previous edition ^^) ! It will be prepared by Cuisine Itinérante caterers and a vegan dish is proposed. Both menus are at a single price of 20 €, drinks not included (a bar will be proposed with wines, beer and soft drinks).<ul><li>appetizer - Babaganoush and marinated vegetables (salade de crudités) ;</li><li>plat de resistance:</li><ul><li>meaty - Beef curry with lemongrass and coconut milk served with Jasmin rice ;</li><li>vegan - Vegetables and tofu curry with lemongrass and coconut milk served with Jasmin rice ;</li></ul><li>dessert - Cookie.</li><p>To book and pay in advance, you can checkout <a href='https://2018.rmll.info/conferences/RMLL2018/tickets'>here</a>"
+        libre_meal_html: "<p>Reservations are open for the Meal of Libre, Sunday July 8 at  8 pm at the FEC (17 place St-Étienne, in homage to the previous edition ^^) ! It will be prepared by Cuisine Itinérante caterers and a vegan dish is proposed. Both menus are at a single price of 20 €, drinks not included (a bar will be proposed with wines, beer and soft drinks).<ul><li>appetizer - Babaganoush and marinated vegetables (salade de crudités) ;</li><li>plat de resistance:</li><ul><li>meaty - Beef curry with lemongrass and coconut milk served with Jasmin rice ;</li><li>vegan - Vegetables and tofu curry with lemongrass and coconut milk served with Jasmin rice ;</li></ul><li>dessert - Cookie.</li><p>To book and pay in advance, you can checkout <a href='https://2018.rmll.info/conferences/RMLL2018/tickets'>here</a>"
       tourism:
         title: Tourism
         intro:
