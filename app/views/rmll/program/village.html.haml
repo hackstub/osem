@@ -21,6 +21,8 @@
                 .img-container
                   - unless booth.picture.thumb.url.nil?
                     = image_tag( booth.picture.thumb.url, alt: booth.title + " logo")
+                  - else
+                    .img
                 %h3= booth.title
               %p
                 = t("common.website")

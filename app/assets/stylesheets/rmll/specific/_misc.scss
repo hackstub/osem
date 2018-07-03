@@ -477,16 +477,10 @@
   font-family: $font-sans;
   background-color: $color-third;
   color: $color-black;
-
+  overflow-x: hidden;
 
   @include screen {
     font-size: 1.2rem;
-  }
-
-  .phone {
-    @include screen {
-      display: none;
-    }
   }
 
   .flex {
@@ -520,14 +514,25 @@
   nav {
     position: sticky;
     top: 0;
+    @include screen {
+      height: calc(100vh - 4rem);
+    }
 
     ul {
       padding: 2rem 1rem;
+      @include screen {
+        max-height: calc(100% - 2rem);
+        overflow: auto;
+      }
+
 
       li {
         line-height: 1.5rem;
         @include screen {
           margin-bottom: 0.5rem;
+        }
+        &:last-of-type {
+          margin-bottom: 2rem;
         }
 
         &::before {
@@ -575,6 +580,7 @@
     &.pres {
       line-height: 1.45rem;
       margin: 0;
+      border: none;
       @include screen {
         margin: 2rem;
       }
@@ -590,7 +596,9 @@
     margin-bottom: 1rem;
 
     .img-container {
-      background-color: lighten($red, 25%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       width: 100px;
       height: 100%;
       min-width: 100px;
@@ -599,10 +607,15 @@
       border-radius: $border-rad;
     }
 
-    img {
-      max-width: 100%;
-      max-height: 100%;
+    .img {
+      width: 100%;
+      height: 100%;
+      background-color: lighten($red, 25%);
+    }
 
+    img {
+      max-width: 95%;
+      max-height: 95%;
     }
 
     h3 {
