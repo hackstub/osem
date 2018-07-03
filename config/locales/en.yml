@@ -343,6 +343,7 @@ en:
       meal:
         title: Meal of Libre
     village:
+      hour_html: "<br><p>Saturday 7 from 10am to 6pm at the Presqu'île Malraux (Médiathèque and UGC) then for the rest of the week from noon to 6pm at the Central Campus of the university (Escarpe building)<p>"
       map:
       contributors:
       cfb:

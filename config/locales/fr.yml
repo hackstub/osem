@@ -337,6 +337,7 @@ fr:
       meal:
         title: Repas du Libre
     village:
+      hour_html: "<br><p>Samedi 7 de 10h à 18h à la presqu'île Malraux (Médiathèque et UGC) puis le reste de la semaine de 12h à 18h au Campus Central de l'université (bâtiment Escarpe)<p>"
       map:
       contributors:
       cfb:
