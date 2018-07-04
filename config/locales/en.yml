@@ -172,11 +172,11 @@ en:
             start: 07:00pm
             end: 09:00pm
             abstract_html: "Within the framework of the RMLL Hackstub & Longevity propose a round table around the practices of creation in free music. What is free music? Free music, like free software, is usually defined as music that can be freely copied, distributed and modified. Thus, free music is either music from the public domain or music broadcast under a Free License. It thus gathers all musical genres and could well have a very particular affinity with electronic music and hip-hop by their practices: remix, sampling, rap, and so on."
-          - title: Folk ball
-            place: Campus central
-            start: 08:00pm
-            end: 10:00pm
-            abstract_html: Abstract - To be announced
+          - title: Wild dance
+            place: Central campus
+            start: 20h00
+            end: 22h00
+            abstract_html: "Musicians and dancers from the « Bals sauvages » collective will play folk dances free of rights outside the LSM. <br>The event is free, open to all and newbie-friendly."
   rmll:
     home:
       background:

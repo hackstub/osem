@@ -171,6 +171,11 @@ fr:
             start: 19h00
             end: 21h00
             abstract_html: "Dans le cadre des RMLL Hackstub & Longevity proposent une table ronde autour des pratiques de création dans la musique libre. La musique libre c’est quoi ? On désigne habituellement comme musique libre, à l'instar d'un logiciel libre, une musique qui peut être librement copiée, distribuée et modifiée. Ainsi, la musique libre est soit de la musique du domaine public, soit de la musique diffusée sous une Licence Libre. Elle regroupe ainsi tous les genres musicaux et pourrait bien avoir une affinité toute particulière avec les musiques électroniques et le hip-hop par leurs pratiques : remix, sampling, rap, etc."
+          - title: Bal sauvage
+            place: Campus central
+            start: 20h00
+            end: 22h00
+            abstract_html: "Des musiciens du collectif « Bals sauvages » viendront jouer des chansons folk libres de droits en plein air. <br>Comme tous les bals sauvages, l'événement est gratuit et ouvert à tous, y compris aux débutants."
   rmll:
     home:
       background:
