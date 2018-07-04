@@ -15,18 +15,9 @@ function formatJson(json, callbackBuilding, callbackSetup) {
     if (days[i] != "friday" && days[i] != "thursday") data[days[i]] = [];
   }
 
-  // Reorder track list
-  var newOrderId = Array(10, 7, 1, 8, 15, 11, 19, 20, 9, 14, 18, 17, 13, 12, 25, 16, 24, 21, 2, 3, 4, 5, 6, 22, 23);
-  var newOrderTracks = Array();
-  for (var i = 0 ; i < newOrderId.length ; i++) {
-      newOrderTracks.push(json.tracks[newOrderId[i]-1]);
-  }
-  json.tracks = newOrderTracks;
-
   // Apply trick to get translated name for tracks
   for (var i = 0; i < json.tracks.length; i++) {
     json.tracks[i].name = json.tracks[i].name.split("*")[lang];
-    // console.log(json.tracks[i]);
   }
 
   var roomsLen = json.rooms.length;
@@ -69,9 +60,13 @@ function formatJson(json, callbackBuilding, callbackSetup) {
     }
   }
 
+  // Reordered track list
+  var newOrderId = Array(10, 7, 1, 8, 15, 11, 19, 20, 9, 14, 18, 17, 13, 12, 25, 16, 24, 21, 2, 3, 4, 5, 6, 22, 23);
+
   for (var day in data) {
     if (data.hasOwnProperty(day)) {
-      for (var i = data[day].length - 1; i >= 0; i--) {
+      var newOrderTracks = Array();
+      for (var i = 0; i < data[day].length; i++) {
         if (data[day][i]) {
           data[day][i].events = data[day][i].events.sort(function(a,b) {return (a.date > b.date) ? 1 : ((b.date > a.date) ? -1 : 0);} );
           for (var j = 0; j < data[day][i].events.length; j++) {
@@ -81,9 +76,10 @@ function formatJson(json, callbackBuilding, callbackSetup) {
               ev.class = "double-bottom";
             }
           }
+          newOrderTracks[newOrderId.indexOf(i)] = data[day][i];
         }
       }
-      callbackBuilding(data[day], day);
+      callbackBuilding(newOrderTracks, day);
     }
   }
   if (callbackSetup) {
