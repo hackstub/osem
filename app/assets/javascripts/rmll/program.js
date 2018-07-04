@@ -1,6 +1,5 @@
 var baseUrl = "/api/v1/conferences/rmll2018/";
 // var baseUrl = "https://osem.aius.u-strasbg.fr/api/v1/conferences/rmll2018";
-
 // ╭─╮┌─╴╭╮╷┌─╴┌─╮╶┬╴╭─╴
 // │╶╮├─╴│││├─╴├┬╯ │ │
 // ╰─╯╰─╴╵╰╯╰─╴╵ ╰╶┴╴╰─╴
@@ -42,6 +41,7 @@ function formatJson(json, callbackBuilding, callbackSetup) {
       daypart = data[day][ev.track_id].events;
       ev.date = date.getUTCHours() * 100 + date.getUTCMinutes();
       var dateStr = ev.date + '';
+      ev.day = lang === 0 ? day : date.toLocaleDateString("fr-FR", { weekday: 'long' });
       ev.dateStr = dateStr.substring(0, 2) + "h" + dateStr.substring(2);;
       ev.start = (date.getUTCHours() * 60 + date.getUTCMinutes()) - 10 * 60;
       ev.room = roomsName[i];
@@ -433,10 +433,10 @@ function buildListArticle(ev) {
   appendChildren(content, [speakers, abstract]);
 
   var infosKeys = [
-    ["Hour", "Type", "Building", "Duration", "Difficulty"],
-    ["Heure", "Type", "Batiment", "Durée", "Niveau"]
+    ["Hour", "Type", "Building", "Duration", "Difficulty", "Day"],
+    ["Heure", "Type", "Batiment", "Durée", "Niveau", "Jour"]
   ];
-  var infosValues = [ev.dateStr.replace("h", ":"), ev.typeName, ev.room, ev.length + "'", ev.difficultyName];
+  var infosValues = [ev.dateStr.replace("h", ":"), ev.typeName, ev.room, ev.length + "'", ev.difficultyName, ev.day];
   var infos = domElement("dl", {class: "infos"});
   for (var i = 0; i < infosValues.length; i++) {
     var container = document.createElement("div");
