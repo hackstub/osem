@@ -1,5 +1,8 @@
 .tree
   %ul
+    %li{ mail == "radio" ? { class:"selected" } : {} }
+      JUL 03 - from: contact [AT] listes2018.rmll.info
+      = link_to t("rmll.participate.radio.title"), rmll_path(:heading => "participate", :page => "radio")
     %li{ mail == "volunteering" ? { class:"selected" } : {} }
       MAY 22 - from: contact [AT] listes2018.rmll.info
       = link_to t("rmll.participate.mail.volunteering"), rmll_path(:heading => "participate", :page => "volunteering")

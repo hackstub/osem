@@ -50,6 +50,8 @@
         = t("menu.participate")
       %ul{ role:"menu", "aria-label":t("menu.participate") }
         %li{ role:"none" }
+          = link_to "Radio RMLL", rmll_path(:heading => "participate", :page => "radio"), { role:"menuitem", tabindex:-1 }
+        %li{ role:"none" }
           = link_to t("menu.volunteering"), rmll_path(:heading => "participate", :page => "volunteering"), { role:"menuitem", tabindex:-1 }
         %li{ role:"none" }
           = link_to t("menu.donate"), rmll_path(:heading => "participate", :page => "donate"), { role:"menuitem", tabindex:-1 }

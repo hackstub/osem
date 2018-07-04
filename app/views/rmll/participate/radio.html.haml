@@ -1,0 +1,21 @@
+= render partial: "rmll/background"
+
+%main.half
+  %section.window
+    - add_bar("Mail", t(".title"))
+    #mail.container.term.overflow
+      %article
+        %h1 Mailing box
+        = render partial: "rmll/participate/mail_headings", locals: { mail: "radio" }
+
+        .content
+          %ul
+            %li Date: fri, 03 Jul 2018 04:15:12
+            %li From: "rmll 2018 team" <contact [AT] listes2018.rmll.info>
+            %li To: You
+            %li
+              %h2= "Subject : " + t(".title")
+
+          - add_text(t(".text"))
+
+          %p= link_to t(".url"), t(".url")
