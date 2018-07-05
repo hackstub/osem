@@ -36,6 +36,7 @@ class ConferenceSerializer < ActiveModel::Serializer
                                                                                                 description: event_schedule.event.description,
                                                                                                 is_highlight: event_schedule.event.is_highlight,
                                                                                                 require_registration:  event_schedule.event.require_registration,
+                                                                                                max_attendees:  event_schedule.event.max_attendees,
                                                                                                 start_time: event_schedule.start_time,
                                                                                                 event_type_id: event_schedule.event.event_type.id,
                                                                                                 difficulty_level_id: event_schedule.event.difficulty_level_id,
