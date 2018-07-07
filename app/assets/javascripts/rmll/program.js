@@ -463,6 +463,13 @@ function buildListArticle(ev) {
     infos.appendChild(container);
   }
 
+  if (ev["require_registration"]) {
+    var reg = domElem("a");
+    reg.innerHTML = ["Register here", "S'inscrire"][lang];
+    reg.href = ev["registration_url"];
+    infos.appendChild(reg);
+  }
+
   appendChildren(article, [content, infos]);
 
   return article;
