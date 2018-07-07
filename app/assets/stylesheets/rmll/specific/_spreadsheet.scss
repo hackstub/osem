@@ -352,8 +352,7 @@
         min-width: 250px;
         height: auto;
 
-        & aside span,
-        & aside a {
+        & aside span {
           display: inline-block;
         }
 
@@ -444,7 +443,7 @@
           }
         }
 
-        span, a {
+        span {
           display: inline-block;
         }
       }
