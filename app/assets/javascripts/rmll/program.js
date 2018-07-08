@@ -1,5 +1,8 @@
 var baseUrl = "/api/v1/conferences/rmll2018/";
 // var baseUrl = "https://osem.aius.u-strasbg.fr/api/v1/conferences/rmll2018";
+var days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+var today = days[new Date(Date.now()).getDay()];
+
 // ╭─╮┌─╴╭╮╷┌─╴┌─╮╶┬╴╭─╴
 // │╶╮├─╴│││├─╴├┬╯ │ │
 // ╰─╯╰─╴╵╰╯╰─╴╵ ╰╶┴╴╰─╴
@@ -8,7 +11,6 @@ function formatJson(json, callbackBuilding, callbackSetup) {
   // FIXME modify api to serve well formated informations
   json = json[0];
   var data = {};
-  var days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
   var roomsName = ['ATRIUM - AT8', 'ATRIUM - AT9', 'ESCARPE - Amphi Ortscheidt', 'ESCARPE - Amphi 29', 'PLATANE - A08', 'PLATANE - A09', 'PLATANE - A10', 'PLATANE - A11', 'PLATANE - A12', 'PLATANE - A13', 'PLATANE - B01', 'PLATANE - B02', 'PLATANE - B03', 'PLATANE - B04', 'PLATANE - B05', 'Médiathèque Malraux', 'Shadok', "Jardins de l'université", "Presqu'île Malraux", 'Salle des colonnes']
   for (var i = 0; i < days.length; i++) {
     if (days[i] != "friday" && days[i] != "thursday") data[days[i]] = [];
@@ -185,7 +187,7 @@ function buildTable(data, day) {
   var tbody = document.querySelector("table");
   var doc = domElem('tbody', '', {"data-day": day});;
 
-  if (day != "saturday") {
+  if (day != today) {
     doc.classList.add("hide");
   }
 
@@ -279,6 +281,9 @@ function initTableListeners () {
   // Day selection Listeners
   var daysbutton = document.querySelectorAll("#daySelection a");
   for (var i = 0; i < daysbutton.length; i++) {
+    if (daysbutton[i].dataset.toggle === today) {
+      daysbutton[i].classList.add("selected");
+    }
     daysbutton[i].addEventListener("click", function (e) {
       var day = e.target.nodeName == "SPAN" ? e.target.parentElement.dataset.toggle : e.target.dataset.toggle;
       var overflowed = document.querySelector(".overflow");
@@ -366,6 +371,8 @@ function setupList() {
   if (url.indexOf('#') > -1) {
     var id = url.substring(url.lastIndexOf('#') + 1);
     document.getElementById(id).scrollIntoView();
+  } else {
+    document.getElementById(today).scrollIntoView();
   }
   initSelectorsListeners(".track .event", ".track");
 }
