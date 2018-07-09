@@ -280,9 +280,14 @@ function buildTableArticle(ev, timeBetween) {
 function initTableListeners () {
   // Day selection Listeners
   var daysbutton = document.querySelectorAll("#daySelection a");
+  var starredDay = document.getElementsByClassName("starred-day");
   for (var i = 0; i < daysbutton.length; i++) {
+
     if (daysbutton[i].dataset.toggle === today) {
       daysbutton[i].classList.add("selected");
+    }
+    if (starredDay[i].dataset.day === today) {
+      starredDay[i].classList.remove("hide");
     }
     daysbutton[i].addEventListener("click", function (e) {
       var day = e.target.nodeName == "SPAN" ? e.target.parentElement.dataset.toggle : e.target.dataset.toggle;

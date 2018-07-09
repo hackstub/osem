@@ -92,7 +92,7 @@
           - (0..4).each do |i|
             - data = t("calendar.days")[i]
             - plenary = data[:plenary]
-            .starred-day{ days[i] == "saturday" ? { "data-day": "#{days[i]}" } : { class:"hide", "data-day": "#{days[i]}" } }
+            .starred-day.hide{ "data-day": "#{days[i]}" }
               -# .info-black
               -#   %p= t("common.#{days[i]}") + " #{i + 7}"
               .row-top
