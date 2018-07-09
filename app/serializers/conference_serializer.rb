@@ -38,10 +38,9 @@ class ConferenceSerializer < ActiveModel::Serializer
                                                                                                 is_highlight: event_schedule.event.is_highlight,
                                                                                                 require_registration: event_schedule.event.require_registration,
                                                                                                 max_attendees: event_schedule.event.max_attendees,
-                                                                                                registration_url: url_for(controller: 'proposals',
-                                                                                                                          action: 'registrations',
+                                                                                                registration_url: url_for(controller: 'conference_registration',
+                                                                                                                          action: 'new',
                                                                                                                           conference_id: object.short_title,
-                                                                                                                          id: event_schedule.event.id,
                                                                                                                           only_path: true
                                                                                                                          ),
                                                                                                 start_time: event_schedule.start_time,
