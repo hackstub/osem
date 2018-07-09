@@ -142,9 +142,10 @@ fr:
             place: Place St Etienne - FEC
             abstract_html: "Le repas du Libre sera cette année composé par le traiteur <a href='https://cuisineitinerante.com/' target='_blank'>Cuisine Itinérante</a>, qui préparera un menu végan et un menu carné. <a href='https://2018.rmll.info/fr/info/food' target='_blank'>Cliquez ici</a> pour plus de détails et pour s'inscrire."
       - plenary:
-          title: Plénière - Enjeux pédagogiques des interfaces
-          speakers: Speakers - To be announced
-          abstract_html: "Une étude de l'éducation aux médias numériques par la question des interfaces, physiques et logicielles : de l'ordinateur fixe aux applications smartphones, la variété des approches est vaste selon l'intérêts des acteurs. Quels modèles émancipateurs opposer à ceux des multinationales dont l'un des objectifs majeurs est celui de la reproduction de leur clientèle ?"
+          title: /!\ ANNULÉ /!\ Plénière - Enjeux pédagogiques des interfaces /!\ ANNULÉ /!\ (rdv au Shadok dès 19h)
+          # speakers: Speakers - To be announced
+          abstract_html: Plénière Annulée ! Retrouvons-nous au Shadok (Presqu'île Malraux) de 19h à minuit pour la soirée performances et le hackerspace. La buvette s'y déplacera !
+          # abstract_html: "Une étude de l'éducation aux médias numériques par la question des interfaces, physiques et logicielles : de l'ordinateur fixe aux applications smartphones, la variété des approches est vaste selon l'intérêts des acteurs. Quels modèles émancipateurs opposer à ceux des multinationales dont l'un des objectifs majeurs est celui de la reproduction de leur clientèle ?"
         nights:
           - title: Performances
             place: Shadok

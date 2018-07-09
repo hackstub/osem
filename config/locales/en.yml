@@ -143,9 +143,10 @@ en:
             place: Place St Etienne - FEC
             abstract_html: For 20 €, you can join the Libre meal to discuss with veteran Free Software supporters.
       - plenary:
-          title: Pedagogical issues of interfaces
-          speakers: Speakers - To be announced
-          abstract_html: "A study of digital media education through the question of interfaces, physical and software: from the desktop computer to smartphone applications, the variety of approaches is vast according to the interests of stakeholders and the pedagogy of teachers. Which models should be opposed to those of multinationals, one of whose major objectives is the reproduction of their clients?"
+          title: /!\ Canceled /!\ Pedagogical issues of interfaces /!\ Canceled /!\
+          # speakers: Speakers - To be announced
+          abstract_html: Plenary Canceled! Let's meet at Shadok (Presqu'île Malraux) from 7pm to midnight for the evening performances and hackerspace. The bar will move there!
+          # abstract_html: "A study of digital media education through the question of interfaces, physical and software: from the desktop computer to smartphone applications, the variety of approaches is vast according to the interests of stakeholders and the pedagogy of teachers. Which models should be opposed to those of multinationals, one of whose major objectives is the reproduction of their clients?"
         nights:
           - title: Performances
             place: Shadok
